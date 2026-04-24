@@ -1,0 +1,26 @@
++---------------------------------------------------------------------------------
+|    description:: VALIDITY_KIND enumeration
+|    keywords::    openEHR Data Types model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Enumeration of three values for constraint models: mandatory, optional, prohibited.
+|
+enumeration VALIDITY_KIND
+    base_type String
+
+feature_group ("values")
+
+    mandatory ("mandatory");
+
+    optional ("optional");
+
+    prohibited ("prohibited");
+
+    disallowed ("disallowed");
+
+end

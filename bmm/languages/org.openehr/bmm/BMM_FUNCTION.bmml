@@ -1,0 +1,30 @@
++---------------------------------------------------------------------------------
+|    description:: BMM_FUNCTION class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| A formal element with signature of the form: name ({arg:TArg}*):TResult. A function
+| is a computed (rather than data) element, generally assumed to be non-state-changing.
+|
+class BMM_FUNCTION
+    is_a BMM_ROUTINE
+
+feature_group ("access")
+
+    |
+    | Optional details enabling a function to be represented as an operator in a
+    | syntactic representation.
+    |
+    prop operator_definition :? BMM_OPERATOR ;
+
+    |
+    | Automatically created Result variable, usable in body and post-condition.
+    |
+    prop result : BMM_RESULT ;
+
+end

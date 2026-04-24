@@ -1,0 +1,33 @@
++---------------------------------------------------------------------------------
+|    description:: STATEMENT_SET class definition
+|    keywords::    openEHR BEL model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| A container for a specific set of statements intended to be used together.
+|
+class STATEMENT_SET
+
+feature_group ("access")
+
+    |
+    | The member statements of this statement set.
+    |
+    prop statement :? List<STATEMENT> ;
+
+    |
+    | Optional name of this rule set.
+    |
+    prop name :? String ;
+
+    |
+    | Execution result of the whole rule set, determined by and-ing of result values of
+    | Assertions in the rule set.
+    |
+    func execution_result : Boolean ;
+
+end

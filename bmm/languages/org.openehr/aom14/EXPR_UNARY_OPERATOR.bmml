@@ -1,0 +1,23 @@
++---------------------------------------------------------------------------------
+|    description:: EXPR_UNARY_OPERATOR class definition
+|    keywords::    openEHR AOM 1.4 model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Unary expression operator, i.e. one taking a single operand.
+|
+class EXPR_UNARY_OPERATOR
+    is_a EXPR_OPERATOR
+
+feature_group ("access")
+
+    |
+    | Operand of the unary operator.
+    |
+    prop operand : EXPR_ITEM ;
+
+end

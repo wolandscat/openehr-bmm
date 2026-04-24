@@ -1,0 +1,34 @@
++---------------------------------------------------------------------------------
+|    description:: EL_TUPLE class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Defines an array of optionally named items, each of any type. Typical use is to
+| represent an argument list to a routine call.
+|
+class EL_TUPLE
+    is_a EL_EXPRESSION
+
+feature_group ("access")
+
+    |
+    | Items in the tuple, potentially with names.
+    |
+    prop items :? List<EL_TUPLE_ITEM> ;
+
+    |
+    | Static type inferred from the literal value.
+    |
+    prop type : BMM_TUPLE_TYPE ;
+
+    |
+    | Return type.
+    |
+    func eval_type : BMM_TYPE ;
+
+end

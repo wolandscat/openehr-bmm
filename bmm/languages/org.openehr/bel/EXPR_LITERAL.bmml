@@ -1,0 +1,24 @@
++---------------------------------------------------------------------------------
+|    description:: EXPR_LITERAL class definition
+|    keywords::    openEHR BEL model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Literal value expression tree leaf item. Represents a literal value of any primitive
+| type included in the PRIMITIVE_TYPE enumeration.
+|
+class EXPR_LITERAL
+    is_a EXPR_LEAF
+
+feature_group ("access")
+
+    |
+    | A statically set constant value of a primitive type.
+    |
+    prop item : Any ;
+
+end

@@ -1,0 +1,26 @@
++---------------------------------------------------------------------------------
+|    description:: ADMIN_ENTRY class definition
+|    keywords::    openEHR Composition model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Entry subtype for administrative information, i.e. information about setting up the
+| clinical process, but not itself clinically relevant. Archetypes will define contained
+| information. Used for administrative details of admission, episode, ward location,
+| discharge, appointment. Not to be used for any clinically significant information.
+|
+class ADMIN_ENTRY
+    is_a ENTRY
+
+feature_group ("access")
+
+    |
+    | Content of the Admin Entry.
+    |
+    prop data : ITEM_STRUCTURE ;
+
+end

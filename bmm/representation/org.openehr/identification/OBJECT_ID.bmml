@@ -1,0 +1,23 @@
++---------------------------------------------------------------------------------
+|    description:: OBJECT_ID class definition
+|    keywords::    openEHR Base Types model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Ancestor class of identifiers of informational objects. Ids may be meaningless (refer-only) or
+| carry information about the identified object.
+|
+abstract class OBJECT_ID
+
+feature_group ("access")
+
+    |
+    | The value of the id in the form defined below.
+    |
+    prop value : String ;
+
+end

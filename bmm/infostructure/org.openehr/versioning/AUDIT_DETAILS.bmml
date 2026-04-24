@@ -1,0 +1,44 @@
++---------------------------------------------------------------------------------
+|    description:: AUDIT_DETAILS class definition
+|    keywords::    openEHR Common model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| The set of attributes required to document the committal of an information
+| item to a repository.
+|
+class AUDIT_DETAILS
+
+feature_group ("access")
+
+    |
+    | Identifier of the logical EHR system where the change was committed.
+    |
+    prop system_id : String ;
+
+    |
+    | Time of committal of the item.
+    |
+    prop time_committed : DV_DATE_TIME ;
+
+    |
+    | Type of change. Coded using the openEHR Terminology audit change type group.
+    |
+    prop change_type : DV_CODED_TEXT ;
+
+    |
+    | Reason for committal. May be used to qualify the value in the change_type field.
+    |
+    prop description :? DV_TEXT ;
+
+    |
+    | Identity and optional reference into identity management service of the user
+    | who committed the item.
+    |
+    prop committer : PARTY_PROXY ;
+
+end

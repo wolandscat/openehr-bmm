@@ -1,0 +1,17 @@
++---------------------------------------------------------------------------------
+|    description:: DV_INTERVAL class definition
+|    keywords::    openEHR Data Types model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Generic class defining an interval (range) of a comparable type. Type parameter T must be a
+| descendant of DV_ORDERED.
+|
+class DV_INTERVAL<T: DV_ORDERED>
+    is_a DATA_VALUE, Interval<T>
+
+end

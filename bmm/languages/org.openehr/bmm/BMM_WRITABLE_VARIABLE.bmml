@@ -1,0 +1,16 @@
++---------------------------------------------------------------------------------
+|    description:: BMM_WRITABLE_VARIABLE class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Meta-type for writable variables, including the special variable Result.
+|
+abstract class BMM_WRITABLE_VARIABLE
+    is_a BMM_VARIABLE
+
+end

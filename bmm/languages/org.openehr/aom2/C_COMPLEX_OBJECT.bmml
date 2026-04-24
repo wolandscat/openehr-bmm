@@ -1,0 +1,43 @@
++---------------------------------------------------------------------------------
+|    description:: C_COMPLEX_OBJECT class definition
+|    keywords::    openEHR AOM2 model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Constraint on complex objects, i.e. any object that consists of other object constraints.
+|
+class C_COMPLEX_OBJECT
+    is_a C_DEFINED_OBJECT
+
+feature_group ("access")
+
+    |
+    | List of constraints on attributes of the reference model type represented by this object.
+    |
+    prop attributes :? List<C_ATTRIBUTE> ;
+
+    |
+    | List of attribute tuple constraints under this object constraint, if any.
+    |
+    prop attribute_tuples :? List<C_ATTRIBUTE_TUPLE> ;
+
+    |
+    | True if any value (i.e. instance) of the reference model type would be allowed.
+    |
+    func any_allowed : Boolean ;
+
+    |
+    | True if constraints represented by this node are narrower or the same as other.
+    |
+    func c_conforms_to (other : C_COMPLEX_OBJECT) : Boolean ;
+
+    |
+    | True if constraints represented by this node contain no further redefinitions with respect to other.
+    |
+    func c_congruent_to (other : C_COMPLEX_OBJECT) : Boolean ;
+
+end

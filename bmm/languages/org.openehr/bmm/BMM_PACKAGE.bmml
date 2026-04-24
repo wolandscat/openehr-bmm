@@ -1,0 +1,35 @@
++---------------------------------------------------------------------------------
+|    description:: BMM_PACKAGE class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Abstraction of a package as a tree structure whose nodes can contain other packages
+| and classes. The name may be qualified if it is a top-level package.
+|
+class BMM_PACKAGE
+    is_a BMM_PACKAGE_CONTAINER
+
+feature_group ("access")
+
+    |
+    | Member modules in this package.
+    |
+    prop members :? List<BMM_MODULE> ;
+
+    |
+    | Obtain the set of top-level classes in this package, either from this package
+    | itself or by recursing into the structure until classes are obtained from children.
+    |
+    func root_classes : List<BMM_CLASS> ;
+
+    |
+    | Full path of this package back to root package.
+    |
+    func path : String ;
+
+end

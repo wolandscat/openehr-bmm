@@ -1,0 +1,28 @@
++---------------------------------------------------------------------------------
+|    description:: BMM_LOCAL_ROUTINE class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Meta-type for a locally declared routine body.
+|
+class BMM_LOCAL_ROUTINE
+    is_a BMM_ROUTINE_DEFINITION
+
+feature_group ("access")
+
+    |
+    | Local variables of the routine, if there is a body defined.
+    |
+    prop locals :? List<BMM_LOCAL> ;
+
+    |
+    | Body of the routine declaration.
+    |
+    prop body : BMM_STATEMENT_BLOCK ;
+
+end

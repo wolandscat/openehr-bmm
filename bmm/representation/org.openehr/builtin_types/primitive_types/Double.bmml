@@ -1,0 +1,75 @@
++---------------------------------------------------------------------------------
+|    description:: Double class definition
+|    keywords::    openEHR Foundation Types model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Type used to represent double-precision decimal numbers. Corresponds to a
+| double-precision floating point value in most languages.
+|
+builtin class Double
+    is_a Ordered_Numeric
+
+feature_group ("access")
+
+    |
+    | The greatest integer no greater than the value of this object.
+    |
+    func floor : Integer ;
+
+feature_group ("operators")
+
+    |
+    | Double-precision addition.
+    |
+    func add (other : Double) : Double
+        alias "+" ;
+        ;
+
+    |
+    | Double-precision subtraction.
+    |
+    func subtract (other : Double) : Double
+        alias "-" ;
+        ;
+
+    |
+    | Double-precision multiplication.
+    |
+    func multiply (other : Double) : Double
+        alias "*" ;
+        ;
+
+    |
+    | Double-precision division.
+    |
+    func divide (other : Double) : Double
+        alias "/" ;
+        ;
+
+    |
+    | Double-precision exponentiation.
+    |
+    func exponent (other : Double) : Double
+        alias "^" ;
+        ;
+
+    |
+    | Returns True if current Double is less than other.
+    |
+    func less_than (other : Double) : Boolean
+        alias "<" ;
+        ;
+
+    |
+    | Unary negation of current Double value.
+    |
+    func negative : Double
+        alias "-" ;
+        ;
+
+end

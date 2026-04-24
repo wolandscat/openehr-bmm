@@ -1,0 +1,38 @@
++---------------------------------------------------------------------------------
+|    description:: INSTRUCTION_EXECUTION_STATE enumeration
+|    keywords::    openEHR Composition model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Enumeration of states in the Instruction State Machine (ISM) used to track the
+| lifecycle of an Instruction execution.
+|
+enumeration INSTRUCTION_EXECUTION_STATE
+    base_type String
+
+feature_group ("values")
+
+    initial ("initial");                   | Instruction created but not yet activated.
+
+    planned ("planned");                   | Instruction has been planned.
+
+    postponed ("postponed");               | Instruction execution has been postponed.
+
+    cancelled ("cancelled");               | Instruction has been cancelled prior to start.
+
+    active ("active");                     | Instruction is currently being executed.
+
+    suspended ("suspended");               | Instruction execution has been suspended.
+
+    completed ("completed");               | Instruction has been completed.
+
+    aborted ("aborted");                   | Instruction execution has been aborted.
+
+    expired ("expired");                   | Instruction has expired without completion.
+
+end
+

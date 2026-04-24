@@ -1,0 +1,24 @@
++---------------------------------------------------------------------------------
+|    description:: EXPR_VALUE class definition
+|    keywords::    openEHR BEL model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Any kind of statement element that can be evaluated. The type will either be supplied
+| in descendant types or inferred by an assignment statement linked to a typed variable.
+|
+abstract class EXPR_VALUE
+
+feature_group ("access")
+
+    |
+    | The computed value of this node as a result of the nodes below it, for operator
+    | nodes, or else statically set or otherwise derived values.
+    |
+    func value : Any ;
+
+end

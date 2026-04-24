@@ -1,0 +1,45 @@
++---------------------------------------------------------------------------------
+|    description:: IMPORTED_VERSION class definition
+|    keywords::    openEHR Common model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Version whose content is an ORIGINAL_VERSION copied from another location.
+| Inherits commit_audit and contribution from VERSION<T>, providing imported
+| versions with their own audit trail and Contribution.
+|
+class IMPORTED_VERSION<T>
+    is_a VERSION<T>
+
+feature_group ("access")
+
+    |
+    | The ORIGINAL_VERSION object that was imported.
+    |
+    prop item : ORIGINAL_VERSION<T> ;
+
+    |
+    | Computed version of uid, derived as item.uid.
+    |
+    func uid : OBJECT_VERSION_ID ;
+
+    |
+    | Computed version of preceding_version_uid, derived as item.preceding_version_uid.
+    |
+    func preceding_version_uid : OBJECT_VERSION_ID ;
+
+    |
+    | Lifecycle state of the content item in the wrapped ORIGINAL_VERSION.
+    |
+    func lifecycle_state : DV_CODED_TEXT ;
+
+    |
+    | Original content of this Version.
+    |
+    func data : T ;
+
+end

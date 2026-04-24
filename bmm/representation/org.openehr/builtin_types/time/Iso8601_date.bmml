@@ -1,0 +1,54 @@
++---------------------------------------------------------------------------------
+|    description:: Iso8601_date class definition
+|    keywords::    openEHR Foundation Types model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Represents an ISO 8601 date, including partial and extended forms. Value may be
+| YYYY-MM-DD (extended, preferred), YYYYMMDD (compact), or a partial invariant.
+|
+class Iso8601_date
+    is_a Iso8601_type
+
+feature_group ("access")
+
+    |
+    | Extract the year part of the date as an Integer.
+    |
+    func year : Integer ;
+
+    |
+    | Extract the month part of the date as an Integer, or return 0 if not present.
+    |
+    func month : Integer ;
+
+    |
+    | Extract the day part of the date as an Integer, or return 0 if not present.
+    |
+    func day : Integer ;
+
+    |
+    | Timezone; may be Void.
+    |
+    func timezone : Iso8601_timezone ;
+
+    |
+    | Indicates whether month in year is unknown.
+    |
+    func month_unknown : Boolean ;
+
+    |
+    | Indicates whether day in month is unknown.
+    |
+    func day_unknown : Boolean ;
+
+    |
+    | Return string value in extended format.
+    |
+    func as_string : String ;
+
+end

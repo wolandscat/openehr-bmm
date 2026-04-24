@@ -1,0 +1,54 @@
++---------------------------------------------------------------------------------
+|    description:: DV_ORDERED class definition
+|    keywords::    openEHR Data Types model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Abstract class defining the concept of ordered values, including ordinals as well as true quantities.
+|
+abstract class DV_ORDERED
+    is_a DATA_VALUE, Ordered
+
+feature_group ("access")
+
+    |
+    | Optional normal status indicator of value with respect to normal range. Coded as HHH, HH, H,
+    | (nothing), L, LL, LLL.
+    |
+    prop normal_status :? CODE_PHRASE ;
+
+    |
+    | Optional normal range.
+    |
+    prop normal_range :? DV_INTERVAL ;
+
+    |
+    | Optional tagged other reference ranges.
+    |
+    prop other_reference_ranges :? List<REFERENCE_RANGE<DV_ORDERED>> ;
+
+    |
+    | Test if two instances are strictly comparable.
+    |
+    func is_strictly_comparable_to (other : DV_ORDERED) : Boolean ;
+
+    |
+    | True if this Ordered object is less than other.
+    |
+    func less_than (other : DV_ORDERED) : Boolean ;
+
+    |
+    | True if this quantity has no reference ranges.
+    |
+    func is_simple : Boolean ;
+
+    |
+    | True if value is in the normal range.
+    |
+    func is_normal : Boolean ;
+
+end

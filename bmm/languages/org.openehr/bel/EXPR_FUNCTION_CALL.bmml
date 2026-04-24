@@ -1,0 +1,24 @@
++---------------------------------------------------------------------------------
+|    description:: EXPR_FUNCTION_CALL class definition
+|    keywords::    openEHR BEL model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Node representing a function call with 0 or more arguments. Functions with no arguments
+| are typically used to represent real world varying values like 'current time'.
+|
+class EXPR_FUNCTION_CALL
+    is_a EXPR_LEAF
+
+feature_group ("access")
+
+    |
+    | Arguments of this function, which can be from 0 to any number.
+    |
+    prop arguments :? List<EXPRESSION> ;
+
+end

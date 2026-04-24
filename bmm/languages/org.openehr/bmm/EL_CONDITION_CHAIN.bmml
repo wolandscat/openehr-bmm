@@ -1,0 +1,24 @@
++---------------------------------------------------------------------------------
+|    description:: EL_CONDITION_CHAIN class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Compound expression consisting of a chain of condition-gated expressions and an
+| ungated else member, representing an if/then/elseif/else chain.
+|
+class EL_CONDITION_CHAIN<T: EL_TERMINAL>
+    is_a EL_DECISION_TABLE<T>
+
+feature_group ("access")
+
+    |
+    | Members of the chain, equivalent to branches in an if/then/else chain.
+    |
+    prop items : List<EL_CONDITIONAL_EXPRESSION<T>> ;
+
+end

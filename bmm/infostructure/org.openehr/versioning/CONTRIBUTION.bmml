@@ -1,0 +1,34 @@
++---------------------------------------------------------------------------------
+|    description:: CONTRIBUTION class definition
+|    keywords::    openEHR Common model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Documents a Contribution (change set) of one or more versions added to a
+| change-controlled repository.
+|
+class CONTRIBUTION
+
+feature_group ("access")
+
+    |
+    | Unique identifier for this Contribution.
+    |
+    prop uid : HIER_OBJECT_ID ;
+
+    |
+    | Set of references to Versions causing changes to this EHR. May include paths
+    | pointing to any number of versionable items such as COMPOSITIONs and FOLDERs.
+    |
+    prop versions : List<OBJECT_REF> ;
+
+    |
+    | Audit trail corresponding to the committal of this Contribution.
+    |
+    prop audit : AUDIT_DETAILS ;
+
+end

@@ -1,0 +1,41 @@
++---------------------------------------------------------------------------------
+|    description:: INSTRUCTION class definition
+|    keywords::    openEHR Composition model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Used to specify actions in the future. Enables simple and complex specifications to
+| be expressed, including in a fully-computable workflow form. Used for any actionable
+| statement such as medication and therapeutic orders, monitoring, recall and review.
+|
+class INSTRUCTION
+    is_a CARE_ENTRY
+
+feature_group ("access")
+
+    |
+    | Mandatory human-readable version of what the Instruction is about.
+    |
+    prop narrative : DV_TEXT ;
+
+    |
+    | Optional expiry date/time to assist determination of when an Instruction can be
+    | assumed to have expired.
+    |
+    prop expiry_time :? DV_DATE_TIME ;
+
+    |
+    | Optional workflow engine executable expression of the Instruction.
+    |
+    prop wf_definition :? DV_PARSABLE ;
+
+    |
+    | List of all activities in Instruction.
+    |
+    prop activities :? List<ACTIVITY> ;
+
+end

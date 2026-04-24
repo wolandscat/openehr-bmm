@@ -1,0 +1,46 @@
++---------------------------------------------------------------------------------
+|    description:: ATTESTATION class definition
+|    keywords::    openEHR Common model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Record an attestation by a party (the committer) to item(s) of record content.
+| Used for authorisation of controlled substances, witnessing of content, or
+| indicating acknowledgement of content by an intended recipient.
+|
+class ATTESTATION
+    is_a AUDIT_DETAILS
+
+feature_group ("access")
+
+    |
+    | Optional visual representation of content attested, e.g. a screen image.
+    |
+    prop attested_view :? DV_MULTIMEDIA ;
+
+    |
+    | Proof of attestation.
+    |
+    prop proof :? String ;
+
+    |
+    | Items attested, expressed as fully qualified runtime paths to the items in question.
+    |
+    prop items :? List<DV_EHR_URI> ;
+
+    |
+    | Reason of this attestation. Optionally coded by the openEHR Terminology
+    | attestation reason group; includes values like authorisation, witness etc.
+    |
+    prop reason : DV_TEXT ;
+
+    |
+    | True if this attestation is outstanding; False means it has been completed.
+    |
+    prop is_pending : Boolean ;
+
+end

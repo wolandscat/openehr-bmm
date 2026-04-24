@@ -1,0 +1,43 @@
++---------------------------------------------------------------------------------
+|    description:: BMM_ROUTINE class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| A feature defining a routine, scoped to a class.
+|
+abstract class BMM_ROUTINE
+    is_a BMM_FEATURE
+
+feature_group ("access")
+
+    |
+    | Formal parameters of the routine.
+    |
+    prop parameters :? List<BMM_PARAMETER> ;
+
+    |
+    | Boolean conditions that must evaluate to True for the routine to execute correctly.
+    |
+    prop pre_conditions :? List<BMM_ASSERTION> ;
+
+    |
+    | Boolean conditions that will evaluate to True if the routine executed correctly.
+    |
+    prop post_conditions :? List<BMM_ASSERTION> ;
+
+    |
+    | Body of a routine, i.e. executable program.
+    |
+    prop definition :? BMM_ROUTINE_DEFINITION ;
+
+    |
+    | Return number of arguments of this routine.
+    |
+    func arity : Integer ;
+
+end

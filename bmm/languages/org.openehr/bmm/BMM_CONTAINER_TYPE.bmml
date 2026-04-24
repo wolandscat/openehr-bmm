@@ -1,0 +1,71 @@
++---------------------------------------------------------------------------------
+|    description:: BMM_CONTAINER_TYPE class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Meta-type that specifies linear containers with a generic parameter corresponding to
+| the type of contained item, and whose container type is a generic type such as
+| List<T>, Set<T> etc.
+|
+class BMM_CONTAINER_TYPE
+    is_a BMM_TYPE
+
+feature_group ("access")
+
+    |
+    | The type of the container. This converts to the root_type in BMM_GENERIC_TYPE.
+    |
+    prop container_class : BMM_GENERIC_CLASS ;
+
+    |
+    | The container item type.
+    |
+    prop item_type : BMM_UNITARY_TYPE ;
+
+    |
+    | True indicates that order of the items in the container attribute is considered
+    | significant and must be preserved, e.g. across sessions, serialisation etc.
+    |
+    prop is_ordered :? Boolean ;
+
+    |
+    | True indicates that only unique instances of items in the container are allowed.
+    |
+    prop is_unique :? Boolean ;
+
+    |
+    | Return full type name, e.g. List<ELEMENT>.
+    |
+    func type_name : String ;
+
+    |
+    | True if the container class is abstract.
+    |
+    func is_abstract : Boolean ;
+
+    |
+    | Flattened list of type names of item_type, i.e. item_type.flattened_type_list().
+    |
+    func flattened_type_list : List<String> ;
+
+    |
+    | Return item_type.
+    |
+    func unitary_type : BMM_UNITARY_TYPE ;
+
+    |
+    | True if item_type is primitive.
+    |
+    func is_primitive : Boolean ;
+
+    |
+    | Return item_type.effective_type().
+    |
+    func effective_type : BMM_EFFECTIVE_TYPE ;
+
+end

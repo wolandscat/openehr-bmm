@@ -1,0 +1,23 @@
++---------------------------------------------------------------------------------
+|    description:: PARTY_PROXY class definition
+|    keywords::    openEHR Common model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Abstract concept of a proxy description of a party, including an optional link to data for this
+| party in a demographic or identity management system.
+|
+abstract class PARTY_PROXY
+
+feature_group ("access")
+
+    |
+    | Optional reference to more detailed demographic or identification information for this party.
+    |
+    prop external_ref :? PARTY_REF ;
+
+end

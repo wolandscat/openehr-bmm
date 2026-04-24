@@ -1,0 +1,24 @@
+|
+|    description:: TREND_KIND enumeration
+|    keywords::    openEHR data value model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Enumeration of trend directions for DV_ORDINAL and similar ordered values.
+|
+enumeration TREND_KIND
+    base_type String
+
+feature_group ("values")
+
+    increase ("increase");
+    decrease ("decrease");
+    change ("change");
+
+end
+
+

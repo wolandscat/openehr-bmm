@@ -1,0 +1,17 @@
++---------------------------------------------------------------------------------
+|    description:: PERSON class definition
+|    keywords::    openEHR Demographic model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Generic description of persons. Provides a dedicated type to which Person archetypes
+| can be targeted.
+|
+class PERSON
+    is_a ACTOR
+
+end

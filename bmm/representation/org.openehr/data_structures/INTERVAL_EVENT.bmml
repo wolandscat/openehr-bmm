@@ -1,0 +1,38 @@
++---------------------------------------------------------------------------------
+|    description:: INTERVAL_EVENT class definition
+|    keywords::    openEHR Data Structures model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Defines a single interval event in a series.
+|
+class INTERVAL_EVENT<T>
+    is_a EVENT<T>
+
+feature_group ("access")
+
+    |
+    | Duration of the time interval during which the values recorded under data are true.
+    |
+    prop width : DV_DURATION ;
+
+    |
+    | Optional count of original samples to which this event corresponds.
+    |
+    prop sample_count :? Integer ;
+
+    |
+    | Mathematical function of the data of this event, e.g. maximum, mean etc.
+    |
+    prop math_function : DV_CODED_TEXT ;
+
+    |
+    | Start time of the interval of this event.
+    |
+    func interval_start_time : DV_DATE_TIME ;
+
+end

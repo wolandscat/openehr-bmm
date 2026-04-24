@@ -1,0 +1,33 @@
++---------------------------------------------------------------------------------
+|    description:: BMM_PACKAGE_CONTAINER class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| A BMM model component that contains packages and classes.
+|
+abstract class BMM_PACKAGE_CONTAINER
+    is_a BMM_MODEL_ELEMENT
+
+feature_group ("access")
+
+    |
+    | Child packages; keys all in upper case for guaranteed matching.
+    |
+    prop packages :? Hash<String, BMM_PACKAGE> ;
+
+    |
+    | Package at the path a_path.
+    |
+    func package_at_path (a_path : String) : BMM_PACKAGE ;
+
+    |
+    | True if there is a package at the path a_path.
+    |
+    func has_package_path (a_path : String) : Boolean ;
+
+end

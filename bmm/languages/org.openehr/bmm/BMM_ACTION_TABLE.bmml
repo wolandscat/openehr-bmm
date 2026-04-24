@@ -1,0 +1,24 @@
++---------------------------------------------------------------------------------
+|    description:: BMM_ACTION_TABLE class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Multi-branch conditional statement structure.
+|
+class BMM_ACTION_TABLE
+    is_a BMM_STATEMENT
+
+feature_group ("access")
+
+    |
+    | A specialised decision table whose outputs can only be procedure agents. In
+    | execution, the matched agent will be invoked.
+    |
+    prop decision_table : BMM_ACTION_DECISION_TABLE ;
+
+end

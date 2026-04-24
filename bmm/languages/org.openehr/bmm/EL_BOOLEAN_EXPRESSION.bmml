@@ -1,0 +1,16 @@
++---------------------------------------------------------------------------------
+|    description:: EL_BOOLEAN_EXPRESSION class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Boolean-returning expression.
+|
+class EL_BOOLEAN_EXPRESSION
+    is_a EL_CONSTRAINED
+
+end

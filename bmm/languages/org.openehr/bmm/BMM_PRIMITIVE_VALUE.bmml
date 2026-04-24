@@ -1,0 +1,23 @@
++---------------------------------------------------------------------------------
+|    description:: BMM_PRIMITIVE_VALUE class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Meta-type for literals whose concrete type is a primitive type.
+|
+class BMM_PRIMITIVE_VALUE
+    is_a BMM_UNITARY_VALUE
+
+feature_group ("access")
+
+    |
+    | Concrete type of this literal.
+    |
+    prop type : BMM_SIMPLE_TYPE ;
+
+end

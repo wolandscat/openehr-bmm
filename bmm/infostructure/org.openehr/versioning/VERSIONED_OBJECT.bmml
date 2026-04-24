@@ -1,0 +1,93 @@
++---------------------------------------------------------------------------------
+|    description:: VERSIONED_OBJECT class definition
+|    keywords::    openEHR Common model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Version control abstraction, defining semantics for versioning one complex object.
+|
+class VERSIONED_OBJECT<T>
+
+feature_group ("access")
+
+    |
+    | Unique identifier of this version container as a UID with no extension; the same
+    | in all instances of the same container in a distributed environment.
+    |
+    prop uid : HIER_OBJECT_ID ;
+
+    |
+    | Reference to object to which this version container belongs, e.g. the containing EHR.
+    |
+    prop owner_id : OBJECT_REF ;
+
+    |
+    | Time of initial creation of this versioned object.
+    |
+    prop time_created : DV_DATE_TIME ;
+
+    |
+    | Return the total number of versions in this object.
+    |
+    func version_count : Integer ;
+
+    |
+    | Return a list of ids of all versions in this object.
+    |
+    func all_version_ids : List<OBJECT_VERSION_ID> ;
+
+    |
+    | Return a list of all versions in this object.
+    |
+    func all_versions : List<VERSION<T>> ;
+
+    |
+    | True if a version for time a_time exists.
+    |
+    func has_version_at_time (a_time : DV_DATE_TIME) : Boolean ;
+
+    |
+    | True if a version with a_version_uid exists.
+    |
+    func has_version_id (a_version_uid : OBJECT_VERSION_ID) : Boolean ;
+
+    |
+    | Return the version with uid = a_version_uid.
+    |
+    func version_with_id (a_version_uid : OBJECT_VERSION_ID) : VERSION<T> ;
+
+    |
+    | Return the version for time a_time.
+    |
+    func version_at_time (a_time : DV_DATE_TIME) : VERSION<T> ;
+
+    |
+    | True if version with a_version_uid is an ORIGINAL_VERSION.
+    |
+    func is_original_version (a_version_uid : OBJECT_VERSION_ID) : Boolean ;
+
+    |
+    | History of all audits and attestations in this versioned repository.
+    |
+    func revision_history : REVISION_HISTORY ;
+
+    |
+    | Return the most recently added version (on trunk or any branch).
+    |
+    func latest_version : VERSION<T> ;
+
+    |
+    | Return the most recently added trunk version.
+    |
+    func latest_trunk_version : VERSION<T> ;
+
+    |
+    | Return the lifecycle state from the latest trunk version.
+    |
+    func trunk_lifecycle_state : DV_CODED_TEXT ;
+
+end

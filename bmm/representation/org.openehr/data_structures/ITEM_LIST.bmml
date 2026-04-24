@@ -1,0 +1,49 @@
++---------------------------------------------------------------------------------
+|    description:: ITEM_LIST class definition
+|    keywords::    openEHR Data Structures model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Logical list data structure, where each item has a value and can be referred to by a name and
+| a positional index.
+|
+class ITEM_LIST
+    is_a ITEM_STRUCTURE
+
+feature_group ("access")
+
+    |
+    | Physical representation of the list.
+    |
+    prop items :? List<ELEMENT> ;
+
+    |
+    | Count of all items.
+    |
+    func item_count : Integer ;
+
+    |
+    | Retrieve the names of all items.
+    |
+    func names : List<DV_TEXT> ;
+
+    |
+    | Retrieve the item with name a_name.
+    |
+    func named_item (a_name : String) : ELEMENT ;
+
+    |
+    | Retrieve the i-th item.
+    |
+    func ith_item (i : Integer) : ELEMENT ;
+
+    |
+    | Generate a CEN EN13606-compatible hierarchy.
+    |
+    func as_hierarchy : CLUSTER ;
+
+end

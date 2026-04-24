@@ -1,0 +1,38 @@
++---------------------------------------------------------------------------------
+|    description:: ELEMENT class definition
+|    keywords::    openEHR Data Structures model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| The leaf variant of ITEM, to which a DATA_VALUE instance is attached.
+|
+class ELEMENT
+    is_a ITEM
+
+feature_group ("access")
+
+    |
+    | Property representing leaf value object of ELEMENT.
+    |
+    prop value :? DATA_VALUE ;
+
+    |
+    | Flavour of null value, e.g. unknown, no information, masked, not applicable.
+    |
+    prop null_flavour :? DV_CODED_TEXT ;
+
+    |
+    | Optional specific reason for null value; if set, null_flavour must be set.
+    |
+    prop null_reason :? DV_TEXT ;
+
+    |
+    | True if value logically not known.
+    |
+    func is_null : Boolean ;
+
+end

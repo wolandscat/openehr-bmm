@@ -1,0 +1,24 @@
++---------------------------------------------------------------------------------
+|    description:: BMM_PROCEDURE_TYPE class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Form of routine specific to procedure object signatures, with result_type being the
+| special Status meta-type.
+|
+class BMM_PROCEDURE_TYPE
+    is_a BMM_ROUTINE_TYPE
+
+feature_group ("access")
+
+    |
+    | Result type of a procedure.
+    |
+    prop result_type :? BMM_STATUS_TYPE ;
+
+end

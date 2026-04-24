@@ -1,0 +1,28 @@
++---------------------------------------------------------------------------------
+|    description:: DV_ENCAPSULATED class definition
+|    keywords::    openEHR Data Types model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Abstract class defining the common meta-data of all types of encapsulated data.
+|
+abstract class DV_ENCAPSULATED
+    is_a DATA_VALUE
+
+feature_group ("access")
+
+    |
+    | Name of character encoding scheme. Unicode/UTF-8 is the default assumption.
+    |
+    prop charset :? CODE_PHRASE «iana.character-sets» ;
+
+    |
+    | Optional indicator of the localised language in which the data is written.
+    |
+    prop language :? CODE_PHRASE «iso.iso_639-1» ;
+
+end

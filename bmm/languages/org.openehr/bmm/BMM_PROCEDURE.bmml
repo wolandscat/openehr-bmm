@@ -1,0 +1,30 @@
++---------------------------------------------------------------------------------
+|    description:: BMM_PROCEDURE class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| A formal element with signature of the form: name ({arg:TArg}*):TStatus, where
+| TStatus is the built-in type BMM_STATUS_TYPE. A procedure is a computed (rather than
+| data) element, generally assumed to be state-changing.
+|
+class BMM_PROCEDURE
+    is_a BMM_ROUTINE
+
+feature_group ("access")
+
+    |
+    | Declared or inferred static type of the entity.
+    |
+    prop type : BMM_STATUS_TYPE ;
+
+    |
+    | Formal signature of this element.
+    |
+    func signature : BMM_PROCEDURE_TYPE ;
+
+end

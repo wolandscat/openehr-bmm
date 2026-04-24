@@ -1,0 +1,48 @@
++---------------------------------------------------------------------------------
+|    description:: Iso8601_timezone class definition
+|    keywords::    openEHR Foundation Types model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| ISO8601 timezone string, in format Z | ±hh[mm], where Z is UTC.
+|
+class Iso8601_timezone
+    is_a Iso8601_type
+
+feature_group ("access")
+
+    |
+    | Extract the hour part of timezone as an Integer in range 00-14.
+    |
+    func hour : Integer ;
+
+    |
+    | Extract the minute part of timezone as an Integer, usually 0 or 30.
+    |
+    func minute : Integer ;
+
+    |
+    | Direction of timezone expressed as +1 or -1.
+    |
+    func sign : Integer ;
+
+    |
+    | Indicates whether minute part is known.
+    |
+    func minute_unknown : Boolean ;
+
+    |
+    | True if timezone is UTC, i.e. +0000.
+    |
+    func is_gmt : Boolean ;
+
+    |
+    | Return timezone string in extended format.
+    |
+    func as_string : String ;
+
+end

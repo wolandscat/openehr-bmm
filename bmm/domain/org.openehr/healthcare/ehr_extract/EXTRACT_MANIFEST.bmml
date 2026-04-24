@@ -1,0 +1,23 @@
++---------------------------------------------------------------------------------
+|    description:: EXTRACT_MANIFEST class definition
+|    keywords::    openEHR EHR Extract model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Specification of the candidate entities and optionally top-level items to be included
+| in the Extract.
+|
+class EXTRACT_MANIFEST
+
+feature_group ("access")
+
+    |
+    | List of entity manifests; UIDs of items included in the Extract.
+    |
+    prop entities : List<EXTRACT_ENTITY_MANIFEST> ;
+
+end

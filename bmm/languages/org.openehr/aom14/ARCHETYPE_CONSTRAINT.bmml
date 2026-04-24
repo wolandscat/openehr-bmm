@@ -1,0 +1,39 @@
++---------------------------------------------------------------------------------
+|    description:: ARCHETYPE_CONSTRAINT class definition
+|    keywords::    openEHR AOM 1.4 model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Archetype equivalent to LOCATABLE class in openEHR Common reference model. Defines common
+| constraints for any inheritor of LOCATABLE in any reference model.
+|
+abstract class ARCHETYPE_CONSTRAINT
+
+feature_group ("access")
+
+    |
+    | True if constraints represented by this node, ignoring any sub-parts, are narrower or
+    | the same as other.
+    |
+    func is_subset_of (other : ARCHETYPE_CONSTRAINT) : Boolean ;
+
+    |
+    | True if this constraint is valid.
+    |
+    func is_valid : Boolean ;
+
+    |
+    | Path of this node relative to root of archetype.
+    |
+    func path : String ;
+
+    |
+    | True if the relative path a_path exists at this node.
+    |
+    func has_path (a_path : String) : Boolean ;
+
+end

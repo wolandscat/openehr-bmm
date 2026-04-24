@@ -1,0 +1,25 @@
++---------------------------------------------------------------------------------
+|    description:: EL_CONDITIONAL_EXPRESSION class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Conditional structure used in condition chain expressions. Evaluated by evaluating
+| its condition, which is a Boolean-returning expression, and if True, the result is
+| the evaluation result of result.
+|
+class EL_CONDITIONAL_EXPRESSION<T: EL_TERMINAL>
+    is_a EL_DECISION_BRANCH<T>
+
+feature_group ("access")
+
+    |
+    | Boolean expression defining the condition of this decision branch.
+    |
+    prop condition : EL_EXPRESSION ;
+
+end

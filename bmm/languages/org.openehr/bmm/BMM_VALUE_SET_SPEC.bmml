@@ -1,0 +1,30 @@
++---------------------------------------------------------------------------------
+|    description:: BMM_VALUE_SET_SPEC class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Definition of a range-constrained class whose value range is defined by reference
+| to a 'value set' within an external resource, e.g. a reference data service.
+|
+class BMM_VALUE_SET_SPEC
+
+feature_group ("access")
+
+    |
+    | Identifier of a resource (typically available as a service) that contains legal
+    | values of a specific type. This is typically a URI but need not be.
+    |
+    prop resource_id : String ;
+
+    |
+    | Identifier of a value set within the resource identified by resource_id, which
+    | specifies the set of legal values of a type.
+    |
+    prop value_set_id : String ;
+
+end

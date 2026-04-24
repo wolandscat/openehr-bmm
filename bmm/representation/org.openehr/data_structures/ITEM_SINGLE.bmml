@@ -1,0 +1,28 @@
++---------------------------------------------------------------------------------
+|    description:: ITEM_SINGLE class definition
+|    keywords::    openEHR Data Structures model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Logical single value data structure, representing any data which is logically a single value.
+|
+class ITEM_SINGLE
+    is_a ITEM_STRUCTURE
+
+feature_group ("access")
+
+    |
+    | The single item in this structure.
+    |
+    prop item : ELEMENT ;
+
+    |
+    | Generate a CEN EN13606-compatible hierarchy consisting of a single ELEMENT.
+    |
+    func as_hierarchy : ELEMENT ;
+
+end

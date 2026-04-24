@@ -1,0 +1,34 @@
++---------------------------------------------------------------------------------
+|    description:: UID_BASED_ID class definition
+|    keywords::    openEHR Base Types model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Abstract model of UID-based identifiers consisting of a root part and an optional extension.
+| Lexical form: root '::' extension.
+|
+abstract class UID_BASED_ID
+    is_a OBJECT_ID
+
+feature_group ("access")
+
+    |
+    | The identifier of the conceptual namespace in which the object exists. Returns the part to the left of the first '::' separator.
+    |
+    func root : UID ;
+
+    |
+    | Optional local identifier of the object within the context of the root identifier.
+    |
+    func extension : String ;
+
+    |
+    | True if not extension.is_empty().
+    |
+    func has_extension : Boolean ;
+
+end

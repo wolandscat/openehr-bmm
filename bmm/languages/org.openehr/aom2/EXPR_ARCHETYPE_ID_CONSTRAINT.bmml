@@ -1,0 +1,24 @@
++---------------------------------------------------------------------------------
+|    description:: EXPR_ARCHETYPE_ID_CONSTRAINT class definition
+|    keywords::    openEHR AOM 2 model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Expression tree leaf item representing a constraint on an archetype identifier.
+|
+class EXPR_ARCHETYPE_ID_CONSTRAINT
+    is_a EXPR_CONSTRAINT
+
+feature_group ("access")
+
+    |
+    | A C_STRING representing a regular expression for matching archetype identifiers
+    | (redefined from C_PRIMITIVE_OBJECT).
+    |
+    prop item : C_STRING ;
+
+end

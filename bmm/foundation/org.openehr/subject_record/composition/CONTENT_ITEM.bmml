@@ -1,0 +1,17 @@
++---------------------------------------------------------------------------------
+|    description:: CONTENT_ITEM class definition
+|    keywords::    openEHR Composition model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Abstract ancestor of all concrete content types. A fresh instance of CONTENT_ITEM
+| is never created; only instances of its subtypes.
+|
+abstract class CONTENT_ITEM
+    is_a LOCATABLE
+
+end

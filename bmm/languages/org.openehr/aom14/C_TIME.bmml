@@ -1,0 +1,56 @@
++---------------------------------------------------------------------------------
+|    description:: C_TIME class definition
+|    keywords::    openEHR AOM 1.4 model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| ISO 8601-compatible constraint on instances of Time. There is no validity flag for
+| 'hour', since it must always be mandatory for a sensible time. Syntax expressions
+| include "HH:??:xx" (time with optional minutes and seconds not allowed).
+|
+class C_TIME
+    is_a C_PRIMITIVE
+
+feature_group ("access")
+
+    |
+    | Validity of minute in constrained time.
+    |
+    prop minute_validity :? VALIDITY_KIND ;
+
+    |
+    | Validity of second in constrained time.
+    |
+    prop second_validity :? VALIDITY_KIND ;
+
+    |
+    | Validity of millisecond in constrained time.
+    |
+    prop millisecond_validity :? VALIDITY_KIND ;
+
+    |
+    | Validity of timezone in constrained time.
+    |
+    prop timezone_validity :? VALIDITY_KIND ;
+
+    |
+    | Interval of Times specifying constraint.
+    |
+    prop range :? Interval<Iso8601_time> ;
+
+    |
+    | The value to assume if this item is not included in data, due to being part of an
+    | optional structure.
+    |
+    prop assumed_value :? Iso8601_time ;
+
+    |
+    | True if validity is in the form of a range.
+    |
+    func validity_is_range : Boolean ;
+
+end

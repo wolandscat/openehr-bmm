@@ -1,0 +1,42 @@
++---------------------------------------------------------------------------------
+|    description:: EXTRACT_VERSION_SPEC class definition
+|    keywords::    openEHR EHR Extract model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Specification of what versions should be included in an Extract. By default, only
+| latest versions are included. The include_all_versions and commit_time_interval
+| attributes are used to modify this behaviour.
+|
+class EXTRACT_VERSION_SPEC
+
+feature_group ("access")
+
+    |
+    | True if all versions of each item in the Extract are included.
+    |
+    prop include_all_versions : Boolean ;
+
+    |
+    | Specifies commit time interval of items to source repository to include in
+    | Extract.
+    |
+    prop commit_time_interval :? DV_INTERVAL<DV_DATE_TIME> ;
+
+    |
+    | True if revision histories of the items in the Extract are included. If included,
+    | it is always the full revision history.
+    |
+    prop include_revision_history : Boolean ;
+
+    |
+    | True if the data of items matched by the content spec should be included. If
+    | False, only revision history is included.
+    |
+    prop include_data : Boolean ;
+
+end

@@ -1,0 +1,99 @@
++---------------------------------------------------------------------------------
+|    description:: C_TERMINOLOGY_CODE class definition
+|    keywords::    openEHR AOM2 model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Constrainer type for instances of Terminology_code. The constraint attribute can contain
+| a single at-code or a single ac-code representing a value-set defined in the archetype
+| terminology. The constraint_status attribute and constraint_required() function together
+| define whether the constraint is considered formal ('required') or not; in non-required
+| cases, a data-item matched to this constraint may be any coded term.
+|
+class C_TERMINOLOGY_CODE
+    is_a C_PRIMITIVE_OBJECT
+
+feature_group ("access")
+
+    |
+    | Individual constraint - a single string that is either a local at-code or a local
+    | ac-code signifying a locally defined value set.
+    |
+    prop constraint : String ;
+
+    |
+    | Assumed Terminology code value.
+    |
+    prop assumed_value :? Terminology_code ;
+
+    |
+    | Default Terminology code value.
+    |
+    prop default_value :? Terminology_code ;
+
+    |
+    | Constraint status of this terminology constraint.
+    |
+    prop constraint_status :? CONSTRAINT_STATUS ;
+
+    |
+    | True if constraint_status is defined and equals required, or if Void (implied required).
+    |
+    func constraint_required : Boolean ;
+
+    |
+    | Return the effective integer value of constraint_status; if null, return 0 (required).
+    |
+    func effective_constraint_status : Integer ;
+
+    |
+    | Effective set of at-code values corresponding to an ac-code for a locally defined
+    | value set.
+    |
+    func value_set_expanded : List<String> ;
+
+    |
+    | For locally defined value sets: term URI(s) substituted from bindings for local
+    | at-codes in value_set_expanded.
+    |
+    func value_set_substituted : List<Uri> ;
+
+    |
+    | For locally defined value sets: final set of external codes to which value set is
+    | resolved.
+    |
+    func value_set_resolved : List<Terminology_code> ;
+
+    |
+    | True if a_value is valid with respect to constraint expressed in this object.
+    |
+    func valid_value (a_value : Terminology_code) : Boolean ;
+
+    |
+    | A generated prototype value from this constraint object.
+    |
+    func prototype_value : Terminology_code ;
+
+    |
+    | True if constraint is empty.
+    |
+    func any_allowed : Boolean ;
+
+    |
+    | True if other.any_allowed or else every constraint in the constraint list exists in
+    | other.constraint, and effective_constraint_status() is <= other.effective_constraint_status().
+    |
+    func c_value_conforms_to (other : C_TERMINOLOGY_CODE) : Boolean ;
+
+    |
+    | True if constraint and other.constraint are both value-set ids that expand to identical
+    | value sets, or are identical value codes; and effective_constraint_status() equals
+    | other.effective_constraint_status().
+    |
+    func c_value_congruent_to (other : C_TERMINOLOGY_CODE) : Boolean ;
+
+end

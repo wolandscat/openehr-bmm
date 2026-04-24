@@ -1,0 +1,32 @@
++---------------------------------------------------------------------------------
+|    description:: CARE_ENTRY class definition
+|    keywords::    openEHR Composition model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| The abstract parent of all clinical ENTRY subtypes. A CARE_ENTRY defines protocol
+| and guideline attributes for all clinical Entry subtypes.
+|
+abstract class CARE_ENTRY
+    is_a ENTRY
+
+feature_group ("access")
+
+    |
+    | Description of the method (i.e. how) the information in this entry was arrived at.
+    | For OBSERVATIONs, this is a description of the method or instrument used. For
+    | EVALUATIONs, how the evaluation was arrived at. For INSTRUCTIONs, how to execute
+    | the Instruction.
+    |
+    prop protocol :? ITEM_STRUCTURE ;
+
+    |
+    | Optional external identifier of guideline creating this Entry if relevant.
+    |
+    prop guideline_id :? OBJECT_REF ;
+
+end

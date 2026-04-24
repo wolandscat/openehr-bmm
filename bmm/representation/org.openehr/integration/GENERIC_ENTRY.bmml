@@ -1,0 +1,24 @@
++---------------------------------------------------------------------------------
+|    description:: GENERIC_ENTRY class definition
+|    keywords::    openEHR Integration model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Intermediate representation of data from sources not conforming to openEHR classes, such as
+| HL7 messages, relational databases.
+|
+class GENERIC_ENTRY
+    is_a CONTENT_ITEM
+
+feature_group ("access")
+
+    |
+    | The data from the source message or record. May be recorded in any structural openEHR representation.
+    |
+    prop data : ITEM ;
+
+end

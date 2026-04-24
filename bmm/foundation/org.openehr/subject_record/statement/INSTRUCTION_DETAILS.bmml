@@ -1,0 +1,35 @@
++---------------------------------------------------------------------------------
+|    description:: INSTRUCTION_DETAILS class definition
+|    keywords::    openEHR Composition model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Used to record details of the Instruction causing an Action.
+|
+class INSTRUCTION_DETAILS
+    is_a PATHABLE
+
+feature_group ("access")
+
+    |
+    | Reference to causing Instruction.
+    |
+    prop instruction_id : LOCATABLE_REF ;
+
+    |
+    | Identifier of Activity within Instruction, in the form of its archetype path.
+    |
+    prop activity_id : String ;
+
+    |
+    | Various workflow engine state details, potentially including condition that fired
+    | to cause this Action, list of notifications which occurred, and other workflow
+    | engine state.
+    |
+    prop wf_details :? ITEM_STRUCTURE ;
+
+end

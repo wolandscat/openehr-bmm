@@ -1,0 +1,83 @@
++---------------------------------------------------------------------------------
+|    description:: BMM_DEFINITIONS class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Definitions used by all BMM packages.
+|
+class BMM_DEFINITIONS
+
+feature_group ("values")
+
+    | Current internal version of BMM meta-model.
+    Bmm_internal_version : String ;
+
+    | Delimiter used to separate schema id from package path in a fully qualified path.
+    Schema_name_delimiter : String ;
+
+    | Delimiter used to separate package names in a package path.
+    Package_name_delimiter : String ;
+
+    | Extension used for BMM files.
+    Bmm_schema_file_extension : String ;
+
+    | Appears between a name and a type in a declaration or type signature.
+    Type_delimiter : Character ;
+
+    | Left delimiter for generic class and generic type names, as used in List<T>.
+    Generic_left_delimiter : Character ;
+
+    | Right delimiter for generic class and generic type names, as used in List<T>.
+    Generic_right_delimiter : Character ;
+
+    | Separator used in Generic types.
+    Generic_separator : Character ;
+
+    | Delimiter between formal type parameter and constraint type, as used in Sortable<T: Ordered>.
+    Generic_constraint_delimiter : Character ;
+
+    | Left delimiter of a Tuple type and also instance.
+    Tuple_left_delim : Character ;
+
+    | Right delimiter of a Tuple type and also instance.
+    Tuple_right_delim : Character ;
+
+    | Separator used in Tuple types and instances.
+    Tuple_separator : Character ;
+
+    | Left delimiter used in serial form of instance constrained enumeration.
+    Constraint_left_delim : Character ;
+
+    | Right delimiter used in serial form of instance constrained enumeration.
+    Constraint_right_delim : Character ;
+
+    | Attribute name of logical attribute 'bmm_version' in .bmm schema file.
+    Metadata_bmm_version : String ;
+
+    | Attribute name of logical attribute 'schema_name' in .bmm schema file.
+    Metadata_schema_name : String ;
+
+    | Attribute name of logical attribute 'rm_publisher' in .bmm schema file.
+    Metadata_rm_publisher : String ;
+
+    | Attribute name of logical attribute 'rm_release' in .bmm schema file.
+    Metadata_rm_release : String ;
+
+    | Attribute name of logical attribute 'schema_revision' in .bmm schema file.
+    Metadata_schema_revision : String ;
+
+    | Attribute name of logical attribute 'schema_lifecycle_state' in .bmm schema file.
+    Metadata_schema_lifecycle_state : String ;
+
+    | Attribute name of logical attribute 'schema_description' in .bmm schema file.
+    Metadata_schema_description : String ;
+
+    | Path of schema file.
+    Metadata_schema_path : String ;
+
+end

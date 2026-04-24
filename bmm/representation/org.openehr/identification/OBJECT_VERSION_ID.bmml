@@ -1,0 +1,39 @@
++---------------------------------------------------------------------------------
+|    description:: OBJECT_VERSION_ID class definition
+|    keywords::    openEHR Base Types model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Globally unique identifier for one version of a versioned object. Lexical form:
+| object_id '::' creating_system_id '::' version_tree_id.
+|
+class OBJECT_VERSION_ID
+    is_a UID_BASED_ID
+
+feature_group ("access")
+
+    |
+    | Unique identifier for logical object of which this identifier identifies one version.
+    |
+    func object_id : UID ;
+
+    |
+    | Identifier of the system that created the Version corresponding to this Object version id.
+    |
+    func creating_system_id : UID ;
+
+    |
+    | Tree identifier of this version with respect to other versions in the same version tree.
+    |
+    func version_tree_id : VERSION_TREE_ID ;
+
+    |
+    | True if this version identifier represents a branch.
+    |
+    func is_branch : Boolean ;
+
+end

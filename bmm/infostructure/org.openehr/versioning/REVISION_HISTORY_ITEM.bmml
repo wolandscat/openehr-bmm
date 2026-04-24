@@ -1,0 +1,29 @@
++---------------------------------------------------------------------------------
+|    description:: REVISION_HISTORY_ITEM class definition
+|    keywords::    openEHR Common model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| An entry in a revision history, corresponding to a version from a versioned
+| container. Consists of AUDIT_DETAILS instances with the revision identifier.
+|
+class REVISION_HISTORY_ITEM
+
+feature_group ("access")
+
+    |
+    | Version identifier for this revision.
+    |
+    prop version_id : OBJECT_VERSION_ID ;
+
+    |
+    | The audits for this revision; includes at least one commit audit, and optionally
+    | further attestations.
+    |
+    prop audits : List<AUDIT_DETAILS> ;
+
+end

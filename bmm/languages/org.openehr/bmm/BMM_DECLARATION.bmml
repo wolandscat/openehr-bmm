@@ -1,0 +1,33 @@
++---------------------------------------------------------------------------------
+|    description:: BMM_DECLARATION class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Declaration of a writable variable, associating a name with a type.
+|
+class BMM_DECLARATION
+    is_a BMM_SIMPLE_STATEMENT
+
+feature_group ("access")
+
+    |
+    | Name of the declared variable.
+    |
+    prop name : String ;
+
+    |
+    | The resulting writable variable entity.
+    |
+    prop result : EL_WRITABLE_VARIABLE ;
+
+    |
+    | The declared type of the variable.
+    |
+    prop type : BMM_TYPE ;
+
+end

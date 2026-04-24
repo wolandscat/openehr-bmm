@@ -1,0 +1,28 @@
++---------------------------------------------------------------------------------
+|    description:: EL_PREDICATE class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Parent type of predicates on any object reference.
+|
+abstract class EL_PREDICATE
+    is_a EL_SIMPLE
+
+feature_group ("access")
+
+    |
+    | The target instance of this predicate.
+    |
+    prop operand : EL_VALUE_GENERATOR ;
+
+    |
+    | Returns the Boolean type definition.
+    |
+    func eval_type : BMM_SIMPLE_TYPE ;
+
+end

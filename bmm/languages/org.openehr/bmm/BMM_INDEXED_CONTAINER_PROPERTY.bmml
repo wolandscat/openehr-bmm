@@ -1,0 +1,28 @@
++---------------------------------------------------------------------------------
+|    description:: BMM_INDEXED_CONTAINER_PROPERTY class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Meta-type of for properties of linear container type, such as Hash<Index_type, T> etc.
+|
+class BMM_INDEXED_CONTAINER_PROPERTY
+    is_a BMM_CONTAINER_PROPERTY
+
+feature_group ("access")
+
+    |
+    | Declared or inferred static type of the entity.
+    |
+    prop type : BMM_INDEXED_CONTAINER_TYPE ;
+
+    |
+    | Name of this property in form name: ContainerTypeName<IndexTypeName, ...>.
+    |
+    func display_name : String ;
+
+end

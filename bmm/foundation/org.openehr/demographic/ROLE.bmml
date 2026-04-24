@@ -1,0 +1,36 @@
++---------------------------------------------------------------------------------
+|    description:: ROLE class definition
+|    keywords::    openEHR Demographic model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Generic description of a role performed by an Actor. The role corresponds to a
+| competency of the Party. Roles are used to define the responsibilities undertaken
+| by a Party for a purpose. Roles should have credentials qualifying the performer to
+| perform the role.
+|
+class ROLE
+    is_a PARTY
+
+feature_group ("access")
+
+    |
+    | Valid time interval for this role.
+    |
+    prop time_validity :? DV_INTERVAL<DV_DATE> ;
+
+    |
+    | Reference to Version container of Actor playing the role.
+    |
+    prop performer : PARTY_REF ;
+
+    |
+    | The capabilities of this role.
+    |
+    prop capabilities :? List<CAPABILITY> ;
+
+end

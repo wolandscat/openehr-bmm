@@ -1,0 +1,37 @@
++---------------------------------------------------------------------------------
+|    description:: ARCHETYPE_TERM class definition
+|    keywords::    openEHR AOM2 model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Representation of a term (coded concept) in an archetype terminology.
+|
+class ARCHETYPE_TERM
+
+feature_group ("access")
+
+    |
+    | Code of this term.
+    |
+    prop code : String ;
+
+    |
+    | Text name of the term in its owning terminology.
+    |
+    prop text : String ;
+
+    |
+    | Description of the term.
+    |
+    prop description : String ;
+
+    |
+    | Other items in the term definition, keyed by item name.
+    |
+    prop other_items :? Hash<String,String> ;
+
+end

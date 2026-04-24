@@ -1,0 +1,39 @@
++---------------------------------------------------------------------------------
+|    description:: BMM_FORMAL_ELEMENT class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| A formal element having a name, type and a type-based signature.
+|
+abstract class BMM_FORMAL_ELEMENT
+    is_a BMM_MODEL_ELEMENT
+
+feature_group ("access")
+
+    |
+    | Declared or inferred static type of the entity.
+    |
+    prop type : BMM_TYPE ;
+
+    |
+    | True if this element can be null (Void) at execution time. May be interpreted as
+    | optionality in subtypes.
+    |
+    prop is_nullable :? Boolean ;
+
+    |
+    | Formal signature of this element, in the form: name [arg1_name: T_arg1, ...][:T_value].
+    |
+    func signature : BMM_SIGNATURE ;
+
+    |
+    | True if type is notionally Boolean.
+    |
+    func is_boolean : Boolean ;
+
+end

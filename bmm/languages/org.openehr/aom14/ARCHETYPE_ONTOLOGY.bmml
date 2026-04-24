@@ -1,0 +1,89 @@
++---------------------------------------------------------------------------------
+|    description:: ARCHETYPE_ONTOLOGY class definition
+|    keywords::    openEHR AOM 1.4 model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Local ontology of an archetype.
+|
+class ARCHETYPE_ONTOLOGY
+
+feature_group ("access")
+
+    |
+    | List of all term codes in the ontology, corresponding to "at" codes in ADL archetypes.
+    |
+    prop term_codes : List<String> ;
+
+    |
+    | List of all constraint codes in the ontology, corresponding to "ac" codes in ADL.
+    |
+    prop constraint_codes : List<String> ;
+
+    |
+    | Archetype which owns this terminology.
+    |
+    prop parent_archetype : ARCHETYPE ;
+
+    |
+    | List of terminologies to which term or constraint bindings exist in this terminology.
+    |
+    prop terminologies_available :? List<String> ;
+
+    |
+    | Specialisation depth of this archetype; unspecialised archetypes have depth 0.
+    |
+    prop specialisation_depth : Integer ;
+
+    |
+    | Names of term attributes defined in this ontology.
+    |
+    prop term_attribute_names : List<String> ;
+
+    |
+    | True if terminology a_lang is present in archetype ontology.
+    |
+    func has_language (a_lang : String) : Boolean ;
+
+    |
+    | True if terminology a_terminology_id is present in archetype ontology.
+    |
+    func has_terminology (a_terminology_id : String) : Boolean ;
+
+    |
+    | True if term_codes has a_code.
+    |
+    func has_term_code (a_code : String) : Boolean ;
+
+    |
+    | True if constraint_codes has a_code.
+    |
+    func has_constraint_code (a_code : String) : Boolean ;
+
+    |
+    | Term definition for a code, in a specified language.
+    |
+    func term_definition (a_lang : String, a_code : String) : ARCHETYPE_TERM ;
+
+    |
+    | Constraint definition for a code, in a specified language.
+    |
+    func constraint_definition (a_code : String, a_lang : String) : ARCHETYPE_TERM ;
+
+    |
+    | Binding of term corresponding to a_code in target external terminology a_terminology,
+    | as a CODE_PHRASE.
+    |
+    func term_binding (a_terminology : String, a_code : String) : CODE_PHRASE ;
+
+    |
+    | Binding of constraint corresponding to a_code in target external terminology
+    | a_terminology_id, as a string (usually a formal query expression).
+    |
+    func constraint_binding (a_terminology_id : String, a_code : String) : String ;
+
+end

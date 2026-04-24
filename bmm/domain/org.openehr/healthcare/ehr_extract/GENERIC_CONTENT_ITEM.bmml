@@ -1,0 +1,80 @@
++---------------------------------------------------------------------------------
+|    description:: GENERIC_CONTENT_ITEM class definition
+|    keywords::    openEHR EHR Extract model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Single item in generic extract, designed for 13606 and CDA data.
+|
+class GENERIC_CONTENT_ITEM
+    is_a EXTRACT_CONTENT_ITEM
+
+feature_group ("access")
+
+    |
+    | Identifier of model or schema used to create the content.
+    |
+    prop item_type :? DV_CODED_TEXT ;
+
+    |
+    | Version of model or schema used to create the content item.
+    |
+    prop item_type_version :? String ;
+
+    |
+    | Reference to a demographic entity elsewhere in this Extract representing the
+    | author of the item version.
+    |
+    prop author :? String ;
+
+    |
+    | Time of creation of this item version on the original system.
+    |
+    prop creation_time :? Iso8601_date_time ;
+
+    |
+    | Reference to a demographic entity elsewhere in this Extract representing an
+    | authoriser of the item version, if relevant.
+    |
+    prop authoriser :? String ;
+
+    |
+    | Time of authorisation of this item version on the original system where relevant.
+    |
+    prop authorisation_time :? Iso8601_date_time ;
+
+    |
+    | Coded lifecycle status of the item.
+    |
+    prop item_status :? DV_CODED_TEXT ;
+
+    |
+    | Version id of this item in original system.
+    |
+    prop version_id :? String ;
+
+    |
+    | Version set id of this item in original system, where applicable.
+    |
+    prop version_set_id :? String ;
+
+    |
+    | Identifier of EMR or other system from which the item was created / extracted.
+    |
+    prop system_id :? String ;
+
+    |
+    | Other details about the content item.
+    |
+    prop other_details :? Hash<String, String> ;
+
+    |
+    | Content object; redefined from EXTRACT_CONTENT_ITEM.item.
+    |
+    prop item :? LOCATABLE ;
+
+end

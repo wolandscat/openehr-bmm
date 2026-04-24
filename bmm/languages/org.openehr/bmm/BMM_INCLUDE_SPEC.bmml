@@ -1,0 +1,22 @@
++---------------------------------------------------------------------------------
+|    description:: BMM_INCLUDE_SPEC class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Schema inclusion structure.
+|
+class BMM_INCLUDE_SPEC
+
+feature_group ("access")
+
+    |
+    | Full identifier of the included schema, e.g. "openehr_primitive_types_1.0.2".
+    |
+    prop id : String ;
+
+end

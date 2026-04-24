@@ -1,0 +1,44 @@
++---------------------------------------------------------------------------------
+|    description:: ADDRESSED_MESSAGE class definition
+|    keywords::    openEHR EHR Extract model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| The concept of a message addressed to nominated recipients.
+|
+class ADDRESSED_MESSAGE
+
+feature_group ("access")
+
+    |
+    | Party sending the message.
+    |
+    prop sender : String ;
+
+    |
+    | Identification of message used by sender. This will be the same no matter how
+    | many times this message is sent to these recipients.
+    |
+    prop sender_reference : String ;
+
+    |
+    | Intended recipients, in the form of internet addresses.
+    |
+    prop addressees : List<String> ;
+
+    |
+    | Urgency with which destination should deal with message: -1 = low, 0 = normal,
+    | 1 = high.
+    |
+    prop urgency :? Integer ;
+
+    |
+    | The content of the message.
+    |
+    prop message : MESSAGE ;
+
+end

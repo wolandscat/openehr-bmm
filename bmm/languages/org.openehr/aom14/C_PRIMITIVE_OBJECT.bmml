@@ -1,0 +1,28 @@
++---------------------------------------------------------------------------------
+|    description:: C_PRIMITIVE_OBJECT class definition
+|    keywords::    openEHR AOM 1.4 model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Constraint on a primitive type.
+|
+class C_PRIMITIVE_OBJECT
+    is_a C_DEFINED_OBJECT
+
+feature_group ("access")
+
+    |
+    | Object actually defining the constraint.
+    |
+    prop item : C_PRIMITIVE ;
+
+    |
+    | True if any value of the type being constrained in item is allowed.
+    |
+    func any_allowed : Boolean ;
+
+end

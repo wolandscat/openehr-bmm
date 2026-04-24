@@ -1,0 +1,48 @@
++---------------------------------------------------------------------------------
+|    description:: BMM_MODEL_ACCESS class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Access to BMM models that have been loaded and validated from one or more schema sets.
+|
+class BMM_MODEL_ACCESS
+
+feature_group ("access")
+
+    |
+    | List of directories where all the schemas loaded here are found.
+    |
+    prop schema_directories :? List<String> ;
+
+    |
+    | All schemas found and loaded from schema_directory, keyed by schema_id.
+    |
+    prop all_schemas :? List<String> ;
+
+    |
+    | Top-level (root) models in use, keyed by model_id.
+    |
+    prop bmm_models :? Hash<String, BMM_MODEL> ;
+
+    |
+    | Validated models, keyed by model_id() and any shorter forms of id, with some
+    | or no versioning information.
+    |
+    prop matching_bmm_models :? List<String> ;
+
+    |
+    | Return model containing the model key which is a model_id or any shorter form.
+    |
+    func bmm_model (a_model_key : String) : BMM_MODEL ;
+
+    |
+    | True if a model for a model_key is available.
+    |
+    func has_bmm_model (a_model_key : String) : Boolean ;
+
+end

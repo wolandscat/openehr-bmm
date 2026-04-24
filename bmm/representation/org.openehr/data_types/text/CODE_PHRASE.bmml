@@ -1,0 +1,32 @@
++---------------------------------------------------------------------------------
+|    description:: CODE_PHRASE class definition
+|    keywords::    openEHR Data Types model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| A fully coordinated term from a terminology service.
+|
+class CODE_PHRASE
+
+feature_group ("access")
+
+    |
+    | Identifier of the distinct terminology from which the code_string was extracted.
+    |
+    prop terminology_id : TERMINOLOGY_ID ;
+
+    |
+    | The key used by the terminology service to identify a concept.
+    |
+    prop code_string : String ;
+
+    |
+    | Optional attribute to carry preferred term corresponding to the code.
+    |
+    prop preferred_term :? String ;
+
+end

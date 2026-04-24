@@ -1,0 +1,39 @@
++---------------------------------------------------------------------------------
+|    description:: DV_IDENTIFIER class definition
+|    keywords::    openEHR Data Types model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Type for representing identifiers of real-world entities such as drivers licence number, social
+| security number, prescription id.
+|
+class DV_IDENTIFIER
+    is_a DATA_VALUE
+
+feature_group ("access")
+
+    |
+    | The identifier value.
+    |
+    prop id : String ;
+
+    |
+    | Optional authority which issues the kind of id.
+    |
+    prop issuer :? String ;
+
+    |
+    | Optional organisation that assigned the id.
+    |
+    prop assigner :? String ;
+
+    |
+    | Optional identifier type, such as prescription or Social Security Number.
+    |
+    prop type :? String ;
+
+end

@@ -1,0 +1,17 @@
++---------------------------------------------------------------------------------
+|    description:: Point_Interval class definition
+|    keywords::    openEHR Foundation Types model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Type representing an Interval that is a point value. Provides an efficient
+| representation substitutable for Interval<T> where needed.
+|
+class Point_Interval<T: Ordered>
+    is_a Interval<T>
+
+end

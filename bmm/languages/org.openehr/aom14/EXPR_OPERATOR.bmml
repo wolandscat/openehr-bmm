@@ -1,0 +1,29 @@
++---------------------------------------------------------------------------------
+|    description:: EXPR_OPERATOR class definition
+|    keywords::    openEHR AOM 1.4 model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Abstract class representing an operator in an expression tree.
+|
+abstract class EXPR_OPERATOR
+    is_a EXPR_ITEM
+
+feature_group ("access")
+
+    |
+    | True if the precedence of this operator has been overridden in the original expression
+    | via parentheses.
+    |
+    prop precedence_overridden : Boolean ;
+
+    |
+    | The operator type.
+    |
+    prop operator : OPERATOR_KIND ;
+
+end

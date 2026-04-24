@@ -1,0 +1,70 @@
++---------------------------------------------------------------------------------
+|    description:: ARCHETYPE_CONSTRAINT class definition
+|    keywords::    openEHR AOM2 model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Abstract parent of all constraint model classes. Defines the common interface
+| for conformance testing, path navigation, and structural queries.
+|
+abstract class ARCHETYPE_CONSTRAINT
+    is_a ADL_CODE_DEFINITIONS
+
+feature_group ("access")
+
+    |
+    | Parent node of this constraint.
+    |
+    prop parent :? ARCHETYPE_CONSTRAINT ;
+
+    |
+    | Owning second-order constraint, if any.
+    |
+    prop soc_parent :? C_SECOND_ORDER ;
+
+    |
+    | True if this constraint node is prohibited, i.e. occurrence is 0..0.
+    |
+    func is_prohibited : Boolean ;
+
+    |
+    | True if the relative path a_path exists at this node.
+    |
+    func has_path (a_path : String) : Boolean ;
+
+    |
+    | Path of this node relative to root of archetype.
+    |
+    func path : String ;
+
+    |
+    | True if constraints represented by this node are narrower or the same as other.
+    |
+    func c_conforms_to (other : ARCHETYPE_CONSTRAINT) : Boolean ;
+
+    |
+    | True if constraints represented by this node contain no further redefinitions
+    | with respect to the node other.
+    |
+    func c_congruent_to (other : ARCHETYPE_CONSTRAINT) : Boolean ;
+
+    |
+    | True if this node is under a second-order constraint.
+    |
+    func is_second_order_constrained : Boolean ;
+
+    |
+    | True if this node is the root of the archetype.
+    |
+    func is_root : Boolean ;
+
+    |
+    | True if this node is a leaf node.
+    |
+    func is_leaf : Boolean ;
+
+end

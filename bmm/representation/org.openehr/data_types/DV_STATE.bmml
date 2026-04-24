@@ -1,0 +1,29 @@
++---------------------------------------------------------------------------------
+|    description:: DV_STATE class definition
+|    keywords::    openEHR Data Types model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| For representing state values which obey a defined state machine. Values driven by
+| archetype-defined state machines.
+|
+class DV_STATE
+    is_a DATA_VALUE
+
+feature_group ("access")
+
+    |
+    | The state name, coded using openEHR Terminology or local archetype terms.
+    |
+    prop value : DV_CODED_TEXT ;
+
+    |
+    | Indicates whether this state is a terminal state.
+    |
+    prop is_terminal : Boolean ;
+
+end

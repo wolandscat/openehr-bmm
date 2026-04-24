@@ -1,0 +1,39 @@
++---------------------------------------------------------------------------------
+|    description:: DV_QUANTIFIED class definition
+|    keywords::    openEHR Data Types model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Abstract class defining the concept of true quantified values, i.e. values which are not only
+| ordered but have a precise magnitude.
+|
+abstract class DV_QUANTIFIED
+    is_a DV_ORDERED
+
+feature_group ("access")
+
+    |
+    | Optional status of magnitude with values: =, <, >, <=, >=, ~.
+    |
+    prop magnitude_status :? String ;
+
+    |
+    | Accuracy of measurement. Exact form determined in descendants.
+    |
+    prop accuracy :? Any ;
+
+    |
+    | The magnitude of this quantity.
+    |
+    func magnitude : Ordered_Numeric ;
+
+    |
+    | True if accuracy is not known.
+    |
+    func accuracy_unknown : Boolean ;
+
+end

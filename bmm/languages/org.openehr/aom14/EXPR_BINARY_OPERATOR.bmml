@@ -1,0 +1,28 @@
++---------------------------------------------------------------------------------
+|    description:: EXPR_BINARY_OPERATOR class definition
+|    keywords::    openEHR AOM 1.4 model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Binary expression operator, i.e. one taking two operands.
+|
+class EXPR_BINARY_OPERATOR
+    is_a EXPR_OPERATOR
+
+feature_group ("access")
+
+    |
+    | Left operand of the binary operator.
+    |
+    prop left_operand : EXPR_ITEM ;
+
+    |
+    | Right operand of the binary operator.
+    |
+    prop right_operand : EXPR_ITEM ;
+
+end

@@ -1,0 +1,30 @@
++---------------------------------------------------------------------------------
+|    description:: BMM_INDEXED_CONTAINER_TYPE class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Meta-type of linear container type that indexes the contained items in the manner of
+| a standard Hash table, map or dictionary.
+|
+class BMM_INDEXED_CONTAINER_TYPE
+    is_a BMM_CONTAINER_TYPE
+
+feature_group ("access")
+
+    |
+    | Type of the element index, typically String or Integer, but may be any type from
+    | which a hash value can be derived.
+    |
+    prop index_type : BMM_SIMPLE_TYPE ;
+
+    |
+    | Return full type name, e.g. HashMap<String, ELEMENT>.
+    |
+    func type_name : String ;
+
+end

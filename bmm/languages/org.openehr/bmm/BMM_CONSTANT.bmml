@@ -1,0 +1,25 @@
++---------------------------------------------------------------------------------
+|    description:: BMM_CONSTANT class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| An immutable, static value-returning element scoped to a class. The value is the
+| result of the evaluation of the generator, which may be as simple as a literal value,
+| or may be any expression, including a function call.
+|
+class BMM_CONSTANT
+    is_a BMM_STATIC
+
+feature_group ("access")
+
+    |
+    | Literal value of the constant.
+    |
+    prop generator : BMM_LITERAL_VALUE ;
+
+end

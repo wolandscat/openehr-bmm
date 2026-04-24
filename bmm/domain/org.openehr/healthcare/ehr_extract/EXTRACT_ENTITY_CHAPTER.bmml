@@ -1,0 +1,24 @@
++---------------------------------------------------------------------------------
+|    description:: EXTRACT_ENTITY_CHAPTER class definition
+|    keywords::    openEHR EHR Extract model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Type of chapter that contains information relating to a single demographic entity.
+|
+class EXTRACT_ENTITY_CHAPTER
+    is_a EXTRACT_CHAPTER
+
+feature_group ("access")
+
+    |
+    | Reference to entity, usually a demographic entity such as a patient that the
+    | content of this chapter relates to.
+    |
+    prop extract_id_key : String ;
+
+end

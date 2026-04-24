@@ -1,0 +1,16 @@
++---------------------------------------------------------------------------------
+|    description:: ITEM_STRUCTURE class definition
+|    keywords::    openEHR Data Structures model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Abstract ancestor of all item structure types.
+|
+abstract class ITEM_STRUCTURE
+    is_a DATA_STRUCTURE
+
+end

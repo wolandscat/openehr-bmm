@@ -1,0 +1,87 @@
++---------------------------------------------------------------------------------
+|    description:: ADL_CODE_DEFINITIONS class definition
+|    keywords::    openEHR AOM2 model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Definitions relating to the internal code system of archetypes. ADL2 uses at-codes for
+| node identification, at-codes for values, and ac-codes for value sets, matching the ADL1.4
+| code system. openEHR systems must support at least the at-coded ADL2 archetypes.
+|
+class ADL_CODE_DEFINITIONS
+
+feature_group ("values")
+
+    | String leader of 'identifier' codes used to identify at-coded archetype nodes.
+    At_code_leader ;
+
+    | String leader of 'identifier' codes used to identify id-coded archetype nodes.
+    Id_code_leader ;
+
+    | String leader of 'value' codes used to identify code values and value set members.
+    Value_code_leader ;
+
+    | String leader of 'value set' codes used to identify value sets.
+    Value_set_code_leader ;
+
+    | Character used to separate numeric parts of codes belonging to different specialisation
+    | levels.
+    Specialisation_separator ;
+
+    | Regex defining the legal numeric part of any archetype code.
+    Code_regex_pattern ;
+
+    | Regex pattern of the root code of any archetype.
+    Root_code_regex_pattern ;
+
+    | Code id used for C_PRIMITIVE_OBJECT nodes on creation.
+    Primitive_node_id ;
+
+feature_group ("access")
+
+    |
+    | True if a_child_code conforms to a_parent_code in the sense of specialisation.
+    |
+    func codes_conformant (a_child_code : String, a_parent_code : String) : Boolean ;
+
+    |
+    | True if a_code is any kind of ADL archetype local code.
+    |
+    func is_adl_code (a_code : String) : Boolean ;
+
+    |
+    | True if a_code is an 'at' code.
+    |
+    func is_at_code (a_code : String) : Boolean ;
+
+    |
+    | True if a_code is an 'id' code.
+    |
+    func is_id_code (a_code : String) : Boolean ;
+
+    |
+    | True if a_code is an 'at' code representing a single terminology item.
+    |
+    func is_value_code (a_code : String) : Boolean ;
+
+    |
+    | True if a_code is an 'ac' code referring to a terminology value set.
+    |
+    func is_value_set_code (a_code : String) : Boolean ;
+
+    |
+    | True if a_code has been specialised, i.e. has a non-zero code index above the last
+    | index.
+    |
+    func is_redefined_code (a_code : String) : Boolean ;
+
+    |
+    | True if a_code is valid at level a_level or less in the specialisation hierarchy.
+    |
+    func code_exists_at_level (a_code : String, a_level : Integer) : Boolean ;
+
+end

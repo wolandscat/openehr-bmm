@@ -1,0 +1,46 @@
++---------------------------------------------------------------------------------
+|    description:: BMM_MODEL_ELEMENT class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Abstract meta-type of BMM declared model elements. A declaration is an element of a
+| model within a context, which defines the scope of the element. Thus, a class
+| definition and its property and routine definitions are model elements, but Types are
+| not, since they are derived from model elements.
+|
+abstract class BMM_MODEL_ELEMENT
+
+feature_group ("access")
+
+    |
+    | Name of this model element.
+    |
+    prop name : String ;
+
+    |
+    | Optional documentation of this element, as a keyed list.
+    |
+    prop documentation :? Hash<String, Any> ;
+
+    |
+    | Model element within which an element is declared.
+    |
+    prop scope : BMM_MODEL_ELEMENT ;
+
+    |
+    | Optional meta-data of this element, as a keyed list. May be used to extend the
+    | meta-model.
+    |
+    prop extensions :? Hash<String, Any> ;
+
+    |
+    | True if this model element is the root of a model structure hierarchy.
+    |
+    func is_root_scope : Boolean ;
+
+end

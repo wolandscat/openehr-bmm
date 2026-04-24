@@ -1,0 +1,23 @@
++---------------------------------------------------------------------------------
+|    description:: CLUSTER class definition
+|    keywords::    openEHR Data Structures model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| The grouping variant of ITEM, which may contain further instances of ITEM, in an ordered list.
+|
+class CLUSTER
+    is_a ITEM
+
+feature_group ("access")
+
+    |
+    | Ordered list of CLUSTER or ELEMENT items under this CLUSTER.
+    |
+    prop items : List<ITEM> ;
+
+end

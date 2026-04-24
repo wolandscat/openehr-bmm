@@ -1,0 +1,75 @@
++---------------------------------------------------------------------------------
+|    description:: Real class definition
+|    keywords::    openEHR Foundation Types model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Type used to represent decimal numbers. Corresponds to a single-precision
+| floating point value in most languages.
+|
+builtin class Real
+    is_a Ordered_Numeric
+
+feature_group ("access")
+
+    |
+    | The greatest integer no greater than the value of this object.
+    |
+    func floor : Integer ;
+
+feature_group ("operators")
+
+    |
+    | Real number addition.
+    |
+    func add (other : Real) : Real
+        alias "+" ;
+        ;
+
+    |
+    | Real number subtraction.
+    |
+    func subtract (other : Real) : Real
+        alias "-" ;
+        ;
+
+    |
+    | Real number multiplication.
+    |
+    func multiply (other : Real) : Real
+        alias "*" ;
+        ;
+
+    |
+    | Real number division.
+    |
+    func divide (other : Real) : Double
+        alias "/" ;
+        ;
+
+    |
+    | Real number exponentiation.
+    |
+    func exponent (other : Double) : Double
+        alias "^" ;
+        ;
+
+    |
+    | Returns True if current Real is less than other.
+    |
+    func less_than (other : Real) : Boolean
+        alias "<" ;
+        ;
+
+    |
+    | Unary negation of current Real value.
+    |
+    func negative : Real
+        alias "-" ;
+        ;
+
+end

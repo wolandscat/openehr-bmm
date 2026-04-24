@@ -1,0 +1,83 @@
++---------------------------------------------------------------------------------
+|    description:: C_OBJECT class definition
+|    keywords::    openEHR AOM2 model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Abstract model of constraint on any kind of object node.
+|
+abstract class C_OBJECT
+    is_a ARCHETYPE_CONSTRAINT
+
+feature_group ("access")
+
+    |
+    | Reference model type that this node corresponds to.
+    |
+    prop rm_type_name : String ;
+
+    |
+    | Occurrences of this object node in the data, under the owning attribute.
+    |
+    prop occurrences :? Multiplicity_interval ;
+
+    |
+    | Semantic identifier of this node, used to distinguish sibling nodes.
+    |
+    prop node_id : String ;
+
+    |
+    | Additional identifiers of this node, e.g. original ADL2 id-codes.
+    |
+    prop alternative_ids :? List<String> ;
+
+    |
+    | True if this node and by implication all sub-nodes are deprecated for use.
+    |
+    prop is_deprecated :? Boolean ;
+
+    |
+    | Optional indicator of order of this node with respect to another sibling.
+    |
+    prop sibling_order :? SIBLING_ORDER ;
+
+    |
+    | Level of specialisation of this archetype node, based on its node_id.
+    |
+    func specialisation_depth : Integer ;
+
+    |
+    | Compute effective occurrences, where no local occurrences constraint is set.
+    |
+    func effective_occurrences : Multiplicity_interval ;
+
+    |
+    | True if constraints represented by this node are narrower or the same as other.
+    |
+    func c_conforms_to (other : C_OBJECT) : Boolean ;
+
+    |
+    | True if constraints represented by this node contain no further redefinitions with respect to other.
+    |
+    func c_congruent_to (other : ARCHETYPE_CONSTRAINT) : Boolean ;
+
+    |
+    | True if this node occurrences conforms to other.occurrences.
+    |
+    func occurrences_conforms_to (other : C_OBJECT) : Boolean ;
+
+    |
+    | True if this node id conforms to other.node_id.
+    |
+    func node_id_conforms_to (other : C_OBJECT) : Boolean ;
+
+    |
+    | True if this C_OBJECT node is prohibited, i.e. if its occurrences is 0..0.
+    |
+    func is_prohibited : Boolean ;
+
+end

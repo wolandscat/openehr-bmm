@@ -1,0 +1,33 @@
++---------------------------------------------------------------------------------
+|    description:: EL_PROPERTY_REF class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Reference to a writable property.
+|
+class EL_PROPERTY_REF
+    is_a EL_FEATURE_REF
+
+feature_group ("access")
+
+    |
+    | Property definition within the class.
+    |
+    prop definition : BMM_PROPERTY ;
+
+    |
+    | Defined to return True.
+    |
+    prop is_writable : Boolean ;
+
+    |
+    | Type of the property, inferred from the definition.
+    |
+    func eval_type : BMM_TYPE ;
+
+end

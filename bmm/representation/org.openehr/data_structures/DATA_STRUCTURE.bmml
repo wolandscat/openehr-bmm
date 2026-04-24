@@ -1,0 +1,24 @@
++---------------------------------------------------------------------------------
+|    description:: DATA_STRUCTURE class definition
+|    keywords::    openEHR Data Structures model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Abstract parent class of all data structure types. Includes the as_hierarchy function which generates
+| the equivalent CEN EN13606 single hierarchy for each subtype.
+|
+abstract class DATA_STRUCTURE
+    is_a LOCATABLE
+
+feature_group ("access")
+
+    |
+    | Hierarchical equivalent of the physical representation, compatible with CEN EN 13606 structures.
+    |
+    func as_hierarchy : ITEM ;
+
+end

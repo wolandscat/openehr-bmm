@@ -1,0 +1,24 @@
++---------------------------------------------------------------------------------
+|    description:: BMM_UNITARY_TYPE class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Parent of meta-types that may be used as the type of any instantiated object that
+| is not a container object.
+|
+abstract class BMM_UNITARY_TYPE
+    is_a BMM_TYPE
+
+feature_group ("access")
+
+    |
+    | Result = self.
+    |
+    func unitary_type : BMM_UNITARY_TYPE ;
+
+end

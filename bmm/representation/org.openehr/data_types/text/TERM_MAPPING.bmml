@@ -1,0 +1,58 @@
++---------------------------------------------------------------------------------
+|    description:: TERM_MAPPING class definition
+|    keywords::    openEHR Data Types model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Represents a coded term mapped to a DV_TEXT, and the relative match of the target term with
+| respect to the mapped item.
+|
+class TERM_MAPPING
+
+feature_group ("access")
+
+    |
+    | The relative match of the target term: > (broader), = (equivalent), < (narrower), ? (unknown).
+    |
+    prop match : Character ;
+
+    |
+    | Purpose of the mapping e.g. automated data mining, billing, interoperability.
+    |
+    prop purpose :? DV_CODED_TEXT ;
+
+    |
+    | The target term of the mapping.
+    |
+    prop target : CODE_PHRASE ;
+
+    |
+    | The mapping is to a narrower term.
+    |
+    func narrower : Boolean ;
+
+    |
+    | The mapping is to a broader term.
+    |
+    func broader : Boolean ;
+
+    |
+    | The mapping is to an equivalent term.
+    |
+    func equivalent : Boolean ;
+
+    |
+    | The kind of mapping is unknown.
+    |
+    func unknown : Boolean ;
+
+    |
+    | True if match is valid (>, =, <, or ?).
+    |
+    func is_valid_match_code (c : Character) : Boolean ;
+
+end

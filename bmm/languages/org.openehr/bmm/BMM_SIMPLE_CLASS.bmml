@@ -1,0 +1,25 @@
++---------------------------------------------------------------------------------
+|    description:: BMM_SIMPLE_CLASS class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Definition of a simple class, i.e. a class that has no generic parameters and is
+| 1:1 with the type it generates.
+|
+class BMM_SIMPLE_CLASS
+    is_a BMM_CLASS
+
+feature_group ("access")
+
+    |
+    | Generate a type object that represents the type of this class. Can only be an
+    | instance of BMM_SIMPLE_TYPE or a descendant.
+    |
+    func type : BMM_SIMPLE_TYPE ;
+
+end

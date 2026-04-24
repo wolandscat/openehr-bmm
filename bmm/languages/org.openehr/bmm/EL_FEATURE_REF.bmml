@@ -1,0 +1,30 @@
++---------------------------------------------------------------------------------
+|    description:: EL_FEATURE_REF class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| A reference that is scoped by a containing entity and requires a context qualifier
+| if it is not the currently scoping entity.
+|
+abstract class EL_FEATURE_REF
+    is_a EL_VALUE_GENERATOR
+
+feature_group ("access")
+
+    |
+    | Scoping expression, which must be an EL_VALUE_GENERATOR.
+    |
+    prop scoper :? EL_VALUE_GENERATOR ;
+
+    |
+    | Generated full reference name, consisting of scoping elements and name
+    | concatenated using dot notation.
+    |
+    func reference : String ;
+
+end

@@ -1,0 +1,28 @@
++---------------------------------------------------------------------------------
+|    description:: EL_STATIC_REF class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Reference to a static feature, either a constant or computed property.
+|
+class EL_STATIC_REF
+    is_a EL_FEATURE_REF
+
+feature_group ("access")
+
+    |
+    | Constant or singleton definition within the class.
+    |
+    prop definition : BMM_STATIC ;
+
+    |
+    | Defined to return False.
+    |
+    prop is_writable : Boolean ;
+
+end

@@ -1,0 +1,23 @@
++---------------------------------------------------------------------------------
+|    description:: RESOURCE_ANNOTATIONS class definition
+|    keywords::    openEHR Resource model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Object representing annotations on a resource. The documentation structure is a
+| multi-level table keyed by language, path, and annotation tag.
+|
+class RESOURCE_ANNOTATIONS
+
+feature_group ("access")
+
+    |
+    | Documentary annotations in a multi-level keyed structure: language, path, tag.
+    |
+    prop documentation : Hash<String, Hash<String, Hash<String, String>>> ;
+
+end

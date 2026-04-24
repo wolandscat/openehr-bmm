@@ -1,0 +1,30 @@
++---------------------------------------------------------------------------------
+|    description:: ACTOR class definition
+|    keywords::    openEHR Demographic model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Ancestor of all real-world types, including people and organisations. An actor is
+| any real-world entity capable of taking on a role.
+|
+abstract class ACTOR
+    is_a PARTY
+
+feature_group ("access")
+
+    |
+    | Languages which can be used to communicate with this actor, in preferred order of
+    | use (if known, else order irrelevant).
+    |
+    prop languages :? List<DV_TEXT> ;
+
+    |
+    | Identifiers of the Version container for each Role played by this Party.
+    |
+    prop roles :? List<PARTY_REF> ;
+
+end

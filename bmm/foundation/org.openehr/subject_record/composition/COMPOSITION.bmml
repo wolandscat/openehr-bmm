@@ -1,0 +1,58 @@
++---------------------------------------------------------------------------------
+|    description:: COMPOSITION class definition
+|    keywords::    openEHR Composition model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Content of one version in a VERSIONED_COMPOSITION. A Composition is considered the
+| unit of modification of the record, the unit of transmission in record Extracts, and
+| the unit of attestation by authorising clinicians.
+|
+class COMPOSITION
+    is_a LOCATABLE
+
+feature_group ("access")
+
+    |
+    | Mandatory indicator of the localised language in which this Composition is written.
+    | Coded from openEHR Code Set languages.
+    |
+    prop language : CODE_PHRASE «iso.iso_639-1» ;
+
+    |
+    | Name of territory in which this Composition was written. Coded from openEHR
+    | countries code set, which is an expression of the ISO 3166 standard.
+    |
+    prop territory : CODE_PHRASE «iso.iso_3166-1-alpha2» ;
+
+    |
+    | Temporal category of this Composition, e.g. persistent, episodic, event.
+    |
+    prop category : DV_CODED_TEXT ;
+
+    |
+    | The person primarily responsible for the content of the Composition.
+    |
+    prop composer : PARTY_PROXY ;
+
+    |
+    | The clinical session context of this Composition, i.e. the contextual attributes
+    | of the clinical session.
+    |
+    prop context :? EVENT_CONTEXT ;
+
+    |
+    | The content of this Composition.
+    |
+    prop content :? List<CONTENT_ITEM> ;
+
+    |
+    | True if category is persistent, False otherwise.
+    |
+    func is_persistent : Boolean ;
+
+end

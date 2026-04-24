@@ -1,0 +1,34 @@
++---------------------------------------------------------------------------------
+|    description:: SIBLING_ORDER class definition
+|    keywords::    openEHR AOM2 model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Defines the order indicator that can be used on a C_OBJECT within a container attribute
+| in a specialised archetype to indicate its order with respect to a sibling defined in a
+| higher specialisation level.
+|
+class SIBLING_ORDER
+
+feature_group ("access")
+
+    |
+    | True if the order relationship is 'before'; if False, it is 'after'.
+    |
+    prop is_before : Boolean ;
+
+    |
+    | Node identifier of sibling before or after which this node should come.
+    |
+    prop sibling_node_id : String ;
+
+    |
+    | True if the order relationship is 'after', computed as the negation of is_before.
+    |
+    func is_after : Boolean ;
+
+end

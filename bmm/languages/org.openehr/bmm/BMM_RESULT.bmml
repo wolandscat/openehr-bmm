@@ -1,0 +1,23 @@
++---------------------------------------------------------------------------------
+|    description:: BMM_RESULT class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Automatically declared variable representing result of a Function call (writable).
+|
+class BMM_RESULT
+    is_a BMM_WRITABLE_VARIABLE
+
+feature_group ("access")
+
+    |
+    | Name of this model element.
+    |
+    prop name : String ;
+
+end

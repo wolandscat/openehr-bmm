@@ -1,0 +1,30 @@
++---------------------------------------------------------------------------------
+|    description:: BASIC_DEFINITIONS class definition
+|    keywords::    openEHR Base Types model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Defines globally used constant values.
+|
+class BASIC_DEFINITIONS
+
+feature_group ("infrastructure")
+
+    | Carriage return character.
+    CR : Character = '\015' ;
+    | Line feed character.
+    LF : Character = '\012' ;
+    | Name of the Any meta-type.
+    Any_type_name : String = "Any" ;
+    | Regex pattern that matches any string.
+    Regex_any_pattern : String = ".*" ;
+    | Default character encoding.
+    Default_encoding : String = "UTF-8" ;
+    | Name of the None type.
+    None_type_name : String = "None" ;
+
+end

@@ -1,0 +1,26 @@
++---------------------------------------------------------------------------------
+|    description:: TEMPLATE class definition
+|    keywords::    openEHR AOM2 model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Class representing a source template, i.e. a kind of archetype that may include template
+| overlays, and may be restricted by tools to only defining mandations, prohibitions, and
+| restrictions on elements already defined in the flat parent.
+|
+class TEMPLATE
+    is_a AUTHORED_ARCHETYPE
+
+feature_group ("access")
+
+    |
+    | Overlay archetypes, i.e. partial archetypes that include full definition and
+    | terminology, but logically derive all their meta-data from the owning template.
+    |
+    prop overlays :? List<TEMPLATE_OVERLAY> ;
+
+end

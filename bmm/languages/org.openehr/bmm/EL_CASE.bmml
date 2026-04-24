@@ -1,0 +1,24 @@
++---------------------------------------------------------------------------------
+|    description:: EL_CASE class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| One branch of a Case table, consisting of a value constraint (the match criterion)
+| and a result of the generic parameter type T.
+|
+class EL_CASE<T: EL_TERMINAL>
+    is_a EL_DECISION_BRANCH<T>
+
+feature_group ("access")
+
+    |
+    | Constraint on the input value for this case branch.
+    |
+    prop value_constraint : C_OBJECT ;
+
+end

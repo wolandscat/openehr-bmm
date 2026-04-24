@@ -1,0 +1,87 @@
++---------------------------------------------------------------------------------
+|    description:: BMM_CLASS class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Meta-type corresponding a class definition in an object model. Inheritance is
+| specified by the ancestors attribute, which contains a list of types rather than
+| classes. Inheritance is thus understood in BMM as a stated relationship between
+| classes. The equivalent relationship between types is conformance.
+|
+abstract class BMM_CLASS
+    is_a BMM_MODULE
+
+feature_group ("access")
+
+    |
+    | List of immediate inheritance parents.
+    |
+    prop ancestors :? List<String> ;
+
+    |
+    | Package this class belongs to.
+    |
+    prop package : BMM_PACKAGE ;
+
+    |
+    | Reference to original source schema defining this class.
+    |
+    prop source_schema_id : String ;
+
+    |
+    | List of computed references to base classes of immediate inheritance descendants.
+    |
+    prop immediate_descendants :? List<BMM_CLASS> ;
+
+    |
+    | True if this definition overrides a class of the same name in an included schema.
+    |
+    prop is_override : Boolean ;
+
+    |
+    | True if this class represents a type considered to be primitive in the type system.
+    |
+    prop is_primitive :? Boolean ;
+
+    |
+    | True if this class is marked as abstract, i.e. direct instances cannot be created.
+    |
+    prop is_abstract :? Boolean ;
+
+    |
+    | Generate a type object that represents the type for which this class is the definer.
+    |
+    func type : BMM_MODEL_TYPE ;
+
+    |
+    | List of all inheritance parent class names, recursively.
+    |
+    func all_ancestors : List<String> ;
+
+    |
+    | Compute all descendants by following immediate_descendants.
+    |
+    func all_descendants : List<String> ;
+
+    |
+    | List of all properties due to current and ancestor classes, keyed by property name.
+    |
+    func flat_properties : List<BMM_PROPERTY> ;
+
+    |
+    | Fully qualified package name, of form: package.package.
+    |
+    func package_path : String ;
+
+    |
+    | Fully qualified class name, of form: package.package.CLASS with package path in
+    | lower-case and class in original case.
+    |
+    func class_path : String ;
+
+end

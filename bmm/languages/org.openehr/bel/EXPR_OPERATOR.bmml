@@ -1,0 +1,35 @@
++---------------------------------------------------------------------------------
+|    description:: EXPR_OPERATOR class definition
+|    keywords::    openEHR BEL model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Abstract parent of operator types.
+|
+abstract class EXPR_OPERATOR
+    is_a EXPRESSION
+
+feature_group ("access")
+
+    |
+    | True if the natural precedence of operators is overridden in the expression
+    | represented by this node; if True, parentheses should be introduced around the
+    | totality of the syntax expression.
+    |
+    prop precedence_overridden :? Boolean ;
+
+    |
+    | Operator definition.
+    |
+    prop operator : OPERATOR_KIND ;
+
+    |
+    | The symbol actually used in the rule, or intended for serialisation.
+    |
+    prop symbol :? String ;
+
+end

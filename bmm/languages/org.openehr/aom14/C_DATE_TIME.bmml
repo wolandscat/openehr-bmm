@@ -1,0 +1,72 @@
++---------------------------------------------------------------------------------
+|    description:: C_DATE_TIME class definition
+|    keywords::    openEHR AOM 1.4 model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| ISO 8601-compatible constraint on instances of Date_Time. There is no validity flag for
+| 'year', since it must always be mandatory for a sensible date/time. Syntax expressions
+| include "YYYY-MM-DDT??:??:??" (date/time with optional time) and
+| "YYYY-MM-DDTHH:MM:xx" (date/time, seconds not allowed).
+|
+class C_DATE_TIME
+    is_a C_PRIMITIVE
+
+feature_group ("access")
+
+    |
+    | Validity of month in constrained date.
+    |
+    prop month_validity :? VALIDITY_KIND ;
+
+    |
+    | Validity of day in constrained date.
+    |
+    prop day_validity :? VALIDITY_KIND ;
+
+    |
+    | Validity of hour in constrained time.
+    |
+    prop hour_validity :? VALIDITY_KIND ;
+
+    |
+    | Validity of minute in constrained time.
+    |
+    prop minute_validity :? VALIDITY_KIND ;
+
+    |
+    | Validity of second in constrained time.
+    |
+    prop second_validity :? VALIDITY_KIND ;
+
+    |
+    | Validity of millisecond in constrained time.
+    |
+    prop millisecond_validity :? VALIDITY_KIND ;
+
+    |
+    | Validity of timezone in constrained date.
+    |
+    prop timezone_validity :? VALIDITY_KIND ;
+
+    |
+    | Range of Date_times specifying constraint.
+    |
+    prop range :? Interval<Iso8601_date_time> ;
+
+    |
+    | The value to assume if this item is not included in data, due to being part of an
+    | optional structure.
+    |
+    prop assumed_value :? Iso8601_date_time ;
+
+    |
+    | True if validity is in the form of a range.
+    |
+    func validity_is_range : Boolean ;
+
+end

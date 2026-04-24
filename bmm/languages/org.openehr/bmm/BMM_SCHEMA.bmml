@@ -1,0 +1,83 @@
++---------------------------------------------------------------------------------
+|    description:: BMM_SCHEMA class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Abstract parent of any persistable form of a BMM model, e.g. P_BMM_SCHEMA.
+|
+abstract class BMM_SCHEMA
+    is_a BMM_MODEL_METADATA
+
+feature_group ("access")
+
+    |
+    | Version of BMM model, enabling schema evolution reasoning. Persisted attribute.
+    |
+    prop bmm_version : String ;
+
+    |
+    | Name of model expressed in schema. Persisted attribute.
+    |
+    prop schema_name : String ;
+
+    |
+    | Revision of schema.
+    |
+    prop schema_revision : String ;
+
+    |
+    | Schema development lifecycle state.
+    |
+    prop schema_lifecycle_state : String ;
+
+    |
+    | Primary author of schema.
+    |
+    prop schema_author : String ;
+
+    |
+    | Description of schema.
+    |
+    prop schema_description : String ;
+
+    |
+    | Current processing state.
+    |
+    prop state : BMM_SCHEMA_STATE ;
+
+    |
+    | Name of this model, if this schema is a model root point.
+    |
+    prop model_name :? String ;
+
+    |
+    | Inclusion list of any form of BMM model. Persisted attribute.
+    |
+    prop includes :? Hash<String, BMM_INCLUDE_SPEC> ;
+
+    |
+    | Contributing authors of schema.
+    |
+    prop schema_contributors :? List<String> ;
+
+    |
+    | Generated from persisted elements.
+    |
+    prop bmm_model :? BMM_MODEL ;
+
+    |
+    | Identifier of this schema, used for stating inclusions and identifying files.
+    |
+    func schema_id : String ;
+
+    |
+    | True when validation may be commenced.
+    |
+    func read_to_validate : Boolean ;
+
+end

@@ -1,0 +1,42 @@
++---------------------------------------------------------------------------------
+|    description:: EXTRACT_PARTICIPATION class definition
+|    keywords::    openEHR EHR Extract model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Model of a participation of a Party in an activity within an Extract. Used to
+| represent any participation of a Party in some activity, which is not explicitly in
+| the model. Should not be used in place of permanent relationships between demographic
+| entities.
+|
+class EXTRACT_PARTICIPATION
+
+feature_group ("access")
+
+    |
+    | The time interval during which the participation took place, or the intended time
+    | interval when used in future contexts.
+    |
+    prop time :? DV_INTERVAL<DV_DATE_TIME> ;
+
+    |
+    | The function of the Party in this participation.
+    |
+    prop function : DV_TEXT ;
+
+    |
+    | The mode of the performer / activity interaction, e.g. present, by telephone,
+    | by email.
+    |
+    prop mode :? DV_CODED_TEXT ;
+
+    |
+    | UID of demographic entity within Extract who performed this participation.
+    |
+    prop performer : String ;
+
+end

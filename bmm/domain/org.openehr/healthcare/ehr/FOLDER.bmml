@@ -1,0 +1,34 @@
++---------------------------------------------------------------------------------
+|    description:: FOLDER class definition
+|    keywords::    openEHR EHR model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| The concept of a named folder.
+|
+class FOLDER
+    is_a LOCATABLE
+
+feature_group ("access")
+
+    |
+    | Sub-folders of this FOLDER.
+    |
+    prop folders :? List<FOLDER> ;
+
+    |
+    | The list of references to other (usually) versioned objects logically in this
+    | folder.
+    |
+    prop items :? List<OBJECT_REF> ;
+
+    |
+    | Archetypable meta-data for FOLDER.
+    |
+    prop details :? ITEM_STRUCTURE ;
+
+end

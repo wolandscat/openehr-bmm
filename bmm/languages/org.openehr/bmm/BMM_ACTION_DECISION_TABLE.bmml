@@ -1,0 +1,16 @@
++---------------------------------------------------------------------------------
+|    description:: BMM_ACTION_DECISION_TABLE class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Specialised form of decision table that allows only procedure call agents (lambdas)
+| as the result of branches.
+|
+class BMM_ACTION_DECISION_TABLE
+
+end

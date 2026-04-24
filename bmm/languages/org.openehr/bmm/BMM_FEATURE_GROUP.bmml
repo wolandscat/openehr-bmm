@@ -1,0 +1,39 @@
++---------------------------------------------------------------------------------
+|    description:: BMM_FEATURE_GROUP class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| A logical group of features, with a name and set of properties that applies to
+| the group.
+|
+class BMM_FEATURE_GROUP
+
+feature_group ("access")
+
+    |
+    | Name of this feature group; defaults to 'feature'.
+    |
+    prop name : String ;
+
+    |
+    | Set of properties of this group, represented as name/value pairs. These are
+    | understood to apply logically to all of the features contained within the group.
+    |
+    prop properties : Hash<String, String> ;
+
+    |
+    | Set of features in this group.
+    |
+    prop features :? List<BMM_FEATURE> ;
+
+    |
+    | Optional visibility to apply to all features in this group.
+    |
+    prop visibility :? BMM_VISIBILITY ;
+
+end

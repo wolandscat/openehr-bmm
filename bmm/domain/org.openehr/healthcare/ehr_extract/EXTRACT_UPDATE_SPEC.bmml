@@ -1,0 +1,41 @@
++---------------------------------------------------------------------------------
+|    description:: EXTRACT_UPDATE_SPEC class definition
+|    keywords::    openEHR EHR Extract model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Specification of how a request should be processed by server. The request can be
+| persisted in the server to enable re-activation and changes-only pattern of Extract
+| updates.
+|
+class EXTRACT_UPDATE_SPEC
+
+feature_group ("access")
+
+    |
+    | If True, this Request is persisted in the server until further notice.
+    |
+    prop persist_in_server : Boolean ;
+
+    |
+    | Period for resending update Extracts in response to original Request.
+    |
+    prop repeat_period :? DV_DURATION ;
+
+    |
+    | Set of Event names that will cause sending of update Extracts, e.g. any_change,
+    | correction, update.
+    |
+    prop trigger_events :? List<DV_CODED_TEXT> ;
+
+    |
+    | Indicate mode of update: send only items that are changed or new since last send.
+    | For persist_in_server Requests only.
+    |
+    prop update_method : CODE_PHRASE ;
+
+end

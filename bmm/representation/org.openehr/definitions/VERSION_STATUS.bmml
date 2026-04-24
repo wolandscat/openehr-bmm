@@ -1,0 +1,28 @@
++---------------------------------------------------------------------------------
+|    description:: VERSION_STATUS enumeration
+|    keywords::    openEHR Data Types model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Status of a versioned artefact: alpha, beta, release_candidate, released, or build.
+|
+enumeration VERSION_STATUS
+    base_type String
+
+feature_group ("values")
+
+    alpha ("alpha");
+
+    beta ("beta");
+
+    release_candidate ("release_candidate");
+
+    released ("released");
+
+    build ("build");
+
+end

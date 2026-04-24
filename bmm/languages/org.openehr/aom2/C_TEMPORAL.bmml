@@ -1,0 +1,49 @@
++---------------------------------------------------------------------------------
+|    description:: C_TEMPORAL class definition
+|    keywords::    openEHR AOM2 model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Abstract parent of C_ORDERED types whose base type is an ISO date/time type.
+|
+abstract class C_TEMPORAL<T: Temporal>
+    is_a C_ORDERED<T>
+
+feature_group ("access")
+
+    |
+    | Optional alternative constraint in the form of a pattern based on ISO8601.
+    |
+    prop pattern_constraint :? String ;
+
+    |
+    | True if a_pattern is a valid constraint. Defined in concrete descendants.
+    |
+    func valid_pattern_constraint (a_pattern : String) : Boolean ;
+
+    |
+    | True if a_pattern can be replaced by an_other_pattern in a specialised constraint.
+    |
+    func valid_pattern_constraint_replacement (a_pattern : String, an_other_pattern : String) : Boolean ;
+
+    |
+    | True if any value (i.e. instance) of the reference model type would be allowed.
+    |
+    func any_allowed : Boolean ;
+
+    |
+    | True if precursor() or else other.pattern_constraint is empty, or else pattern_constraint
+    | is a valid (narrower) replacement for other.pattern_constraint.
+    |
+    func c_value_conforms_to (other : C_ORDERED) : Boolean ;
+
+    |
+    | True if precursor (other) and pattern_constraint ~ other.pattern_constraint.
+    |
+    func c_value_congruent_to (other : C_ORDERED) : Boolean ;
+
+end

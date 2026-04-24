@@ -1,0 +1,24 @@
+|
+|    description:: TEXT_FORMAT_TYPES enumeration
+|    keywords::    openEHR data value model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Enumeration of text format types for the DV_TEXT formatting attribute.
+|
+enumeration TEXT_FORMAT_TYPES
+    base_type Integer
+
+feature_group ("values")
+
+    plain (0);
+
+    plain_no_newlines(1);
+
+    markdown(2);
+
+end

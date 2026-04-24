@@ -1,0 +1,29 @@
++---------------------------------------------------------------------------------
+|    description:: DV_ORDINAL class definition
+|    keywords::    openEHR Data Types model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| A data type that represents integral score values where there is implied ordering, no implication
+| of constant distance, and a finite total number of values.
+|
+class DV_ORDINAL
+    is_a DV_ORDERED
+
+feature_group ("access")
+
+    |
+    | Value in ordered enumeration of values. Any integer value can be used.
+    |
+    prop value : Integer ;
+
+    |
+    | Coded textual representation of this value in the enumeration.
+    |
+    prop symbol : DV_CODED_TEXT ;
+
+end

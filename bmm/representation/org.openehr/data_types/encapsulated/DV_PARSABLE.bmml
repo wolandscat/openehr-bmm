@@ -1,0 +1,33 @@
++---------------------------------------------------------------------------------
+|    description:: DV_PARSABLE class definition
+|    keywords::    openEHR Data Types model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Encapsulated data expressed as a parsable String. Assumed to be plaintext.
+|
+class DV_PARSABLE
+    is_a DV_ENCAPSULATED
+
+feature_group ("access")
+
+    |
+    | The string, which may validly be empty in some syntaxes.
+    |
+    prop value : String ;
+
+    |
+    | Name of the formalism, e.g. GLIF 1.0, Proforma etc.
+    |
+    prop formalism : String ;
+
+    |
+    | Size in bytes of value.
+    |
+    func size : Integer ;
+
+end

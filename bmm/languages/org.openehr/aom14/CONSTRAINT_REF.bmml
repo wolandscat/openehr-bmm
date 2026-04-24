@@ -1,0 +1,24 @@
++---------------------------------------------------------------------------------
+|    description:: CONSTRAINT_REF class definition
+|    keywords::    openEHR AOM 1.4 model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Reference to a constraint described elsewhere in the same archetype. Used to
+| allow the same C_OBJECT definition to be used in more than one place.
+|
+class CONSTRAINT_REF
+    is_a C_REFERENCE_OBJECT
+
+feature_group ("access")
+
+    |
+    | Reference to an archetype constraint, in the form of an archetype path.
+    |
+    prop reference : String ;
+
+end

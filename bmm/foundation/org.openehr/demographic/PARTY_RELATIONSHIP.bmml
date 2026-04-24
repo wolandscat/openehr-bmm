@@ -1,0 +1,44 @@
++---------------------------------------------------------------------------------
+|    description:: PARTY_RELATIONSHIP class definition
+|    keywords::    openEHR Demographic model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Generic description of a relationship between parties.
+|
+class PARTY_RELATIONSHIP
+    is_a LOCATABLE
+
+feature_group ("access")
+
+    |
+    | The detailed description of the relationship.
+    |
+    prop details :? ITEM_STRUCTURE ;
+
+    |
+    | Target of relationship.
+    |
+    prop target : PARTY_REF ;
+
+    |
+    | Valid time interval for this relationship.
+    |
+    prop time_validity :? DV_INTERVAL<DV_DATE> ;
+
+    |
+    | Source of relationship.
+    |
+    prop source : PARTY_REF ;
+
+    |
+    | Type of relationship, such as employment, authority, health provision. Taken from
+    | value of inherited name attribute.
+    |
+    func type : DV_TEXT ;
+
+end

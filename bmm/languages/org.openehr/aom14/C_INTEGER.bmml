@@ -1,0 +1,34 @@
++---------------------------------------------------------------------------------
+|    description:: C_INTEGER class definition
+|    keywords::    openEHR AOM 1.4 model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Constraint on instances of Integer.
+|
+class C_INTEGER
+    is_a C_PRIMITIVE
+
+feature_group ("access")
+
+    |
+    | Set of Integers specifying constraint.
+    |
+    prop list :? List<Integer> ;
+
+    |
+    | Range of Integers specifying constraint.
+    |
+    prop range :? Interval<Integer> ;
+
+    |
+    | The value to assume if this item is not included in data, due to being part of an
+    | optional structure.
+    |
+    prop assumed_value :? Integer ;
+
+end

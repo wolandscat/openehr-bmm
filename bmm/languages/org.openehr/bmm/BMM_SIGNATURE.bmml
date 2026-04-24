@@ -1,0 +1,31 @@
++---------------------------------------------------------------------------------
+|    description:: BMM_SIGNATURE class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Built-in meta-type that expresses the type structure of any referenceable element
+| of a model. Consists of potential arguments and result, with constraints in
+| descendants determining the exact form.
+|
+class BMM_SIGNATURE
+    is_a BMM_BUILTIN_TYPE
+
+feature_group ("access")
+
+    |
+    | Result type of signature.
+    |
+    prop result_type : BMM_TYPE ;
+
+    |
+    | Return the logical set consisting of argument_types.flattened_type_list() and
+    | result_type.flattened_type_list().
+    |
+    func flattened_type_list : List<String> ;
+
+end

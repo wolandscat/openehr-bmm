@@ -1,0 +1,123 @@
++---------------------------------------------------------------------------------
+|    description:: ARCHETYPE class definition
+|    keywords::    openEHR AOM 1.4 model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Archetype equivalent to ARCHETYPED class in Common reference model. Defines semantics of
+| identification, lifecycle, versioning, composition and specialisation.
+|
+class ARCHETYPE
+    is_a AUTHORED_RESOURCE
+
+feature_group ("access")
+
+    |
+    | Root node of the definition of this archetype.
+    |
+    prop definition : C_COMPLEX_OBJECT ;
+
+    |
+    | The ontology of the archetype.
+    |
+    prop ontology : ARCHETYPE_ONTOLOGY ;
+
+    |
+    | ADL version if archetype was read in from an ADL sharable archetype.
+    |
+    prop adl_version :? String ;
+
+    |
+    | Multi-axial identifier of this archetype in archetype space.
+    |
+    prop archetype_id : ARCHETYPE_ID ;
+
+    |
+    | OID identifier of this archetype.
+    |
+    prop uid :? HIER_OBJECT_ID ;
+
+    |
+    | The normative meaning of the archetype as a whole, expressed as a local archetype
+    | code, typically "at0000".
+    |
+    prop concept : String ;
+
+    |
+    | Identifier of the specialisation parent of this archetype.
+    |
+    prop parent_archetype_id :? ARCHETYPE_ID ;
+
+    |
+    | Invariant statements about this object, expressed in first order predicate logic.
+    |
+    prop invariants :? List<ASSERTION> ;
+
+    |
+    | The concept name of the archetype in language a_lang.
+    |
+    func concept_name (a_lang : String) : String ;
+
+    |
+    | Set of language-independent paths extracted from archetype.
+    |
+    func physical_paths : List<String> ;
+
+    |
+    | Set of language-dependent paths extracted from archetype, with node_ids replaced by
+    | their meanings from the ontology.
+    |
+    func logical_paths (lang : String) : List<String> ;
+
+    |
+    | Specialisation depth of this archetype; larger than 0 if this archetype has a parent.
+    |
+    func specialisation_depth : Integer ;
+
+    |
+    | True if this archetype is a specialisation of another.
+    |
+    func is_specialised : Boolean ;
+
+    |
+    | True if the archetype is valid overall.
+    |
+    func is_valid : Boolean ;
+
+    |
+    | True if every node_id found on a C_OBJECT node is found in ontology.term_codes.
+    |
+    func node_ids_valid : Boolean ;
+
+    |
+    | Version of predecessor archetype of this archetype, if any.
+    |
+    func previous_version : String ;
+
+    |
+    | True if every ARCHETYPE_INTERNAL_REF.target_path refers to a legitimate node in the
+    | archetype definition.
+    |
+    func internal_references_valid : Boolean ;
+
+    |
+    | True if every CONSTRAINT_REF.reference found on a C_OBJECT node is found in
+    | ontology.constraint_codes.
+    |
+    func constraint_references_valid : Boolean ;
+
+    |
+    | The short concept name of the archetype extracted from the archetype_id.
+    |
+    func short_concept_name : String ;
+
+    |
+    | Version of this archetype.
+    |
+    func version : String ;
+
+end

@@ -1,0 +1,31 @@
++---------------------------------------------------------------------------------
+|    description:: BMM_TUPLE_TYPE class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Built-in meta-type representing the type of a tuple, i.e. an array of any number of
+| other types. This includes both container and unitary types, since tuple instances
+| represent concrete objects.
+|
+class BMM_TUPLE_TYPE
+    is_a BMM_BUILTIN_TYPE
+
+feature_group ("access")
+
+    |
+    | List of types of the items of the tuple, keyed by purpose in the tuple.
+    |
+    prop item_types : Hash<String, BMM_TYPE> ;
+
+    |
+    | Return the logical set of unique types from the merge of flattened_type_list()
+    | called on each member of item_types.
+    |
+    func flattened_type_list : List<String> ;
+
+end

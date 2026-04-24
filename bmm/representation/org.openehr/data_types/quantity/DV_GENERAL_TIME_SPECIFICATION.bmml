@@ -1,0 +1,33 @@
++---------------------------------------------------------------------------------
+|    description:: DV_GENERAL_TIME_SPECIFICATION class definition
+|    keywords::    openEHR Data Types model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Specifies points in time in a general syntax. Based on the HL7v3 GTS data type.
+|
+class DV_GENERAL_TIME_SPECIFICATION
+    is_a DV_TIME_SPECIFICATION
+
+feature_group ("access")
+
+    |
+    | Calendar alignment extracted from value.
+    |
+    func calendar_alignment : String ;
+
+    |
+    | Event alignment extracted from value.
+    |
+    func event_alignment : String ;
+
+    |
+    | Extracted from value.
+    |
+    func institution_specified : Boolean ;
+
+end

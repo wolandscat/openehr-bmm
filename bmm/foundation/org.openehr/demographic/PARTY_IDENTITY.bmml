@@ -1,0 +1,31 @@
++---------------------------------------------------------------------------------
+|    description:: PARTY_IDENTITY class definition
+|    keywords::    openEHR Demographic model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| An identity owned by a Party, such as a person name or company name, and which is
+| used by the Party to identify itself. Actual structure is archetyped.
+|
+class PARTY_IDENTITY
+    is_a LOCATABLE
+
+feature_group ("access")
+
+    |
+    | The value of the identity. This will often take the form of a parseable string or
+    | a small structure of strings.
+    |
+    prop details : ITEM_STRUCTURE ;
+
+    |
+    | Purpose of identity, e.g. legal, stagename, nickname, tribal name, trading name.
+    | Taken from value of inherited name attribute.
+    |
+    func purpose : DV_TEXT ;
+
+end

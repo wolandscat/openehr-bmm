@@ -1,0 +1,16 @@
++---------------------------------------------------------------------------------
+|    description:: PARTY_SELF class definition
+|    keywords::    openEHR Common model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Party proxy representing the subject of the record. Indicates the party is the owner of the EHR.
+|
+class PARTY_SELF
+    is_a PARTY_PROXY
+
+end

@@ -1,0 +1,34 @@
++---------------------------------------------------------------------------------
+|    description:: ASSERTION class definition
+|    keywords::    openEHR BEL model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Meta-type for a first order predicate logic expression with a Boolean result.
+|
+class ASSERTION
+    is_a STATEMENT
+
+feature_group ("access")
+
+    |
+    | Expression tag, used for differentiating multiple assertions.
+    |
+    prop tag :? String ;
+
+    |
+    | String form of expression, in case an expression evaluator taking String expressions
+    | is used for evaluation.
+    |
+    prop string_expression :? String ;
+
+    |
+    | Root of expression tree.
+    |
+    prop expression : EXPRESSION ;
+
+end

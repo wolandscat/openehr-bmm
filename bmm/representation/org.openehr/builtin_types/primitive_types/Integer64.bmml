@@ -1,0 +1,74 @@
++---------------------------------------------------------------------------------
+|    description:: Integer64 class definition
+|    keywords::    openEHR Foundation Types model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Type representing minimal interface of built-in Integer64 type (64-bit integers).
+|
+builtin class Integer64
+    is_a Ordered_Numeric
+
+feature_group ("operators")
+
+    |
+    | 64-bit integer addition.
+    |
+    func add (other : Integer64) : Integer64
+        alias "+" ;
+        ;
+
+    |
+    | 64-bit integer subtraction.
+    |
+    func subtract (other : Integer64) : Integer64
+        alias "-" ;
+        ;
+
+    |
+    | 64-bit integer multiplication.
+    |
+    func multiply (other : Integer64) : Integer64
+        alias "*" ;
+        ;
+
+    |
+    | 64-bit integer division.
+    |
+    func divide (other : Integer64) : Double
+        alias "/" ;
+        ;
+
+    |
+    | 64-bit integer exponentiation.
+    |
+    func exponent (other : Double) : Double
+        alias "^" ;
+        ;
+
+    |
+    | 64-bit integer modulo — remainder of integer division.
+    |
+    func modulo (mod : Integer64) : Integer64
+        alias "mod" ;
+        ;
+
+    |
+    | Returns True if current Integer64 is less than other.
+    |
+    func less_than (other : Integer64) : Boolean
+        alias "<" ;
+        ;
+
+    |
+    | Unary negation of current Integer64 value.
+    |
+    func negative : Integer64
+        alias "-" ;
+        ;
+
+end

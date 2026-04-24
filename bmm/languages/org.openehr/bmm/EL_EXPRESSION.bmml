@@ -1,0 +1,28 @@
++---------------------------------------------------------------------------------
+|    description:: EL_EXPRESSION class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Abstract parent of all typed expression meta-types.
+|
+abstract class EL_EXPRESSION
+
+feature_group ("access")
+
+    |
+    | Meta-type of this expression entity, used in type-checking and evaluation.
+    | Effected in descendants.
+    |
+    func eval_type : BMM_TYPE ;
+
+    |
+    | True if eval_type is notionally Boolean.
+    |
+    func is_boolean : Boolean ;
+
+end

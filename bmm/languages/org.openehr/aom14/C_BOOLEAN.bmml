@@ -1,0 +1,35 @@
++---------------------------------------------------------------------------------
+|    description:: C_BOOLEAN class definition
+|    keywords::    openEHR AOM 1.4 model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Constraint on instances of Boolean. Both attributes cannot be set to False, since this
+| would mean that the Boolean value being constrained cannot be True or False.
+|
+class C_BOOLEAN
+    is_a C_PRIMITIVE
+
+feature_group ("access")
+
+    |
+    | True if the value True is allowed.
+    |
+    prop true_valid : Boolean ;
+
+    |
+    | True if the value False is allowed.
+    |
+    prop false_valid : Boolean ;
+
+    |
+    | The value to assume if this item is not included in data, due to being part of an
+    | optional structure.
+    |
+    prop assumed_value :? Boolean ;
+
+end

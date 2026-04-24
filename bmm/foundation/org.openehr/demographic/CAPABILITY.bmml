@@ -1,0 +1,31 @@
++---------------------------------------------------------------------------------
+|    description:: CAPABILITY class definition
+|    keywords::    openEHR Demographic model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Capability of a role, such as ehr modifier or health care provider. Capability should
+| be backed up by credentials.
+|
+class CAPABILITY
+    is_a LOCATABLE
+
+feature_group ("access")
+
+    |
+    | The qualifications of the performer of the role for this capability. This might
+    | include professional qualifications and official identifications such as provider
+    | numbers.
+    |
+    prop credentials : ITEM_STRUCTURE ;
+
+    |
+    | Valid time interval for the credentials of this capability.
+    |
+    prop time_validity :? DV_INTERVAL<DV_DATE> ;
+
+end

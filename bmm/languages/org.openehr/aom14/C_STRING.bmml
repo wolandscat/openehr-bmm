@@ -1,0 +1,45 @@
++---------------------------------------------------------------------------------
+|    description:: C_STRING class definition
+|    keywords::    openEHR AOM 1.4 model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Constraint on instances of String.
+|
+class C_STRING
+    is_a C_PRIMITIVE
+
+feature_group ("access")
+
+    |
+    | Regular expression pattern for proposed instances of String to match.
+    |
+    prop pattern :? String ;
+
+    |
+    | Set of Strings specifying constraint.
+    |
+    prop list :? List<String> ;
+
+    |
+    | True if the list is being used to specify the constraint but is not considered
+    | exhaustive.
+    |
+    prop list_open : Boolean ;
+
+    |
+    | The value to assume if this item is not included in data, due to being part of an
+    | optional structure.
+    |
+    prop assumed_value :? String ;
+
+    |
+    | True if a_value is valid with respect to constraint expressed in this object.
+    |
+    func valid_value (a_value : String) : Boolean ;
+
+end

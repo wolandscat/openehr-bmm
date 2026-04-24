@@ -1,0 +1,31 @@
++---------------------------------------------------------------------------------
+|    description:: EXPR_FOR_ALL class definition
+|    keywords::    openEHR BEL model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Universal quantification operator, usually known as for_all, whose operand is a
+| collection of items referenced by an EXPR_VALUE_REF. The condition attribute represents
+| an assertion applied to every member of the collection at runtime.
+|
+class EXPR_FOR_ALL
+    is_a EXPR_OPERATOR
+
+feature_group ("access")
+
+    |
+    | Boolean condition that returns True or False when applied to a member of the operand
+    | of a for_all operator.
+    |
+    prop condition : ASSERTION ;
+
+    |
+    | Reference to collection/container object to which the for_all operator is applied.
+    |
+    prop operand : EXPR_VALUE_REF ;
+
+end

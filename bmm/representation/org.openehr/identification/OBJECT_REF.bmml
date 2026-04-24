@@ -1,0 +1,33 @@
++---------------------------------------------------------------------------------
+|    description:: OBJECT_REF class definition
+|    keywords::    openEHR Base Types model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Class describing a reference to another object, which may exist locally or be maintained outside
+| the current namespace.
+|
+class OBJECT_REF
+
+feature_group ("access")
+
+    |
+    | Namespace to which this identifier belongs in the local system context, e.g. terminology, demographic.
+    |
+    prop namespace : String ;
+
+    |
+    | Name of the class of object to which this identifier type refers, e.g. PARTY, PERSON, GUIDELINE.
+    |
+    prop type : String ;
+
+    |
+    | Globally unique id of an object, regardless of where it is stored.
+    |
+    prop id : OBJECT_ID ;
+
+end

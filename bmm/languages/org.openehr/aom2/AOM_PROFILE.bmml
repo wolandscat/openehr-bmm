@@ -1,0 +1,63 @@
++---------------------------------------------------------------------------------
+|    description:: AOM_PROFILE class definition
+|    keywords::    openEHR AOM 2 model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Profile of common settings relating to use of reference model(s) and terminology
+| for a given archetype developing organisation.
+|
+class AOM_PROFILE
+
+feature_group ("access")
+
+    |
+    | Name of this profile, usually based on the publisher it pertains to, e.g. "openEHR".
+    |
+    prop profile_name : String ;
+
+    |
+    | States a class from the Reference Model that provides archetyping capability in
+    | RM data structures. Optional — if set, tools show only RM classes inheriting
+    | from this class.
+    |
+    prop archetype_parent_class :? String ;
+
+    |
+    | Defines a base class from the RM whose descendants are considered logical data
+    | types. Optional — used to help tooling provide more intelligent display.
+    |
+    prop archetype_data_value_parent_class :? String ;
+
+    |
+    | If archetype_parent_class is not set, designate a class whose descendants should
+    | be visible in tree and grid renderings of the archetype definition.
+    |
+    prop archetype_visualise_descendants_of :? String ;
+
+    |
+    | Mappings from AOM built-in types to actual types in RM.
+    |
+    prop aom_rm_type_mappings :? Hash<String, AOM_TYPE_MAPPING> ;
+
+    |
+    | Allowed type substitutions: RM type names keyed by AOM built-in types that can
+    | substitute for them in an archetype.
+    |
+    prop aom_rm_type_substitutions :? Hash<String, String> ;
+
+    |
+    | Mappings of lifecycle state names used in archetypes to AOM lifecycle state names.
+    |
+    prop aom_lifecycle_mappings :? Hash<String, String> ;
+
+    |
+    | Equivalences of RM primitive types to the in-built set of primitive types.
+    |
+    prop rm_primitive_type_equivalences :? Hash<String, String> ;
+
+end

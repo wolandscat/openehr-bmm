@@ -1,0 +1,73 @@
++---------------------------------------------------------------------------------
+|    description:: BMM_MODEL class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Definition of the root of a BMM model.
+|
+class BMM_MODEL
+    is_a BMM_PACKAGE_CONTAINER, BMM_MODEL_METADATA
+
+feature_group ("access")
+
+    |
+    | All classes in this model, keyed by type name.
+    |
+    prop class_definitions :? List<String> ;
+
+    |
+    | List of other models 'used' (i.e. 'imported') by this model.
+    |
+    prop used_models :? List<BMM_MODEL> ;
+
+    |
+    | All classes in this model, keyed by type name.
+    |
+    prop modules :? Hash<String, BMM_MODULE> ;
+
+    |
+    | Identifier of this model, lower-case, formed from rm_publisher_model_name_rm_release.
+    |
+    func model_id : String ;
+
+    |
+    | Retrieve the class definition corresponding to a_type_name.
+    |
+    func class_definition (a_name : String) : BMM_CLASS ;
+
+    |
+    | True if a_class_name has a class definition in the model.
+    |
+    func has_class_definition (a_class_name : String) : Boolean ;
+
+    |
+    | True if a_type_name is already concretely known in the system.
+    |
+    func has_type_definition (a_type_name : String) : Boolean ;
+
+    |
+    | Retrieve the enumeration definition corresponding to a_type_name.
+    |
+    func enumeration_definition (a_name : String) : BMM_ENUMERATION ;
+
+    |
+    | List of keys in class_definitions of items marked as primitive types.
+    |
+    func primitive_types : List<String> ;
+
+    |
+    | List of keys in class_definitions of items that are enumeration types.
+    |
+    func enumeration_types : List<String> ;
+
+    |
+    | True if a_class_name is a descendant in the model of a_parent_class_name.
+    |
+    func is_descendant_of (a_class_name : String, a_parent_class_name : String) : Boolean ;
+
+end

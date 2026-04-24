@@ -1,0 +1,25 @@
++---------------------------------------------------------------------------------
+|    description:: RM_OVERLAY class definition
+|    keywords::    openEHR AOM2 model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Container object for archetype statements relating to RM attributes, which may be
+| directly on objects constrained within the archetype, or at deeper non-constrained RM
+| paths from an object or the root.
+|
+class RM_OVERLAY
+
+feature_group ("access")
+
+    |
+    | Optional structure in which visibility and aliasing of reference model elements can
+    | be specified. Key is path to an RM attribute; value is visibility definition.
+    |
+    prop rm_visibility :? Hash<String,RM_ATTRIBUTE_VISIBILITY> ;
+
+end

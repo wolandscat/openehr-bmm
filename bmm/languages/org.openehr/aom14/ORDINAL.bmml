@@ -1,0 +1,27 @@
++---------------------------------------------------------------------------------
+|    description:: ORDINAL class definition
+|    keywords::    openEHR AOM 1.4 model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| An ordinal type that maps a set of integers to terminology codes.
+|
+class ORDINAL
+
+feature_group ("access")
+
+    |
+    | Coded term corresponding to this ordinal value.
+    |
+    prop symbol : CODE_PHRASE ;
+
+    |
+    | Integer value of this ordinal.
+    |
+    prop value : Integer ;
+
+end

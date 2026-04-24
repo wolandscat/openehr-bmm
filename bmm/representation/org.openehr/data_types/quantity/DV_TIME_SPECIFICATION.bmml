@@ -1,0 +1,39 @@
++---------------------------------------------------------------------------------
+|    description:: DV_TIME_SPECIFICATION class definition
+|    keywords::    openEHR Data Types model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Abstract class of which all timing specifications are specialisations. Specifies points in time,
+| possibly linked to the calendar or a real world repeating event.
+|
+abstract class DV_TIME_SPECIFICATION
+    is_a DATA_VALUE
+
+feature_group ("access")
+
+    |
+    | The specification, in the HL7v3 syntax for PIVL or EIVL types.
+    |
+    prop value : DV_PARSABLE ;
+
+    |
+    | Indicates what prototypical calendar point the specification is aligned to.
+    |
+    func calendar_alignment : String ;
+
+    |
+    | Indicates what real-world event the specification is aligned to.
+    |
+    func event_alignment : String ;
+
+    |
+    | Indicates if the specification is aligned with institution schedules.
+    |
+    func institution_specified : Boolean ;
+
+end

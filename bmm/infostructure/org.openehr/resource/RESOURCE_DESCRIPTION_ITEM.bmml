@@ -1,0 +1,55 @@
++---------------------------------------------------------------------------------
+|    description:: RESOURCE_DESCRIPTION_ITEM class definition
+|    keywords::    openEHR Resource model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Language-specific detail of resource description. When a resource is translated
+| for use in another language environment, each instance needs to be copied and
+| translated.
+|
+class RESOURCE_DESCRIPTION_ITEM
+
+feature_group ("access")
+
+    |
+    | The localised language in which the items in this description item are written.
+    |
+    prop language : Terminology_code «iso.iso_639-1» ;
+
+    |
+    | Purpose of the resource.
+    |
+    prop purpose : String ;
+
+    |
+    | Keywords which characterise this resource, used for indexing and searching.
+    |
+    prop keywords :? List<String> ;
+
+    |
+    | Description of the uses of the resource, i.e. contexts in which it could be used.
+    |
+    prop use :? String ;
+
+    |
+    | Description of any misuses of the resource, i.e. contexts in which it should not be used.
+    |
+    prop misuse :? String ;
+
+    |
+    | URIs of original clinical document(s) or description of which resource is a
+    | formalisation, in the language of this description item; keyed by meaning.
+    |
+    prop original_resource_uri :? Hash<String, String> ;
+
+    |
+    | Additional language-sensitive resource metadata, as a list of name/value pairs.
+    |
+    prop other_details :? Hash<String, String> ;
+
+end

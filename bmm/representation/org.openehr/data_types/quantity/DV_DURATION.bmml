@@ -1,0 +1,49 @@
++---------------------------------------------------------------------------------
+|    description:: DV_DURATION class definition
+|    keywords::    openEHR Data Types model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Represents a period of time with respect to a notional point in time. A sign may be used to
+| indicate backwards direction.
+|
+class DV_DURATION
+    is_a DV_AMOUNT
+
+feature_group ("access")
+
+    |
+    | ISO8601 duration string, including deviations to support negative values and weeks.
+    |
+    prop value : String ;
+
+    |
+    | Numeric value of the duration as a number of seconds.
+    |
+    func magnitude : Double ;
+
+    |
+    | Sum of this Duration and other.
+    |
+    func add (other : DV_DURATION) : DV_DURATION ;
+
+    |
+    | Difference of this Duration and other.
+    |
+    func subtract (other : DV_DURATION) : DV_DURATION ;
+
+    |
+    | Product of this Duration and factor.
+    |
+    func multiply (factor : Real) : DV_DURATION ;
+
+    |
+    | Negated version of current duration.
+    |
+    func negative : DV_DURATION ;
+
+end

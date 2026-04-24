@@ -1,0 +1,29 @@
++---------------------------------------------------------------------------------
+|    description:: EL_WRITABLE_VARIABLE class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Meta-type of writable variables, including routine locals and the special variable
+| 'Result'.
+|
+class EL_WRITABLE_VARIABLE
+    is_a EL_VARIABLE
+
+feature_group ("access")
+
+    |
+    | Variable definition to which this reference refers.
+    |
+    prop definition : BMM_WRITABLE_VARIABLE ;
+
+    |
+    | Defined to return True in all cases.
+    |
+    prop is_writable : Boolean ;
+
+end

@@ -1,0 +1,24 @@
++---------------------------------------------------------------------------------
+|    description:: C_DOMAIN_TYPE class definition
+|    keywords::    openEHR AOM 1.4 model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Abstract parent type of domain-specific constrainer types, to be defined in external
+| packages.
+|
+abstract class C_DOMAIN_TYPE
+    is_a C_DEFINED_OBJECT
+
+feature_group ("access")
+
+    |
+    | Standard (i.e. C_OBJECT) form of constraint.
+    |
+    func standard_equivalent : C_COMPLEX_OBJECT ;
+
+end

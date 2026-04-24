@@ -1,0 +1,29 @@
++---------------------------------------------------------------------------------
+|    description:: EL_CASE_TABLE class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Compound expression consisting of a list of value-range/expression pairs and an
+| else member, representing a case statement flavour of decision table.
+|
+class EL_CASE_TABLE<T: EL_TERMINAL>
+    is_a EL_DECISION_TABLE<T>
+
+feature_group ("access")
+
+    |
+    | Members of the case table, equivalent to cases in a case statement.
+    |
+    prop items : List<EL_CASE<T>> ;
+
+    |
+    | Expression generating the input value for the case table.
+    |
+    prop test_value : EL_VALUE_GENERATOR ;
+
+end

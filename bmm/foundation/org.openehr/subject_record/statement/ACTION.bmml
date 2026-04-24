@@ -1,0 +1,41 @@
++---------------------------------------------------------------------------------
+|    description:: ACTION class definition
+|    keywords::    openEHR Composition model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Used to record a clinical action that has been performed, which may have been ad hoc,
+| or due to the execution of an Activity in an Instruction workflow. Every Action
+| corresponds to a careflow step of some kind or another.
+|
+class ACTION
+    is_a CARE_ENTRY
+
+feature_group ("access")
+
+    |
+    | Point in time at which this action completed.
+    |
+    prop time : DV_DATE_TIME ;
+
+    |
+    | Details of transition in the Instruction state machine caused by this Action.
+    |
+    prop ism_transition : ISM_TRANSITION ;
+
+    |
+    | Details of the Instruction that caused this Action to be performed, if there was one.
+    |
+    prop instruction_details :? INSTRUCTION_DETAILS ;
+
+    |
+    | Description of the action that has been performed, in the form of an archetyped
+    | structure.
+    |
+    prop description : ITEM_STRUCTURE ;
+
+end

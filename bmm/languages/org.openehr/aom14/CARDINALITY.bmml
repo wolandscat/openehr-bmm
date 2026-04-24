@@ -1,0 +1,50 @@
++---------------------------------------------------------------------------------
+|    description:: CARDINALITY class definition
+|    keywords::    openEHR AOM 1.4 model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Expresses constraints on the cardinality of container objects. Cardinality includes
+| ordering and uniqueness information.
+|
+class CARDINALITY
+
+feature_group ("access")
+
+    |
+    | The interval of this cardinality.
+    |
+    prop interval : Interval<Integer> ;
+
+    |
+    | True if the members of the container attribute to which this cardinality refers
+    | are ordered.
+    |
+    prop is_ordered : Boolean ;
+
+    |
+    | True if the members of the container attribute to which this cardinality refers
+    | are unique.
+    |
+    prop is_unique : Boolean ;
+
+    |
+    | True if the semantics of this cardinality represent a bag (unordered, non-unique).
+    |
+    func is_bag : Boolean ;
+
+    |
+    | True if the semantics of this cardinality represent a list (ordered, non-unique).
+    |
+    func is_list : Boolean ;
+
+    |
+    | True if the semantics of this cardinality represent a set (unordered, unique).
+    |
+    func is_set : Boolean ;
+
+end

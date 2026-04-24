@@ -1,0 +1,44 @@
++---------------------------------------------------------------------------------
+|    description:: ITEM_TAG class definition
+|    keywords::    openEHR Common model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+import org.openEHR.base ;
+
+|
+| A tag with optional value associated with a target information entity identified by a UID.
+|
+class ITEM_TAG
+
+feature_group ("access")
+
+    |
+    | The tag key. May not be empty or contain leading or trailing whitespace.
+    |
+    prop key : String ;
+
+    |
+    | The value. If set, may not be empty.
+    |
+    prop value :? String ;
+
+    |
+    | Identifier of target, which may be a VERSIONED_OBJECT<T> or a VERSION<T>.
+    |
+    prop target : UID_BASED_ID ;
+
+    |
+    | Optional archetype (AQL) or RM path within target, used to tag a fine-grained element.
+    |
+    prop target_path :? String ;
+
+    |
+    | Identifier of owner object, such as EHR.
+    |
+    prop owner_id : OBJECT_REF ;
+
+end

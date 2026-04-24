@@ -1,0 +1,24 @@
++---------------------------------------------------------------------------------
+|    description:: BMM_STRING_VALUE class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Meta-type for a literal String value, for which type is fixed to the BMM_TYPE
+| representing String and value is of type String.
+|
+class BMM_STRING_VALUE
+    is_a BMM_PRIMITIVE_VALUE
+
+feature_group ("access")
+
+    |
+    | Native String value.
+    |
+    prop value : String ;
+
+end

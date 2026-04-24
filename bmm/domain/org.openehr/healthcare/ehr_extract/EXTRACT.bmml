@@ -1,0 +1,56 @@
++---------------------------------------------------------------------------------
+|    description:: EXTRACT class definition
+|    keywords::    openEHR EHR Extract model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Generic model of an Extract of some information from a repository.
+|
+class EXTRACT
+    is_a LOCATABLE
+
+feature_group ("access")
+
+    |
+    | The content extracted and serialised from the source repository for this Extract.
+    |
+    prop chapters :? List<EXTRACT_CHAPTER> ;
+
+    |
+    | The specification that this Extract actually conforms to; might not be identical
+    | with the specification of the corresponding request.
+    |
+    prop specification :? EXTRACT_SPEC ;
+
+    |
+    | Reference to causing Request, if any.
+    |
+    prop request_id :? OBJECT_REF ;
+
+    |
+    | Creation time of this Extract.
+    |
+    prop time_created : DV_DATE_TIME ;
+
+    |
+    | Identifier of creating system.
+    |
+    prop system_id : HIER_OBJECT_ID ;
+
+    |
+    | Number of this Extract response in sequence of responses to Extract request
+    | identified by request_id. If this is the sole response, or there was no request,
+    | value is 1.
+    |
+    prop sequence_nr : Integer ;
+
+    |
+    | Participations relevant to the creation of this Extract.
+    |
+    prop participations :? List<EXTRACT_PARTICIPATION> ;
+
+end

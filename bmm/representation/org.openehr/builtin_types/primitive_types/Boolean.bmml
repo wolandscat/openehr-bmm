@@ -1,0 +1,79 @@
++---------------------------------------------------------------------------------
+|    description:: Boolean class definition
+|    keywords::    openEHR Foundation Types model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Type representing minimal interface of built-in Boolean type.
+|
+builtin class Boolean
+    is_a Any
+
+feature_group ("operators")
+
+    |
+    | Logical conjunction of Self with other.
+    |
+    func conjunction (other : Boolean) : Boolean
+        alias
+            "and", "∧" ;
+        ;
+
+    |
+    | Logical semi-strict conjunction of Self with other.
+    |
+    func semistrict_conjunction (other : Boolean) : Boolean
+        alias
+            "and then" ;
+        ;
+
+    |
+    | Logical disjunction of Self with other.
+    |
+    func disjunction (other : Boolean) : Boolean
+        alias
+            "or", "∨" ;
+        ;
+
+    |
+    | Logical semi-strict disjunction of Self with other.
+    |
+    func semistrict_disjunction (other : Boolean) : Boolean
+        alias
+            "or else" ;
+        ;
+
+    |
+    | Logical exclusive or of Self with other.
+    |
+    func exclusive_disjunction (other : Boolean) : Boolean
+        alias
+            "xor", "⊻" ;
+        ;
+
+    |
+    | Boolean implication of other (semi-strict).
+    |
+    func implication (other : Boolean) : Boolean
+        alias
+            "implies", "⇒" ;
+        ;
+
+    |
+    | Boolean negation of the current value.
+    |
+    func negation : Boolean
+        alias
+            "not", "¬" ;
+        ;
+
+invariant
+    involutive_negation: is_equal (¬(¬Self)) ;
+    non_contradiction: ¬(Self ∧ (¬Self)) ;
+    completeness: Self ∨ (¬Self) ;
+
+end

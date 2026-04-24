@@ -1,0 +1,29 @@
++---------------------------------------------------------------------------------
+|    description:: BMM_EXTERNAL_ROUTINE class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| External routine meta-type, containing sufficient meta-data to enable a routine in
+| an external library to be called.
+|
+class BMM_EXTERNAL_ROUTINE
+    is_a BMM_ROUTINE_DEFINITION
+
+feature_group ("access")
+
+    |
+    | External call general meta-data, including target routine name, type mapping etc.
+    |
+    prop meta_data : Hash<String, String> ;
+
+    |
+    | Optional argument-mapping meta-data.
+    |
+    prop argument_mapping :? Hash<String, String> ;
+
+end

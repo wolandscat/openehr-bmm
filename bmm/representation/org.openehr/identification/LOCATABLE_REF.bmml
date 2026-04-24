@@ -1,0 +1,33 @@
++---------------------------------------------------------------------------------
+|    description:: LOCATABLE_REF class definition
+|    keywords::    openEHR Base Types model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Reference to a LOCATABLE instance inside the top-level content structure inside a VERSION<T>.
+|
+class LOCATABLE_REF
+    is_a OBJECT_REF
+
+feature_group ("access")
+
+    |
+    | Optional path from object root to final target.
+    |
+    prop path :? String ;
+
+    |
+    | Globally unique id of the target object (redefined to UID_BASED_ID).
+    |
+    prop id : UID_BASED_ID ;
+
+    |
+    | A URI form of the reference, created by concatenating scheme, id.value, and optional path.
+    |
+    func as_uri : String ;
+
+end

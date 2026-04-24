@@ -1,0 +1,43 @@
++---------------------------------------------------------------------------------
+|    description:: ISM_TRANSITION class definition
+|    keywords::    openEHR Composition model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Model of a transition in the Instruction State Machine, caused by a careflow step.
+| The attributes document the careflow step as well as the ISM transition.
+|
+class ISM_TRANSITION
+    is_a PATHABLE
+
+feature_group ("access")
+
+    |
+    | The ISM current state. Coded by openEHR terminology group Instruction states.
+    |
+    prop current_state : DV_CODED_TEXT ;
+
+    |
+    | The ISM transition which occurred to arrive in the current_state. Coded by
+    | openEHR terminology group Instruction transitions.
+    |
+    prop transition :? DV_CODED_TEXT ;
+
+    |
+    | The step in the careflow process which occurred as part of generating this action,
+    | e.g. dispense, start_administration. Represents the clinical label for the
+    | activity, as opposed to current_state which represents the ISM computable form.
+    |
+    prop careflow_step :? DV_CODED_TEXT ;
+
+    |
+    | Optional possibility of adding one or more reasons for this careflow step having
+    | been taken.
+    |
+    prop reason :? List<DV_TEXT> ;
+
+end

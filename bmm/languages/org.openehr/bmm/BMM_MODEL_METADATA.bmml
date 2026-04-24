@@ -1,0 +1,28 @@
++---------------------------------------------------------------------------------
+|    description:: BMM_MODEL_METADATA class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Core properties of BMM_MODEL, may be used in a serial representation as well, such
+| as P_BMM_SCHEMA.
+|
+class BMM_MODEL_METADATA
+
+feature_group ("access")
+
+    |
+    | Publisher of model expressed in the schema.
+    |
+    prop rm_publisher : String ;
+
+    |
+    | Release of model expressed in the schema as a 3-part numeric, e.g. "3.1.0".
+    |
+    prop rm_release : String ;
+
+end

@@ -1,0 +1,16 @@
++---------------------------------------------------------------------------------
+|    description:: BMM_LOCAL class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| A routine local variable (writable).
+|
+class BMM_LOCAL
+    is_a BMM_WRITABLE_VARIABLE
+
+end

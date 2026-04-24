@@ -1,0 +1,32 @@
++---------------------------------------------------------------------------------
+|    description:: LINK class definition
+|    keywords::    openEHR Common model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Defines a logical relationship between two items, such as two ENTRYs or an ENTRY and a COMPOSITION.
+|
+class LINK
+
+feature_group ("access")
+
+    |
+    | Description of the relationship, usually in clinical terms, such as "problem" or "issue".
+    |
+    prop meaning : DV_TEXT ;
+
+    |
+    | Clinical or domain-level meaning for the kind of link, e.g. problem or issue.
+    |
+    prop type : DV_TEXT ;
+
+    |
+    | The logical 'to' object in the link relation.
+    |
+    prop target : DV_EHR_URI ;
+
+end

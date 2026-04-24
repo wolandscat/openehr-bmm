@@ -1,0 +1,29 @@
++---------------------------------------------------------------------------------
+|    description:: EXPR_LEAF class definition
+|    keywords::    openEHR AOM 1.4 model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Expression leaf items, i.e. an atomic value. There are three kinds: a constant value,
+| an attribute reference, and a function call.
+|
+class EXPR_LEAF
+    is_a EXPR_ITEM
+
+feature_group ("access")
+
+    |
+    | The type of item referred to: "constant", "attribute", "function".
+    |
+    prop reference_type : String ;
+
+    |
+    | The leaf item itself.
+    |
+    prop item : Any ;
+
+end

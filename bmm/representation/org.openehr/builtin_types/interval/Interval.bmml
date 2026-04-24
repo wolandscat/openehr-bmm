@@ -1,0 +1,64 @@
++---------------------------------------------------------------------------------
+|    description:: Interval class definition
+|    keywords::    openEHR Foundation Types model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Interval abstraction, featuring upper and lower limits that may be open or
+| closed, included or not included.
+|
+abstract class Interval<T: Ordered>
+    is_a Any
+
+feature_group ("access")
+
+    |
+    | Lower bound.
+    |
+    prop lower :? T ;
+
+    |
+    | Upper bound.
+    |
+    prop upper :? T ;
+
+    |
+    | True if lower boundary is open (i.e. = -infinity).
+    |
+    prop lower_unbounded : Boolean ;
+
+    |
+    | True if upper boundary is open (i.e. = +infinity).
+    |
+    prop upper_unbounded : Boolean ;
+
+    |
+    | True if lower boundary value is included in range, if not lower_unbounded.
+    |
+    prop lower_included : Boolean ;
+
+    |
+    | True if upper boundary value is included in range, if not upper_unbounded.
+    |
+    prop upper_included : Boolean ;
+
+    |
+    | True if the value is properly contained in this Interval.
+    |
+    func has : Boolean ;
+
+    |
+    | True if there is any overlap between intervals.
+    |
+    func intersects : Boolean ;
+
+    |
+    | True if current interval properly contains other.
+    |
+    func contains : Boolean ;
+
+end

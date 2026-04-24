@@ -1,0 +1,36 @@
++---------------------------------------------------------------------------------
+|    description:: EXTERNAL_QUERY class definition
+|    keywords::    openEHR BEL model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Definition of a variable whose value is derived from a query run on a data context in
+| the operational environment. Typical uses are to obtain patient data like date of birth,
+| sex, weight, or items from a knowledge context such as a drug database.
+|
+class EXTERNAL_QUERY
+    is_a EXPR_VALUE
+
+feature_group ("access")
+
+    |
+    | Optional name of context, allowing basic separation of query types, e.g. "patient",
+    | "medications".
+    |
+    prop context : String ;
+
+    |
+    | Identifier of query in the external context, e.g. "date_of_birth".
+    |
+    prop query_id : String ;
+
+    |
+    | Optional arguments to query.
+    |
+    prop query_args :? List<String> ;
+
+end

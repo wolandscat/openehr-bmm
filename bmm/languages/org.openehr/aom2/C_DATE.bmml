@@ -1,0 +1,57 @@
++---------------------------------------------------------------------------------
+|    description:: C_DATE class definition
+|    keywords::    openEHR AOM2 model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Constraint on instances representing dates, in the form either of a set of validity
+| values, or else date ranges based on the C_ORDERED list constraint. There is no
+| validity flag for year, since it must always be mandatory for a sensible date.
+| Syntax expressions include "YYYY-??-??" (date with optional month and day).
+|
+class C_DATE
+    is_a C_TEMPORAL
+
+feature_group ("access")
+
+    |
+    | Formal constraint on Iso8601_date, in the form of one or more Interval<Iso8601_date>.
+    |
+    prop constraint :? List<Interval<Iso8601_date>> ;
+
+    |
+    | Default value set in a template, and present in an operational template.
+    |
+    prop default_value :? Iso8601_date ;
+
+    |
+    | Value to be assumed if none sent in data.
+    |
+    prop assumed_value :? Iso8601_date ;
+
+    |
+    | Validity of month in constrained date.
+    |
+    func month_validity : VALIDITY_KIND ;
+
+    |
+    | Validity of day in constrained date.
+    |
+    func day_validity : VALIDITY_KIND ;
+
+    |
+    | Return valid_iso8601_date_constraint_pattern (a_pattern).
+    |
+    func valid_pattern_constraint (a_pattern : String) : Boolean ;
+
+    |
+    | Return true if a_pattern can be validly replaced by an_other_pattern in a specialised
+    | constraint, based on valid_date_constraint_replacements.
+    |
+    func valid_pattern_constraint_replacement (a_pattern : String, an_other_pattern : String) : Boolean ;
+
+end

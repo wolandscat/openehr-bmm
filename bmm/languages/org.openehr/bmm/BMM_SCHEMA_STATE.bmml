@@ -1,0 +1,31 @@
++---------------------------------------------------------------------------------
+|    description:: BMM_SCHEMA_STATE enumeration
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Enumeration of processing states of a BMM_SCHEMA used by creation and validation
+| routines in BMM_SCHEMA.
+|
+enumeration BMM_SCHEMA_STATE
+    base_type String
+
+feature_group ("values")
+
+    | Initial state directly after instantiation of schema.
+    State_created ("State_created");
+
+    | Initial validation pass after instantiation.
+    State_validated_created ("State_validated_created");
+
+    | State of schema processing if there are still included schemas to process.
+    State_includes_pending ("State_includes_pending");
+
+    | State when all included schemas have been processed.
+    State_includes_processed ("State_includes_processed");
+
+end

@@ -1,0 +1,71 @@
++---------------------------------------------------------------------------------
+|    description:: BMM_PARAMETER_TYPE class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Definition of a generic parameter in a class definition of a generic type.
+|
+class BMM_PARAMETER_TYPE
+    is_a BMM_UNITARY_TYPE
+
+feature_group ("access")
+
+    |
+    | Name of the parameter, e.g. 'T' etc. The name is limited to 1 character and
+    | upper-case.
+    |
+    prop name : String ;
+
+    |
+    | Optional conformance constraint that must be the name of a defined type.
+    |
+    prop type_constraint :? BMM_EFFECTIVE_TYPE ;
+
+    |
+    | If set, is the corresponding generic parameter definition in an ancestor class.
+    |
+    prop inheritance_precursor :? BMM_PARAMETER_TYPE ;
+
+    |
+    | Result is either conforms_to_type or inheritance_precursor.flattened_conforms_to_type.
+    |
+    func flattened_conforms_to_type : BMM_EFFECTIVE_TYPE ;
+
+    |
+    | Signature form of the open type, including constrainer type if there is one,
+    | e.g. T:Ordered.
+    |
+    func type_signature : String ;
+
+    |
+    | Result = False - generic parameters are understood by definition to be non-primitive.
+    |
+    func is_primitive : Boolean ;
+
+    |
+    | Result = False - generic parameters are understood by definition to be non-abstract.
+    |
+    func is_abstract : Boolean ;
+
+    |
+    | Return name.
+    |
+    func type_name : String ;
+
+    |
+    | Result is either flattened_conforms_to_type.flattened_type_list or the Any type.
+    |
+    func flattened_type_list : List<String> ;
+
+    |
+    | Generate ultimate conformance type, which is either flattened_conforms_to_type
+    | or if not set, 'Any'.
+    |
+    func effective_type : BMM_EFFECTIVE_TYPE ;
+
+end

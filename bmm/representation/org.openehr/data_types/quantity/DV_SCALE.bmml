@@ -1,0 +1,34 @@
++---------------------------------------------------------------------------------
+|    description:: DV_SCALE class definition
+|    keywords::    openEHR Data Types model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| A data type that represents scale values with implied ordering, no implication of constant distance,
+| finite total values, allowing non-integer values.
+|
+class DV_SCALE
+    is_a DV_ORDERED
+
+feature_group ("access")
+
+    |
+    | Coded textual representation of this value in the scale range.
+    |
+    prop symbol : DV_CODED_TEXT ;
+
+    |
+    | Real number value of Scale item.
+    |
+    prop value : Real ;
+
+    |
+    | Test if this Scale value is strictly comparable to other.
+    |
+    func is_strictly_comparable_to (other : DV_SCALE) : Boolean ;
+
+end

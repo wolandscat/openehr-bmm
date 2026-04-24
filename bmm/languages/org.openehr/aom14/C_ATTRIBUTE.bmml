@@ -1,0 +1,38 @@
++---------------------------------------------------------------------------------
+|    description:: C_ATTRIBUTE class definition
+|    keywords::    openEHR AOM 1.4 model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Abstract model of constraint on any kind of attribute node.
+|
+abstract class C_ATTRIBUTE
+    is_a ARCHETYPE_CONSTRAINT
+
+feature_group ("access")
+
+    |
+    | Reference model attribute within the enclosing type represented by a C_OBJECT.
+    |
+    prop rm_attribute_name : String ;
+
+    |
+    | Constraint on whether the attribute target object exists or not.
+    |
+    prop existence : Interval<Integer> ;
+
+    |
+    | Child C_OBJECT nodes, each representing a constraint on the type of this attribute.
+    |
+    prop children :? List<C_OBJECT> ;
+
+    |
+    | True if any value (i.e. instance) of the reference model attribute is allowed.
+    |
+    func any_allowed : Boolean ;
+
+end

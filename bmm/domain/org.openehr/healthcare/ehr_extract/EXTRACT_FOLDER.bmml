@@ -1,0 +1,23 @@
++---------------------------------------------------------------------------------
+|    description:: EXTRACT_FOLDER class definition
+|    keywords::    openEHR EHR Extract model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Folder in local Folder structure in an Extract. Empty Folders are allowed.
+|
+class EXTRACT_FOLDER
+    is_a EXTRACT_ITEM
+
+feature_group ("access")
+
+    |
+    | List of Folders and content items in this Folder.
+    |
+    prop items :? List<EXTRACT_ITEM> ;
+
+end

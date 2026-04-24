@@ -1,0 +1,32 @@
++---------------------------------------------------------------------------------
+|    description:: X_CONTRIBUTION class definition
+|    keywords::    openEHR EHR Extract model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Serialised form of Contribution for an Extract.
+|
+class X_CONTRIBUTION
+
+feature_group ("access")
+
+    |
+    | UID of Contribution in source system.
+    |
+    prop uid : HIER_OBJECT_ID ;
+
+    |
+    | Audit of Contribution in source system.
+    |
+    prop audit : AUDIT_DETAILS ;
+
+    |
+    | Serialised Versions from Contribution in source system.
+    |
+    prop versions :? List<VERSION> ;
+
+end

@@ -1,0 +1,59 @@
++---------------------------------------------------------------------------------
+|    description:: EVENT_CONTEXT class definition
+|    keywords::    openEHR Composition model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Documents the context information of a healthcare event involving the subject of care
+| and the health system. The context information recorded here is independent of the
+| attributes recorded in the version audit, which document the system interaction
+| context, i.e. the context of a user interacting with the health record system.
+|
+class EVENT_CONTEXT
+    is_a PATHABLE
+
+feature_group ("access")
+
+    |
+    | Start time of the clinical session or other kind of event during which a provider
+    | performs a service of any kind for the patient.
+    |
+    prop start_time : DV_DATE_TIME ;
+
+    |
+    | Optional end time of the clinical session.
+    |
+    prop end_time :? DV_DATE_TIME ;
+
+    |
+    | The actual location where the session occurred, e.g. microbiology lab 2, home,
+    | ward A3.
+    |
+    prop location :? String ;
+
+    |
+    | The setting in which the clinical session took place. Coded using the openEHR
+    | Terminology, setting group.
+    |
+    prop setting : DV_CODED_TEXT ;
+
+    |
+    | Other optional context which will be archetyped.
+    |
+    prop other_context :? ITEM_STRUCTURE ;
+
+    |
+    | The health care facility under whose care the event took place.
+    |
+    prop health_care_facility :? PARTY_IDENTIFIED ;
+
+    |
+    | Parties involved in the healthcare event.
+    |
+    prop participations :? List<PARTICIPATION> ;
+
+end

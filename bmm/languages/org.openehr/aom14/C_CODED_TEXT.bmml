@@ -1,0 +1,34 @@
++---------------------------------------------------------------------------------
+|    description:: C_CODED_TEXT class definition
+|    keywords::    openEHR AOM 1.4 model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Constrainer class for Coded text data.
+|
+class C_CODED_TEXT
+    is_a C_DOMAIN_TYPE
+
+feature_group ("access")
+
+    |
+    | Terminology identifier.
+    |
+    prop terminology : String ;
+
+    |
+    | Optional list of codes from the terminology. No list means any code from the
+    | terminology is allowed.
+    |
+    prop code_list :? List<String> ;
+
+    |
+    | Reference to a constraint in external terminology service.
+    |
+    prop reference :? String ;
+
+end

@@ -1,0 +1,17 @@
++---------------------------------------------------------------------------------
+|    description:: EL_TERMINAL class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Expression entities that are terminals (i.e. leaves) within operator expressions
+| or tuples.
+|
+abstract class EL_TERMINAL
+    is_a EL_EXPRESSION
+
+end

@@ -1,0 +1,29 @@
++---------------------------------------------------------------------------------
+|    description:: EL_LITERAL class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Literal value of any type known in the model, including primitive types. Defined
+| via a BMM_LITERAL_VALUE.
+|
+class EL_LITERAL
+    is_a EL_SIMPLE
+
+feature_group ("access")
+
+    |
+    | The literal value from which the value of this node can be computed.
+    |
+    prop value : BMM_LITERAL_VALUE<BMM_TYPE> ;
+
+    |
+    | Return the type of the literal value.
+    |
+    func eval_type : BMM_TYPE ;
+
+end

@@ -1,0 +1,42 @@
++---------------------------------------------------------------------------------
+|    description:: C_DATE class definition
+|    keywords::    openEHR AOM 1.4 model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| ISO 8601-compatible constraint on instances of Date, in the form either of a set of
+| validity values or an actual date range. There is no validity flag for 'year', since
+| it must always be mandatory for a sensible date. Syntax expressions include
+| "YYYY-??-??" (date with optional month and day).
+|
+class C_DATE
+    is_a C_PRIMITIVE
+
+feature_group ("access")
+
+    |
+    | Validity of day in constrained date.
+    |
+    prop day_validity :? VALIDITY_KIND ;
+
+    |
+    | Validity of month in constrained date.
+    |
+    prop month_validity :? VALIDITY_KIND ;
+
+    |
+    | Interval of Dates specifying constraint.
+    |
+    prop range :? Interval<Iso8601_date> ;
+
+    |
+    | The value to assume if this item is not included in data, due to being part of an
+    | optional structure.
+    |
+    prop assumed_value :? Iso8601_date ;
+
+end

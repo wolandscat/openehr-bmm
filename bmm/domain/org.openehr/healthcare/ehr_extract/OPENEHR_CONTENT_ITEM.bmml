@@ -1,0 +1,23 @@
++---------------------------------------------------------------------------------
+|    description:: OPENEHR_CONTENT_ITEM class definition
+|    keywords::    openEHR EHR Extract model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Form of EXTRACT_ITEM containing openEHR serialised VERSIONED_OBJECTs.
+|
+class OPENEHR_CONTENT_ITEM
+    is_a EXTRACT_CONTENT_ITEM
+
+feature_group ("access")
+
+    |
+    | Content object; redefined from EXTRACT_CONTENT_ITEM.item.
+    |
+    prop item :? X_VERSIONED_OBJECT ;
+
+end

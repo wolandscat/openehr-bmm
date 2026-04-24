@@ -1,0 +1,49 @@
++---------------------------------------------------------------------------------
+|    description:: HISTORY class definition
+|    keywords::    openEHR Data Structures model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Root object of a linear history, i.e. time series structure. Generic class whose type parameter
+| must be a descendant of ITEM_STRUCTURE.
+|
+class HISTORY<T: ITEM_STRUCTURE>
+    is_a DATA_STRUCTURE
+
+feature_group ("access")
+
+    |
+    | Time origin of this event history.
+    |
+    prop origin : DV_DATE_TIME ;
+
+    |
+    | Period between samples in this segment if periodic.
+    |
+    prop period :? DV_DURATION ;
+
+    |
+    | Duration of the entire History.
+    |
+    prop duration :? DV_DURATION ;
+
+    |
+    | Optional summary data that aggregates, organizes, reduces and transforms the event series.
+    |
+    prop summary :? ITEM_STRUCTURE ;
+
+    |
+    | The events in the series.
+    |
+    prop events :? List<EVENT<T>> ;
+
+    |
+    | Indicates whether history is periodic.
+    |
+    func is_periodic : Boolean ;
+
+end

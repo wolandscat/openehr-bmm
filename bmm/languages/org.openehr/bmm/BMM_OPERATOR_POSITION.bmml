@@ -1,0 +1,25 @@
++---------------------------------------------------------------------------------
+|    description:: BMM_OPERATOR_POSITION enumeration
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Enumeration of possible position of operator in a syntactic representation for
+| operators associated with 1- and 2- degree functions.
+|
+enumeration BMM_OPERATOR_POSITION
+    base_type String
+
+feature_group ("values")
+
+    | Prefix operator position: operator comes before operand.
+    prefix ("prefix");
+
+    | Infix operator position: operator comes between left and right operands.
+    infix ("infix");
+
+end

@@ -1,0 +1,27 @@
++---------------------------------------------------------------------------------
+|    description:: SECTION class definition
+|    keywords::    openEHR Composition model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Represents a heading in a heading structure, or section tree. Created according to
+| archetyped structures for typical headings such as SOAP, physical examination, but
+| also pathology result heading structures. Should not be used instead of ENTRY
+| hierarchical structures.
+|
+class SECTION
+    is_a CONTENT_ITEM
+
+feature_group ("access")
+
+    |
+    | Ordered list of content items under this section, which may include more SECTIONs
+    | or ENTRYs.
+    |
+    prop items :? List<CONTENT_ITEM> ;
+
+end

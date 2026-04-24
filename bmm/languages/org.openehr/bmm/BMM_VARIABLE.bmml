@@ -1,0 +1,23 @@
++---------------------------------------------------------------------------------
+|    description:: BMM_VARIABLE class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| A routine-scoped formal element.
+|
+abstract class BMM_VARIABLE
+    is_a BMM_FORMAL_ELEMENT
+
+feature_group ("access")
+
+    |
+    | Routine within which variable is defined.
+    |
+    prop scope : BMM_ROUTINE ;
+
+end

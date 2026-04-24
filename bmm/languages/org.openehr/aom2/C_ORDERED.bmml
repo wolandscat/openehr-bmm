@@ -1,0 +1,54 @@
++---------------------------------------------------------------------------------
+|    description:: C_ORDERED class definition
+|    keywords::    openEHR AOM2 model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Abstract parent of primitive constrainer classes based on Ordered base types, i.e. types
+| like Integer, Real, and the Date/Time types. The model constraint is a List of Intervals,
+| which may include point Intervals, and acts as an efficient and formally tractable
+| representation of any number of point values and/or contiguous intervals of an ordered
+| value domain.
+|
+abstract class C_ORDERED<T: Ordered>
+    is_a C_PRIMITIVE_OBJECT
+
+feature_group ("access")
+
+    |
+    | Constraint in the form of a List of Intervals of the parameter type T.
+    |
+    prop constraint :? List<Interval<T>> ;
+
+    |
+    | Default value set in a template, and present in an operational template.
+    |
+    prop default_value :? T ;
+
+    |
+    | Value to be assumed if none sent in data.
+    |
+    prop assumed_value :? T ;
+
+    |
+    | True if any value (i.e. instance) of the reference model type would be allowed.
+    |
+    func any_allowed : Boolean ;
+
+    |
+    | True if other.any_allowed or else for every constraint in the constraint list there is
+    | a constraint in other.constraint that contains it.
+    |
+    func c_value_conforms_to (other : C_ORDERED) : Boolean ;
+
+    |
+    | True if the items in constraint are equal in number and identical pair-wise with those
+    | in other.constraint.
+    |
+    func c_value_congruent_to (other : C_ORDERED) : Boolean ;
+
+end

@@ -1,0 +1,29 @@
++---------------------------------------------------------------------------------
+|    description:: DV_AMOUNT class definition
+|    keywords::    openEHR Data Types model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Abstract class defining the concept of relative quantified 'amounts'. The + and - operators
+| are defined.
+|
+abstract class DV_AMOUNT
+    is_a DV_QUANTIFIED
+
+feature_group ("access")
+
+    |
+    | Accuracy of measurement, expressed either as a half-range percent value or a half-range quantity.
+    |
+    prop accuracy :? Real ;
+
+    |
+    | If True, accuracy was recorded as a percent value; if False, as an absolute quantity.
+    |
+    prop accuracy_is_percent :? Boolean ;
+
+end

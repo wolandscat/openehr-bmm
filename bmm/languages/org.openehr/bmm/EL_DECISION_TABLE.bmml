@@ -1,0 +1,30 @@
++---------------------------------------------------------------------------------
+|    description:: EL_DECISION_TABLE class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Meta-type for decision tables, generic on the meta-type of the result attribute
+| of branches. Allows specialised forms of if/else and case structures.
+|
+abstract class EL_DECISION_TABLE<T: EL_TERMINAL>
+    is_a EL_TERMINAL
+
+feature_group ("access")
+
+    |
+    | Members of the decision table, equivalent to branches in an if/then/else chain
+    | or cases in a case statement.
+    |
+    prop items : List<EL_DECISION_BRANCH<T>> ;
+
+    |
+    | Result expression of the table if no branch condition evaluates to True.
+    |
+    prop else : T ;
+
+end

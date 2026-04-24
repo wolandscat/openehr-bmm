@@ -1,0 +1,47 @@
++---------------------------------------------------------------------------------
+|    description:: VERSION_TREE_ID class definition
+|    keywords::    openEHR Base Types model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Version tree identifier for one version. Lexical form: trunk_version ['.' branch_number '.' branch_version].
+|
+class VERSION_TREE_ID
+
+feature_group ("access")
+
+    |
+    | String form of this identifier.
+    |
+    prop value : String ;
+
+    |
+    | Trunk version number; numbering starts at 1.
+    |
+    func trunk_version : String ;
+
+    |
+    | True if this version identifier represents a branch.
+    |
+    func is_branch : Boolean ;
+
+    |
+    | True if this version identifier corresponds to the first version.
+    |
+    func is_first : Boolean ;
+
+    |
+    | Number of branch from the trunk point; numbering starts at 1.
+    |
+    func branch_number : String ;
+
+    |
+    | Version of the branch; numbering starts at 1.
+    |
+    func branch_version : String ;
+
+end

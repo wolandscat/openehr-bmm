@@ -1,0 +1,124 @@
++---------------------------------------------------------------------------------
+|    description:: ARCHETYPE_TERMINOLOGY class definition
+|    keywords::    openEHR AOM2 model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Local terminology of an archetype. Defines the semantics of the terminology of an archetype.
+|
+class ARCHETYPE_TERMINOLOGY
+
+feature_group ("access")
+
+    |
+    | True if this terminology only contains terms relating to a differential specialisation.
+    |
+    prop is_differential : Boolean ;
+
+    |
+    | Original language of the terminology; must be a code in the ISO 639-1 2 character language code-set.
+    |
+    prop original_language : String ;
+
+    |
+    | Term code defining the meaning of the artefact as a whole, always used as the root node id.
+    |
+    prop concept_code : String ;
+
+    |
+    | Directory of term definitions as a two-level table. Outer keys are language codes,
+    | inner keys are term codes, e.g. "at0017", "id17".
+    |
+    prop term_definitions : Hash<String,Hash<String,ARCHETYPE_TERM>> ;
+
+    |
+    | Directory of bindings to external terminology codes and value sets, as a two-level table.
+    | Outer keys are terminology ids, inner keys are constraint codes or paths.
+    |
+    prop term_bindings :? Hash<String,Hash<String,Uri>> ;
+
+    |
+    | Archetype that owns this terminology.
+    |
+    prop owner_archetype : ARCHETYPE ;
+
+    |
+    | Archetype-local value sets, each keyed by value-set id (an ac-code).
+    |
+    prop value_sets :? Hash<String,VALUE_SET> ;
+
+    |
+    | Directory of extracts of external terminologies, as a two-level table.
+    |
+    prop terminology_extracts :? Hash<String,Hash<String,ARCHETYPE_TERM>> ;
+
+    |
+    | Specialisation depth of this artefact. Unspecialised artefacts have depth 0.
+    |
+    func specialisation_depth : Integer ;
+
+    |
+    | List of all node id codes (at-codes or id-codes) in the terminology.
+    |
+    func node_codes : List<String> ;
+
+    |
+    | List of all value term codes (at-codes) in the terminology.
+    |
+    func value_codes : List<String> ;
+
+    |
+    | List of all value set codes (ac-codes) in the terminology.
+    |
+    func value_set_codes : List<String> ;
+
+    |
+    | True if language a_lang is present in archetype terminology.
+    |
+    func has_language (a_lang : String) : Boolean ;
+
+    |
+    | True if there are bindings to terminology a_terminology_id present.
+    |
+    func has_terminology (a_terminology_id : String) : Boolean ;
+
+    |
+    | True if code a_code is defined in this terminology.
+    |
+    func has_term_code (a_code : String) : Boolean ;
+
+    |
+    | Term definition for a code, in a specified language.
+    |
+    func term_definition (a_lang : String, a_code : String) : ARCHETYPE_TERM ;
+
+    |
+    | Binding of constraint corresponding to a_code in target external terminology.
+    |
+    func term_binding (a_terminology : String, a_code : String) : Uri ;
+
+    |
+    | List of terminologies to which term or constraint bindings exist in this terminology.
+    |
+    func terminologies_available : List<String> ;
+
+    |
+    | Return an ARCHETYPE_TERM from specified terminology extract, for specified term code.
+    |
+    func terminology_extract_term (a_terminology_id : String, a_code : String) : ARCHETYPE_TERM ;
+
+    |
+    | True if there is a provided terminology extract present.
+    |
+    func has_terminology_extract (a_terminology_id : String) : Boolean ;
+
+    |
+    | List of languages in which terms in this terminology are available.
+    |
+    func languages_available : List<String> ;
+
+end

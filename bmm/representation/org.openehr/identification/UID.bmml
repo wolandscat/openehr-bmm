@@ -1,0 +1,23 @@
++---------------------------------------------------------------------------------
+|    description:: UID class definition
+|    keywords::    openEHR Base Types model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Abstract parent of classes representing unique identifiers which identify information entities
+| in a durable way.
+|
+abstract class UID
+
+feature_group ("access")
+
+    |
+    | The value of the id.
+    |
+    prop value : String ;
+
+end

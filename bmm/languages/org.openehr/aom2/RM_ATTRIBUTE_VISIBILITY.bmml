@@ -1,0 +1,27 @@
++---------------------------------------------------------------------------------
+|    description:: RM_ATTRIBUTE_VISIBILITY class definition
+|    keywords::    openEHR AOM2 model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Definition of visibility of an RM attribute within a larger archetype structure.
+|
+class RM_ATTRIBUTE_VISIBILITY
+
+feature_group ("access")
+
+    |
+    | Visibility setting of a non-archetyped RM attribute.
+    |
+    prop visibility :? VISIBILITY_TYPE ;
+
+    |
+    | Optional alias for the attribute referenced by the path.
+    |
+    prop alias :? Terminology_code ;
+
+end

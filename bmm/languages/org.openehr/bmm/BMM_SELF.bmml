@@ -1,0 +1,24 @@
++---------------------------------------------------------------------------------
+|    description:: BMM_SELF class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Meta-type for an automatically created variable referencing the current instance.
+| Typically called 'self' or 'this' in programming languages. Read-only.
+|
+class BMM_SELF
+    is_a BMM_READONLY_VARIABLE
+
+feature_group ("access")
+
+    |
+    | Name of this model element.
+    |
+    prop name : String ;
+
+end

@@ -1,0 +1,39 @@
++---------------------------------------------------------------------------------
+|    description:: ITEM_TREE class definition
+|    keywords::    openEHR Data Structures model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Logical tree data structure. Used for data which is logically a tree such as audiology results,
+| microbiology results.
+|
+class ITEM_TREE
+    is_a ITEM_STRUCTURE
+
+feature_group ("access")
+
+    |
+    | The items comprising the ITEM_TREE.
+    |
+    prop items :? List<ITEM> ;
+
+    |
+    | True if path a_path is a valid leaf path.
+    |
+    func has_element_path (a_path : String) : Boolean ;
+
+    |
+    | Return the leaf element at the path a_path.
+    |
+    func element_at_path (a_path : String) : ELEMENT ;
+
+    |
+    | Generate a CEN EN13606-compatible hierarchy, same as physical representation.
+    |
+    func as_hierarchy : CLUSTER ;
+
+end

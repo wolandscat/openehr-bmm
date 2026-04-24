@@ -1,0 +1,35 @@
++---------------------------------------------------------------------------------
+|    description:: C_PRIMITIVE_TUPLE class definition
+|    keywords::    openEHR AOM2 model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Class representing a single object tuple instance in a tuple constraint. Each such
+| instance is a vector of object constraints, where each member (each C_PRIMITIVE_OBJECT)
+| corresponds to one of the C_ATTRIBUTEs referred to by the owning C_ATTRIBUTE_TUPLE.
+|
+class C_PRIMITIVE_TUPLE
+    is_a C_SECOND_ORDER
+
+feature_group ("access")
+
+    |
+    | Object constraint members of this tuple group.
+    |
+    prop members : List<C_PRIMITIVE_OBJECT> ;
+
+    |
+    | True if constraints represented by this node are narrower or the same as other.
+    |
+    func c_conforms_to (other : C_PRIMITIVE_TUPLE) : Boolean ;
+
+    |
+    | True if constraints represented by this node contain no further redefinitions with respect to other.
+    |
+    func c_congruent_to (other : C_SECOND_ORDER) : Boolean ;
+
+end

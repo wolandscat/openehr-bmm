@@ -1,0 +1,66 @@
++---------------------------------------------------------------------------------
+|    description:: BMM_GENERIC_TYPE class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Meta-type based on a non-container generic class, e.g. Packet<Header>.
+|
+class BMM_GENERIC_TYPE
+    is_a BMM_MODEL_TYPE
+
+feature_group ("access")
+
+    |
+    | Generic parameters of the root_type in this type specifier. The order must match
+    | the order of the owning class's formal generic parameter declarations.
+    |
+    prop generic_parameters : List<BMM_UNITARY_TYPE> ;
+
+    |
+    | Defining generic class of this type.
+    |
+    prop base_class : BMM_GENERIC_CLASS ;
+
+    |
+    | Return the full name of the type including generic parameters, e.g. DV_INTERVAL<T>.
+    |
+    func type_name : String ;
+
+    |
+    | Signature form of the type, which for generics includes generic parameter
+    | constrainer types, e.g. Interval<T:Ordered>.
+    |
+    func type_signature : String ;
+
+    |
+    | True if base_class.is_abstract or if any (non-open) parameter type is abstract.
+    |
+    func is_abstract : Boolean ;
+
+    |
+    | Result is base_class.name followed by names of all generic parameter type names.
+    |
+    func flattened_type_list : List<String> ;
+
+    |
+    | Returns True if there is any substituted generic parameter.
+    |
+    func is_partially_closed : Boolean ;
+
+    |
+    | Effective underlying class for this type, abstracting away any container type.
+    |
+    func effective_base_class : BMM_GENERIC_CLASS ;
+
+    |
+    | True if all generic parameters from ancestor generic types have been substituted
+    | in this type.
+    |
+    func is_open : Boolean ;
+
+end

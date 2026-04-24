@@ -1,0 +1,87 @@
++---------------------------------------------------------------------------------
+|    description:: ARCHETYPE_HRID class definition
+|    keywords::    openEHR AOM2 model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Human-readable structured identifier (HRID) for an archetype or template.
+|
+class ARCHETYPE_HRID
+
+feature_group ("access")
+
+    |
+    | Reverse domain name namespace identifier.
+    |
+    prop namespace :? String ;
+
+    |
+    | Name of the Reference Model publisher.
+    |
+    prop rm_publisher : String ;
+
+    |
+    | Name of the package in whose reachability graph the rm_class is found.
+    |
+    prop rm_package : String ;
+
+    |
+    | Name of the root class of this archetype.
+    |
+    prop rm_class : String ;
+
+    |
+    | The short concept name of the archetype as used in the multi-axial archetype_hrid.
+    |
+    prop concept_id : String ;
+
+    |
+    | The full numeric version of this archetype consisting of 3 parts, e.g. "1.8.2".
+    |
+    prop release_version : String ;
+
+    |
+    | The status of the version: released, release_candidate, alpha, or beta.
+    |
+    prop version_status : VERSION_STATUS ;
+
+    |
+    | The build count since last increment of any version part.
+    |
+    prop build_count : String ;
+
+    |
+    | The 'interface' form of the HRID, i.e. down to the major version.
+    |
+    func semantic_id : String ;
+
+    |
+    | The 'physical' form of the HRID, i.e. with complete version information.
+    |
+    func physical_id : String ;
+
+    |
+    | Full version identifier string, based on release_version, version_status, and build_count.
+    |
+    func version_id : String ;
+
+    |
+    | Major version of this archetype, extracted from release_version.
+    |
+    func major_version : String ;
+
+    |
+    | Minor version of this archetype, extracted from release_version.
+    |
+    func minor_version : String ;
+
+    |
+    | Patch version of this archetype, extracted from release_version.
+    |
+    func patch_version : String ;
+
+end

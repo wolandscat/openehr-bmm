@@ -1,0 +1,16 @@
++---------------------------------------------------------------------------------
+|    description:: TYPE_DEF_TIME class definition
+|    keywords::    openEHR BEL model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Rules meta-type representing the primitive type Time.
+|
+class TYPE_DEF_TIME
+    is_a EXPR_TYPE_DEF
+
+end

@@ -1,0 +1,45 @@
++---------------------------------------------------------------------------------
+|    description:: EL_OPERATOR class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Abstract parent of operator types.
+|
+abstract class EL_OPERATOR
+    is_a EL_EXPRESSION
+
+feature_group ("access")
+
+    |
+    | True if the natural precedence of operators is overridden in the expression
+    | represented by this node of the expression tree.
+    |
+    prop precedence_overridden :? Boolean ;
+
+    |
+    | The symbol actually used in the expression for serialisation.
+    |
+    prop symbol :? String ;
+
+    |
+    | Function call equivalent to this operator expression, inferred by matching
+    | operator against functions defined in the interface of the principal operand.
+    |
+    prop call : EL_FUNCTION_CALL ;
+
+    |
+    | Operator definition derived from the definition's operator_definition.
+    |
+    func operator_definition : BMM_OPERATOR ;
+
+    |
+    | Function call equivalent to this operator.
+    |
+    func equivalent_call : EL_FUNCTION_CALL ;
+
+end

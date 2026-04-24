@@ -1,0 +1,27 @@
++---------------------------------------------------------------------------------
+|    description:: BMM_PARAMETER_DIRECTION enumeration
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Enumeration of parameter read/write direction values.
+|
+enumeration BMM_PARAMETER_DIRECTION
+    base_type String
+
+feature_group ("values")
+
+    | Parameter is an input parameter, and treated as readonly by the receiving routine.
+    in ("in");
+
+    | Parameter is an output parameter, treated as a reference to a writeable entity.
+    out ("out");
+
+    | Parameter is an input and output parameter, treated as a readable and writeable reference.
+    in_out ("in_out");
+
+end

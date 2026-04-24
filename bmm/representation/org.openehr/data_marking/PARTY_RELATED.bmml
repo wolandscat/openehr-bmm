@@ -1,0 +1,23 @@
++---------------------------------------------------------------------------------
+|    description:: PARTY_RELATED class definition
+|    keywords::    openEHR Common model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Proxy type for identifying a party and its relationship to the subject of the record.
+|
+class PARTY_RELATED
+    is_a PARTY_IDENTIFIED
+
+feature_group ("access")
+
+    |
+    | Relationship of subject of this ENTRY to the subject of the record. May be coded.
+    |
+    prop relationship : DV_CODED_TEXT ;
+
+end

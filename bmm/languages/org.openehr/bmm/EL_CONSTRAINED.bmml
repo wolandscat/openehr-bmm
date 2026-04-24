@@ -1,0 +1,23 @@
++---------------------------------------------------------------------------------
+|    description:: EL_CONSTRAINED class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Abstract parent for second-order constrained forms of first-order expression meta-types.
+|
+abstract class EL_CONSTRAINED
+    is_a EL_EXPRESSION
+
+feature_group ("access")
+
+    |
+    | The base expression of this constrained form.
+    |
+    prop base_expression : EL_EXPRESSION ;
+
+end

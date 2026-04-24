@@ -1,0 +1,23 @@
++---------------------------------------------------------------------------------
+|    description:: BMM_ENUMERATION_STRING class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| String-based enumeration meta-type.
+|
+class BMM_ENUMERATION_STRING
+    is_a BMM_ENUMERATION
+
+feature_group ("access")
+
+    |
+    | Optional list of specific values. Must be 1:1 with item_names list.
+    |
+    prop item_values :? List<BMM_STRING_VALUE> ;
+
+end

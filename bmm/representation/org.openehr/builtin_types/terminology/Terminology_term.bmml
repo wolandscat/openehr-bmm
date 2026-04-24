@@ -1,0 +1,29 @@
++---------------------------------------------------------------------------------
+|    description:: Terminology_term class definition
+|    keywords::    openEHR Foundation Types model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Leaf type representing a standalone term from a terminology, consisting of the
+| term text and the code, i.e. a concept reference.
+|
+class Terminology_term
+    is_a Any
+
+feature_group ("access")
+
+    |
+    | Reference to the terminology concept formally representing this term.
+    |
+    prop concept : Terminology_code ;
+
+    |
+    | Text of the term.
+    |
+    prop text : String ;
+
+end

@@ -1,0 +1,35 @@
++---------------------------------------------------------------------------------
+|    description:: ACTIVITY class definition
+|    keywords::    openEHR Composition model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Defines a single activity within an Instruction, such as a medication administration.
+|
+class ACTIVITY
+    is_a LOCATABLE
+
+feature_group ("access")
+
+    |
+    | Description of the activity, in the form of an archetyped structure.
+    |
+    prop description : ITEM_STRUCTURE ;
+
+    |
+    | Timing of the activity, in the form of a parsable string. If used, the preferred
+    | syntax is ISO8601 R format, but other formats may be used including HL7 GTS.
+    |
+    prop timing :? DV_PARSABLE ;
+
+    |
+    | Perl-compliant regular expression pattern indicating the valid identifiers of
+    | archetypes for Actions corresponding to this Activity specification.
+    |
+    prop action_archetype_id : String ;
+
+end

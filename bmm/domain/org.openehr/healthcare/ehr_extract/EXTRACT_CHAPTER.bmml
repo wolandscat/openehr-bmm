@@ -1,0 +1,23 @@
++---------------------------------------------------------------------------------
+|    description:: EXTRACT_CHAPTER class definition
+|    keywords::    openEHR EHR Extract model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| One content chapter of an Extract; contains information relating to only one entity.
+|
+class EXTRACT_CHAPTER
+    is_a LOCATABLE
+
+feature_group ("access")
+
+    |
+    | The information content of this chapter.
+    |
+    prop items :? List<EXTRACT_ITEM> ;
+
+end

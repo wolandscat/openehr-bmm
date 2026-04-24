@@ -1,0 +1,54 @@
++---------------------------------------------------------------------------------
+|    description:: BMM_SCHEMA_DESCRIPTOR class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Descriptor for a BMM schema. Contains a meta-data table of attributes obtained from
+| a mini-ODIN parse of the schema file.
+|
+abstract class BMM_SCHEMA_DESCRIPTOR
+
+feature_group ("access")
+
+    |
+    | Schema id, formed by create_schema_id() from the schema meta-data.
+    |
+    prop schema_id : String ;
+
+    |
+    | Table of {key, value} of schema meta-data, keys are string values defined by
+    | BMM_DEFINITIONS.Metadata_* constants.
+    |
+    prop meta_data : Hash<String, String> ;
+
+    |
+    | Persistent form of model.
+    |
+    prop bmm_schema :? BMM_SCHEMA ;
+
+    |
+    | Computable form of model.
+    |
+    prop bmm_model :? BMM_MODEL ;
+
+    |
+    | Identifiers of schemas included by this schema.
+    |
+    prop includes :? List<String> ;
+
+    |
+    | True if this is a top-level schema, i.e. is the root schema of a 'model'.
+    |
+    func is_top_level : Boolean ;
+
+    |
+    | True if the BMM version found in the schema is compatible with that in this software.
+    |
+    func is_bmm_compatible : Boolean ;
+
+end

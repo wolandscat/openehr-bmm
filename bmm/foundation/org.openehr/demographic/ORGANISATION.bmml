@@ -1,0 +1,18 @@
++---------------------------------------------------------------------------------
+|    description:: ORGANISATION class definition
+|    keywords::    openEHR Demographic model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Generic description of organisations. An organisation is a legally constituted body
+| whose existence (in general) outlives the existence of parties considered to be part
+| of it.
+|
+class ORGANISATION
+    is_a ACTOR
+
+end

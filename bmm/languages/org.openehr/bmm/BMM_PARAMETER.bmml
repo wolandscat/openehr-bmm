@@ -1,0 +1,24 @@
++---------------------------------------------------------------------------------
+|    description:: BMM_PARAMETER class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| A routine parameter variable (read-only).
+|
+class BMM_PARAMETER
+    is_a BMM_READONLY_VARIABLE
+
+feature_group ("access")
+
+    |
+    | Optional read/write direction of the parameter. If none supplied, the parameter
+    | is treated as in, i.e. readable.
+    |
+    prop direction :? BMM_PARAMETER_DIRECTION ;
+
+end

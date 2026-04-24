@@ -1,0 +1,83 @@
++---------------------------------------------------------------------------------
+|    description:: DV_MULTIMEDIA class definition
+|    keywords::    openEHR Data Types model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| A specialisation of DV_ENCAPSULATED for audiovisual and bio-signal types.
+|
+class DV_MULTIMEDIA
+    is_a DV_ENCAPSULATED
+
+feature_group ("access")
+
+    |
+    | Text to display in lieu of multimedia display/replay.
+    |
+    prop alternate_text :? String ;
+
+    |
+    | URI reference to electronic information stored outside the record.
+    |
+    prop uri :? DV_URI ;
+
+    |
+    | The actual data found at uri, if supplied inline.
+    |
+    prop data :? Array<Octet> ;
+
+    |
+    | Data media type coded from openEHR code set media types (IANA MIME types).
+    |
+    prop media_type : CODE_PHRASE «iana.media-types» ;
+
+    |
+    | Compression type, a coded value. Void means no compression.
+    |
+    prop compression_algorithm :? CODE_PHRASE «iana.compression-algorithms» ;
+
+    |
+    | Binary cryptographic integrity checksum.
+    |
+    prop integrity_check :? Array<Octet> ;
+
+    |
+    | Type of integrity check.
+    |
+    prop integrity_check_algorithm :? CODE_PHRASE «iana.integrity-check-algorithms» ;
+
+    |
+    | The thumbnail for this item, if one exists; mainly for graphics formats.
+    |
+    prop thumbnail :? DV_MULTIMEDIA ;
+
+    |
+    | Original size in bytes of unencoded encapsulated data.
+    |
+    prop size : Integer ;
+
+    |
+    | True if data is stored externally to the record, as indicated by uri.
+    |
+    func is_external : Boolean ;
+
+    |
+    | True if data is stored in expanded form within the EHR itself.
+    |
+    func is_inline : Boolean ;
+
+    |
+    | True if data is stored in compressed form.
+    |
+    func is_compressed : Boolean ;
+
+    |
+    | True if an integrity check has been computed.
+    |
+    func has_integrity_check : Boolean ;
+
+end

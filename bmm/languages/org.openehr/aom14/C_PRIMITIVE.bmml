@@ -1,0 +1,37 @@
++---------------------------------------------------------------------------------
+|    description:: C_PRIMITIVE class definition
+|    keywords::    openEHR AOM 1.4 model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Parent of types representing constraints on primitive types.
+|
+abstract class C_PRIMITIVE
+
+feature_group ("access")
+
+    |
+    | Value to be assumed if none sent in data.
+    |
+    prop assumed_value :? Any ;
+
+    |
+    | Generate a default value from this constraint object.
+    |
+    func default_value : Any ;
+
+    |
+    | True if there is an assumed value.
+    |
+    func has_assumed_value : Boolean ;
+
+    |
+    | True if a_value is valid with respect to constraint expressed in this object.
+    |
+    func valid_value (a_value : Any) : Boolean ;
+
+end

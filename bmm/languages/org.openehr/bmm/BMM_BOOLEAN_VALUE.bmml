@@ -1,0 +1,24 @@
++---------------------------------------------------------------------------------
+|    description:: BMM_BOOLEAN_VALUE class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Meta-type for a literal Boolean value, for which type is fixed to the BMM_TYPE
+| representing Boolean and value is of type Boolean.
+|
+class BMM_BOOLEAN_VALUE
+    is_a BMM_PRIMITIVE_VALUE
+
+feature_group ("access")
+
+    |
+    | Native Boolean value.
+    |
+    prop value : Boolean ;
+
+end

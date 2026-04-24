@@ -1,0 +1,25 @@
++---------------------------------------------------------------------------------
+|    description:: ARCHETYPE_INTERNAL_REF class definition
+|    keywords::    openEHR AOM 1.4 model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| A constraint defined by proxy, using a reference to an object constraint defined
+| elsewhere in the same archetype. The local occurrences value should always be used;
+| if not specified during deserialisation, the target occurrences are used.
+|
+class ARCHETYPE_INTERNAL_REF
+    is_a C_REFERENCE_OBJECT
+
+feature_group ("access")
+
+    |
+    | Reference to an object node using archetype path notation.
+    |
+    prop target_path : String ;
+
+end

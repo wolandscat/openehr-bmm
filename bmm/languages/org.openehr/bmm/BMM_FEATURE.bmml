@@ -1,0 +1,39 @@
++---------------------------------------------------------------------------------
+|    description:: BMM_FEATURE class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| A module-scoped formal element.
+|
+abstract class BMM_FEATURE
+    is_a BMM_FORMAL_ELEMENT
+
+feature_group ("access")
+
+    |
+    | True if this feature was synthesised due to generic substitution in an inherited
+    | type, or further constraining of a formal generic parameter.
+    |
+    prop is_synthesised_generic :? Boolean ;
+
+    |
+    | Extensions to feature-level meta-types.
+    |
+    prop feature_extensions :? List<BMM_FEATURE_EXTENSION> ;
+
+    |
+    | Group containing this feature.
+    |
+    prop group : BMM_FEATURE_GROUP ;
+
+    |
+    | Model element within which an element is declared.
+    |
+    prop scope : BMM_CLASS ;
+
+end

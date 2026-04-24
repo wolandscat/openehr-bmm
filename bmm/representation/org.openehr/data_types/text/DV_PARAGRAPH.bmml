@@ -1,0 +1,27 @@
++---------------------------------------------------------------------------------
+|    description:: DV_PARAGRAPH class definition
+|    keywords::    openEHR Data Types model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| DEPRECATED: use markdown formatted DV_TEXT instead.
+|
+| A logical composite text value consisting of a series of DV_TEXTs, i.e. plain
+| text (optionally coded) potentially with simple formatting, to form a larger
+| tract of prose which may be displayed as a paragraph.
+|
+class DV_PARAGRAPH
+    is_a DATA_VALUE
+
+feature_group ("access")
+
+    |
+    | Items making up the paragraph, each of which is a text item.
+    |
+    prop items : List<DV_TEXT> ;
+
+end

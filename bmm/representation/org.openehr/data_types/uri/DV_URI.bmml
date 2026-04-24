@@ -1,0 +1,44 @@
++---------------------------------------------------------------------------------
+|    description:: DV_URI class definition
+|    keywords::    openEHR Data Types model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| A reference to an object which structurally conforms to the Universal Resource Identifier (URI)
+| RFC-3986 standard.
+|
+class DV_URI
+    is_a DATA_VALUE
+
+feature_group ("access")
+
+    |
+    | Value of URI as a String.
+    |
+    prop value : String ;
+
+    |
+    | A distributed information space in which information objects exist.
+    |
+    func scheme : String ;
+
+    |
+    | A string whose format is a function of the scheme. Identifies the location in scheme-space.
+    |
+    func path : String ;
+
+    |
+    | A part of, a fragment or a sub-function within an object.
+    |
+    func fragment_id : String ;
+
+    |
+    | Query string to send to application implied by scheme and path.
+    |
+    func query : String ;
+
+end

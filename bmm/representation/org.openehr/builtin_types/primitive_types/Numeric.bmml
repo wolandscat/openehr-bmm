@@ -1,0 +1,61 @@
++---------------------------------------------------------------------------------
+|    description:: Numeric class definition
+|    keywords::    openEHR Foundation Types model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Abstract parent class of numeric types, which have arithmetic and comparison
+| operators defined.
+|
+abstract builtin class Numeric
+    is_a Any
+
+feature_group ("operators")
+
+    |
+    | Sum with other. Actual type of result depends on arithmetic balancing rules.
+    |
+    func add (other : Numeric) : Numeric
+        alias "+" ;
+        ;
+
+    |
+    | Result of subtracting other. Actual type of result depends on arithmetic balancing rules.
+    |
+    func subtract (other : Numeric) : Numeric
+        alias "-" ;
+        ;
+
+    |
+    | Product by other. Actual type of result depends on arithmetic balancing rules.
+    |
+    func multiply (other : Numeric) : Numeric
+        alias "*" ;
+        ;
+
+    |
+    | Divide by other. Actual type of result depends on arithmetic balancing rules.
+    |
+    func divide (other : Numeric) : Numeric
+        alias "/" ;
+        ;
+
+    |
+    | Exponentiation of current value by other.
+    |
+    func exponent (other : Numeric) : Numeric
+        alias "^" ;
+        ;
+
+    |
+    | Unary negation of current value.
+    |
+    func negative : Numeric
+        alias "-" ;
+        ;
+
+end

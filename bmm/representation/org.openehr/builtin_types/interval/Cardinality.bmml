@@ -1,0 +1,49 @@
++---------------------------------------------------------------------------------
+|    description:: Cardinality class definition
+|    keywords::    openEHR Foundation Types model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Express constraints on the cardinality of container objects which are the
+| values of multiply-valued attributes, including uniqueness and ordering, providing
+| the means to state that a container acts like a logical list, set or bag.
+|
+class Cardinality
+
+feature_group ("access")
+
+    |
+    | The interval of this cardinality.
+    |
+    prop interval : Multiplicity_Interval ;
+
+    |
+    | True if the members of the container attribute are ordered.
+    |
+    prop is_ordered : Boolean ;
+
+    |
+    | True if the members of the container attribute are unique.
+    |
+    prop is_unique : Boolean ;
+
+    |
+    | True if the semantics represent a bag (unordered, non-unique membership).
+    |
+    func is_bag : Boolean ;
+
+    |
+    | True if the semantics represent a list (ordered, non-unique membership).
+    |
+    func is_list : Boolean ;
+
+    |
+    | True if the semantics represent a set (unordered, unique membership).
+    |
+    func is_set : Boolean ;
+
+end

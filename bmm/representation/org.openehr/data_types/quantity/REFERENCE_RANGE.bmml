@@ -1,0 +1,28 @@
++---------------------------------------------------------------------------------
+|    description:: REFERENCE_RANGE class definition
+|    keywords::    openEHR Data Types model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Defines a named range to be associated with any DV_ORDERED datum. May represent normal, therapeutic,
+| dangerous, critical ranges.
+|
+class REFERENCE_RANGE<T>
+
+feature_group ("access")
+
+    |
+    | Term whose value indicates the meaning of this range, e.g. normal, critical, therapeutic.
+    |
+    prop meaning : DV_TEXT ;
+
+    |
+    | The data range for this meaning.
+    |
+    prop range : DV_INTERVAL<T> ;
+
+end

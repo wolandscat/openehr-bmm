@@ -1,0 +1,24 @@
++---------------------------------------------------------------------------------
+|    description:: VERSIONED_COMPOSITION class definition
+|    keywords::    openEHR EHR model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Version-controlled composition abstraction, defined by inheriting
+| VERSIONED_OBJECT<COMPOSITION>.
+|
+class VERSIONED_COMPOSITION
+    is_a VERSIONED_OBJECT<COMPOSITION>
+
+feature_group ("access")
+
+    |
+    | Indicates whether this composition set is persistent; derived from first version.
+    |
+    func is_persistent : Boolean ;
+
+end

@@ -1,0 +1,69 @@
++---------------------------------------------------------------------------------
+|    description:: Iso8601_duration class definition
+|    keywords::    openEHR Foundation Types model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Represents an ISO 8601 duration, which may have multiple parts from years down
+| to seconds. Value format: P[nnY][nnM][nnW][nnD][T[nnH][nnM][nnS]].
+|
+class Iso8601_duration
+    is_a Iso8601_type
+
+feature_group ("access")
+
+    |
+    | Number of years in the value.
+    |
+    func years : Integer ;
+
+    |
+    | Number of months in the value.
+    |
+    func months : Integer ;
+
+    |
+    | Number of weeks in the value.
+    |
+    func weeks : Integer ;
+
+    |
+    | Number of days in the value.
+    |
+    func days : Integer ;
+
+    |
+    | Number of hours in the value.
+    |
+    func hours : Integer ;
+
+    |
+    | Number of minutes in the value.
+    |
+    func minutes : Integer ;
+
+    |
+    | Number of seconds in the value.
+    |
+    func seconds : Integer ;
+
+    |
+    | Fractional seconds in the value.
+    |
+    func fractional_seconds : Real ;
+
+    |
+    | Total number of seconds equivalent of entire duration.
+    |
+    func to_seconds : Real ;
+
+    |
+    | Return the duration string value.
+    |
+    func as_string : String ;
+
+end

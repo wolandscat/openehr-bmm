@@ -1,0 +1,45 @@
++---------------------------------------------------------------------------------
+|    description:: EXTRACT_ENTITY_MANIFEST class definition
+|    keywords::    openEHR EHR Extract model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| The manifest for one entity (e.g. EHR subject), identifying the entity and optionally
+| specifying top-level items to be included in the Extract. The extract_id_key attribute
+| is used to record the identifier used throughout the Extract for this entity.
+|
+class EXTRACT_ENTITY_MANIFEST
+
+feature_group ("access")
+
+    |
+    | Identifier by which this entity is known in the Extract.
+    |
+    prop extract_id_key : String ;
+
+    |
+    | EHR / EMR identifier for the entity at the target system.
+    |
+    prop ehr_id :? HIER_OBJECT_ID ;
+
+    |
+    | Subject (i.e. patient or similar) identifier for the entity at the target system.
+    |
+    prop subject_id :? PARTY_REF ;
+
+    |
+    | Other identifiers that may be used to find the entity at the target system.
+    |
+    prop other_ids :? List<OBJECT_REF> ;
+
+    |
+    | List of UIDs of items to be included in the Extract, in cases where individual
+    | items are being requested by id.
+    |
+    prop item_list :? List<OBJECT_REF> ;
+
+end

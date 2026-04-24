@@ -1,0 +1,54 @@
++---------------------------------------------------------------------------------
+|    description:: ORIGINAL_VERSION class definition
+|    keywords::    openEHR Common model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| A Version containing locally created content and optional attestations.
+|
+class ORIGINAL_VERSION<T>
+    is_a VERSION<T>
+
+feature_group ("access")
+
+    |
+    | Stored version of uid.
+    |
+    prop uid : OBJECT_VERSION_ID ;
+
+    |
+    | Stored version of preceding_version_uid.
+    |
+    prop preceding_version_uid :? OBJECT_VERSION_ID ;
+
+    |
+    | Identifiers of other versions whose content was merged into this version, if any.
+    |
+    prop other_input_version_uids :? List<OBJECT_VERSION_ID> ;
+
+    |
+    | Lifecycle state of the content item; coded by openEHR vocabulary
+    | version lifecycle state.
+    |
+    prop lifecycle_state : DV_CODED_TEXT ;
+
+    |
+    | Set of attestations relating to this version.
+    |
+    prop attestations :? List<ATTESTATION> ;
+
+    |
+    | Data content of this Version.
+    |
+    prop data :? T ;
+
+    |
+    | True if this Version was created from more than just the preceding (checked out) version.
+    |
+    func is_merged : Boolean ;
+
+end

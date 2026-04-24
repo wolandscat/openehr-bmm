@@ -1,0 +1,48 @@
++---------------------------------------------------------------------------------
+|    description:: TRANSLATION_DETAILS class definition
+|    keywords::    openEHR Resource model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Class providing details of a natural language translation of a resource.
+|
+class TRANSLATION_DETAILS
+
+feature_group ("access")
+
+    |
+    | Language of the translation, encoded using ISO 639-1 language codes.
+    |
+    prop language : Terminology_code «iso.iso_639-1» ;
+
+    |
+    | Primary translator name and other demographic details.
+    |
+    prop author : Hash<String, String> ;
+
+    |
+    | Accreditation of primary translator or group, usually a national translator's
+    | registration or association membership id.
+    |
+    prop accreditation :? String ;
+
+    |
+    | Version of this resource last time it was translated into this language.
+    |
+    prop version_last_translated :? String ;
+
+    |
+    | Additional contributors to this translation.
+    |
+    prop other_contributors :? List<String> ;
+
+    |
+    | Any other meta-data about this translation.
+    |
+    prop other_details :? Hash<String, String> ;
+
+end

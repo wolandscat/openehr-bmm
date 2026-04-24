@@ -1,0 +1,28 @@
++---------------------------------------------------------------------------------
+|    description:: VARIABLE_DECLARATION class definition
+|    keywords::    openEHR BEL model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Meta-type for the declaration of a named variable that can be used in an expression.
+|
+class VARIABLE_DECLARATION
+    is_a STATEMENT
+
+feature_group ("access")
+
+    |
+    | Name of the variable.
+    |
+    prop name : String ;
+
+    |
+    | Primitive type of the variable, enabling its use to be type-checked in expressions.
+    |
+    prop type : EXPR_TYPE_DEF ;
+
+end

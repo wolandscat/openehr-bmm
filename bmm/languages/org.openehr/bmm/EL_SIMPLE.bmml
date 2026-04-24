@@ -1,0 +1,16 @@
++---------------------------------------------------------------------------------
+|    description:: EL_SIMPLE class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Simple terminal, i.e. logically atomic expression element.
+|
+abstract class EL_SIMPLE
+    is_a EL_TERMINAL
+
+end

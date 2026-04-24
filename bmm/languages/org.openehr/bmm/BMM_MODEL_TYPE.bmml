@@ -1,0 +1,38 @@
++---------------------------------------------------------------------------------
+|    description:: BMM_MODEL_TYPE class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| A type that is defined by a class (or classes) in the model.
+|
+abstract class BMM_MODEL_TYPE
+    is_a BMM_EFFECTIVE_TYPE
+
+feature_group ("access")
+
+    |
+    | Optional value set constraint on this type.
+    |
+    prop value_constraint :? BMM_VALUE_SET_SPEC ;
+
+    |
+    | Base class of this type.
+    |
+    prop base_class : BMM_CLASS ;
+
+    |
+    | Result = base_class.name.
+    |
+    func type_base_name : String ;
+
+    |
+    | Result = base_class.is_primitive.
+    |
+    func is_primitive : Boolean ;
+
+end

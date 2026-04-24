@@ -1,0 +1,16 @@
++---------------------------------------------------------------------------------
+|    description:: ACCESS_CONTROL_SETTINGS class definition
+|    keywords::    openEHR EHR model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Access Control Settings for the EHR and components. Intended to support multiple
+| access control schemes. Currently implementation dependent.
+|
+abstract class ACCESS_CONTROL_SETTINGS
+
+end

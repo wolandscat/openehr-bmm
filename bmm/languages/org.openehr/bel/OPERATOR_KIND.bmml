@@ -1,0 +1,78 @@
++---------------------------------------------------------------------------------
+|    description:: OPERATOR_KIND enumeration
+|    keywords::    openEHR BEL model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Enumeration representing operators.
+|
+enumeration OPERATOR_KIND
+    base_type String
+
+feature_group ("values")
+
+    | Equality (equals) operator.
+    eq ("eq");
+
+    | Inequality (not-equals) operator.
+    ne ("ne");
+
+    | Less than operator.
+    lt ("lt");
+
+    | Less than or equals operator.
+    le ("le");
+
+    | Greater than operator.
+    gt ("gt");
+
+    | Greater than or equals operator.
+    ge ("ge");
+
+    | Matches operator.
+    matches ("matches");
+
+    | Logical negation (not) operator.
+    not ("not");
+
+    | Logical conjunction (and) operator.
+    and ("and");
+
+    | Logical inclusive disjunction (or) operator.
+    or ("or");
+
+    | Logical exclusive disjunction (exclusive or) operator.
+    xor ("xor");
+
+    | Logical implication (implies) operator.
+    implies ("implies");
+
+    | Universal quantification operator.
+    for_all ("for_all");
+
+    | Existential quantification operator.
+    exists ("exists");
+
+    | Arithmetic addition (plus) operator.
+    plus ("plus");
+
+    | Arithmetic subtraction (minus) operator.
+    minus ("minus");
+
+    | Arithmetic multiplication (times) operator.
+    multiply ("multiply");
+
+    | Arithmetic division (divided-by) operator.
+    divide ("divide");
+
+    | Arithmetic modulo operator.
+    modulo ("modulo");
+
+    | Arithmetic exponent (to the power of) operator.
+    exponent ("exponent");
+
+end

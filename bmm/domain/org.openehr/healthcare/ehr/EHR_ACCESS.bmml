@@ -1,0 +1,31 @@
++---------------------------------------------------------------------------------
+|    description:: EHR_ACCESS class definition
+|    keywords::    openEHR EHR model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| EHR-wide access control object. All access decisions to data in the EHR must be made
+| in accordance with the policies and rules in this object.
+|
+class EHR_ACCESS
+    is_a LOCATABLE
+
+feature_group ("access")
+
+    |
+    | Access control settings for the EHR. Instance is a subtype of
+    | ACCESS_CONTROL_SETTINGS, allowing for the use of different access control schemes.
+    |
+    prop settings :? ACCESS_CONTROL_SETTINGS ;
+
+    |
+    | The name of the access control scheme in use; corresponds to the concrete instance
+    | of the settings attribute.
+    |
+    func scheme : String ;
+
+end

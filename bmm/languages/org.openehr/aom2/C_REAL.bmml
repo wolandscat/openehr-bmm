@@ -1,0 +1,33 @@
++---------------------------------------------------------------------------------
+|    description:: C_REAL class definition
+|    keywords::    openEHR AOM2 model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Constraint on instances of Real.
+|
+class C_REAL
+    is_a C_ORDERED
+
+feature_group ("access")
+
+    |
+    | Formal constraint on Real, in the form of one or more Interval<Real>.
+    |
+    prop constraint :? List<Interval<Real>> ;
+
+    |
+    | Default value set in a template, and present in an operational template.
+    |
+    prop default_value :? Real ;
+
+    |
+    | Value to be assumed if none sent in data.
+    |
+    prop assumed_value :? Real ;
+
+end

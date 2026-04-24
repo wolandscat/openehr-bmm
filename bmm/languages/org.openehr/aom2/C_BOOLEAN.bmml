@@ -1,0 +1,56 @@
++---------------------------------------------------------------------------------
+|    description:: C_BOOLEAN class definition
+|    keywords::    openEHR AOM2 model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Constraint on instances of Boolean. Both attributes cannot be set to False, since this
+| would mean that the Boolean value being constrained cannot be True or False.
+|
+class C_BOOLEAN
+    is_a C_PRIMITIVE_OBJECT
+
+feature_group ("access")
+
+    |
+    | Boolean constraint - a list of Boolean values.
+    |
+    prop constraint :? List<Boolean> ;
+
+    |
+    | Assumed Boolean value.
+    |
+    prop assumed_value :? Boolean ;
+
+    |
+    | Default Boolean value.
+    |
+    prop default_value :? Boolean ;
+
+    |
+    | Prototype Boolean value.
+    |
+    func prototype_value : Boolean ;
+
+    |
+    | True if any value (i.e. instance) of the reference model type would be allowed.
+    |
+    func any_allowed : Boolean ;
+
+    |
+    | True if other.any_allowed or else every constraint in the constraint list exists in
+    | other.constraint.
+    |
+    func c_value_conforms_to (other : C_BOOLEAN) : Boolean ;
+
+    |
+    | True if the items in constraint are equal in number and identical pair-wise with those
+    | in other.constraint.
+    |
+    func c_value_congruent_to (other : C_BOOLEAN) : Boolean ;
+
+end

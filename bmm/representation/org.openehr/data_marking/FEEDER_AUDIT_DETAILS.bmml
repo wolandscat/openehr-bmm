@@ -1,0 +1,55 @@
++---------------------------------------------------------------------------------
+|    description:: FEEDER_AUDIT_DETAILS class definition
+|    keywords::    openEHR Common model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+import org.openEHR.base ;
+
+|
+| Audit details for any system in a feeder system chain. Records who/where/when the information
+| item was created.
+|
+class FEEDER_AUDIT_DETAILS
+
+feature_group ("access")
+
+    |
+    | Identifier of the system which handled the information item.
+    |
+    prop system_id : String ;
+
+    |
+    | Identifier of the particular site/facility within an organisation which handled the item.
+    |
+    prop location :? PARTY_IDENTIFIED ;
+
+    |
+    | Identifiers for subject of the received information item.
+    |
+    prop subject :? PARTY_PROXY ;
+
+    |
+    | Optional provider(s) who created, committed, forwarded or otherwise handled the item.
+    |
+    prop provider :? PARTY_IDENTIFIED ;
+
+    |
+    | Time of handling the item.
+    |
+    prop time :? DV_DATE_TIME ;
+
+    |
+    | Any identifier used in the system such as interim, final, or numeric versions if available.
+    |
+    prop version_id :? String ;
+
+    |
+    | Optional attribute to carry any custom meta-data. May be archetyped.
+    |
+    prop other_details :? ITEM_STRUCTURE ;
+
+end

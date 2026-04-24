@@ -1,0 +1,48 @@
++---------------------------------------------------------------------------------
+|    description:: PATHABLE class definition
+|    keywords::    openEHR Common model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Defines the pathing capabilities used by nearly all classes in the openEHR reference model.
+| PATHABLE objects can locate child objects using paths and know their parent object.
+|
+abstract class PATHABLE
+
+feature_group ("infrastructure")
+
+    |
+    | Parent of this node in a compositional hierarchy.
+    |
+    func parent : PATHABLE ;
+
+    |
+    | The item at a path (relative to this item); only valid for unique paths.
+    |
+    func item_at_path (a_path : String) : Any ;
+
+    |
+    | List of items corresponding to a non-unique path.
+    |
+    func items_at_path (a_path : String) : List<Any> ;
+
+    |
+    | True if the path exists in the data.
+    |
+    func path_exists (a_path : String) : Boolean ;
+
+    |
+    | True if the path corresponds to a single item.
+    |
+    func path_unique (a_path : String) : Boolean ;
+
+    |
+    | The path to an item relative to the root of this archetyped structure.
+    |
+    func path_of_item (a_loc : PATHABLE) : String ;
+
+end

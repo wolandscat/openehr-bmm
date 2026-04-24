@@ -1,0 +1,69 @@
++---------------------------------------------------------------------------------
+|    description:: EHR class definition
+|    keywords::    openEHR EHR model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| The EHR object is the root object and access point of an EHR for a subject of care.
+|
+class EHR
+
+feature_group ("access")
+
+    |
+    | The identifier of the logical EHR management system in which this EHR was created.
+    |
+    prop system_id : HIER_OBJECT_ID ;
+
+    |
+    | The unique identifier of this EHR.
+    |
+    prop ehr_id : HIER_OBJECT_ID ;
+
+    |
+    | List of contributions causing changes to this EHR. Each contribution contains a
+    | list of versions, which may include references to any number of VERSION instances.
+    |
+    prop contributions :? List<OBJECT_REF> ;
+
+    |
+    | Reference to EHR_STATUS object for this EHR.
+    |
+    prop ehr_status : OBJECT_REF ;
+
+    |
+    | Reference to EHR_ACCESS object for this EHR.
+    |
+    prop ehr_access : OBJECT_REF ;
+
+    |
+    | Master list of all Versioned Composition references in this EHR.
+    |
+    prop compositions :? List<OBJECT_REF> ;
+
+    |
+    | Optional directory structure for this EHR. If present, this is a reference to
+    | the first member of folders.
+    |
+    prop directory :? OBJECT_REF ;
+
+    |
+    | Time of creation of the EHR.
+    |
+    prop time_created : DV_DATE_TIME ;
+
+    |
+    | Optional additional Folder structures for this EHR.
+    |
+    prop folders :? List<OBJECT_REF> ;
+
+    |
+    | Optional list of tags associated with this EHR.
+    |
+    prop tags :? List<OBJECT_REF> ;
+
+end

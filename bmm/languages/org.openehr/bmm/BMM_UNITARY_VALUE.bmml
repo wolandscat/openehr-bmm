@@ -1,0 +1,16 @@
++---------------------------------------------------------------------------------
+|    description:: BMM_UNITARY_VALUE class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Meta-type for literals whose concrete type is a unitary type in the BMM sense.
+|
+abstract class BMM_UNITARY_VALUE<T: BMM_UNITARY_TYPE>
+    is_a BMM_LITERAL_VALUE<T>
+
+end

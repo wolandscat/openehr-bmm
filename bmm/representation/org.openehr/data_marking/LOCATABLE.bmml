@@ -1,0 +1,61 @@
++---------------------------------------------------------------------------------
+|    description:: LOCATABLE class definition
+|    keywords::    openEHR Common model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Root class of all information model classes that can be archetyped. Defines the idea of locatability
+| in an archetyped structure.
+|
+abstract class LOCATABLE
+    is_a PATHABLE
+
+feature_group ("infrastructure")
+
+    |
+    | Optional globally unique object identifier for root points of archetyped structures.
+    |
+    prop uid :? UID_BASED_ID ;
+
+    |
+    | Design-time archetype identifier of this node, used to build archetype paths.
+    |
+    prop archetype_node_id : String ;
+
+    |
+    | Details of archetyping used on this node.
+    |
+    prop archetype_details :? ARCHETYPED ;
+
+feature_group ("access")
+
+    |
+    | Runtime name of this fragment, used to build runtime paths.
+    |
+    prop name : DV_TEXT ;
+
+    |
+    | Links to other archetyped structures.
+    |
+    prop links :? List<LINK> ;
+
+    |
+    | Audit trail from non-openEHR system of original commit of information.
+    |
+    prop feeder_audit :? FEEDER_AUDIT ;
+
+    |
+    | Clinical concept of the archetype as a whole, derived from archetype_node_id of root node.
+    |
+    func concept : DV_TEXT ;
+
+    |
+    | True if this node is the root of an archetyped structure.
+    |
+    func is_archetype_root : Boolean ;
+
+end

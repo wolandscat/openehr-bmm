@@ -1,0 +1,27 @@
++---------------------------------------------------------------------------------
+|    description:: EVALUATION class definition
+|    keywords::    openEHR Composition model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Entry type for evaluation statements. Used for all kinds of statements which evaluate
+| other information, such as interpretations of observations, diagnoses, differential
+| diagnoses, hypotheses, risk assessments, goals and plans. Should not be used for
+| actionable statements such as medication orders, which are represented using
+| INSTRUCTION.
+|
+class EVALUATION
+    is_a CARE_ENTRY
+
+feature_group ("access")
+
+    |
+    | The data of this evaluation, in the form of a spatial data structure.
+    |
+    prop data : ITEM_STRUCTURE ;
+
+end

@@ -1,0 +1,32 @@
++---------------------------------------------------------------------------------
+|    description:: BMM_ENUMERATION class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Definition of an enumeration class, understood as a class whose value range is
+| constrained extensionally, i.e. by an explicit enumeration of named singleton
+| instances. Only one inheritance ancestor is allowed in order to provide the base
+| type to which the range constraint is applied.
+|
+class BMM_ENUMERATION
+    is_a BMM_SIMPLE_CLASS
+
+feature_group ("access")
+
+    |
+    | The list of names of the enumeration. If no values are supplied, the integer
+    | values 0, 1, 2, ... are assumed.
+    |
+    prop item_names :? List<String> ;
+
+    |
+    | Optional list of specific values. Must be 1:1 with item_names list.
+    |
+    prop item_values :? List<BMM_PRIMITIVE_VALUE> ;
+
+end

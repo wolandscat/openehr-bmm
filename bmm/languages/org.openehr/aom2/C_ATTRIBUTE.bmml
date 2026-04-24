@@ -1,0 +1,83 @@
++---------------------------------------------------------------------------------
+|    description:: C_ATTRIBUTE class definition
+|    keywords::    openEHR AOM2 model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Abstract model of constraint on any kind of attribute in a class model.
+|
+class C_ATTRIBUTE
+    is_a ARCHETYPE_CONSTRAINT
+
+feature_group ("access")
+
+    |
+    | Reference model attribute within the enclosing type represented by a C_OBJECT.
+    |
+    prop rm_attribute_name : String ;
+
+    |
+    | Constraint on whether the attribute target object exists or not (mandatory or not).
+    |
+    prop existence :? Multiplicity_interval ;
+
+    |
+    | Child C_OBJECT nodes. Each represents a constraint on the type of this attribute.
+    |
+    prop children :? List<C_OBJECT> ;
+
+    |
+    | Path to the parent object of this attribute, used in differential specialised archetypes.
+    |
+    prop differential_path :? String ;
+
+    |
+    | Cardinality constraint of attribute, if a container attribute.
+    |
+    prop cardinality :? Cardinality ;
+
+    |
+    | Flag indicating whether this attribute constraint is on a container (multiply-valued) attribute.
+    |
+    prop is_multiple : Boolean ;
+
+    |
+    | True if there is no effective constraint on the children of this C_ATTRIBUTE.
+    |
+    func any_allowed : Boolean ;
+
+    |
+    | True if this C_ATTRIBUTE has an existence constraint of 1..1.
+    |
+    func is_mandatory : Boolean ;
+
+    |
+    | Path of this attribute with respect to owning C_OBJECT, including differential path.
+    |
+    func rm_attribute_path : String ;
+
+    |
+    | True if this node logically represents a single-valued attribute.
+    |
+    func is_single : Boolean ;
+
+    |
+    | True if constraints represented by this node contain no further redefinitions with respect to other.
+    |
+    func c_congruent_to (other : ARCHETYPE_CONSTRAINT) : Boolean ;
+
+    |
+    | True if constraints represented by this node are narrower or the same as other.
+    |
+    func c_conforms_to (other : ARCHETYPE_CONSTRAINT) : Boolean ;
+
+    |
+    | True if this C_ATTRIBUTE has an existence constraint of 0..0.
+    |
+    func is_prohibited : Boolean ;
+
+end

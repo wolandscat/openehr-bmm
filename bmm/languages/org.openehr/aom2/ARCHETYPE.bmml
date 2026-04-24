@@ -1,0 +1,76 @@
++---------------------------------------------------------------------------------
+|    description:: ARCHETYPE class definition
+|    keywords::    openEHR AOM2 model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Core formal model of the root object of any archetype or template. Defines basic
+| identification and structural connections to definition, terminology, rules etc.
+| Parent class of all concrete types of archetype.
+|
+abstract class ARCHETYPE
+
+feature_group ("access")
+
+    |
+    | Archetype reference of the specialisation parent of this archetype, if applicable.
+    |
+    prop parent_archetype_id :? String ;
+
+    |
+    | Identifier of this archetype.
+    |
+    prop archetype_id : ARCHETYPE_HRID ;
+
+    |
+    | Flag indicating whether this archetype is differential or flat in its contents.
+    |
+    prop is_differential : Boolean ;
+
+    |
+    | Root node of the definition of this archetype.
+    |
+    prop definition : C_COMPLEX_OBJECT ;
+
+    |
+    | The terminology of the archetype.
+    |
+    prop terminology : ARCHETYPE_TERMINOLOGY ;
+
+    |
+    | Rules relating to this archetype. Statements are expressed in first order predicate logic.
+    |
+    prop rules :? List<STATEMENT_SET> ;
+
+    prop rm_overlay :? RM_OVERLAY ;
+
+    |
+    | The concept code of the root object of the archetype, also standing for the concept of the archetype as a whole.
+    |
+    func concept_code : String ;
+
+    |
+    | Set of language-independent paths extracted from archetype. Paths obey Xpath-like syntax.
+    |
+    func physical_paths : List<String> ;
+
+    |
+    | Set of language-dependent paths extracted from archetype. Node ids replaced by meanings from terminology.
+    |
+    func logical_paths (a_lang : String) : List<String> ;
+
+    |
+    | Specialisation depth of this archetype; larger than 0 if this archetype has a parent.
+    |
+    func specialisation_depth : Integer ;
+
+    |
+    | True if this archetype is a specialisation of another.
+    |
+    func is_specialised : Boolean ;
+
+end

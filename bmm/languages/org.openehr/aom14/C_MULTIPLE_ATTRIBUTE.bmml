@@ -1,0 +1,29 @@
++---------------------------------------------------------------------------------
+|    description:: C_MULTIPLE_ATTRIBUTE class definition
+|    keywords::    openEHR AOM 1.4 model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Concrete model of constraint on a multiply-valued (i.e. container) attribute node.
+|
+class C_MULTIPLE_ATTRIBUTE
+    is_a C_ATTRIBUTE
+
+feature_group ("access")
+
+    |
+    | Cardinality of this attribute constraint, if it constrains a container attribute.
+    |
+    prop cardinality : CARDINALITY ;
+
+    |
+    | List of constraints representing members of the container value of this attribute
+    | within the data.
+    |
+    func members : List<C_OBJECT> ;
+
+end

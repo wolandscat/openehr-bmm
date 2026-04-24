@@ -1,0 +1,29 @@
++---------------------------------------------------------------------------------
+|    description:: BMM_EFFECTIVE_TYPE class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Meta-type for a concrete, unitary type that can be used as an actual parameter type
+| in a generic type declaration.
+|
+abstract class BMM_EFFECTIVE_TYPE
+    is_a BMM_UNITARY_TYPE
+
+feature_group ("access")
+
+    |
+    | Result = self.
+    |
+    func effective_type : BMM_EFFECTIVE_TYPE ;
+
+    |
+    | Name of base generator type, i.e. excluding any generic parts if present.
+    |
+    func type_base_name : String ;
+
+end

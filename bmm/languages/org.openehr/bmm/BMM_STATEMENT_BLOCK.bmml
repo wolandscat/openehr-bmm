@@ -1,0 +1,24 @@
++---------------------------------------------------------------------------------
+|    description:: BMM_STATEMENT_BLOCK class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| A statement block corresponding to the programming language concept of the same
+| name. May be used to establish scope in specific languages.
+|
+class BMM_STATEMENT_BLOCK
+    is_a BMM_STATEMENT_ITEM
+
+feature_group ("access")
+
+    |
+    | Child statement items of the current block.
+    |
+    prop items :? List<BMM_STATEMENT_ITEM> ;
+
+end

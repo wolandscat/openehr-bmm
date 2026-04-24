@@ -1,0 +1,22 @@
++---------------------------------------------------------------------------------
+|    description:: EL_AGENT_CALL class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| A call made to a 'closed' agent, i.e. one with no remaining open arguments.
+|
+abstract class EL_AGENT_CALL
+
+feature_group ("access")
+
+    |
+    | The agent being called.
+    |
+    prop agent : EL_AGENT ;
+
+end

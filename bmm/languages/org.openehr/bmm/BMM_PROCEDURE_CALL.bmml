@@ -1,0 +1,25 @@
++---------------------------------------------------------------------------------
+|    description:: BMM_PROCEDURE_CALL class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| A call made on a closed procedure agent. The method in BMM via which external
+| actions are achieved from within a program.
+|
+class BMM_PROCEDURE_CALL
+    is_a EL_AGENT_CALL
+    is_a BMM_SIMPLE_STATEMENT
+
+feature_group ("access")
+
+    |
+    | The procedure agent being called.
+    |
+    prop agent : EL_PROCEDURE_AGENT ;
+
+end

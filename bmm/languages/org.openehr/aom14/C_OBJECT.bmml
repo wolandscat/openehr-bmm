@@ -1,0 +1,33 @@
++---------------------------------------------------------------------------------
+|    description:: C_OBJECT class definition
+|    keywords::    openEHR AOM 1.4 model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Abstract model of constraint on any kind of object node.
+|
+abstract class C_OBJECT
+    is_a ARCHETYPE_CONSTRAINT
+
+feature_group ("access")
+
+    |
+    | Reference model type that this node corresponds to.
+    |
+    prop rm_type_name : String ;
+
+    |
+    | Occurrences of this object node in the data, under the owning attribute.
+    |
+    prop occurrences : Interval<Integer> ;
+
+    |
+    | Semantic identifier of this node, used to distinguish sibling nodes.
+    |
+    prop node_id : String ;
+
+end

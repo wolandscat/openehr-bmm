@@ -1,0 +1,49 @@
++---------------------------------------------------------------------------------
+|    description:: DV_TEXT class definition
+|    keywords::    openEHR Data Types model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| A text item which may contain any amount of legal characters. Visual formatting and hyperlinks
+| may be included via markdown.
+|
+class DV_TEXT
+    is_a DATA_VALUE
+
+feature_group ("access")
+
+    |
+    | Displayable rendition of the item.
+    |
+    prop value : String ;
+
+    |
+    | DEPRECATED: use markdown link in value attribute.
+    |
+    prop hyperlink :? DV_URI ;
+
+    |
+    | If set, contains plain, plain_no_newlines, or markdown.
+    |
+    prop formatting :? String ;
+
+    |
+    | Terms from other terminologies most closely matching this term.
+    |
+    prop mappings :? List<TERM_MAPPING> ;
+
+    |
+    | Optional indicator of the localised language.
+    |
+    prop language :? CODE_PHRASE ;
+
+    |
+    | Name of character encoding scheme.
+    |
+    prop encoding :? CODE_PHRASE ;
+
+end

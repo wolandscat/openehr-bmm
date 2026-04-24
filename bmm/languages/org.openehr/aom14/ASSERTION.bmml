@@ -1,0 +1,39 @@
++---------------------------------------------------------------------------------
+|    description:: ASSERTION class definition
+|    keywords::    openEHR AOM 1.4 model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Structural model of a typed first order predicate logic assertion, in the form of an
+| expression tree, including optional variable definitions.
+|
+class ASSERTION
+
+feature_group ("access")
+
+    |
+    | Expression tag, used for differentiating multiple assertions.
+    |
+    prop tag :? String ;
+
+    |
+    | String form of expression, in case an expression evaluator taking String expressions
+    | is used for evaluation.
+    |
+    prop string_expression :? String ;
+
+    |
+    | Root of expression tree.
+    |
+    prop expression : EXPR_ITEM ;
+
+    |
+    | Definitions of variables used in the assertion expression.
+    |
+    prop variables :? List<ASSERTION_VARIABLE> ;
+
+end

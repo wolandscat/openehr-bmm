@@ -1,0 +1,24 @@
++---------------------------------------------------------------------------------
+|    description:: DV_CODED_TEXT class definition
+|    keywords::    openEHR Data Types model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| A text item whose value must be the rubric from a controlled terminology, the key of which is
+| the defining_code attribute.
+|
+class DV_CODED_TEXT
+    is_a DV_TEXT
+
+feature_group ("access")
+
+    |
+    | The term of which the value attribute is the textual rendition (rubric).
+    |
+    prop defining_code : CODE_PHRASE ;
+
+end

@@ -1,0 +1,24 @@
++---------------------------------------------------------------------------------
+|    description:: C_ARCHETYPE_ROOT class definition
+|    keywords::    openEHR AOM2 model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| A specialisation of C_COMPLEX_OBJECT whose node_id attribute is an archetype identifier
+| rather than the normal internal node code. Used for external references and slot-fillers.
+|
+class C_ARCHETYPE_ROOT
+    is_a C_COMPLEX_OBJECT
+
+feature_group ("access")
+
+    |
+    | Reference to archetype being used to fill a slot or redefine an external reference.
+    |
+    prop archetype_ref : String ;
+
+end

@@ -1,0 +1,28 @@
++---------------------------------------------------------------------------------
+|    description:: TERMINOLOGY_RELATION class definition
+|    keywords::    openEHR AOM2 model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Class whose instances represent any kind of 1:N relationship between a source term and
+| 1-N target terms.
+|
+abstract class TERMINOLOGY_RELATION
+
+feature_group ("access")
+
+    |
+    | Code of source term of this relation.
+    |
+    prop id : String ;
+
+    |
+    | List of target terms in this relation.
+    |
+    prop members : List<String> ;
+
+end

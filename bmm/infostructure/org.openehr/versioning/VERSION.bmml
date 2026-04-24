@@ -1,0 +1,70 @@
++---------------------------------------------------------------------------------
+|    description:: VERSION class definition
+|    keywords::    openEHR Common model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Abstract model of one Version within a Version container, containing data,
+| commit audit trail, and the identifier of its Contribution.
+|
+abstract class VERSION<T>
+
+feature_group ("access")
+
+    |
+    | Contribution in which this version was added.
+    |
+    prop contribution : OBJECT_REF ;
+
+    |
+    | OpenPGP digital signature or digest of content committed in this Version.
+    |
+    prop signature :? String ;
+
+    |
+    | Audit trail corresponding to the committal of this version to the VERSIONED_OBJECT.
+    |
+    prop commit_audit : AUDIT_DETAILS ;
+
+    |
+    | Unique identifier of this VERSION as a {object_id, version_tree_id, creating_system_id} triple.
+    |
+    func uid : OBJECT_VERSION_ID ;
+
+    |
+    | Unique identifier of the version of which this version is a modification;
+    | Void if this is the first version.
+    |
+    func preceding_version_uid : OBJECT_VERSION_ID ;
+
+    |
+    | The data of this Version.
+    |
+    func data : T ;
+
+    |
+    | Lifecycle state of this version; coded by openEHR vocabulary version lifecycle state.
+    |
+    func lifecycle_state : DV_CODED_TEXT ;
+
+    |
+    | A canonical serial form of this Version, suitable for generating reliable hashes
+    | and signatures.
+    |
+    func canonical_form : String ;
+
+    |
+    | Copy of the owning VERSIONED_OBJECT uid value; extracted from the local uid property.
+    |
+    func owner_id : HIER_OBJECT_ID ;
+
+    |
+    | True if this Version represents a branch. Derived from uid attribute.
+    |
+    func is_branch : Boolean ;
+
+end

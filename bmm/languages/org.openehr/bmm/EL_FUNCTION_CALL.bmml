@@ -1,0 +1,41 @@
++---------------------------------------------------------------------------------
+|    description:: EL_FUNCTION_CALL class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| A call made on a closed function agent, returning a result. Equivalent to an
+| 'application' of a function in lambda calculus.
+|
+class EL_FUNCTION_CALL
+    is_a EL_FEATURE_REF
+    is_a EL_AGENT_CALL
+
+feature_group ("access")
+
+    |
+    | The function agent being called.
+    |
+    prop agent : EL_FUNCTION_AGENT ;
+
+    |
+    | Defined to return False.
+    |
+    prop is_writable : Boolean ;
+
+    |
+    | Return the agent's definition type.
+    |
+    func eval_type : BMM_TYPE ;
+
+    |
+    | Generated full reference name, consisting of any scoping elements, function name
+    | and routine parameters enclosed in parentheses.
+    |
+    func reference : String ;
+
+end

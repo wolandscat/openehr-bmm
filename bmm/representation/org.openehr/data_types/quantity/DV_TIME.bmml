@@ -1,0 +1,44 @@
++---------------------------------------------------------------------------------
+|    description:: DV_TIME class definition
+|    keywords::    openEHR Data Types model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Represents an absolute point in time from an origin usually interpreted as start of the current
+| day, specified to a fraction of a second. ISO 8601 semantics.
+|
+class DV_TIME
+    is_a DV_TEMPORAL
+
+feature_group ("access")
+
+    |
+    | ISO8601 time string.
+    |
+    prop value : String ;
+
+    |
+    | Numeric value of the time as seconds since start of day (00:00:00).
+    |
+    func magnitude : Real ;
+
+    |
+    | Addition of a Duration to this Time.
+    |
+    func add (a_diff : DV_DURATION) : DV_TIME ;
+
+    |
+    | Subtract a Duration from this Time.
+    |
+    func subtract (a_diff : DV_DURATION) : DV_TIME ;
+
+    |
+    | Difference between this Time and other.
+    |
+    func diff (other : DV_TIME) : DV_DURATION ;
+
+end

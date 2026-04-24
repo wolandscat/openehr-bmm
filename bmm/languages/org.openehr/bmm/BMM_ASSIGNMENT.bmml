@@ -1,0 +1,29 @@
++---------------------------------------------------------------------------------
+|    description:: BMM_ASSIGNMENT class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Statement type representing an assignment from a value-generating source to a
+| writable entity (a variable reference or property).
+|
+class BMM_ASSIGNMENT
+    is_a BMM_SIMPLE_STATEMENT
+
+feature_group ("access")
+
+    |
+    | The target variable on the left-hand side of this assignment.
+    |
+    prop target : EL_VALUE_GENERATOR ;
+
+    |
+    | Source (right-hand side) of the assignment.
+    |
+    prop source : EL_EXPRESSION ;
+
+end

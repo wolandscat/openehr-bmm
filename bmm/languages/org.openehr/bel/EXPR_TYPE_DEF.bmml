@@ -1,0 +1,29 @@
++---------------------------------------------------------------------------------
+|    description:: EXPR_TYPE_DEF class definition
+|    keywords::    openEHR BEL model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Ancestor class for type definitions known in the openEHR Expression formalism.
+|
+abstract class EXPR_TYPE_DEF
+
+feature_group ("access")
+
+    |
+    | Natural language type name of this type as used in abstract rules syntax variable
+    | declarations.
+    |
+    prop type_name : String ;
+
+    |
+    | Attribute of the openEHR primitive type (or Any) corresponding to this type
+    | definition meta-type.
+    |
+    prop type_anchor : Any ;
+
+end

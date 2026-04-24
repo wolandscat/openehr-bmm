@@ -1,0 +1,63 @@
++---------------------------------------------------------------------------------
+|    description:: EXTRACT_SPEC class definition
+|    keywords::    openEHR EHR Extract model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Specification of an Extract's contents. The specification consists of attributes
+| specifying the directory, a version specification (which versions of information items
+| are to be included) and a manifest (which entities are to be included in the extract).
+|
+class EXTRACT_SPEC
+
+feature_group ("access")
+
+    |
+    | Specification of which versions of information items to include in the Extract.
+    | If Void, the default is latest versions only.
+    |
+    prop version_spec :? EXTRACT_VERSION_SPEC ;
+
+    |
+    | Specification of entities (e.g. records) to include in the Extract.
+    |
+    prop manifest : EXTRACT_MANIFEST ;
+
+    |
+    | Coded term indicating the type of content required, e.g. openehr-ehr,
+    | openehr-demographic, generic-emr.
+    |
+    prop extract_type : DV_CODED_TEXT ;
+
+    |
+    | Indicates whether in-line instances of DV_MULTIMEDIA in the source data are
+    | included or not.
+    |
+    prop include_multimedia : Boolean ;
+
+    |
+    | Requested priority of this request to be handled by server.
+    |
+    prop priority : Integer ;
+
+    |
+    | Degree of links to follow emanating from content items specified for inclusion.
+    | 0 = don't follow; 1 = follow first degree links; n = follow nth degree links.
+    |
+    prop link_depth : Integer ;
+
+    |
+    | Queries specifying the contents of this Extract.
+    |
+    prop criteria :? List<DV_CODED_TEXT> ;
+
+    |
+    | Other specification items. Archetypable.
+    |
+    prop other_details :? ITEM_STRUCTURE ;
+
+end

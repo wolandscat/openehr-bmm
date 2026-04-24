@@ -1,0 +1,57 @@
++---------------------------------------------------------------------------------
+|    description:: AUTHORED_RESOURCE class definition
+|    keywords::    openEHR Resource model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Abstract idea of an online resource created by a human author.
+|
+abstract class AUTHORED_RESOURCE
+
+feature_group ("access")
+
+    |
+    | Unique identifier of the family of archetypes having the same interface identifier
+    | (same major version).
+    |
+    prop uid :? UUID ;
+
+    |
+    | Language in which this resource was initially authored. Required to ensure natural
+    | language translations can preserve quality.
+    |
+    prop original_language : Terminology_code «iso.iso_639-1» ;
+
+    |
+    | True if this resource is under any kind of change control, in which case revision
+    | history is created.
+    |
+    prop is_controlled :? Boolean ;
+
+    |
+    | Description and lifecycle information of the resource.
+    |
+    prop description :? RESOURCE_DESCRIPTION ;
+
+    |
+    | Annotations on individual items within the resource, keyed by path.
+    |
+    prop annotations :? RESOURCE_ANNOTATIONS ;
+
+    |
+    | List of details for each natural language translation made of this resource,
+    | keyed by language code.
+    |
+    prop translations :? Hash<String, TRANSLATION_DETAILS> ;
+
+    |
+    | Total list of languages available in this resource, derived from original_language
+    | and translations.
+    |
+    func languages_available : List<String> ;
+
+end

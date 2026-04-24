@@ -1,0 +1,46 @@
++---------------------------------------------------------------------------------
+|    description:: BMM_PROPERTY class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Meta-type of a writable property definition within a class definition of an object
+| model. The is_composition attribute indicates whether the property has sub-part or an
+| association semantics with respect to the owning class.
+|
+abstract class BMM_PROPERTY
+    is_a BMM_INSTANTIABLE_FEATURE
+
+feature_group ("access")
+
+    |
+    | True if this property is marked with info model im_runtime property.
+    |
+    prop is_im_runtime :? Boolean ;
+
+    |
+    | True if this property was marked with info model im_infrastructure flag.
+    |
+    prop is_im_infrastructure :? Boolean ;
+
+    |
+    | True if this property instance is a compositional sub-part of the owning class
+    | instance. Equivalent to 'composition' in UML associations.
+    |
+    prop is_composition :? Boolean ;
+
+    |
+    | Interval form of 0..1, 1..1 etc, derived from is_nullable.
+    |
+    func existence : Multiplicity_interval ;
+
+    |
+    | Name of this property to display in UI.
+    |
+    func display_name : String ;
+
+end

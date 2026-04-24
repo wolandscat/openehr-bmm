@@ -1,0 +1,33 @@
++---------------------------------------------------------------------------------
+|    description:: ARCHETYPED class definition
+|    keywords::    openEHR Common model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Archetypes act as the configuration basis for structures of instances defined by the reference model.
+| An ARCHETYPED instance identifies the archetype used to create a node.
+|
+class ARCHETYPED
+
+feature_group ("infrastructure")
+
+    |
+    | Globally unique archetype identifier.
+    |
+    prop archetype_id : ARCHETYPE_ID ;
+
+    |
+    | Globally unique template identifier, if a template was active at this point.
+    |
+    prop template_id :? TEMPLATE_ID ;
+
+    |
+    | Version of the openEHR reference model used to create this object.
+    |
+    prop rm_version : String ;
+
+end

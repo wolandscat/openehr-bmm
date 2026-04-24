@@ -1,0 +1,18 @@
++---------------------------------------------------------------------------------
+|    description:: Ordered_Numeric class definition
+|    keywords::    openEHR Foundation Types model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Abstract notional parent class of ordered, numeric types — types with both the
+| less_than() and arithmetic functions defined.
+|
+abstract builtin class Ordered_Numeric
+    is_a Ordered
+    is_a Numeric
+
+end

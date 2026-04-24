@@ -1,0 +1,43 @@
++---------------------------------------------------------------------------------
+|    description:: BMM_SIMPLE_TYPE class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Type reference to a single type i.e. not generic or container type.
+|
+class BMM_SIMPLE_TYPE
+    is_a BMM_MODEL_TYPE
+
+feature_group ("access")
+
+    |
+    | Defining class of this type.
+    |
+    prop base_class : BMM_SIMPLE_CLASS ;
+
+    |
+    | Result is base_class.name.
+    |
+    func type_name : String ;
+
+    |
+    | Result is base_class.is_abstract.
+    |
+    func is_abstract : Boolean ;
+
+    |
+    | Result is base_class.name.
+    |
+    func flattened_type_list : List<String> ;
+
+    |
+    | Main design class for this type, from which properties etc can be extracted.
+    |
+    func effective_base_class : BMM_SIMPLE_CLASS ;
+
+end

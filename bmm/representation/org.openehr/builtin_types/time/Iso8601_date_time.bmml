@@ -1,0 +1,64 @@
++---------------------------------------------------------------------------------
+|    description:: Iso8601_date_time class definition
+|    keywords::    openEHR Foundation Types model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Represents an ISO 8601 date/time, including partial and extended forms. Value may
+| be YYYY-MM-DDThh:mm:ss (extended, preferred) or compact, or partial variants.
+|
+class Iso8601_date_time
+    is_a Iso8601_type
+
+feature_group ("access")
+
+    |
+    | Extract the year part of the date/time as an Integer.
+    |
+    func year : Integer ;
+
+    |
+    | Extract the month part of the date/time as an Integer, or return 0 if not present.
+    |
+    func month : Integer ;
+
+    |
+    | Extract the day part of the date/time as an Integer, or return 0 if not present.
+    |
+    func day : Integer ;
+
+    |
+    | Extract the hour part of the date/time as an Integer, or return 0 if not present.
+    |
+    func hour : Integer ;
+
+    |
+    | Extract the minute part of the date/time as an Integer, or return 0 if not present.
+    |
+    func minute : Integer ;
+
+    |
+    | Extract the integral seconds part of the date/time as an Integer, or return 0.
+    |
+    func second : Integer ;
+
+    |
+    | Extract the fractional seconds part of the date/time as a Real.
+    |
+    func fractional_second : Real ;
+
+    |
+    | Timezone; may be Void.
+    |
+    func timezone : Iso8601_timezone ;
+
+    |
+    | Return string value in extended format.
+    |
+    func as_string : String ;
+
+end

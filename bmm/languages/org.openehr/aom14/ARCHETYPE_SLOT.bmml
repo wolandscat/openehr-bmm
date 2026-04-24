@@ -1,0 +1,28 @@
++---------------------------------------------------------------------------------
+|    description:: ARCHETYPE_SLOT class definition
+|    keywords::    openEHR AOM 1.4 model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Constraint describing a 'slot' where another archetype can occur.
+|
+class ARCHETYPE_SLOT
+    is_a C_REFERENCE_OBJECT
+
+feature_group ("access")
+
+    |
+    | List of constraints defining other archetypes that could be included at this point.
+    |
+    prop includes :? List<ASSERTION> ;
+
+    |
+    | List of constraints defining other archetypes that cannot be included at this point.
+    |
+    prop excludes :? List<ASSERTION> ;
+
+end

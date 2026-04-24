@@ -1,0 +1,39 @@
++---------------------------------------------------------------------------------
+|    description:: OPERATIONAL_TEMPLATE class definition
+|    keywords::    openEHR AOM2 model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Root object of an operational template. An operational template is derived from a
+| TEMPLATE definition and the ARCHETYPEs and/or TEMPLATE_OVERLAYs mentioned by that
+| template by a process of flattening, and potentially removal of unneeded languages and
+| terminologies. Used for generating and validating RM-canonical instance data and as a
+| source artefact for generating XML schemas, APIs and UI form definitions.
+|
+class OPERATIONAL_TEMPLATE
+    is_a AUTHORED_ARCHETYPE
+
+feature_group ("access")
+
+    |
+    | Compendium of flattened terminologies of archetypes referenced from this template,
+    | keyed by archetype identifier.
+    |
+    prop component_terminologies :? Hash<String,ARCHETYPE_TERMINOLOGY> ;
+
+    |
+    | Compendium of flattened terminology extracts from archetypes referenced from this
+    | template, keyed by archetype identifier.
+    |
+    prop terminology_extracts :? Hash<String,ARCHETYPE_TERMINOLOGY> ;
+
+    |
+    | Return the component terminology for the archetype with identifier an_id.
+    |
+    func component_terminology (an_id : String) : ARCHETYPE_TERMINOLOGY ;
+
+end

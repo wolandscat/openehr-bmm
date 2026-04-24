@@ -1,0 +1,55 @@
++---------------------------------------------------------------------------------
+|    description:: String class definition
+|    keywords::    openEHR Foundation Types model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Type representing minimal interface of built-in String type, used to represent
+| textual data in any natural or formal language.
+|
+builtin class String
+    is_a Ordered
+
+feature_group ("access")
+
+    |
+    | True if string is empty, i.e. equal to "".
+    |
+    func is_empty : Boolean ;
+
+    |
+    | True if string can be parsed as an integer.
+    |
+    func is_integer : Boolean ;
+
+    |
+    | The integer corresponding to the integer value represented in this string.
+    |
+    func as_integer : Integer ;
+
+    |
+    | True if this String contains other (case-sensitive).
+    |
+    func contains (other : String) : Boolean ;
+
+feature_group ("operators")
+
+    |
+    | Concatenation — result of appending other to this string.
+    |
+    func append (other : String) : String
+        alias "+" ;
+        ;
+
+    |
+    | Lexical comparison based on ordering in the relevant character set.
+    |
+    func less_than (other : String) : Boolean
+        alias "<" ;
+        ;
+
+end

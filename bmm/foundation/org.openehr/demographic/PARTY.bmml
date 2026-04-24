@@ -1,0 +1,52 @@
++---------------------------------------------------------------------------------
+|    description:: PARTY class definition
+|    keywords::    openEHR demographic model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Ancestor of all Party types, including real world entities and their roles. A Party
+| is any entity which can participate in an activity. The name attribute inherited from
+| LOCATABLE is used to indicate the actual type of party.
+|
+abstract class PARTY
+    is_a LOCATABLE
+
+feature_group ("access")
+
+    |
+    | Identities used by the party to identify itself, such as legal name, stage names,
+    | aliases, nicknames and so on.
+    |
+    prop identities : List<PARTY_IDENTITY> ;
+
+    |
+    | Contacts for this party.
+    |
+    prop contacts :? List<CONTACT> ;
+
+    |
+    | All other details for this Party.
+    |
+    prop details :? ITEM_STRUCTURE ;
+
+    |
+    | Relationships in which this Party takes part as source.
+    |
+    prop relationships :? List<PARTY_RELATIONSHIP> ;
+
+    |
+    | Type of party, such as PERSON, ORGANISATION, etc. Taken from inherited name
+    | attribute.
+    |
+    func type : DV_TEXT ;
+
+    |
+    | References to relationships in which this Party takes part as target.
+    |
+    func reverse_relationships : List<LOCATABLE_REF> ;
+
+end

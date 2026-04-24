@@ -1,0 +1,39 @@
++---------------------------------------------------------------------------------
+|    description:: EVENT class definition
+|    keywords::    openEHR Data Structures model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Defines the abstract notion of a single event in a series. Generic, allowing types to be locked
+| to particular spatial types.
+|
+abstract class EVENT<T: ITEM_STRUCTURE>
+    is_a LOCATABLE
+
+feature_group ("access")
+
+    |
+    | Time of this event.
+    |
+    prop time : DV_DATE_TIME ;
+
+    |
+    | The data of this event.
+    |
+    prop data : T ;
+
+    |
+    | Optional state data for this event.
+    |
+    prop state :? ITEM_STRUCTURE ;
+
+    |
+    | Offset of this event from origin, computed as time.diff(parent.origin).
+    |
+    func offset : DV_DURATION ;
+
+end

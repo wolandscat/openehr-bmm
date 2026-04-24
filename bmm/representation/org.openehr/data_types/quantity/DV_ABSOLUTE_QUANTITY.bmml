@@ -1,0 +1,24 @@
++---------------------------------------------------------------------------------
+|    description:: DV_ABSOLUTE_QUANTITY class definition
+|    keywords::    openEHR Data Types model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Abstract class defining the concept of quantified entities whose values are absolute with respect
+| to an origin. Dates and Times are the main example.
+|
+abstract class DV_ABSOLUTE_QUANTITY
+    is_a DV_QUANTIFIED
+
+feature_group ("access")
+
+    |
+    | Optional accuracy of measurement, expressed as a DV_AMOUNT.
+    |
+    prop accuracy :? DV_AMOUNT ;
+
+end

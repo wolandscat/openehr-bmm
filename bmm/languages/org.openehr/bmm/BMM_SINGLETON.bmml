@@ -1,0 +1,23 @@
++---------------------------------------------------------------------------------
+|    description:: BMM_SINGLETON class definition
+|    keywords::    openEHR BMM model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Meta-type for static value properties computed once by a function invocation.
+|
+class BMM_SINGLETON
+    is_a BMM_STATIC
+
+feature_group ("access")
+
+    |
+    | Generator of the value of this static property.
+    |
+    prop generator : BMM_ROUTINE_DEFINITION ;
+
+end

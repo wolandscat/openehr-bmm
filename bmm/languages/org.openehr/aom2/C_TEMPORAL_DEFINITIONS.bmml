@@ -1,0 +1,66 @@
++---------------------------------------------------------------------------------
+|    description:: C_TEMPORAL_DEFINITIONS class definition
+|    keywords::    openEHR AOM2 model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Definitions related to C_TEMPORAL constraints.
+|
+class C_TEMPORAL_DEFINITIONS
+
+feature_group ("values")
+
+    | List of allowed date constraints, e.g. "YYYY-MM-DD", "YYYY-MM-??", "YYYY-??-??".
+    valid_date_constraint_patterns ;
+
+    | List of allowed date constraint replacements in specialised archetypes.
+    valid_date_constraint_replacements ;
+
+    | List of allowed time constraints, e.g. "HH:MM:SS", "HH:MM:??", "HH:??:??".
+    valid_time_constraint_patterns ;
+
+    | List of allowed time constraint replacements in specialised archetypes.
+    valid_time_constraint_replacements ;
+
+    | List of allowed date/time constraints, e.g. "YYYY-MM-DDTHH:MM:SS".
+    valid_date_time_constraint_patterns ;
+
+    | List of allowed date/time constraint replacements in specialised archetypes.
+    valid_date_time_constraint_replacements ;
+
+feature_group ("access")
+
+    |
+    | True if ISO8601 duration string other_dur contains every character element in a_dur.
+    |
+    func valid_duration_constraint_replacement (a_dur : String, other_dur : String) : Boolean ;
+
+    |
+    | True if string literal like "yyyy-MM-dd" containing "XX" or "??" in MM or dd slots
+    | is in valid_date_constraint_patterns.
+    |
+    func valid_iso8601_date_constraint_pattern (s : String) : Boolean ;
+
+    |
+    | True if string literal like "hh:mm:ss" containing "XX" or "??" in mm or ss slots
+    | is in valid_time_constraint_patterns.
+    |
+    func valid_iso8601_time_constraint_pattern (s : String) : Boolean ;
+
+    |
+    | True if string literal in form "yyyy-MM-dd hh:mm:ss" containing "XX" or "??" in
+    | variable slots is in valid_date_time_constraint_patterns.
+    |
+    func valid_iso8601_date_time_constraint_pattern (s : String) : Boolean ;
+
+    |
+    | True if string in form P[Y][M][W][D][T[H][M][S]] is a valid ISO 8601 duration
+    | constraint pattern (openEHR allows W mixed in).
+    |
+    func valid_iso8601_duration_constraint_pattern (s : String) : Boolean ;
+
+end

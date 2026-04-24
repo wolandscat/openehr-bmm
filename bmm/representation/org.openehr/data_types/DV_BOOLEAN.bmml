@@ -1,0 +1,23 @@
++---------------------------------------------------------------------------------
+|    description:: DV_BOOLEAN class definition
+|    keywords::    openEHR Data Types model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Items which are truly boolean data, such as true/false or yes/no answers.
+|
+class DV_BOOLEAN
+    is_a DATA_VALUE
+
+feature_group ("access")
+
+    |
+    | Boolean value of this item.
+    |
+    prop value : Boolean ;
+
+end

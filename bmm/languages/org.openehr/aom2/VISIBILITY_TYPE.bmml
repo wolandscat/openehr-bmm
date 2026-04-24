@@ -1,0 +1,24 @@
++---------------------------------------------------------------------------------
+|    description:: VISIBILITY_TYPE enumeration
+|    keywords::    openEHR AOM2 model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Enumeration of visibility settings for model elements.
+|
+enumeration VISIBILITY_TYPE
+    base_type String
+
+feature_group ("values")
+
+    | Indicates to a tool to hide the model element to which this marker is attached.
+    hide ("hide");
+
+    | Indicates to a tool to show the model element to which this marker is attached.
+    show ("show");
+
+end

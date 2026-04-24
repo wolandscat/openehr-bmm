@@ -1,0 +1,25 @@
++---------------------------------------------------------------------------------
+|    description:: C_SINGLE_ATTRIBUTE class definition
+|    keywords::    openEHR AOM 1.4 model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Concrete model of constraint on a single-valued attribute node. The meaning of the
+| inherited children attribute is that they are alternatives.
+|
+class C_SINGLE_ATTRIBUTE
+    is_a C_ATTRIBUTE
+
+feature_group ("access")
+
+    |
+    | List of alternative constraints for the single child of this attribute within the
+    | data.
+    |
+    func alternatives : List<C_OBJECT> ;
+
+end

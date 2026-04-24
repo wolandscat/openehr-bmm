@@ -1,0 +1,24 @@
++---------------------------------------------------------------------------------
+|    description:: EXPR_LEAF class definition
+|    keywords::    openEHR BEL model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Meta-type representing one of: a manifest constant of any primitive type; a path
+| referring to a value in the archetype; a constraint; or a variable reference.
+|
+abstract class EXPR_LEAF
+    is_a EXPRESSION
+
+feature_group ("access")
+
+    |
+    | The reference item from which the value of this node can be computed.
+    |
+    prop item :? Any ;
+
+end

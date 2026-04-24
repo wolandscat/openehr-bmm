@@ -1,0 +1,84 @@
++---------------------------------------------------------------------------------
+|    description:: ITEM_TABLE class definition
+|    keywords::    openEHR Data Structures model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Logical relational database style table data structure, in which columns are named and ordered.
+| Implemented using Cluster-per-row encoding.
+|
+class ITEM_TABLE
+    is_a ITEM_STRUCTURE
+
+feature_group ("access")
+
+    |
+    | Physical representation of the table as a list of CLUSTERs, each containing one row.
+    |
+    prop rows :? List<CLUSTER> ;
+
+    |
+    | Number of rows in the table.
+    |
+    func row_count : Integer ;
+
+    |
+    | Return number of columns in the table.
+    |
+    func column_count : Integer ;
+
+    |
+    | Return set of row names.
+    |
+    func row_names : List<DV_TEXT> ;
+
+    |
+    | Return set of column names.
+    |
+    func column_names : List<DV_TEXT> ;
+
+    |
+    | Return i-th row.
+    |
+    func ith_row (i : Integer) : CLUSTER ;
+
+    |
+    | Return True if there is a row with name = a_key.
+    |
+    func has_row_with_name (a_name : String) : Boolean ;
+
+    |
+    | Return True if there is a column with name = a_key.
+    |
+    func has_column_with_name (a_name : String) : Boolean ;
+
+    |
+    | Return row with name = a_key.
+    |
+    func named_row (a_name : String) : CLUSTER ;
+
+    |
+    | Return True if there is a row with key keys.
+    |
+    func has_row_with_key (keys : List<String>) : Boolean ;
+
+    |
+    | Return rows with particular keys.
+    |
+    func row_with_key (keys : List<String>) : CLUSTER ;
+
+    |
+    | Return cell at a particular location.
+    |
+    func element_at_cell_ij (i : Integer, j : Integer) : ELEMENT ;
+
+    |
+    | Generate a CEN EN13606-compatible hierarchy.
+    |
+    func as_hierarchy : CLUSTER ;
+
+end
