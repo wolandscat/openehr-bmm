@@ -1,5 +1,5 @@
 +---------------------------------------------------------------------------------
-|    description:: EXTRACT_CHAPTER class definition
+|    description:: EXTRACT_FOLDER class definition
 |    keywords::    openEHR EHR Extract model
 |    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
 |    support::     https://openehr.atlassian.net/issues/
@@ -7,16 +7,17 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+
 |
-| One content chapter of an Extract; contains information relating to only one entity.
+| Folder in local Folder structure in an Extract. Empty Folders are allowed.
 |
-class EXTRACT_CHAPTER
-    is_a LOCATABLE
+class EXTRACT_FOLDER
+    is_a EXTRACT_ITEM
 
 feature_group ("access")
 
     |
-    | The information content of this chapter.
+    | List of Folders and content items in this Folder.
     |
     prop items :? List<EXTRACT_ITEM> ;
 

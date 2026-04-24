@@ -1,5 +1,5 @@
 +---------------------------------------------------------------------------------
-|    description:: OPENEHR_CONTENT_ITEM class definition
+|    description:: X_CONTRIBUTION class definition
 |    keywords::    openEHR EHR Extract model
 |    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
 |    support::     https://openehr.atlassian.net/issues/
@@ -7,17 +7,27 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+
 |
-| Form of EXTRACT_ITEM containing openEHR serialised VERSIONED_OBJECTs.
+| Serialised form of Contribution for an Extract.
 |
-class OPENEHR_CONTENT_ITEM
-    is_a EXTRACT_CONTENT_ITEM
+class X_CONTRIBUTION
 
 feature_group ("access")
 
     |
-    | Content object; redefined from EXTRACT_CONTENT_ITEM.item.
+    | UID of Contribution in source system.
     |
-    prop item :? X_VERSIONED_OBJECT ;
+    prop uid : HIER_OBJECT_ID ;
+
+    |
+    | Audit of Contribution in source system.
+    |
+    prop audit : AUDIT_DETAILS ;
+
+    |
+    | Serialised Versions from Contribution in source system.
+    |
+    prop versions :? List<VERSION> ;
 
 end

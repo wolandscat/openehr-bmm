@@ -1,5 +1,5 @@
 +---------------------------------------------------------------------------------
-|    description:: X_VERSIONED_PARTY class definition
+|    description:: X_VERSIONED_COMPOSITION class definition
 |    keywords::    openEHR EHR Extract model
 |    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
 |    support::     https://openehr.atlassian.net/issues/
@@ -7,10 +7,11 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+
 |
-| Form of X_VERSIONED_OBJECT for PARTY demographic object.
+| Form of X_VERSIONED_OBJECT for COMPOSITION EHR object.
 |
-class X_VERSIONED_PARTY
-    is_a X_VERSIONED_OBJECT<PARTY>
+class X_VERSIONED_COMPOSITION
+    is_a X_VERSIONED_OBJECT<COMPOSITION>
 
 end

@@ -1,5 +1,5 @@
 +---------------------------------------------------------------------------------
-|    description:: EXTRACT_ENTITY_CHAPTER class definition
+|    description:: EXTRACT_MANIFEST class definition
 |    keywords::    openEHR EHR Extract model
 |    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
 |    support::     https://openehr.atlassian.net/issues/
@@ -7,18 +7,18 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+
 |
-| Type of chapter that contains information relating to a single demographic entity.
+| Specification of the candidate entities and optionally top-level items to be included
+| in the Extract.
 |
-class EXTRACT_ENTITY_CHAPTER
-    is_a EXTRACT_CHAPTER
+class EXTRACT_MANIFEST
 
 feature_group ("access")
 
     |
-    | Reference to entity, usually a demographic entity such as a patient that the
-    | content of this chapter relates to.
+    | List of entity manifests; UIDs of items included in the Extract.
     |
-    prop extract_id_key : String ;
+    prop entities : List<EXTRACT_ENTITY_MANIFEST> ;
 
 end

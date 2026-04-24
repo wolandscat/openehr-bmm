@@ -7,6 +7,7 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+
 |
 | Specification of how a request should be processed by server. The request can be
 | persisted in the server to enable re-activation and changes-only pattern of Extract

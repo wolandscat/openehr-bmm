@@ -1,5 +1,5 @@
 +---------------------------------------------------------------------------------
-|    description:: X_CONTRIBUTION class definition
+|    description:: EXTRACT_ACTION_REQUEST class definition
 |    keywords::    openEHR EHR Extract model
 |    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
 |    support::     https://openehr.atlassian.net/issues/
@@ -7,26 +7,30 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+
 |
-| Serialised form of Contribution for an Extract.
+| Request for an action relating to a previous Extract request, such as cancel,
+| resend, or send new.
 |
-class X_CONTRIBUTION
+class EXTRACT_ACTION_REQUEST
+    is_a LOCATABLE
 
 feature_group ("access")
 
     |
-    | UID of Contribution in source system.
+    | Identifier of previous EXTRACT_REQUEST.
+    |
+    prop request_id : OBJECT_REF ;
+
+    |
+    | Requested action: cancel | resend | send new. Coded by openEHR Terminology group
+    | extract action type.
+    |
+    prop action : DV_CODED_TEXT ;
+
+    |
+    | Identifier of this action request.
     |
     prop uid : HIER_OBJECT_ID ;
-
-    |
-    | Audit of Contribution in source system.
-    |
-    prop audit : AUDIT_DETAILS ;
-
-    |
-    | Serialised Versions from Contribution in source system.
-    |
-    prop versions :? List<VERSION> ;
 
 end

@@ -1,5 +1,5 @@
 +---------------------------------------------------------------------------------
-|    description:: SYNC_EXTRACT_REQUEST class definition
+|    description:: EXTRACT_ITEM class definition
 |    keywords::    openEHR EHR Extract model
 |    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
 |    support::     https://openehr.atlassian.net/issues/
@@ -7,18 +7,11 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
-|
-| Type of request designed for synchronisation of Contributions between openEHR
-| servers.
-|
-class SYNC_EXTRACT_REQUEST
-    is_a MESSAGE_CONTENT
 
-feature_group ("access")
-
-    |
-    | Details of specification of synchronisation request.
-    |
-    prop specification : SYNC_EXTRACT_SPEC ;
+|
+| Abstract parent of Extract Folder and Content types.
+|
+abstract class EXTRACT_ITEM
+    is_a LOCATABLE
 
 end

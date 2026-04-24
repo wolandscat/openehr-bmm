@@ -1,5 +1,5 @@
 +---------------------------------------------------------------------------------
-|    description:: X_VERSIONED_EHR_ACCESS class definition
+|    description:: EXTRACT_ENTITY_CHAPTER class definition
 |    keywords::    openEHR EHR Extract model
 |    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
 |    support::     https://openehr.atlassian.net/issues/
@@ -7,10 +7,19 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+
 |
-| Form of X_VERSIONED_OBJECT for EHR_ACCESS EHR object.
+| Type of chapter that contains information relating to a single demographic entity.
 |
-class X_VERSIONED_EHR_ACCESS
-    is_a X_VERSIONED_OBJECT<EHR_ACCESS>
+class EXTRACT_ENTITY_CHAPTER
+    is_a EXTRACT_CHAPTER
+
+feature_group ("access")
+
+    |
+    | Reference to entity, usually a demographic entity such as a patient that the
+    | content of this chapter relates to.
+    |
+    prop extract_id_key : String ;
 
 end

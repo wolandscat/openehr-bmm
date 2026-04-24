@@ -7,6 +7,7 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+
 |
 | An authored, possibly signed, piece of content intended for one or more recipients.
 | Since the recipient may or may not be known directly, recipients are specified in

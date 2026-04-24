@@ -1,5 +1,5 @@
 +---------------------------------------------------------------------------------
-|    description:: EXTRACT_ACTION_REQUEST class definition
+|    description:: EXTRACT_CHAPTER class definition
 |    keywords::    openEHR EHR Extract model
 |    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
 |    support::     https://openehr.atlassian.net/issues/
@@ -7,29 +7,18 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+
 |
-| Request for an action relating to a previous Extract request, such as cancel,
-| resend, or send new.
+| One content chapter of an Extract; contains information relating to only one entity.
 |
-class EXTRACT_ACTION_REQUEST
+class EXTRACT_CHAPTER
     is_a LOCATABLE
 
 feature_group ("access")
 
     |
-    | Identifier of previous EXTRACT_REQUEST.
+    | The information content of this chapter.
     |
-    prop request_id : OBJECT_REF ;
-
-    |
-    | Requested action: cancel | resend | send new. Coded by openEHR Terminology group
-    | extract action type.
-    |
-    prop action : DV_CODED_TEXT ;
-
-    |
-    | Identifier of this action request.
-    |
-    prop uid : HIER_OBJECT_ID ;
+    prop items :? List<EXTRACT_ITEM> ;
 
 end

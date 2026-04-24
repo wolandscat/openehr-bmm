@@ -1,5 +1,5 @@
 +---------------------------------------------------------------------------------
-|    description:: X_VERSIONED_FOLDER class definition
+|    description:: SYNC_EXTRACT class definition
 |    keywords::    openEHR EHR Extract model
 |    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
 |    support::     https://openehr.atlassian.net/issues/
@@ -7,10 +7,23 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+
 |
-| Form of X_VERSIONED_OBJECT for FOLDER EHR object.
+| Extract designed for synchronisation of Contributions between openEHR servers.
 |
-class X_VERSIONED_FOLDER
-    is_a X_VERSIONED_OBJECT<FOLDER>
+class SYNC_EXTRACT
+    is_a MESSAGE_CONTENT
+
+feature_group ("access")
+
+    |
+    | Details of specification of this Extract.
+    |
+    prop specification : SYNC_EXTRACT_SPEC ;
+
+    |
+    | Content, in the form of serialised Contributions.
+    |
+    prop items :? List<X_CONTRIBUTION> ;
 
 end

@@ -7,6 +7,7 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+
 |
 | Model of a participation of a Party in an activity within an Extract. Used to
 | represent any participation of a Party in some activity, which is not explicitly in

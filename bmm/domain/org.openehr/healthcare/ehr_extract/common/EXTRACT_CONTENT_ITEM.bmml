@@ -7,6 +7,7 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+
 |
 | Abstract model of a wrapper for one content item in an Extract, containing various
 | meta-data. Indicates whether it was part of the primary set and what its original

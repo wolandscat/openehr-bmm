@@ -7,6 +7,7 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+
 |
 | Specification of what versions should be included in an Extract. By default, only
 | latest versions are included. The include_all_versions and commit_time_interval
