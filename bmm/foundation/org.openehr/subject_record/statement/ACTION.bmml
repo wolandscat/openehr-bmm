@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:representation;
+
 |
 | Used to record a clinical action that has been performed, which may have been ad hoc,
 | or due to the execution of an Activity in an Instruction workflow. Every Action

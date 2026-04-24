@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:representation;
+
 |
 | Meta-type of a writable property definition within a class definition of an object
 | model. The is_composition attribute indicates whether the property has sub-part or an

@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+
+
 |
 | Represents a coded term mapped to a DV_TEXT, and the relative match of the target term with
 | respect to the mapped item.

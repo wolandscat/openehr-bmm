@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:representation;
+
 |
 | The abstract parent of all ENTRY subtypes. An ENTRY is the root of a logical item of
 | hard clinical information created in the clinical statement context, within a clinical

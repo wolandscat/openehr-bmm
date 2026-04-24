@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:representation;
+
 |
 | Form of routine specific to procedure object signatures, with result_type being the
 | special Status meta-type.

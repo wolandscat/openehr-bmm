@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:foundation;
+
 |
 | The EHR object is the root object and access point of an EHR for a subject of care.
 |

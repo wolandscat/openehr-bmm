@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+
+
 |
 | Model of the DCE Universal Unique Identifier (UUID) in 8-4-4-4-12 hexadecimal format. Also
 | known as a GUID.

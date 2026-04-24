@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:representation;
+
 |
 | Concrete model of constraint on a single-valued attribute node. The meaning of the
 | inherited children attribute is that they are alternatives.

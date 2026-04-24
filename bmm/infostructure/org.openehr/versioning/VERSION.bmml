@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:representation;
+
 |
 | Abstract model of one Version within a Version container, containing data,
 | commit audit trail, and the identifier of its Contribution.

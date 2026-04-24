@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+
+
 |
 | Items which are truly boolean data, such as true/false or yes/no answers.
 |

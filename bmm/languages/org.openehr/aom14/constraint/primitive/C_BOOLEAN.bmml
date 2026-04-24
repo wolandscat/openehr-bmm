@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:representation;
+
 |
 | Constraint on instances of Boolean. Both attributes cannot be set to False, since this
 | would mean that the Boolean value being constrained cannot be True or False.

@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:representation;
+
 |
 | Built-in meta-type that expresses the type structure of any referenceable element
 | of a model. Consists of potential arguments and result, with constraints in

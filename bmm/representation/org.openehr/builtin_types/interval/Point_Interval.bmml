@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+
+
 |
 | Type representing an Interval that is a point value. Provides an efficient
 | representation substitutable for Interval<T> where needed.

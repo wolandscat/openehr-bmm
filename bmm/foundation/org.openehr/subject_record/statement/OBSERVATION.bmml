@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:representation;
+
 |
 | Entry subtype for all clinical data in the past or present, i.e. which (by the time
 | it is recorded) has already occurred. OBSERVATION data is expressed using the class

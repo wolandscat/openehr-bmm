@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:representation;
+
 |
 | Abstract parent type of C_OBJECT subtypes that are defined by value, i.e. whose
 | definitions are actually in the archetype rather than being by reference.

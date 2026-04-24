@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:representation;
+
 |
 | ISO 8601-compatible constraint on instances of Duration. Constraints are of the form
 | "PWD" (weeks and/or days), "PDTHMS" (days, hours, minutes, seconds) etc. Both range

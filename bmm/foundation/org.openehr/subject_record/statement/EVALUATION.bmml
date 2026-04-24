@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:representation;
+
 |
 | Entry type for evaluation statements. Used for all kinds of statements which evaluate
 | other information, such as interpretations of observations, diagnoses, differential

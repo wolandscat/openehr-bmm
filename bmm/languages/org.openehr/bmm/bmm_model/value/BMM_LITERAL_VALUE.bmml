@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:representation;
+
 |
 | Meta-type for literal instance values declared in a model. Instance values may be
 | inline values of primitive types in the usual fashion or complex objects in syntax

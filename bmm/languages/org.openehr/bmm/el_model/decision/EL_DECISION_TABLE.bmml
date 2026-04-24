@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:representation;
+
 |
 | Meta-type for decision tables, generic on the meta-type of the result attribute
 | of branches. Allows specialised forms of if/else and case structures.

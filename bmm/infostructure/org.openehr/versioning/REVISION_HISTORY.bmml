@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:representation;
+
 |
 | Defines the notion of a revision history of audit items, each associated with
 | the version for which that audit was committed. The list is in most-recent-last order.

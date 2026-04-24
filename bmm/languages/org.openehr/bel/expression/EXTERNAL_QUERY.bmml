@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:representation;
+
 |
 | Definition of a variable whose value is derived from a query run on a data context in
 | the operational environment. Typical uses are to obtain patient data like date of birth,

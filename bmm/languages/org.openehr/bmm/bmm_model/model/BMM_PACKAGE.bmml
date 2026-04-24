@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:representation;
+
 |
 | Abstraction of a package as a tree structure whose nodes can contain other packages
 | and classes. The name may be qualified if it is a top-level package.

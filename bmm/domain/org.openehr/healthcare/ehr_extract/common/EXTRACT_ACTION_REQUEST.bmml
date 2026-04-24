@@ -7,7 +7,7 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
-
+import org.openehr:foundation;
 |
 | Request for an action relating to a previous Extract request, such as cancel,
 | resend, or send new.

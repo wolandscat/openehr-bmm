@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:representation;
+
 |
 | Abstract idea of specifying a type in some context. This is not the same as
 | 'defining' a class. A type specification is essentially a reference of some kind,

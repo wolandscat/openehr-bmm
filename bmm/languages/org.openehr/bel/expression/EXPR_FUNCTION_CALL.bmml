@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:representation;
+
 |
 | Node representing a function call with 0 or more arguments. Functions with no arguments
 | are typically used to represent real world varying values like 'current time'.

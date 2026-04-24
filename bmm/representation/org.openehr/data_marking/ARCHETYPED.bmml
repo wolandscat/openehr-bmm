@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+
+
 |
 | Archetypes act as the configuration basis for structures of instances defined by the reference model.
 | An ARCHETYPED instance identifies the archetype used to create a node.

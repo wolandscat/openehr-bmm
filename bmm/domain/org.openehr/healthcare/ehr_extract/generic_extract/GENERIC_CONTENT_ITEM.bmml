@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:foundation;
+
 
 |
 | Single item in generic extract, designed for 13606 and CDA data.

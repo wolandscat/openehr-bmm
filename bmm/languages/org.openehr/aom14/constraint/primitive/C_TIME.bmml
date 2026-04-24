@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:representation;
+
 |
 | ISO 8601-compatible constraint on instances of Time. There is no validity flag for
 | 'hour', since it must always be mandatory for a sensible time. Syntax expressions

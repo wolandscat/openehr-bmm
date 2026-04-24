@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:representation;
+
 |
 | Core formal model of the root object of any archetype or template. Defines basic
 | identification and structural connections to definition, terminology, rules etc.

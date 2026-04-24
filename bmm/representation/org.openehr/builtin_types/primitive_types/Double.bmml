@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+
+
 |
 | Type used to represent double-precision decimal numbers. Corresponds to a
 | double-precision floating point value in most languages.

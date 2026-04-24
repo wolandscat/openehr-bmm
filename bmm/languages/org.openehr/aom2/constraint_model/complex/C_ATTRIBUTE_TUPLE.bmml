@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:representation;
+
 |
 | Object representing a constraint on an attribute tuple, i.e. a group of attributes
 | constrained together. Typically used for co-varying constraints like {units, range}.

@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+
+
 |
 | Generic class defining an interval (range) of a comparable type. Type parameter T must be a
 | descendant of DV_ORDERED.

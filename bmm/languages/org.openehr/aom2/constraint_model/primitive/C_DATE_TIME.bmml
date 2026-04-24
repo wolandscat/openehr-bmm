@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:representation;
+
 |
 | Constraint on instances representing date/times, i.e. instants in time. There is no
 | validity flag for year, since it must always be mandatory for a sensible date/time.

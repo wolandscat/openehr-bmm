@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:representation;
+
 |
 | An entry in a revision history, corresponding to a version from a versioned
 | container. Consists of AUDIT_DETAILS instances with the revision identifier.

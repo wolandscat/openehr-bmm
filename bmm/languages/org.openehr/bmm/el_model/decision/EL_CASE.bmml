@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:representation;
+
 |
 | One branch of a Case table, consisting of a value constraint (the match criterion)
 | and a result of the generic parameter type T.

@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:representation;
+
 |
 | Compound expression consisting of a chain of condition-gated expressions and an
 | ungated else member, representing an if/then/elseif/else chain.

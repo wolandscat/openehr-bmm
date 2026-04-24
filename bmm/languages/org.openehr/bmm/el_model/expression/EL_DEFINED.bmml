@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:representation;
+
 |
 | A predicate taking one external variable reference argument that returns True if
 | the reference is resolvable, i.e. the external value is obtainable.

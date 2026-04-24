@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:representation;
+
 |
 | Enumeration of states in the Instruction State Machine (ISM) used to track the
 | lifecycle of an Instruction execution.

@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:representation;
+
 |
 | The abstract parent of all clinical ENTRY subtypes. A CARE_ENTRY defines protocol
 | and guideline attributes for all clinical Entry subtypes.

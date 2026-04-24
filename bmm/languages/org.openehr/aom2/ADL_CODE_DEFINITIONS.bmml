@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:representation;
+
 |
 | Definitions relating to the internal code system of archetypes. ADL2 uses at-codes for
 | node identification, at-codes for values, and ac-codes for value sets, matching the ADL1.4

@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:representation;
+
 |
 | Class representing a source template, i.e. a kind of archetype that may include template
 | overlays, and may be restricted by tools to only defining mandations, prohibitions, and

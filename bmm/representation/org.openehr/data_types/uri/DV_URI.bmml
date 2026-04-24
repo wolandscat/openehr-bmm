@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+
+
 |
 | A reference to an object which structurally conforms to the Universal Resource Identifier (URI)
 | RFC-3986 standard.

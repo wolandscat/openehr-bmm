@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:foundation;
+
 |
 | EHR-wide access control object. All access decisions to data in the EHR must be made
 | in accordance with the policies and rules in this object.

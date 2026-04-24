@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:representation;
+
 |
 | Object representing annotations on a resource. The documentation structure is a
 | multi-level table keyed by language, path, and annotation tag.

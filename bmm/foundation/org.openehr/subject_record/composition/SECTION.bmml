@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:representation;
+
 |
 | Represents a heading in a heading structure, or section tree. Created according to
 | archetyped structures for typical headings such as SOAP, physical examination, but

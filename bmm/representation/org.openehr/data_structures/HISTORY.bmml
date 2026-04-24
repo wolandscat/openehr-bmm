@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+
+
 |
 | Root object of a linear history, i.e. time series structure. Generic class whose type parameter
 | must be a descendant of ITEM_STRUCTURE.

@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:representation;
+
 |
 | Conditional structure used in condition chain expressions. Evaluated by evaluating
 | its condition, which is a Boolean-returning expression, and if True, the result is

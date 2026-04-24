@@ -7,7 +7,9 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
-import org.openEHR.base ;
+
+
+import org.openehr:base ;
 
 |
 | A tag with optional value associated with a target information entity identified by a UID.

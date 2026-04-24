@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+
+
 |
 | Defines the pathing capabilities used by nearly all classes in the openEHR reference model.
 | PATHABLE objects can locate child objects using paths and know their parent object.

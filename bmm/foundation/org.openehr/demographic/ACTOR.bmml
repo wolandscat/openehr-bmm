@@ -7,6 +7,7 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:representation;
 |
 | Ancestor of all real-world types, including people and organisations. An actor is
 | any real-world entity capable of taking on a role.

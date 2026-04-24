@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:representation;
+
 |
 | Universal quantification operator, usually known as for_all, whose operand is a
 | collection of items referenced by an EXPR_VALUE_REF. The condition attribute represents

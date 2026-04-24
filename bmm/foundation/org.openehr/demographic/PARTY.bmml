@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:representation;
+
 |
 | Ancestor of all Party types, including real world entities and their roles. A Party
 | is any entity which can participate in an activity. The name attribute inherited from

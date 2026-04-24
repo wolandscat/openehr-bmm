@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:foundation;
+
 
 |
 | Details of specification of Extract, used in a request to specify an Extract, or in

@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:representation;
+
 |
 | Model of a transition in the Instruction State Machine, caused by a careflow step.
 | The attributes document the careflow step as well as the ISM transition.

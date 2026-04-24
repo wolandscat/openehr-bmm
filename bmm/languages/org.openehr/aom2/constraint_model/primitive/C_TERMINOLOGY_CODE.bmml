@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:representation;
+
 |
 | Constrainer type for instances of Terminology_code. The constraint attribute can contain
 | a single at-code or a single ac-code representing a value-set defined in the archetype

@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:representation;
+
 |
 | Content of one version in a VERSIONED_COMPOSITION. A Composition is considered the
 | unit of modification of the record, the unit of transmission in record Extracts, and

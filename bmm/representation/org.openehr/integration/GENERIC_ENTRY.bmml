@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+
+
 |
 | Intermediate representation of data from sources not conforming to openEHR classes, such as
 | HL7 messages, relational databases.

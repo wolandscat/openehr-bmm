@@ -7,7 +7,9 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
-import org.openEHR.base ;
+
+
+import org.openehr:base ;
 
 |
 | Audit details for any system in a feeder system chain. Records who/where/when the information

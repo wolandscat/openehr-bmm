@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:foundation;
+
 |
 | Single object per EHR containing various EHR-wide status flags and settings,
 | including whether this EHR can be queried, modified etc. This object is always

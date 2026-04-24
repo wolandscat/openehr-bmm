@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:representation;
+
 |
 | Definition of a range-constrained class whose value range is defined by reference
 | to a 'value set' within an external resource, e.g. a reference data service.

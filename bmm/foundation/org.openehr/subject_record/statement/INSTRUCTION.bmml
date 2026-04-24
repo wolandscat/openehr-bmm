@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:representation;
+
 |
 | Used to specify actions in the future. Enables simple and complex specifications to
 | be expressed, including in a fully-computable workflow form. Used for any actionable

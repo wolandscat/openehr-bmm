@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:representation;
+
 |
 | Archetype equivalent to LOCATABLE class in openEHR Common reference model. Defines common
 | constraints for any inheritor of LOCATABLE in any reference model.

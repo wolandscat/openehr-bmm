@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:representation;
+
 |
 | Class representing a single object tuple instance in a tuple constraint. Each such
 | instance is a vector of object constraints, where each member (each C_PRIMITIVE_OBJECT)

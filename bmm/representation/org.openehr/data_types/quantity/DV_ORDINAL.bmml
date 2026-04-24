@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+
+
 |
 | A data type that represents integral score values where there is implied ordering, no implication
 | of constant distance, and a finite total number of values.

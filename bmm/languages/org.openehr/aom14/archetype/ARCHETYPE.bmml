@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:representation;
+
 |
 | Archetype equivalent to ARCHETYPED class in Common reference model. Defines semantics of
 | identification, lifecycle, versioning, composition and specialisation.

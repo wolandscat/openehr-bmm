@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:representation;
+
 |
 | A call made on a closed function agent, returning a result. Equivalent to an
 | 'application' of a function in lambda calculus.

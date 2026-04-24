@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:representation;
+
 |
 | Version whose content is an ORIGINAL_VERSION copied from another location.
 | Inherits commit_audit and contribution from VERSION<T>, providing imported

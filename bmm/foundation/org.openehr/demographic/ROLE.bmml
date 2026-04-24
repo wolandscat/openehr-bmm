@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:representation;
+
 |
 | Generic description of a role performed by an Actor. The role corresponds to a
 | competency of the Party. Roles are used to define the responsibilities undertaken

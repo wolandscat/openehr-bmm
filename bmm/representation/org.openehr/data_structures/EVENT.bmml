@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+
+
 |
 | Defines the abstract notion of a single event in a series. Generic, allowing types to be locked
 | to particular spatial types.

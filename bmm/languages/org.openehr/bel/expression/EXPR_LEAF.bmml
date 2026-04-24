@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:representation;
+
 |
 | Meta-type representing one of: a manifest constant of any primitive type; a path
 | referring to a value in the archetype; a constraint; or a variable reference.

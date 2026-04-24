@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:representation;
+
 |
 | Built-in meta-type representing the type of a tuple, i.e. an array of any number of
 | other types. This includes both container and unitary types, since tuple instances

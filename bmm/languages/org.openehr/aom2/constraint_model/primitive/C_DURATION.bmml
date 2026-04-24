@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:representation;
+
 |
 | Constraint on instances representing duration, assumed to have the same parts as the
 | ISO 8601 duration string. Constraints are of the form "PWD" (weeks and/or days),

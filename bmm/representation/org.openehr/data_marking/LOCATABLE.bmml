@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+
+
 |
 | Root class of all information model classes that can be archetyped. Defines the idea of locatability
 | in an archetyped structure.

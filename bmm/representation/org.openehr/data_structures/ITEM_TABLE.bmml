@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+
+
 |
 | Logical relational database style table data structure, in which columns are named and ordered.
 | Implemented using Cluster-per-row encoding.

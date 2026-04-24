@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:representation;
+
 |
 | Defines the order indicator that can be used on a C_OBJECT within a container attribute
 | in a specialised archetype to indicate its order with respect to a sibling defined in a

@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:representation;
+
 |
 | A constraint defined by proxy, using a reference to an object constraint defined
 | elsewhere in the same archetype. The local occurrences value should always be used;

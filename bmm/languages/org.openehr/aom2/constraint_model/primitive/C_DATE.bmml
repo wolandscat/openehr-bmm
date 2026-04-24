@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:representation;
+
 |
 | Constraint on instances representing dates, in the form either of a set of validity
 | values, or else date ranges based on the C_ORDERED list constraint. There is no

@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:representation;
+
 |
 | An immutable, static value-returning element scoped to a class. The value is the
 | result of the evaluation of the generator, which may be as simple as a literal value,

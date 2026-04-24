@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:representation;
+
 |
 | Reference to a constraint described elsewhere in the same archetype. Used to
 | allow the same C_OBJECT definition to be used in more than one place.

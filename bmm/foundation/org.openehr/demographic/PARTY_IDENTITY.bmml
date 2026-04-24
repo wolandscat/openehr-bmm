@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:representation;
+
 |
 | An identity owned by a Party, such as a person name or company name, and which is
 | used by the Party to identify itself. Actual structure is archetyped.

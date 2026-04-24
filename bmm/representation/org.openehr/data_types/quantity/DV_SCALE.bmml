@@ -7,6 +7,8 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+
+
 |
 | A data type that represents scale values with implied ordering, no implication of constant distance,
 | finite total values, allowing non-integer values.
