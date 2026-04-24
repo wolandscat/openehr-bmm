@@ -1,0 +1,30 @@
+= openEHR Class Library (BMM4)
+
+== Contents
+
+This repository contains the openEHR class definitions for most specifications, in 'BMML' format, which is a formal syntax based on the https://specifications.openehr.org/releases/LANG/development/bmm.html[openEHR Basic Meta-Model (BMM) specification^].
+
+== Creation Method
+
+The library was created via the use of Claude.ai, using the https://github.com/Cadasto/openehr-assistant-mcp[openEHR assistant MCP server^] for extraction of semantics from existing specifications, recently published by Cadasto / Code24 (NL).
+
+The extraction was carried out using the latest trunk versions of the openEHR specification repositories as of 24/04/2026.
+
+== Formalism and Tools
+
+The 'BMM4' target formalism is an object-oriented / functional language, with some similarities to modern typed programming languages such as Kotlin and TypeScript. It is based on the openEHR Basic Meta-Model, augmented in various ways.
+
+Tools that are available for working with bmml files / BMM4:
+
+* BMM parser (Antlr4, Kotlin)
+* BMM implementation
+* BMM publisher - generates a website, including PlantUML
+* IntelliJ bmml plugin
+
+Various modelling tools are forthcoming.
+
+== Acknowledgements
+
+This work was funded by http://www.arssemantica.com[Ars Semantica, UK^].
+
+
