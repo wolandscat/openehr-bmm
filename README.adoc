@@ -10,6 +10,10 @@ The library was created via the use of Claude.ai, using the https://github.com/C
 
 The extraction was carried out using the latest trunk versions of the openEHR specification repositories as of 24/04/2026.
 
+== Logical Structure
+
+The package structure of the library follows the new 'SPLASH' structure, rather than the traditional openEHR component structure. However, the classes are (barring conversion errors) unchanged from the openEHR specifications.
+
 == Formalism and Tools
 
 The 'BMM4' target formalism is an object-oriented / functional language, with some similarities to modern typed programming languages such as Kotlin and TypeScript. It is based on the openEHR Basic Meta-Model, augmented in various ways.
