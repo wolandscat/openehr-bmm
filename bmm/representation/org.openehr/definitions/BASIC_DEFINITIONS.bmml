@@ -3,11 +3,9 @@
 |    keywords::    openEHR Base Types model
 |    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
 |    support::     https://openehr.atlassian.net/issues/
-|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
-
-
 
 |
 | Defines globally used constant values.
@@ -16,17 +14,34 @@ class BASIC_DEFINITIONS
 
 feature_group ("infrastructure")
 
+    |
     | Carriage return character.
-    CR : Character = '\015' ;
+    |
+    const CR : Character = '\r' ;
+
+    |
     | Line feed character.
-    LF : Character = '\012' ;
+    |
+    const LF : Character = '\n' ;
+
+    |
     | Name of the Any meta-type.
-    Any_type_name : String = "Any" ;
+    |
+    const Any_type_name : String = "Any" ;
+
+    |
     | Regex pattern that matches any string.
-    Regex_any_pattern : String = ".*" ;
+    |
+    const Regex_any_pattern : String = ".*" ;
+
+    |
     | Default character encoding.
-    Default_encoding : String = "UTF-8" ;
+    |
+    const Default_encoding : String = "UTF-8" ;
+
+    |
     | Name of the None type.
-    None_type_name : String = "None" ;
+    |
+    const None_type_name : String = "None" ;
 
 end

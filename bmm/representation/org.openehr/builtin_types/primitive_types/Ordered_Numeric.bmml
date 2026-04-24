@@ -3,7 +3,7 @@
 |    keywords::    openEHR Foundation Types model
 |    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
 |    support::     https://openehr.atlassian.net/issues/
-|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
@@ -14,7 +14,6 @@
 | less_than() and arithmetic functions defined.
 |
 abstract builtin class Ordered_Numeric
-    is_a Ordered
-    is_a Numeric
+    is_a Ordered, Numeric
 
 end

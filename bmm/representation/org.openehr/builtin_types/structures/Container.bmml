@@ -3,7 +3,7 @@
 |    keywords::    openEHR Foundation Types model
 |    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
 |    support::     https://openehr.atlassian.net/issues/
-|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
@@ -12,7 +12,7 @@
 |
 | Abstract ancestor of container types whose items are addressable in some way.
 |
-abstract class Container<T: Any>
+abstract builtin class Container<T: Any>
     is_a Any
 
 feature_group ("access")

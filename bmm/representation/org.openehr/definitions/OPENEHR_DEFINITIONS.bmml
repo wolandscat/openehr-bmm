@@ -3,11 +3,9 @@
 |    keywords::    openEHR Base Types model
 |    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
 |    support::     https://openehr.atlassian.net/issues/
-|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
-
-
 
 |
 | Inheritance class to provide access to constants defined in other packages.
@@ -17,8 +15,10 @@ class OPENEHR_DEFINITIONS
 
 feature_group ("infrastructure")
 
+    |
     | Predefined terminology identifier to indicate it is local to the knowledge
     | resource in which it occurs, e.g. an archetype.
-    Local_terminology_id : String = "local" ;
+    |
+    const Local_terminology_id : String = "local" ;
 
 end

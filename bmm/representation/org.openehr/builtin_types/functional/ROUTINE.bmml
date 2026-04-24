@@ -3,7 +3,7 @@
 |    keywords::    openEHR Foundation Types model
 |    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
 |    support::     https://openehr.atlassian.net/issues/
-|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
@@ -12,6 +12,6 @@
 |
 | Type representing a routine with 0 or more arguments represented as a TUPLE.
 |
-class ROUTINE<ARGS: TUPLE>
+class ROUTINE<V: TUPLE>
 
 end

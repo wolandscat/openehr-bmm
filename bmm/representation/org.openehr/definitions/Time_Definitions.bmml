@@ -3,7 +3,7 @@
 |    keywords::    openEHR Foundation Types model
 |    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
 |    support::     https://openehr.atlassian.net/issues/
-|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
@@ -14,39 +14,83 @@
 | where the international dateline is. Thus, time in New Zealand is quoted
 | using +12:00, not -12:00.
 |
-class Time_Definitions
+builtin class Time_Definitions
 
-feature_group ("infrastructure")
+feature_group ("definitions")
 
+    |
     | Number of seconds in a minute.
-    Seconds_in_minute : Integer = 60 ;
+    |
+    const Seconds_in_minute : Integer = 60 ;
+
+    |
     | Number of minutes in an hour.
-    Minutes_in_hour : Integer = 60 ;
+    |
+    const Minutes_in_hour : Integer = 60 ;
+
+    |
     | Number of clock hours in a day.
-    Hours_in_day : Integer = 24 ;
+    |
+    const Hours_in_day : Integer = 24 ;
+
+    |
     | Number of days in a normal year.
-    Days_in_year : Integer = 365 ;
+    |
+    const Days_in_year : Integer = 365 ;
+
+    |
     | Calendar days in a standard leap year.
-    Days_in_leap_year : Integer = 366 ;
+    |
+    const Days_in_leap_year : Integer = 366 ;
+
+    |
     | Maximum number of days in a year, accounting for leap years.
-    Max_days_in_year : Integer = 366 ;
+    |
+    const Max_days_in_year : Integer = 366 ;
+
+    |
     | Number of days in a week.
-    Days_in_week : Integer = 7 ;
+    |
+    const Days_in_week : Integer = 7 ;
+
+    |
     | Number of months in a year.
-    Months_in_year : Integer = 12 ;
+    |
+    const Months_in_year : Integer = 12 ;
+
+    |
     | Maximum number of days in any month.
-    Max_days_in_month : Integer = 31 ;
+    |
+    const Max_days_in_month : Integer = 31 ;
+
+    |
     | Used for conversions of durations containing months to days and/or seconds.
-    Average_days_in_month : Real = 30.42 ;
+    |
+    const Average_days_in_month : Real = 30.42 ;
+
+    |
     | Used for conversions of durations containing years to days and/or seconds.
-    Average_days_in_year : Real = 365.24 ;
+    |
+    const Average_days_in_year : Real = 365.24 ;
+
+    |
     | Nominal days in a month, used for conversions.
-    Nominal_days_in_month : Real = 30.42 ;
+    |
+    const Nominal_days_in_month : Real = 30.42 ;
+
+    |
     | Nominal days in a year, used for conversions.
-    Nominal_days_in_year : Real = 365.24 ;
+    |
+    const Nominal_days_in_year : Real = 365.24 ;
+
+    |
     | Minimum hour value of a timezone according to ISO 8601.
-    Min_timezone_hour : Integer = 12 ;
+    |
+    const Min_timezone_hour : Integer = 12 ;
+
+    |
     | Maximum hour value of a timezone according to ISO 8601.
-    Max_timezone_hour : Integer = 14 ;
+    |
+    const Max_timezone_hour : Integer = 14 ;
 
 end

@@ -3,7 +3,7 @@
 |    keywords::    openEHR Foundation Types model
 |    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
 |    support::     https://openehr.atlassian.net/issues/
-|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
@@ -13,7 +13,7 @@
 | Type representing a keyed table of values. V is the value type and K the type
 | of the keys.
 |
-class Hash<K: Ordered, V>
+builtin class Hash<K: Ordered, V>
     is_a Container<V>
 
 feature_group ("access")

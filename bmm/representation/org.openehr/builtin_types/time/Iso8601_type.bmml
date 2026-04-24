@@ -3,7 +3,7 @@
 |    keywords::    openEHR Foundation Types model
 |    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
 |    support::     https://openehr.atlassian.net/issues/
-|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
@@ -14,8 +14,7 @@
 | and 'partial' concepts from ISO 8601.
 |
 abstract class Iso8601_type
-    is_a Temporal
-    is_a Time_Definitions
+    is_a Temporal, Time_Definitions
 
 feature_group ("access")
 

@@ -3,7 +3,7 @@
 |    keywords::    openEHR representation model
 |    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
 |    support::     https://openehr.atlassian.net/issues/
-|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>>
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
@@ -18,40 +18,94 @@ enumeration INSTRUCTION_EXECUTION_TRANSITION
 
 feature_group ("values")
 
-    ism_t_initiate ("initiate");                   | Transition to initiate an instruction.
+    |
+    | Transition to initiate an instruction.
+    |
+    ism_t_initiate ("initiate");
 
-    ism_t_start ("start");                         | Transition to start execution.
+    |
+    | Transition to start execution.
+    |
+    ism_t_start ("start");
 
-    ism_t_schedule ("schedule");                   | Transition to schedule the instruction.
+    |
+    | Transition to schedule the instruction.
+    |
+    ism_t_schedule ("schedule");
 
-    ism_t_plan_step ("plan_step");                 | Transition representing a planned step.
+    |
+    | Transition representing a planned step.
+    |
+    ism_t_plan_step ("plan_step");
 
-    ism_t_cancel ("cancel");                       | Transition to cancel the instruction.
+    |
+    | Transition to cancel the instruction.
+    |
+    ism_t_cancel ("cancel");
 
-    ism_t_do ("do");                               | Transition to perform an active step.
+    |
+    | Transition to perform an active step.
+    |
+    ism_t_do ("do");
 
-    ism_t_resume ("resume");                       | Transition to resume a suspended instruction.
+    |
+    | Transition to resume a suspended instruction.
+    |
+    ism_t_resume ("resume");
 
-    ism_t_suspend ("suspend");                     | Transition to suspend an active instruction.
+    |
+    | Transition to suspend an active instruction.
+    |
+    ism_t_suspend ("suspend");
 
-    ism_t_suspended_step ("suspended_step");       | Transition representing a step in suspended state.
+    |
+    | Transition representing a step in suspended state.
+    |
+    ism_t_suspended_step ("suspended_step");
 
-    ism_t_active_step ("active_step");             | Transition representing a step in active state.
+    |
+    | Transition representing a step in active state.
+    |
+    ism_t_active_step ("active_step");
 
-    ism_t_scheduled_step ("scheduled_step");       | Transition representing a step in scheduled state.
+    |
+    | Transition representing a step in scheduled state.
+    |
+    ism_t_scheduled_step ("scheduled_step");
 
-    ism_t_postponed_step ("postponed_step");       | Transition representing a step in postponed state.
+    |
+    | Transition representing a step in postponed state.
+    |
+    ism_t_postponed_step ("postponed_step");
 
-    ism_t_abort ("abort");                         | Transition to abort the instruction.
+    |
+    | Transition to abort the instruction.
+    |
+    ism_t_abort ("abort");
 
-    ism_t_restore ("restore");                     | Transition to restore a previously suspended instruction.
+    |
+    | Transition to restore a previously suspended instruction.
+    |
+    ism_t_restore ("restore");
 
-    ism_t_postpone ("postpone");                   | Transition to postpone an instruction.
+    |
+    | Transition to postpone an instruction.
+    |
+    ism_t_postpone ("postpone");
 
-    ism_t_time_out ("time_out");                   | Transition triggered by expiry of a time limit.
+    |
+    | Transition triggered by expiry of a time limit.
+    |
+    ism_t_time_out ("time_out");
 
-    ism_t_notify_completed ("notify_completed");   | Transition notifying that the instruction completed.
+    |
+    | Transition notifying that the instruction completed.
+    |
+    ism_t_notify_completed ("notify_completed");
 
-    ism_t_notify_aborted ("notify_aborted");       | Transition notifying that the instruction was aborted.
+    |
+    | Transition notifying that the instruction was aborted.
+    |
+    ism_t_notify_aborted ("notify_aborted");
 
 end
