@@ -27,6 +27,6 @@ feature_group ("access")
 invariant
     consistency: ¬any_allowed;
 
-    target_path_valid: ∃target_path ∧ ¬target_path.is_empty;
+    target_path_valid: ∃target_path ∧ ¬target_path.is_empty();
 
 end

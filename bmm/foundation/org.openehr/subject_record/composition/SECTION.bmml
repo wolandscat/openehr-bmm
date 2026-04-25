@@ -29,6 +29,6 @@ feature_group ("access")
     prop items :? List<CONTENT_ITEM> ;
 
 invariant
-    items_valid: ∃items ⇒ ¬items.is_empty
+    items_valid: ∃items ⇒ ¬items.is_empty();
 
 end

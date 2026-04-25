@@ -97,7 +97,7 @@ invariant
 
     concept_code_validity: id_codes.has (concept_code);
 
-    term_bindings_validity: ∃bindings ⇒ ¬bindings.is_empty;
+    term_bindings_validity: ∃bindings ⇒ ¬bindings.is_empty();
 
     parent_archetype_valid: parent_archetype.ontology = Current;
 

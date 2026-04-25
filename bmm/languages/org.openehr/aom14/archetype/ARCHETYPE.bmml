@@ -130,9 +130,9 @@ invariant
 
     inv_specialisation_validity: is_specialised ⇒ specialisation_depth > 0;
 
-    inv_invariants_valid: ∃invariants ⇒ ¬invariants.is_empty;
+    inv_invariants_valid: ∃invariants ⇒ ¬invariants.is_empty();
 
-    inv_uid_validity: ∃uid ⇒ ¬uid.is_empty;
+    inv_uid_validity: ∃uid ⇒ ¬uid.is_empty();
 
     inv_version_validity: ∃version ∧ version.is_equal(archetype_id.version_id);
 

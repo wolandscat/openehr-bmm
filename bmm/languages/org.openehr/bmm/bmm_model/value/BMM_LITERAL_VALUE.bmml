@@ -30,7 +30,7 @@ feature_group ("access")
 
     |
     | Optional specification of formalism of the `_value_literal_` attribute for complex values.
-    | Value may be any of `json &#124; json5 &#124; yawl &#124; xml &#124; odin &#124; rdf` or
+    | Value may be any of `json | json5 | yawl | xml | odin | rdf` or
     | another value agreed by the user community. If not set, `json` is assumed.
     |
     prop syntax :? String ;

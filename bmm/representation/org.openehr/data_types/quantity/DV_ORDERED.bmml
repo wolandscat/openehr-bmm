@@ -58,7 +58,7 @@ feature_group ("access")
     func is_normal : Boolean ;
 
 invariant
-    other_reference_ranges_validity: ∃other_reference_ranges ⇒ ¬other_reference_ranges.is_empty;
+    other_reference_ranges_validity: ∃other_reference_ranges ⇒ ¬other_reference_ranges.is_empty();
 
     is_simple_validity: (¬∃normal_range ∧ ¬∃other_reference_ranges) ⇒ is_simple;
 

@@ -41,6 +41,6 @@ feature_group ("access")
     prop wf_details :? ITEM_STRUCTURE ;
 
 invariant
-    activity_path_valid: ¬activity_id.is_empty
+    activity_path_valid: ¬activity_id.is_empty();
 
 end

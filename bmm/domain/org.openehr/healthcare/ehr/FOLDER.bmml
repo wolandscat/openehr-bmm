@@ -35,6 +35,6 @@ feature_group ("access")
     prop details :? ITEM_STRUCTURE ;
 
 invariant
-    folders_valid: ¬folders.is_empty;
+    folders_valid: ¬folders.is_empty();
 
 end

@@ -33,7 +33,7 @@ feature_group ("access")
     func size : Integer ;
 
 invariant
-    formalism_valid: ¬formalism.is_empty;
+    formalism_valid: ¬formalism.is_empty();
     size_valid: size >= 0;
 
 end

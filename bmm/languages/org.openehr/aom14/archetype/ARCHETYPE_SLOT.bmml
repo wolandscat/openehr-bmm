@@ -28,9 +28,9 @@ feature_group ("access")
     prop excludes :? List<ASSERTION> ;
 
 invariant
-    includes_valid: ∃includes ⇒ ¬includes.is_empty;
+    includes_valid: ∃includes ⇒ ¬includes.is_empty();
 
-    excludes_valid: ∃excludes ⇒ ¬excludes.is_empty;
+    excludes_valid: ∃excludes ⇒ ¬excludes.is_empty();
 
     validity: any_allowed ⊻ (∃includes ∨ ∃excludes);
 

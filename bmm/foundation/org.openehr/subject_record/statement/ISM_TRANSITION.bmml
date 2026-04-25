@@ -44,8 +44,7 @@ feature_group ("access")
     prop reason :? List<DV_TEXT> ;
 
 invariant
-    current_state_valid: terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_instruction_states, current_state.defining_code)
-
-    transition_valid: ∃transition ⇒ terminology (Terminology_id_openehr).
+    current_state_valid: terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_instruction_states, current_state.defining_code);
+    transition_valid: ∃transition ⇒ terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_instruction_transitions, transition.defining_code);
 
 end

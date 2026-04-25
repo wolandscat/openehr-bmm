@@ -75,13 +75,9 @@ feature_group ("access")
 
 invariant
     language_valid: code_set (Code_set_id_languages).has_code (language);
-
     encoding_valid: code_set (Code_set_id_character_sets).has_code (encoding);
-
     subject_validity: subject_is_self ⇒ subject.generating_type = "PARTY_SELF";
-
-    other_participations_valid: ∃other_participations ⇒ ¬other_participations.is_empty;
-
+    other_participations_valid: ∃other_participations ⇒ ¬other_participations.is_empty();
     is_archetype_root: is_archetype_root;
 
 end

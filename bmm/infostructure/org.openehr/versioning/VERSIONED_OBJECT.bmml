@@ -104,6 +104,6 @@ invariant
 
     latest_version_valid: version_count > 0 ⇒ ∃latest_version;
 
-    uid_validity: extension.is_empty;
+    uid_validity: extension.is_empty();
 
 end

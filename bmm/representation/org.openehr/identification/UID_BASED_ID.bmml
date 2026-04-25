@@ -37,6 +37,6 @@ feature_group ("access")
     func has_extension : Boolean ;
 
 invariant
-    has_extension_valid: extension.is_empty ⊻ has_extension;
+    has_extension_valid: extension.is_empty()⊻ has_extension;
 
 end

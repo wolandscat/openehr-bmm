@@ -30,7 +30,7 @@ feature_group ("access")
 
 invariant
     basic_validity: ∃name ∨ ∃identifiers ∨ ∃external_ref;
-    name_valid: ∃name ⇒ ¬name.is_empty;
-    identifiers_valid: ∃identifiers ⇒ ¬identifiers.is_empty;
+    name_valid: ∃name ⇒ ¬name.is_empty();
+    identifiers_valid: ∃identifiers ⇒ ¬identifiers.is_empty();
 
 end

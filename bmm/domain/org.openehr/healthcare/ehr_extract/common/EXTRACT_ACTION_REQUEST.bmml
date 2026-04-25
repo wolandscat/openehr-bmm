@@ -25,7 +25,7 @@ feature_group ("access")
     prop request_id : OBJECT_REF ;
 
     |
-    | Requested action: `cancel &#124; resend &#124; send new`. Coded by openEHR Terminology
+    | Requested action: `cancel | resend | send new`. Coded by openEHR Terminology
     | group `'extract action type'`.
     |
     prop action : DV_CODED_TEXT ;

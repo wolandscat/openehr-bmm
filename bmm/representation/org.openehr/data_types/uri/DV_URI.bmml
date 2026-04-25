@@ -59,6 +59,6 @@ feature_group ("access")
     func query : String ;
 
 invariant
-    value_valid: ¬value.is_empty;
+    value_valid: ¬value.is_empty();
 
 end

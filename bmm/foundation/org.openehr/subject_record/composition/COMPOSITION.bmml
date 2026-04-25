@@ -35,9 +35,9 @@ feature_group ("access")
     |
     | Temporal category of this Composition, i.e.
     |
-    | * `431&#124;persistent&#124;` - of potential life-time validity;
-    | * `451&#124;episodic&#124;` - valid over the life of a care episode;
-    | * `433&#124;event&#124;` - valid at the time of recording (long-term validity requires
+    | * `431|persistent|` - of potential life-time validity;
+    | * `451|episodic|` - valid over the life of a care episode;
+    | * `433|event|` - valid at the time of recording (long-term validity requires
     | subsequent clinical assessment).
     |
     | or any other code defined in the openEHR terminology group 'category'.
@@ -64,20 +64,16 @@ feature_group ("access")
     prop content :? List<CONTENT_ITEM> ;
 
     |
-    | True if category is `431&#124;persistent&#124;`, False otherwise. Useful for finding
+    | True if category is `431|persistent|`, False otherwise. Useful for finding
     | Compositions in an EHR which are guaranteed to be of interest to most users.
     |
     func is_persistent : Boolean ;
 
 invariant
-    category_validity: terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_composition_category, category.defining_code)
-
-    territory_valid: code_set(Code_set_id_countries).has_code(territory)
-
-    language_valid: code_set(Code_set_id_languages).has_code(language)
-
-    content_valid: ∃content ⇒ ¬content.is_empty
-
-    is_archetype_root: is_archetype_root
+    category_validity: terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_composition_category, category.defining_code);
+    territory_valid: code_set(Code_set_id_countries).has_code(territory);
+    language_valid: code_set(Code_set_id_languages).has_code(language);
+    content_valid: ∃content ⇒ ¬content.is_empty();
+    is_archetype_root: is_archetype_root;
 
 end

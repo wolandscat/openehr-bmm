@@ -26,6 +26,6 @@ feature_group ("access")
     prop items : List<DV_TEXT> ;
 
 invariant
-    items_valid: ¬items.is_empty;
+    items_valid: ¬items.is_empty();
 
 end

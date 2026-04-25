@@ -36,6 +36,6 @@ feature_group ("access")
     prop capabilities :? List<CAPABILITY> ;
 
 invariant
-    capabilities_valid: ∃capabilities ⇒ ¬capabilities.empty
+    capabilities_valid: ∃capabilities ⇒ ¬capabilities.is_empty();
 
 end

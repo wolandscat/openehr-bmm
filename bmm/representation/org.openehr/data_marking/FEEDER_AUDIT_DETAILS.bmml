@@ -62,6 +62,6 @@ feature_group ("access")
     prop other_details :? ITEM_STRUCTURE ;
 
 invariant
-    system_id_valid: ¬system_id.is_empty;
+    system_id_valid: ¬system_id.is_empty();
 
 end

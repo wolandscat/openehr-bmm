@@ -44,6 +44,6 @@ feature_group ("access")
     prop action_archetype_id : String ;
 
 invariant
-    action_archetype_id_valid: ¬action_archetype_id.is_empty;
+    action_archetype_id_valid: ¬action_archetype_id.is_empty();
 
 end

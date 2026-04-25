@@ -11,7 +11,6 @@ import org.openehr:representation ;
 import org.openehr:foundation ;
 
 
-
 |
 | Specification of what versions should be included in an Extract. By default, only
 | latest versions are included. The include_all_versions and commit_time_interval
@@ -51,6 +50,6 @@ feature_group ("access")
     prop include_data : Boolean ;
 
 invariant
-    includes_revision_history_valid: ¬include_data ⇒ include_revision_history
+    includes_revision_history_valid: ¬include_data ⇒ include_revision_history;
 
 end

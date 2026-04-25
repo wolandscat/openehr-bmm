@@ -66,9 +66,9 @@ invariant
 
     current_revision_valid: (∃current_revision ∧ ¬is_controlled) ⇒ current_revision.is_equal ("(uncontrolled)");
 
-    translations_valid: ∃translations ⇒ (¬translations.is_empty ∧ ¬translations.has (orginal_language.code_string));
+    translations_valid: ∃translations ⇒ ¬translations.is_empty()∧ ¬translations.has (orginal_language.code_string);
 
-    description_valid: ∃translations ⇒ ∀ d:description.details ¦ translations.has_key (d.language.code_string));
+    description_valid: ∃translations ⇒ ∀ d:description.details ¦ translations.has_key (d.language.code_string);
 
     languages_available_valid: languages_available.has (original_language);
 

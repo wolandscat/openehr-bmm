@@ -31,7 +31,7 @@ feature_group ("access")
     |
     | Mathematical function of the data of this event, e.g. maximum, mean etc. Coded using https
     | ://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml[openEH
-    | R vocabulary `event math function`]. Default value `640&#124;actual&#124;`, meaning
+    | R vocabulary `event math function`]. Default value `640|actual|`, meaning
     | 'actual value'.
     |
     prop math_function : DV_CODED_TEXT ;

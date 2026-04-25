@@ -10,8 +10,6 @@
 import org.openehr:representation ;
 import org.openehr:foundation ;
 
-
-
 |
 | Abstract model of a wrapper for one content item in an Extract, containing various
 | meta-data. Indicates whether it was part of the primary set and what its original
@@ -46,6 +44,6 @@ feature_group ("access")
     prop item :? LOCATABLE ;
 
 invariant
-    item_validity: is_masked ⊻ ∃item
+    item_validity: is_masked ⊻ ∃item;
 
 end

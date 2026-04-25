@@ -41,6 +41,6 @@ feature_group ("access")
     prop type :? String ;
 
 invariant
-    id_valid: ¬id.is_empty;
+    id_valid: ¬id.is_empty();
 
 end

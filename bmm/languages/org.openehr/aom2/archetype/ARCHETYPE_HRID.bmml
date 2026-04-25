@@ -96,13 +96,13 @@ feature_group ("access")
     func patch_version : String ;
 
 invariant
-    inv_rm_publisher_validity: ¬rm_publisher.is_empty;
+    inv_rm_publisher_validity: ¬rm_publisher.is_empty();
 
-    inv_rm_package_validity: ¬rm_package.is_empty;
+    inv_rm_package_validity: ¬rm_package.is_empty();
 
-    inv_class_name_validity: ¬rm_class.is_empty;
+    inv_class_name_validity: ¬rm_class.is_empty();
 
-    inv_concept_id_validity: ¬concept_id.is_empty;
+    inv_concept_id_validity: ¬concept_id.is_empty();
 
     inv_release_version_validity: valid_version (release_version);
 

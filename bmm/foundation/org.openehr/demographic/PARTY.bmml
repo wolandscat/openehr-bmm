@@ -59,9 +59,9 @@ feature_group ("access")
 
 invariant
     type_valid: type = name;
-    contacts_valid: ∃contacts ⇒ ¬contacts.is_empty;
+    contacts_valid: ∃contacts ⇒ ¬contacts.is_empty();
 
-    relationships_validity: ∃relationships ⇒ ¬relationships.is_empty ∧ ∀ r:relationships ¦ r.source = self;
+    relationships_validity: ∃relationships ⇒ ¬relationships.is_empty()∧ ∀ r:relationships ¦ r.source = self;
     reverse_relationships_validity: ∃reverse_relationships ⇒
         ¬reverse_relationships.empty ∧ ∀ r:reverse_relationships ¦
             repository ("demographics").all_party_relationships.has_object (r) ∧

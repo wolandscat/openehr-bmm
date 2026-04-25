@@ -39,7 +39,7 @@ feature_group ("access")
     prop variables :? List<ASSERTION_VARIABLE> ;
 
 invariant
-    tag_valid: ∃tag ⇒ ¬tag.is_empty;
+    tag_valid: ∃tag ⇒ ¬tag.is_empty();
 
     expression_valid: ∃expression ∧ expression.type.is_equal("BOOLEAN");
 
