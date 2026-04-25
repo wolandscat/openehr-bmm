@@ -72,12 +72,12 @@ feature_group ("access")
     func contains : Boolean ;
 
 invariant
-    lower_included_valid: lower_unbounded ⇒ ¬lower_included
+    lower_included_valid: lower_unbounded ⇒ ¬lower_included;
 
-    upper_included_valid: upper_unbounded ⇒ ¬upper_included
+    upper_included_valid: upper_unbounded ⇒ ¬upper_included;
 
-    limits_consistent: (¬upper_unbounded ∧ ¬lower_unbounded) ⇒ lower \<= upper
+    limits_consistent: (¬upper_unbounded ∧ ¬lower_unbounded) ⇒ lower <= upper;
 
-    limits_comparable: (¬upper_unbounded ∧ ¬lower_unbounded) ⇒ lower.strictly_comparable_to (upper)
+    limits_comparable: (¬upper_unbounded ∧ ¬lower_unbounded) ⇒ lower.strictly_comparable_to (upper);
 
 end

@@ -42,8 +42,7 @@ feature_group ("access")
     func interval_start_time : DV_DATE_TIME ;
 
 invariant
-    math_function_validity: terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_event_math_function, math_function.defining_code)
-
-    interval_start_time_valid: interval_start_time = time - width
+    math_function_validity: terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_event_math_function, math_function.defining_code);
+    interval_start_time_valid: interval_start_time = time - width;
 
 end

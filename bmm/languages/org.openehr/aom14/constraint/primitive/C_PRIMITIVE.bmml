@@ -37,6 +37,6 @@ feature_group ("access")
     func valid_value (a_value : Any) : Boolean ;
 
 invariant
-    assumed_value_valid: has_assumed_value ⇒ valid_value(assumed_value)
+    assumed_value_valid: has_assumed_value ⇒ valid_value(assumed_value);
 
 end

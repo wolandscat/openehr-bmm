@@ -55,12 +55,12 @@ feature_group ("access")
     func as_string : String ;
 
 invariant
-    year_valid: valid_year (year)
+    year_valid: valid_year (year);
 
-    month_valid: ¬month_unknown ⇒ valid_month (month)
+    month_valid: ¬month_unknown ⇒ valid_month (month);
 
-    day_valid: ¬day_unknown ⇒ valid_day (year, month, day)
+    day_valid: ¬day_unknown ⇒ valid_day (year, month, day);
 
-    partial_validity: month_unknown ⇒ day_unknown
+    partial_validity: month_unknown ⇒ day_unknown;
 
 end

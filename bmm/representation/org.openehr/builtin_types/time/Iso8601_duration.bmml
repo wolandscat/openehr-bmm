@@ -78,20 +78,13 @@ feature_group ("access")
     func as_string : String ;
 
 invariant
-    years_valid: years >= 0
-
-    months_valid: months >= 0
-
-    weeks_valid: weeks >= 0
-
-    days_valid: days >= 0
-
-    hours_valid: hours >= 0
-
-    minutes_valid: minutes >= 0
-
-    seconds_valid: seconds >= 0
-
-    fractional_second_valid: fractional_second >= 0.0 ∧ fractional_second < 1.0
+    years_valid: years >= 0;
+    months_valid: months >= 0;
+    weeks_valid: weeks >= 0;
+    days_valid: days >= 0;
+    hours_valid: hours >= 0;
+    minutes_valid: minutes >= 0;
+    seconds_valid: seconds >= 0;
+    fractional_second_valid: fractional_second >= 0.0 ∧ fractional_second < 1.0;
 
 end

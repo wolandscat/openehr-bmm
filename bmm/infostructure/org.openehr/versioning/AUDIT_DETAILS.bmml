@@ -48,8 +48,8 @@ feature_group ("access")
     prop committer : PARTY_PROXY ;
 
 invariant
-    system_id_valid: ¬system_id.is_empty
+    system_id_valid: ¬system_id.is_empty;
 
-    change_type_valid: terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_audit_change_type, change_type.defining_code)
+    change_type_valid: terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_audit_change_type, change_type.defining_code);
 
 end

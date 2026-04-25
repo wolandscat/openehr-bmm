@@ -54,10 +54,10 @@ feature_group ("access")
     func is_merged : Boolean ;
 
 invariant
-    attestations_valid: ∃attestations ⇒ ¬attestations.is_empty
+    attestations_valid: ∃attestations ⇒ ¬attestations.is_empty;
 
-    is_merged_validity: ¬∃other_input_version_ids ⊻ is_merged
+    is_merged_validity: ¬∃other_input_version_ids ⊻ is_merged;
 
-    other_input_version_uids_valid: ∃other_input_version_uids ⇒ ¬other_input_version_uids.is_empty
+    other_input_version_uids_valid: ∃other_input_version_uids ⇒ ¬other_input_version_uids.is_empty;
 
 end

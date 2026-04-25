@@ -49,8 +49,8 @@ feature_group ("access")
     prop is_pending : Boolean ;
 
 invariant
-    items_valid: ∃items ⇒ ¬items.is_empty
+    items_valid: ∃items ⇒ ¬items.is_empty;
 
-    reason_valid: (reason.generating_type.is_equal (“DV_CODED_TEXT”) ⇒ terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_attestation_reason, reason.defining_code))
+    reason_valid: (reason.generating_type.is_equal ("DV_CODED_TEXT") ⇒ terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_attestation_reason, reason.defining_code));
 
 end

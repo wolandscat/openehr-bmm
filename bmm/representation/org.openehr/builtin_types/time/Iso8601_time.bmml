@@ -62,14 +62,10 @@ feature_group ("access")
     func as_string : String ;
 
 invariant
-    hour_valid: valid_hour(hour, minute, second)
-
-    minute_valid: ¬minute_unknown ⇒ valid_minute (minute)
-
-    second_valid: ¬second_unknown ⇒ valid_second (second)
-
-    fractional_second_valid: has_fractional_second ⇒ (¬second_unknown ∧ valid_fractional_second (fractional_second))
-
-    partial_validity: minute_unknown ⇒ second_unknown
+    hour_valid: valid_hour(hour, minute, second);
+    minute_valid: ¬minute_unknown ⇒ valid_minute (minute);
+    second_valid: ¬second_unknown ⇒ valid_second (second);
+    fractional_second_valid: has_fractional_second ⇒ (¬second_unknown ∧ valid_fractional_second (fractional_second));
+    partial_validity: minute_unknown ⇒ second_unknown;
 
 end

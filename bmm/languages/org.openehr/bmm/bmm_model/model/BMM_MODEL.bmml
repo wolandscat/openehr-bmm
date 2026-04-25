@@ -79,6 +79,6 @@ feature_group ("access")
     func is_descendant_of (a_class_name : String, a_parent_class_name : String) : Boolean ;
 
 invariant
-    inv_top_level_scope: scope = self
+    inv_top_level_scope: scope = self;
 
 end

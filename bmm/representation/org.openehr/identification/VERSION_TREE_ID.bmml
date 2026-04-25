@@ -49,18 +49,12 @@ feature_group ("access")
     func branch_version : String ;
 
 invariant
-    value_valid: ¬value.is_empty
-
-    trunk_version_valid: ∃trunk_version ∧ trunk_version.is_integer ∧ trunk_version.as_integer >= 1
-
-    branch_number_valid: ∃branch_number ⇒ branch_number.is_integer ∧ branch_number.as_integer >= 1
-
-    branch_version_valid: ∃branch_version ⇒ branch_version.is_integer ∧ branch_version.as_integer >= 1
-
-    branch_validity: (¬∃branch_number ∧ ¬∃branch_version ) ⊻ (∃branch_number ∧ ∃branch_version )
-
-    is_branch_validity: is_branch ⊻ ¬∃branch_number
-
-    is_first_validity: ¬is_first ⊻ trunk_version.is_equal(“1”)
+    value_valid: ¬value.is_empty;
+    trunk_version_valid: ∃trunk_version ∧ trunk_version.is_integer ∧ trunk_version.as_integer >= 1;
+    branch_number_valid: ∃branch_number ⇒ branch_number.is_integer ∧ branch_number.as_integer >= 1;
+    branch_version_valid: ∃branch_version ⇒ branch_version.is_integer ∧ branch_version.as_integer >= 1;
+    branch_validity: (¬∃branch_number ∧ ¬∃branch_version ) ⊻ (∃branch_number ∧ ∃branch_version );
+    is_branch_validity: is_branch ⊻ ¬∃branch_number;
+    is_first_validity: ¬is_first ⊻ trunk_version.is_equal("1");
 
 end

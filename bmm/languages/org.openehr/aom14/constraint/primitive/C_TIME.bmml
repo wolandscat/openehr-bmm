@@ -57,12 +57,14 @@ feature_group ("access")
     func validity_is_range : Boolean ;
 
 invariant
-    minute_validity_optional: minute_validity = {VALIDITY_KIND}.optional ⇒ (second_validity = {VALIDITY_KIND}.optional ∨ second_validity = {VALIDITY_KIND}.disallowed)
+    minute_validity_optional: minute_validity = VALIDITY_KIND.optional ⇒ (second_validity = VALIDITY_KIND.optional ∨ second_validity = VALIDITY_KIND.disallowed);
 
-    minute_validity_disallowed: minute_validity = {VALIDITY_KIND}.disallowed ⇒ second_validity = {VALIDITY_KIND}.disallowed
+    minute_validity_disallowed: minute_validity = VALIDITY_KIND.disallowed ⇒ second_validity = VALIDITY_KIND.disallowed;
 
-    second_validity_optional: second_validity = {VALIDITY_KIND}.optional ⇒ (millisecond_validity = {VALIDITY_KIND}.optional ∨ millisecond_validity = {VALIDITY_KIND}.disallowed)
+    second_validity_optional: second_validity = VALIDITY_KIND.optional ⇒ (millisecond_validity = VALIDITY_KIND.optional ∨ millisecond_validity = VALIDITY_KIND.disallowed);
 
-    second_validity_disallowed: second_validity = {VALIDITY_KIND}.disallowed ⇒ millisecond_validity = {VALIDITY_KIND}.disallowed Validity_is_range: validity_is_range = (∃range)
+    second_validity_disallowed: second_validity = VALIDITY_KIND.disallowed ⇒ millisecond_validity = VALIDITY_KIND.disallowed;
+
+    validity_is_range: validity_is_range = ∃range;
 
 end

@@ -33,6 +33,6 @@ feature_group ("access")
     func keys : List<String> ;
 
 invariant
-    code_valid: ¬code.is_empty
+    code_valid: ¬code.is_empty;
 
 end

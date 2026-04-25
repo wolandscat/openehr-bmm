@@ -39,6 +39,6 @@ feature_group ("access")
     func component_terminology (an_id : String) : ARCHETYPE_TERMINOLOGY ;
 
 invariant
-    specialisation_validity: is_specialised
+    specialisation_validity: is_specialised;
 
 end

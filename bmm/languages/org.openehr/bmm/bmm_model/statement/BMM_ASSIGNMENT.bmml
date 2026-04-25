@@ -29,6 +29,6 @@ feature_group ("access")
     prop source : EL_EXPRESSION ;
 
 invariant
-    inv_target_writable: target.is_writable
+    inv_target_writable: target.is_writable;
 
 end

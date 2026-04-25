@@ -24,6 +24,6 @@ feature_group ("access")
     prop reference : String ;
 
 invariant
-    consistency: ¬any_allowed
+    consistency: ¬any_allowed;
 
 end

@@ -31,6 +31,6 @@ feature_group ("access")
     func purpose : DV_TEXT ;
 
 invariant
-    purpose_valid: purpose = name
+    purpose_valid: purpose = name;
 
 end

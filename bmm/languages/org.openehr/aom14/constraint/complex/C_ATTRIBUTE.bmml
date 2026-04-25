@@ -42,10 +42,10 @@ feature_group ("access")
     func any_allowed : Boolean ;
 
 invariant
-    rm_attribute_name_valid: ¬rm_attribute_name.is_empty
+    rm_attribute_name_valid: ¬rm_attribute_name.is_empty;
 
-    existence_set: existence.lower >= 0 ∧ existence.upper \<= 1
+    existence_set: existence.lower >= 0 ∧ existence.upper <= 1;
 
-    children_validity: any_allowed ⊻ ∃children
+    children_validity: any_allowed ⊻ ∃children;
 
 end

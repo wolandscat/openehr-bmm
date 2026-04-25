@@ -74,10 +74,8 @@ feature_group ("operators")
         ;
 
 invariant
-    involutive_negation: is_equal (¬ (¬self))
-
-    non_contradiction: ¬ (self ∧ (¬self))
-
-    completeness: self ∨ (¬self)
+    involutive_negation: is_equal (¬ (¬self));
+    non_contradiction: ¬ (self ∧ (¬self));
+    completeness: self ∨ (¬self);
 
 end

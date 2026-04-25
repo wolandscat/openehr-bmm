@@ -49,10 +49,8 @@ feature_group ("access")
     prop other_meta_data : Hash<String,String> ;
 
 invariant
-    invariant_adl_version_validity: valid_version_id (adl_version)
-
-    invariant_rm_release: valid_version_id (rm_release)
-
-    description_validity: ∃description
+    invariant_adl_version_validity: valid_version_id (adl_version);
+    invariant_rm_release: valid_version_id (rm_release);
+    description_validity: ∃description;
 
 end

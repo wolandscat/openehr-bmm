@@ -24,6 +24,6 @@ feature_group ("access")
     func alternatives : List<C_OBJECT> ;
 
 invariant
-    members_valid: ∃alternatives ∧ alternatives.∀(co: C_OBJECT &#124; co.occurrences.upper \<= 1)
+    members_valid: ∃alternatives ∧ ∀ co:alternatives ¦ co.occurrences.upper <= 1;
 
 end

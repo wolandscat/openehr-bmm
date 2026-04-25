@@ -29,6 +29,6 @@ feature_group ("access")
     prop range : DV_INTERVAL<T> ;
 
 invariant
-    range_is_simple: (range.lower_unbounded ∨ range.lower.is_simple) ∧ (range.upper_unbounded ∨ range.upper.is_simple)
+    range_is_simple: (range.lower_unbounded ∨ range.lower.is_simple) ∧ (range.upper_unbounded ∨ range.upper.is_simple);
 
 end

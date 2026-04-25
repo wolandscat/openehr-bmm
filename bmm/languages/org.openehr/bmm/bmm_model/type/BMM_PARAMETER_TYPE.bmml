@@ -71,6 +71,6 @@ feature_group ("access")
     func effective_type : BMM_EFFECTIVE_TYPE ;
 
 invariant
-    inv_generic_name: name.count = 1 ∧ name.is_upper
+    inv_generic_name: name.count = 1 ∧ name.is_upper;
 
 end

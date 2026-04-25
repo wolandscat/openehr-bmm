@@ -34,8 +34,7 @@ feature_group ("access")
     prop accuracy_is_percent :? Boolean ;
 
 invariant
-    accuracy_is_percent_validity: accuracy = 0 ⇒ ¬accuracy_is_percent
-
-    accuracy_validity: accuracy_is_percent ⇒ valid_percentage (accuracy)
+    accuracy_is_percent_validity: accuracy = 0 ⇒ ¬accuracy_is_percent;
+    accuracy_validity: accuracy_is_percent ⇒ valid_percentage (accuracy);
 
 end

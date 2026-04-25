@@ -30,8 +30,8 @@ feature_group ("access")
     prop result : BMM_RESULT ;
 
 invariant
-    operator_validity: ∃operator_def ⇒ arity in &#124;1..2&#124;
+    operator_validity: ∃operator_def ⇒ arity ∈ |1..2|;
 
-    inv_result_type: type = Result.type
+    inv_result_type: type = Result.type;
 
 end

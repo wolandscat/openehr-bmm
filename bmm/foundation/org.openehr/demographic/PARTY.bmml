@@ -14,6 +14,12 @@ import org.openehr:representation;
 | is any entity which can participate in an activity. The name attribute inherited from
 | LOCATABLE is used to indicate the actual type of party.
 |
+| NOTE: It is strongly recommended that the inherited attribute uid be populated in `PARTY` objects,
+|       using the UID copied from the `object_id()` of the `uid` field of the enclosing `VERSION`
+|       object.
+|       For example, the `ORIGINAL_VERSION.uid 87284370-2D4B-4e3d-A3F3-F303D2F4F34B::uk.nhs.ehr1::2`
+|       would be copied to the `uid` field of the `PARTY` object.
+|
 abstract class PARTY
     is_a LOCATABLE
 
@@ -52,16 +58,16 @@ feature_group ("access")
     func reverse_relationships : List<LOCATABLE_REF> ;
 
 invariant
-    type_valid: type = name
+    type_valid: type = name;
+    contacts_valid: ∃contacts ⇒ ¬contacts.is_empty;
 
-    contacts_valid: ∃contacts ⇒ ¬contacts.is_empty
+    relationships_validity: ∃relationships ⇒ ¬relationships.is_empty ∧ ∀ r:relationships ¦ r.source = self;
+    reverse_relationships_validity: ∃reverse_relationships ⇒
+        ¬reverse_relationships.empty ∧ ∀ r:reverse_relationships ¦
+            repository ("demographics").all_party_relationships.has_object (r) ∧
+            repository("demographics").all_party_relationships.object (r).target = self;
 
-    relationships_validity: ∃relationships ⇒ (¬relationships.is_empty ∧ relationships.∀ (r &#124; r.source = self)
-
-    reverse_relationships_validity: ∃reverse_relationships ⇒ (¬reverse_relationships.empty ∧ reverse_relationships.∀ (item &#124; repository ("demographics").all_party_relationships.has_object (item) ∧ repository("demographics").all_party_relationships.object (item).target = self))
-
-    is_archetype_root: is_archetype_root
-
-    uid_mandatory: ∃uid
+    is_archetype_root: is_archetype_root;
+    uid_mandatory: ∃uid;
 
 end

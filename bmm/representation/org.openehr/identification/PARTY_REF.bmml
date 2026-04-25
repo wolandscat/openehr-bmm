@@ -16,6 +16,6 @@ class PARTY_REF
     is_a OBJECT_REF
 
 invariant
-    type_validity: type.is_equal(“PERSON”) ∨ type.is_equal(“ORGANISATION”) ∨ type.is_equal(“GROUP”) ∨ type.is_equal(“AGENT”)∨ type.is_equal(“ROLE”) ∨ type.is_equal(“PARTY”) ∨ type.is_equal(“ACTOR”)
+    type_validity: type.is_equal("PERSON") ∨ type.is_equal("ORGANISATION") ∨ type.is_equal("GROUP") ∨ type.is_equal("AGENT")∨ type.is_equal("ROLE") ∨ type.is_equal("PARTY") ∨ type.is_equal("ACTOR");
 
 end

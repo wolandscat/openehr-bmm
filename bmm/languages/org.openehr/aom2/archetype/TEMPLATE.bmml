@@ -26,6 +26,6 @@ feature_group ("access")
     prop overlays :? List<TEMPLATE_OVERLAY> ;
 
 invariant
-    inv_is_specialised: is_specialised
+    inv_is_specialised: is_specialised;
 
 end

@@ -96,14 +96,14 @@ feature_group ("access")
     func trunk_lifecycle_state : DV_CODED_TEXT ;
 
 invariant
-    version_count_valid: version_count >= 0
+    version_count_valid: version_count >= 0;
 
-    all_version_ids_valid: all_version_ids.count = version_count
+    all_version_ids_valid: all_version_ids.count = version_count;
 
-    all_versions_valid: all_versions.count = version_count
+    all_versions_valid: all_versions.count = version_count;
 
-    latest_version_valid: version_count > 0 ⇒ ∃latest_version
+    latest_version_valid: version_count > 0 ⇒ ∃latest_version;
 
-    uid_validity: extension.is_empty
+    uid_validity: extension.is_empty;
 
 end

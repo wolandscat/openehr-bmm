@@ -18,6 +18,6 @@ class TEMPLATE_OVERLAY
     is_a ARCHETYPE
 
 invariant
-    inv_is_specialised: is_specialised
+    inv_is_specialised: is_specialised;
 
 end

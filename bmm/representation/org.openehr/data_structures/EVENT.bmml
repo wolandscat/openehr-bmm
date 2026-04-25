@@ -40,6 +40,6 @@ feature_group ("access")
     func offset : DV_DURATION ;
 
 invariant
-    offset_validity1: ∃offset ∧ offset = time.diff (parent.origin)
+    offset_validity1: ∃offset ∧ offset = time.diff (parent.origin);
 
 end

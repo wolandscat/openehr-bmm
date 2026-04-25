@@ -73,9 +73,7 @@ feature_group ("access")
 
 invariant
     links_valid: ∃links ⇒ ¬links.is_empty;
-
     archetyped_valid: is_archetype_root ⊻ ¬∃archetype_details;
-
     archetype_node_id_valid: ¬archetype_node_id.is_empty;
 
 end

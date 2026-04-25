@@ -36,6 +36,6 @@ feature_group ("infrastructure")
     prop rm_version : String ;
 
 invariant
-    rm_version_valid: ¬rm_version.is_empty
+    rm_version_valid: ¬rm_version.is_empty;
 
 end

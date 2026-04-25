@@ -86,6 +86,6 @@ feature_group ("access")
     func as_hierarchy : CLUSTER ;
 
 invariant
-    valid_structure: rows.∀ (items.∀ (instance_of ("ELEMENT")))
+    valid_structure: ∀ r:rows ¦ (∀ i:items ¦ i instance_of ("ELEMENT");
 
 end

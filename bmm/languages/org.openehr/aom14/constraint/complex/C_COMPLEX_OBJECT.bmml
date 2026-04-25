@@ -28,6 +28,6 @@ feature_group ("access")
     func any_allowed : Boolean ;
 
 invariant
-    attributes_valid: any_allowed ⊻ (∃attributes ∧ ¬attributes.is_empty)
+    attributes_valid: any_allowed ⊻ (∃attributes ∧ ¬attributes.is_empty);
 
 end

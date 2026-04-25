@@ -40,6 +40,6 @@ feature_group ("access")
     func institution_specified : Boolean ;
 
 invariant
-    value_valid: value.formalism.is_equal (“HL7:PIVL”) ∨ value.formalism. is_equal (“HL7:EIVL”)
+    value_valid: value.formalism.is_equal ("HL7:PIVL") ∨ value.formalism. is_equal ("HL7:EIVL");
 
 end

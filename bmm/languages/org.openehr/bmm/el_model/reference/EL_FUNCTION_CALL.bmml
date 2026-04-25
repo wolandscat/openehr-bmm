@@ -41,6 +41,6 @@ feature_group ("access")
     func reference : String ;
 
 invariant
-    inv_valid_agent: agent.is_callable()
+    inv_valid_agent: agent.is_callable();
 
 end

@@ -53,10 +53,8 @@ feature_group ("access")
     func is_periodic : Boolean ;
 
 invariant
-    events_valid: (∃events ∧ ¬events.is_empty) ∨ ∃summary
-
-    periodic_validity: is_periodic ⊻ ¬∃period
-
-    period_consistency: is_periodic ⇒ events.∀ (e: EVENT &#124; e.offset. to_seconds.mod(period.to_seconds) = 0)
+    events_valid: (∃events ∧ ¬events.is_empty) ∨ ∃summary;
+    periodic_validity: is_periodic ⊻ ¬∃period;
+    period_consistency: is_periodic ⇒ ∀e:events ¦ e.offset.to_seconds.mod(period.to_seconds) = 0;
 
 end

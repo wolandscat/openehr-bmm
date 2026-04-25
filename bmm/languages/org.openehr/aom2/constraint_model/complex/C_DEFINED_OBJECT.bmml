@@ -46,6 +46,6 @@ feature_group ("access")
     func has_default_value : Boolean ;
 
 invariant
-    inv_valid_default_value: valid_value (default_value)
+    inv_valid_default_value: valid_value (default_value);
 
 end

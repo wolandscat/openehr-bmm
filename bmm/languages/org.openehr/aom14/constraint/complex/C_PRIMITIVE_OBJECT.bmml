@@ -28,6 +28,6 @@ feature_group ("access")
     func any_allowed : Boolean ;
 
 invariant
-    item_valid: any_allowed ⊻ ∃item
+    item_valid: any_allowed ⊻ ∃item;
 
 end

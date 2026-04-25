@@ -61,6 +61,6 @@ feature_group ("access")
     func valid_pattern_constraint_replacement (a_pattern : String, an_other_pattern : String) : Boolean ;
 
 invariant
-    pattern_validity: ∃pattern ⇒ valid_iso8601_date_constraint_pattern(pattern)
+    pattern_validity: ∃pattern ⇒ valid_iso8601_date_constraint_pattern(pattern);
 
 end

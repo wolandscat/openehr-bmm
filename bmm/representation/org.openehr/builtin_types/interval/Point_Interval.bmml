@@ -17,6 +17,6 @@ class Point_Interval<T: Ordered>
     is_a Interval<T>
 
 invariant
-    inv_point: lower = upper
+    inv_point: lower = upper;
 
 end

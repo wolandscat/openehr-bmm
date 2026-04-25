@@ -66,28 +66,18 @@ feature_group ("access")
     func as_string : String ;
 
 invariant
-    year_valid: valid_year (year)
+    year_valid: valid_year (year);
+    month_valid: valid_month (month);
+    day_valid: valid_day(year, month, day);
+    hour_valid: valid_hour (hour, minute, second);
+    minute_valid: ¬minute_unknown ⇒ valid_minute(minute);
+    second_valid: ¬second_unknown ⇒ valid_second (second);
+    fractional_second_valid: has_fractional_second ⇒ (¬second_unknown ∧ valid_fractional_second (fractional_second));
 
-    month_valid: valid_month (month)
-
-    day_valid: valid_day(year, month, day)
-
-    hour_valid: valid_hour (hour, minute, second)
-
-    minute_valid: ¬minute_unknown ⇒ valid_minute(minute)
-
-    second_valid: ¬second_unknown ⇒ valid_second (second)
-
-    fractional_second_valid: has_fractional_second ⇒ (¬second_unknown ∧ valid_fractional_second (fractional_second))
-
-    partial_validity_year: ¬month_unknown
-
-    partial_validity_month: ¬month_unknown
-
-    partial_validity_day: ¬day_unknown
-
-    partial_validity_hour: ¬hour_unknown
-
-    partial_validity_minute: minute_unknown ⇒ second_unknown
+    partial_validity_year: ¬month_unknown;
+    partial_validity_month: ¬month_unknown;
+    partial_validity_day: ¬day_unknown;
+    partial_validity_hour: ¬hour_unknown;
+    partial_validity_minute: minute_unknown ⇒ second_unknown;
 
 end

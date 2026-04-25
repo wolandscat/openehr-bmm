@@ -126,18 +126,18 @@ feature_group ("access")
     func version : String ;
 
 invariant
-    inv_concept_valid: ontology.has_term_code (concept_code)
+    inv_concept_valid: ontology.has_term_code (concept_code);
 
-    inv_specialisation_validity: is_specialised ⇒ specialisation_depth > 0
+    inv_specialisation_validity: is_specialised ⇒ specialisation_depth > 0;
 
-    inv_invariants_valid: ∃invariants ⇒ ¬invariants.is_empty
+    inv_invariants_valid: ∃invariants ⇒ ¬invariants.is_empty;
 
-    inv_uid_validity: ∃uid ⇒ ¬uid.is_empty
+    inv_uid_validity: ∃uid ⇒ ¬uid.is_empty;
 
-    inv_version_validity: ∃version ∧ version.is_equal(archetype_id.version_id)
+    inv_version_validity: ∃version ∧ version.is_equal(archetype_id.version_id);
 
-    inv_description_valid: ∃description
+    inv_description_valid: ∃description;
 
-    inv_original_language_valid: original_language /= void ∧ ∃language
+    inv_original_language_valid: ∃original_language ∧ ∃language;
 
 end

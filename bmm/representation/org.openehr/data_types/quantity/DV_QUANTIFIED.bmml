@@ -46,6 +46,6 @@ feature_group ("access")
     func accuracy_unknown : Boolean ;
 
 invariant
-    magnitude_status_valid: ∃magnitude_status ⇒ valid_magnitude_status (magnitude_status)
+    magnitude_status_valid: ∃magnitude_status ⇒ valid_magnitude_status (magnitude_status);
 
 end

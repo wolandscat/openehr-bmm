@@ -81,6 +81,6 @@ feature_group ("access")
     func timezone_validity : VALIDITY_KIND ;
 
 invariant
-    pattern_validity: ∃pattern ⇒ valid_iso8601_date_time_constraint_pattern(pattern)
+    pattern_validity: ∃pattern ⇒ valid_iso8601_date_time_constraint_pattern(pattern);
 
 end

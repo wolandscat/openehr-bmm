@@ -38,6 +38,6 @@ feature_group ("access")
     prop preferred_term :? String ;
 
 invariant
-    code_string_valid: ¬code_string.is_empty
+    code_string_valid: ¬code_string.is_empty;
 
 end

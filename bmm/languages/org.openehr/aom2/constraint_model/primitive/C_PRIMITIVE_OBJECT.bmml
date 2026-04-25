@@ -68,6 +68,6 @@ feature_group ("access")
     func c_value_congruent_to (other : C_PRIMITIVE_OBJECT) : Boolean ;
 
 invariant
-    inv_valid_assumed_value: valid_value (assumed_value)
+    inv_valid_assumed_value: valid_value (assumed_value);
 
 end

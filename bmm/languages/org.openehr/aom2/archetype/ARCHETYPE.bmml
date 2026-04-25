@@ -85,8 +85,7 @@ feature_group ("access")
     func is_specialised : Boolean ;
 
 invariant
-    invariant_concept_valid: terminology.has_term_code (concept_code)
-
-    invariant_specialisation_validity: is_specialised ⇒ specialisation_depth > 0
+    invariant_concept_valid: terminology.has_term_code (concept_code);
+    invariant_specialisation_validity: is_specialised ⇒ specialisation_depth > 0;
 
 end

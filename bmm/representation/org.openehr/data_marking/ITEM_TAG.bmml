@@ -45,8 +45,7 @@ feature_group ("access")
     prop owner_id : OBJECT_REF ;
 
 invariant
-    inv_key_valid: ¬key.is_empty ∧ key.is_justified
-
-    inv_value_valid: ∃value ⇒ ¬value.is_empty
+    inv_key_valid: ¬key.is_empty ∧ key.is_justified;
+    inv_value_valid: ∃value ⇒ ¬value.is_empty;
 
 end

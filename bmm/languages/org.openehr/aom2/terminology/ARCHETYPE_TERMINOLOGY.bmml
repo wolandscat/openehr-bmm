@@ -141,12 +141,12 @@ feature_group ("access")
     func languages_available : List<String> ;
 
 invariant
-    original_language_validity: code_set (Code_set_id_languages).has_concept_id (original_language)
+    original_language_validity: code_set (Code_set_id_languages).has_concept_id (original_language);
 
-    concept_code_validity: id_codes.has (concept_code)
+    concept_code_validity: id_codes.has (concept_code);
 
-    term_bindings_validity: bindings /= void ⇒ ¬bindings.is_empty
+    term_bindings_validity: ∃bindings ⇒ ¬bindings.is_empty;
 
-    parent_archetype_valid: parent_archetype.terminology = Current
+    parent_archetype_valid: parent_archetype.terminology = Current;
 
 end
