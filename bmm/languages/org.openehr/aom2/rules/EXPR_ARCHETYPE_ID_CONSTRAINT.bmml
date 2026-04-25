@@ -18,8 +18,7 @@ class EXPR_ARCHETYPE_ID_CONSTRAINT
 feature_group ("access")
 
     |
-    | A C_STRING representing a regular expression for matching archetype identifiers
-    | (redefined from C_PRIMITIVE_OBJECT).
+    | A C_STRING representing a regular expression for matching Archetype identifiers.
     |
     prop item : C_STRING ;
 

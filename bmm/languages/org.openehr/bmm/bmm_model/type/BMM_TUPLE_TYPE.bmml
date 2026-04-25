@@ -25,8 +25,8 @@ feature_group ("access")
     prop item_types : Hash<String, BMM_TYPE> ;
 
     |
-    | Return the logical set of unique types from the merge of flattened_type_list()
-    | called on each member of item_types.
+    | Return the logical set (i.e. unique types) from the merge of `_flattened_type_list_()`
+    | called on each member of `_item_types_`.
     |
     func flattened_type_list : List<String> ;
 

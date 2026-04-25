@@ -18,13 +18,21 @@ abstract class DV_ENCAPSULATED
 feature_group ("access")
 
     |
-    | Name of character encoding scheme. Unicode/UTF-8 is the default assumption.
+    | Name of character encoding scheme in which this value is encoded. Coded from openEHR Code
+    | Set character sets . Unicode is the default assumption in openEHR, with UTF-8 being the
+    | assumed encoding. This attribute allows for variations from these assumptions.
     |
     prop charset :? CODE_PHRASE «iana.character-sets» ;
 
     |
-    | Optional indicator of the localised language in which the data is written.
+    | Optional indicator of the localised language in which the data is written, if relevant.
+    | Coded from openEHR Code Set `languages`.
     |
     prop language :? CODE_PHRASE «iso.iso_639-1» ;
+
+invariant
+    language_valid: ∃language ⇒ code_set (Code_set_id_languages).has_code (language)
+
+    charset_valid: ∃charset ⇒ code_set (Code_set_id_character_sets).has_code (charset)
 
 end

@@ -44,8 +44,12 @@ feature_group ("access")
     func ith_item (i : Integer) : ELEMENT ;
 
     |
-    | Generate a CEN EN13606-compatible hierarchy.
+    | Generate a CEN EN13606-compatible hierarchy consisting of a single `CLUSTER` containing
+    | the `ELEMENTs` of this list.
     |
     func as_hierarchy : CLUSTER ;
+
+invariant
+    valid_structure: items.forall (i:ITEM &#124; i.type = "ELEMENT")
 
 end

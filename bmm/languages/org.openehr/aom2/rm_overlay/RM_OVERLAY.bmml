@@ -19,8 +19,10 @@ class RM_OVERLAY
 feature_group ("access")
 
     |
-    | Optional structure in which visibility and aliasing of reference model elements can
-    | be specified. Key is path to an RM attribute; value is visibility definition.
+    | Optional structure in which visibility and aliasing of reference model elements can be
+    | specified. Key is path to an RM attribute, which is typically formed from a path to an
+    | archetyped node concatenated with a further pure RM attribute path; may also refer to a
+    | non-archetyped attribute.
     |
     prop rm_visibility :? Hash<String,RM_ATTRIBUTE_VISIBILITY> ;
 

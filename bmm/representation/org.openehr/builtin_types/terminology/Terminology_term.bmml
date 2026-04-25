@@ -24,7 +24,7 @@ feature_group ("access")
     prop concept : Terminology_code ;
 
     |
-    | Text of the term.
+    | Text of term.
     |
     prop text : String ;
 

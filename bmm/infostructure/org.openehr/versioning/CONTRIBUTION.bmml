@@ -23,8 +23,9 @@ feature_group ("access")
     prop uid : HIER_OBJECT_ID ;
 
     |
-    | Set of references to Versions causing changes to this EHR. May include paths
-    | pointing to any number of versionable items such as COMPOSITIONs and FOLDERs.
+    | Set of references to Versions causing changes to this EHR. Each contribution contains a
+    | list of versions, which may include paths pointing to any number of versionable items,
+    | i.e. items of types such as `COMPOSITION` and `FOLDER`.
     |
     prop versions : List<OBJECT_REF> ;
 

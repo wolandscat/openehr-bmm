@@ -20,13 +20,14 @@ class EXPR_FOR_ALL
 feature_group ("access")
 
     |
-    | Boolean condition that returns True or False when applied to a member of the operand
-    | of a for_all operator.
+    | Boolean condition that returns True or False when applied to a member of the operand of a
+    | `for_all` operator.
     |
     prop condition : ASSERTION ;
 
     |
-    | Reference to collection/container object to which the for_all operator is applied.
+    | Reference to collection / container object to which the `for_all` operator is to be
+    | applied.
     |
     prop operand : EXPR_VALUE_REF ;
 

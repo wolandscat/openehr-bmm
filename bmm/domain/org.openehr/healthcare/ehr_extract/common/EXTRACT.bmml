@@ -26,8 +26,8 @@ feature_group ("access")
     prop chapters :? List<EXTRACT_CHAPTER> ;
 
     |
-    | The specification that this Extract actually conforms to; might not be identical
-    | with the specification of the corresponding request.
+    | The specification that this Extract actually conforms to; might not be identical with the
+    | specification of the corresponding request.
     |
     prop specification :? EXTRACT_SPEC ;
 
@@ -37,7 +37,7 @@ feature_group ("access")
     prop request_id :? OBJECT_REF ;
 
     |
-    | Creation time of this Extract.
+    | Creation time of this Extract
     |
     prop time_created : DV_DATE_TIME ;
 
@@ -47,9 +47,8 @@ feature_group ("access")
     prop system_id : HIER_OBJECT_ID ;
 
     |
-    | Number of this Extract response in sequence of responses to Extract request
-    | identified by request_id. If this is the sole response, or there was no request,
-    | value is 1.
+    | Number of this Extract response in sequence of responses to Extract request identified by
+    | `_request_id_`. If this is the sole response, or there was no request, value is 1.
     |
     prop sequence_nr : Integer ;
 
@@ -57,5 +56,8 @@ feature_group ("access")
     | Participations relevant to the creation of this Extract.
     |
     prop participations :? List<EXTRACT_PARTICIPATION> ;
+
+invariant
+    sequence_nr_valid: sequence_nr >= 1
 
 end

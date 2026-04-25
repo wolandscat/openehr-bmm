@@ -17,12 +17,12 @@ class ORDINAL
 feature_group ("access")
 
     |
-    | Coded term corresponding to this ordinal value.
+    | Terminology code providing the Ordinal's symbol.
     |
     prop symbol : CODE_PHRASE ;
 
     |
-    | Integer value of this ordinal.
+    | Ordinal value.
     |
     prop value : Integer ;
 

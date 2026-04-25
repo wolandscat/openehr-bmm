@@ -18,24 +18,26 @@ abstract class EL_OPERATOR
 feature_group ("access")
 
     |
-    | True if the natural precedence of operators is overridden in the expression
-    | represented by this node of the expression tree.
+    | True if the natural precedence of operators is overridden in the expression represented by
+    | this node of the expression tree. If True, parentheses should be introduced around the
+    | totality of the syntax expression corresponding to this operator node and its operands.
     |
     prop precedence_overridden :? Boolean ;
 
     |
-    | The symbol actually used in the expression for serialisation.
+    | The symbol actually used in the expression, or intended to be used for serialisation. Must
+    | be a member of `OPERATOR_DEF._symbols_`.
     |
     prop symbol :? String ;
 
     |
-    | Function call equivalent to this operator expression, inferred by matching
-    | operator against functions defined in the interface of the principal operand.
+    | Function call equivalent to this operator expression, inferred by matching operator
+    | against functions defined in interface of principal operand.
     |
     prop call : EL_FUNCTION_CALL ;
 
     |
-    | Operator definition derived from the definition's operator_definition.
+    | Operator definition derived from `_definition.operator_definition()_`.
     |
     func operator_definition : BMM_OPERATOR ;
 

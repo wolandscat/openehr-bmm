@@ -19,8 +19,8 @@ class BMM_FUNCTION
 feature_group ("access")
 
     |
-    | Optional details enabling a function to be represented as an operator in a
-    | syntactic representation.
+    | Optional details enabling a function to be represented as an operator in a syntactic
+    | representation.
     |
     prop operator_definition :? BMM_OPERATOR ;
 
@@ -28,5 +28,10 @@ feature_group ("access")
     | Automatically created Result variable, usable in body and post-condition.
     |
     prop result : BMM_RESULT ;
+
+invariant
+    operator_validity: ∃operator_def ⇒ arity in &#124;1..2&#124;
+
+    inv_result_type: type = Result.type
 
 end

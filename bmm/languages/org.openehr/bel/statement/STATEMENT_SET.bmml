@@ -27,7 +27,7 @@ feature_group ("access")
     prop name :? String ;
 
     |
-    | Execution result of the whole rule set, determined by and-ing of result values of
+    | Execution result of the whole rule set. Determined by the and-ing of result values of
     | Assertions in the rule set.
     |
     func execution_result : Boolean ;

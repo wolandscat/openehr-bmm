@@ -24,4 +24,7 @@ feature_group ("access")
     |
     prop condition : EL_EXPRESSION ;
 
+invariant
+    inv_condition_boolean: condition.is_boolean()
+
 end

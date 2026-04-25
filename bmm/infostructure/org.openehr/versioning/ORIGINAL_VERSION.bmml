@@ -18,12 +18,12 @@ class ORIGINAL_VERSION<T>
 feature_group ("access")
 
     |
-    | Stored version of uid.
+    | Stored version of inheritance precursor.
     |
     prop uid : OBJECT_VERSION_ID ;
 
     |
-    | Stored version of preceding_version_uid.
+    | Stored version of inheritance precursor.
     |
     prop preceding_version_uid :? OBJECT_VERSION_ID ;
 
@@ -33,8 +33,8 @@ feature_group ("access")
     prop other_input_version_uids :? List<OBJECT_VERSION_ID> ;
 
     |
-    | Lifecycle state of the content item; coded by openEHR vocabulary
-    | version lifecycle state.
+    | Lifecycle state of the content item in this version; coded by openEHR vocabulary `version
+    | lifecycle state`.
     |
     prop lifecycle_state : DV_CODED_TEXT ;
 
@@ -52,5 +52,12 @@ feature_group ("access")
     | True if this Version was created from more than just the preceding (checked out) version.
     |
     func is_merged : Boolean ;
+
+invariant
+    attestations_valid: ∃attestations ⇒ ¬attestations.is_empty
+
+    is_merged_validity: ¬∃other_input_version_ids ⊻ is_merged
+
+    other_input_version_uids_valid: ∃other_input_version_uids ⇒ ¬other_input_version_uids.is_empty
 
 end

@@ -19,12 +19,12 @@ class DV_TIME
 feature_group ("access")
 
     |
-    | ISO8601 time string.
+    | ISO8601 time string
     |
     prop value : String ;
 
     |
-    | Numeric value of the time as seconds since start of day (00:00:00).
+    | Numeric value of the time as seconds since the start of day, i.e. `00:00:00`.
     |
     func magnitude : Real ;
 
@@ -42,5 +42,8 @@ feature_group ("access")
     | Difference between this Time and other.
     |
     func diff (other : DV_TIME) : DV_DURATION ;
+
+invariant
+    value_valid: valid_iso8601_time (value)
 
 end

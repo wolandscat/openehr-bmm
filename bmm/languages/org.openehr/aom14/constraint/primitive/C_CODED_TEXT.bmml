@@ -23,13 +23,11 @@ feature_group ("access")
     prop terminology : String ;
 
     |
-    | Optional list of codes from the terminology. No list means any code from the
-    | terminology is allowed.
+    | Optional list of codes from the terminology. No list means any code from the terminology
+    | is allowed.
     |
     prop code_list :? List<String> ;
 
-    |
-    | Reference to a constraint in external terminology service.
     |
     prop reference :? String ;
 

@@ -19,8 +19,6 @@ abstract class DV_ABSOLUTE_QUANTITY
 feature_group ("access")
 
     |
-    | Optional accuracy of measurement, expressed as a DV_AMOUNT.
-    |
     prop accuracy :? DV_AMOUNT ;
 
 end

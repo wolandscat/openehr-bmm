@@ -23,7 +23,8 @@ feature_group ("access")
     prop value : String ;
 
     |
-    | Numeric value of the date/time as seconds since 0001-01-01T00:00:00Z.
+    | Numeric value of the date/time as seconds since the calendar origin date/time
+    | `0001-01-01T00:00:00Z`.
     |
     func magnitude : Double ;
 
@@ -41,5 +42,8 @@ feature_group ("access")
     | Difference between this Date/time and other.
     |
     func diff (other : DV_DATE_TIME) : DV_DURATION ;
+
+invariant
+    value_valid: valid_iso8601_date_time (value)
 
 end

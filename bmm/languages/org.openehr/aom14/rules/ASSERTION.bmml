@@ -23,8 +23,8 @@ feature_group ("access")
     prop tag :? String ;
 
     |
-    | String form of expression, in case an expression evaluator taking String expressions
-    | is used for evaluation.
+    | String form of expression, in case an expression evaluator taking String expressions is
+    | used for evaluation.
     |
     prop string_expression :? String ;
 
@@ -37,5 +37,10 @@ feature_group ("access")
     | Definitions of variables used in the assertion expression.
     |
     prop variables :? List<ASSERTION_VARIABLE> ;
+
+invariant
+    tag_valid: ∃tag ⇒ ¬tag.is_empty
+
+    expression_valid: ∃expression ∧ expression.type.is_equal(“BOOLEAN”)
 
 end

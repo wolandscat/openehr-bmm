@@ -18,7 +18,8 @@ abstract class C_TEMPORAL<T: Temporal>
 feature_group ("access")
 
     |
-    | Optional alternative constraint in the form of a pattern based on ISO8601.
+    | Optional alternative constraint in the form of a pattern based on ISO8601. See descendants
+    | for details.
     |
     prop pattern_constraint :? String ;
 
@@ -33,7 +34,8 @@ feature_group ("access")
     func valid_pattern_constraint_replacement (a_pattern : String, an_other_pattern : String) : Boolean ;
 
     |
-    | True if any value (i.e. instance) of the reference model type would be allowed.
+    | True if any value (i.e. instance) of the reference model type would be allowed. Redefined
+    | in descendants.
     |
     func any_allowed : Boolean ;
 

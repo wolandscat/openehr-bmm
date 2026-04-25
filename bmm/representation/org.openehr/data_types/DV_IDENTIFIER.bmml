@@ -19,23 +19,28 @@ class DV_IDENTIFIER
 feature_group ("access")
 
     |
-    | The identifier value.
+    | The identifier value. Often structured, according to the definition of the issuing
+    | authority's rules.
     |
     prop id : String ;
 
     |
-    | Optional authority which issues the kind of id.
+    | Optional authority which issues the kind of id used in the id field of this object.
     |
     prop issuer :? String ;
 
     |
-    | Optional organisation that assigned the id.
+    | Optional organisation that assigned the id to the item being identified.
     |
     prop assigner :? String ;
 
     |
-    | Optional identifier type, such as prescription or Social Security Number.
+    | Optional identifier type, such as prescription , or Social Security Number . One day a
+    | controlled vocabulary might be possible for this.
     |
     prop type :? String ;
+
+invariant
+    id_valid: ¬id.is_empty
 
 end

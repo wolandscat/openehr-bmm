@@ -19,47 +19,56 @@ class Iso8601_duration
 feature_group ("access")
 
     |
-    | Number of years in the value.
+    | Number of years in the `_value_`, i.e. the number preceding the `'Y'` in the `'YMD'` part,
+    | if one exists.
     |
     func years : Integer ;
 
     |
-    | Number of months in the value.
+    | Number of months in the `_value_`, i.e. the value preceding the `'M'` in the `'YMD'` part,
+    | if one exists.
     |
     func months : Integer ;
 
     |
-    | Number of weeks in the value.
+    | Number of weeks in the `_value_`, i.e. the value preceding the `W`, if one exists.
     |
     func weeks : Integer ;
 
     |
-    | Number of days in the value.
+    | Number of days in the `_value_`, i.e. the number preceding the `'D'` in the `'YMD'` part,
+    | if one exists.
     |
     func days : Integer ;
 
     |
-    | Number of hours in the value.
+    | Number of hours in the `_value_`, i.e. the number preceding the `'H'` in the `'HMS'` part,
+    | if one exists.
     |
     func hours : Integer ;
 
     |
-    | Number of minutes in the value.
+    | Number of minutes in the `_value_`, i.e. the number preceding the `'M'` in the `'HMS'`
+    | part, if one exists.
     |
     func minutes : Integer ;
 
     |
-    | Number of seconds in the value.
+    | Number of seconds in the `_value_`, i.e. the integer number preceding the `'S'` in the
+    | `'HMS'` part, if one exists.
     |
     func seconds : Integer ;
 
     |
-    | Fractional seconds in the value.
+    | Fractional seconds in the `_value_`, i.e. the decimal part of the number preceding the
+    | `'S'` in the `'HMS'` part, if one exists.
     |
     func fractional_seconds : Real ;
 
     |
-    | Total number of seconds equivalent of entire duration.
+    | Total number of seconds equivalent (including fractional) of entire duration. Where non-
+    | definite elements such as year and month (i.e. 'Y' and 'M') are included, the
+    | corresponding 'average' durations from `Time_definitions` are used to compute the result.
     |
     func to_seconds : Real ;
 
@@ -67,5 +76,22 @@ feature_group ("access")
     | Return the duration string value.
     |
     func as_string : String ;
+
+invariant
+    years_valid: years >= 0
+
+    months_valid: months >= 0
+
+    weeks_valid: weeks >= 0
+
+    days_valid: days >= 0
+
+    hours_valid: hours >= 0
+
+    minutes_valid: minutes >= 0
+
+    seconds_valid: seconds >= 0
+
+    fractional_second_valid: fractional_second >= 0.0 ∧ fractional_second < 1.0
 
 end

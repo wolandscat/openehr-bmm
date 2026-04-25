@@ -20,22 +20,23 @@ class IMPORTED_VERSION<T>
 feature_group ("access")
 
     |
-    | The ORIGINAL_VERSION object that was imported.
+    | The `ORIGINAL_VERSION` object that was imported.
     |
     prop item : ORIGINAL_VERSION<T> ;
 
     |
-    | Computed version of uid, derived as item.uid.
+    | Computed version of inheritance precursor, derived as `_item.uid_`.
     |
     func uid : OBJECT_VERSION_ID ;
 
     |
-    | Computed version of preceding_version_uid, derived as item.preceding_version_uid.
+    | Computed version of inheritance precursor, derived as `_item.preceding_version_uid_`.
     |
     func preceding_version_uid : OBJECT_VERSION_ID ;
 
     |
-    | Lifecycle state of the content item in the wrapped ORIGINAL_VERSION.
+    | Lifecycle state of the content item in wrapped `ORIGINAL_VERSION`, derived as
+    | `_item.lifecycle_state_`; coded by openEHR vocabulary `version lifecycle state`.
     |
     func lifecycle_state : DV_CODED_TEXT ;
 

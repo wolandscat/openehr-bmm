@@ -54,7 +54,7 @@ feature_group ("operators")
         ;
 
     |
-    | Unary negation of current value.
+    | Generate negative of current value.
     |
     func negative : Numeric
         alias "-" ;

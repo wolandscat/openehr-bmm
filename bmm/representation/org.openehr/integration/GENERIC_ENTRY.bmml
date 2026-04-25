@@ -19,7 +19,8 @@ class GENERIC_ENTRY
 feature_group ("access")
 
     |
-    | The data from the source message or record. May be recorded in any structural openEHR representation.
+    | The data from the source message or record. May be recorded in any structural openEHR
+    | representation.
     |
     prop data : ITEM ;
 

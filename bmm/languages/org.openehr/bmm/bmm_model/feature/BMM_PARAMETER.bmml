@@ -18,8 +18,8 @@ class BMM_PARAMETER
 feature_group ("access")
 
     |
-    | Optional read/write direction of the parameter. If none supplied, the parameter
-    | is treated as in, i.e. readable.
+    | Optional read/write direction of the parameter. If none-supplied, the parameter is treated
+    | as `in`, i.e. readable.
     |
     prop direction :? BMM_PARAMETER_DIRECTION ;
 

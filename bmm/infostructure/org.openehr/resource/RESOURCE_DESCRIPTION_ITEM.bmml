@@ -19,7 +19,10 @@ class RESOURCE_DESCRIPTION_ITEM
 feature_group ("access")
 
     |
-    | The localised language in which the items in this description item are written.
+    | The localised language in which the items in this description item are written. Encoded
+    | following the RFC 5646 standard, using ISO 639-1 (two-character) language codes, e.g.
+    | "en". It may include a region subtag conforming to ISO 3166-1 alpha-2 (two-character
+    | country codes), e.g. "pt-br" for Brazilian Portuguese.
     |
     prop language : Terminology_code «iso.iso_639-1» ;
 
@@ -29,7 +32,7 @@ feature_group ("access")
     prop purpose : String ;
 
     |
-    | Keywords which characterise this resource, used for indexing and searching.
+    | Keywords which characterise this resource, used e.g. for indexing and searching.
     |
     prop keywords :? List<String> ;
 
@@ -44,13 +47,13 @@ feature_group ("access")
     prop misuse :? String ;
 
     |
-    | URIs of original clinical document(s) or description of which resource is a
-    | formalisation, in the language of this description item; keyed by meaning.
+    | URIs of original clinical document(s) or description of which resource is a formalisation,
+    | in the language of this description item; keyed by meaning.
     |
     prop original_resource_uri :? Hash<String, String> ;
 
     |
-    | Additional language-sensitive resource metadata, as a list of name/value pairs.
+    | Additional language-senstive resource metadata, as a list of name/value pairs.
     |
     prop other_details :? Hash<String, String> ;
 

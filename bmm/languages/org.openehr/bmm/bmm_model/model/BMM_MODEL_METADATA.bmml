@@ -23,7 +23,7 @@ feature_group ("access")
     prop rm_publisher : String ;
 
     |
-    | Release of model expressed in the schema as a 3-part numeric, e.g. "3.1.0".
+    | Release of model expressed in the schema as a 3-part numeric, e.g. "3.1.0" .
     |
     prop rm_release : String ;
 

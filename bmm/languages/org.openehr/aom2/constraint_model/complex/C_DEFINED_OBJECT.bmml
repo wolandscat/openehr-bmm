@@ -19,12 +19,14 @@ abstract class C_DEFINED_OBJECT
 feature_group ("access")
 
     |
-    | Default value set in a template, and present in an operational template.
+    | Default value set in a template, and present in an operational template. Generally limited
+    | to leaf and near-leaf nodes.
     |
     prop default_value :? Any ;
 
     |
-    | True if any value (i.e. instance) of the reference model type would be allowed.
+    | True if any value (i.e. instance) of the reference model type would be allowed. Redefined
+    | in descendants.
     |
     func any_allowed : Boolean ;
 
@@ -42,5 +44,8 @@ feature_group ("access")
     | True if there is an assumed value.
     |
     func has_default_value : Boolean ;
+
+invariant
+    inv_valid_default_value: valid_value (default_value)
 
 end

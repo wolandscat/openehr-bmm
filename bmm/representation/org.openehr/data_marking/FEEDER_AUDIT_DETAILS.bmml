@@ -20,12 +20,16 @@ class FEEDER_AUDIT_DETAILS
 feature_group ("access")
 
     |
-    | Identifier of the system which handled the information item.
+    | Identifier of the system which handled the information item. This is the IT system owned
+    | by the organisation legally responsible for handling the data, and at which the data were
+    | previously created or passed by an earlier system.
     |
     prop system_id : String ;
 
     |
     | Identifier of the particular site/facility within an organisation which handled the item.
+    | For computability, this identifier needs to be e.g. a PKI identifier which can be included
+    | in the identifier list of the `PARTY_IDENTIFIED` object.
     |
     prop location :? PARTY_IDENTIFIED ;
 
@@ -40,12 +44,15 @@ feature_group ("access")
     prop provider :? PARTY_IDENTIFIED ;
 
     |
-    | Time of handling the item.
+    | Time of handling the item. For an originating system, this will be time of creation, for
+    | an intermediate feeder system, this will be a time of accession or other time of handling,
+    | where available.
     |
     prop time :? DV_DATE_TIME ;
 
     |
-    | Any identifier used in the system such as interim, final, or numeric versions if available.
+    | Any identifier used in the system such as "interim" , "final" , or numeric versions if
+    | available.
     |
     prop version_id :? String ;
 
@@ -53,5 +60,8 @@ feature_group ("access")
     | Optional attribute to carry any custom meta-data. May be archetyped.
     |
     prop other_details :? ITEM_STRUCTURE ;
+
+invariant
+    system_id_valid: ¬system_id.is_empty
 
 end

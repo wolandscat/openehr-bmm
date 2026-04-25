@@ -21,12 +21,16 @@ class C_TIME
 feature_group ("access")
 
     |
-    | Formal constraint on Iso8601_time, in the form of one or more Interval<Iso8601_time>.
+    | Formal constraint on the assumed primitive `Iso8601_time` type, in the form of one or more
+    | `Interval<Iso8601_time>`.
+    |
+    | For a pattern constraint or no constraint, use an empty list.
     |
     prop constraint :? List<Interval<Iso8601_time>> ;
 
     |
-    | Default value set in a template, and present in an operational template.
+    | Default value set in a template, and present in an operational template. Generally limited
+    | to leaf and near-leaf nodes.
     |
     prop default_value :? Iso8601_time ;
 
@@ -65,5 +69,8 @@ feature_group ("access")
     | constraint, based on valid_time_constraint_replacements.
     |
     func valid_pattern_constraint_replacement (a_pattern : String, an_other_pattern : String) : Boolean ;
+
+invariant
+    pattern_validity: ∃pattern ⇒ valid_iso8601_time_constraint_pattern (pattern)
 
 end

@@ -19,23 +19,33 @@ abstract class DV_QUANTIFIED
 feature_group ("access")
 
     |
-    | Optional status of magnitude with values: =, <, >, <=, >=, ~.
+    | Optional status of magnitude with values:
+    |
+    | * `"="` : magnitude is a point value
+    | * `"<"` : value is < magnitude
+    | * `">"` : value is > magnitude
+    | * `"\<="` : value is \<= magnitude
+    | * `">="` : value is >= magnitude
+    | * `"~"` : value is approximately magnitude
+    |
+    | If not present, assumed meaning is `"="` .
     |
     prop magnitude_status :? String ;
 
     |
-    | Accuracy of measurement. Exact form determined in descendants.
+    | Accuracy of measurement. Exact form of expression determined in descendants.
     |
     prop accuracy :? Any ;
 
     |
-    | The magnitude of this quantity.
-    |
     func magnitude : Ordered_Numeric ;
 
     |
-    | True if accuracy is not known.
+    | True if accuracy is not known, e.g. due to not being recorded or discernable.
     |
     func accuracy_unknown : Boolean ;
+
+invariant
+    magnitude_status_valid: ∃magnitude_status ⇒ valid_magnitude_status (magnitude_status)
 
 end

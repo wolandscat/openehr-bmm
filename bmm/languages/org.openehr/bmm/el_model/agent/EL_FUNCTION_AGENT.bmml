@@ -18,12 +18,14 @@ class EL_FUNCTION_AGENT
 feature_group ("access")
 
     |
-    | Reference to definition of a routine for which this is a function agent.
+    | Reference to definition of a routine for which this is a direct call instance, if one
+    | exists.
     |
     prop definition :? BMM_FUNCTION ;
 
     |
-    | Eval type is the function type signature.
+    | Eval type is the signature corresponding to the (remaining) open arguments and return
+    | type, if any.
     |
     func eval_type : BMM_FUNCTION_TYPE ;
 

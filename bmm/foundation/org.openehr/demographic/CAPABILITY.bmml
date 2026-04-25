@@ -19,9 +19,8 @@ class CAPABILITY
 feature_group ("access")
 
     |
-    | The qualifications of the performer of the role for this capability. This might
-    | include professional qualifications and official identifications such as provider
-    | numbers.
+    | The qualifications of the performer of the role for this capability. This might include
+    | professional qualifications and official identifications such as provider numbers etc.
     |
     prop credentials : ITEM_STRUCTURE ;
 

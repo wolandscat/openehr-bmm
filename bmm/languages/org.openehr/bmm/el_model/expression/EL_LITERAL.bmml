@@ -19,12 +19,12 @@ class EL_LITERAL
 feature_group ("access")
 
     |
-    | The literal value from which the value of this node can be computed.
+    | The reference item from which the value of this node can be computed.
     |
     prop value : BMM_LITERAL_VALUE<BMM_TYPE> ;
 
     |
-    | Return the type of the literal value.
+    | Return `_value.type_`.
     |
     func eval_type : BMM_TYPE ;
 

@@ -23,7 +23,7 @@ feature_group ("access")
     prop locals :? List<BMM_LOCAL> ;
 
     |
-    | Body of the routine declaration.
+    | Body of routine declaration.
     |
     prop body : BMM_STATEMENT_BLOCK ;
 

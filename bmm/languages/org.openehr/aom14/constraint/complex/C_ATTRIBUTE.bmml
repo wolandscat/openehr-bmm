@@ -23,18 +23,29 @@ feature_group ("access")
     prop rm_attribute_name : String ;
 
     |
-    | Constraint on whether the attribute target object exists or not.
+    | Constraint on every attribute, regardless of whether it is singular or of a container
+    | type, which indicates whether its target object exists or not (i.e. is mandatory or not).
     |
     prop existence : Interval<Integer> ;
 
     |
-    | Child C_OBJECT nodes, each representing a constraint on the type of this attribute.
+    | Child C_OBJECT nodes. Each such node represents a constraint on the type of this attribute
+    | in its reference model. Multiples occur both for multiple items in the case of container
+    | attributes, and alternatives in the case of singular attributes.
     |
     prop children :? List<C_OBJECT> ;
 
     |
-    | True if any value (i.e. instance) of the reference model attribute is allowed.
+    | True if any value (i.e. instance) of the reference model attribute represented by this
+    | C_ATTIRBUTE is allowed.
     |
     func any_allowed : Boolean ;
+
+invariant
+    rm_attribute_name_valid: ¬rm_attribute_name.is_empty
+
+    existence_set: existence.lower >= 0 ∧ existence.upper \<= 1
+
+    children_validity: any_allowed ⊻ ∃children
 
 end

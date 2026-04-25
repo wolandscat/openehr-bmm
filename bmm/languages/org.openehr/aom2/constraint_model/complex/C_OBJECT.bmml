@@ -23,17 +23,31 @@ feature_group ("access")
     prop rm_type_name : String ;
 
     |
-    | Occurrences of this object node in the data, under the owning attribute.
+    | Occurrences of this object node in the data, under the owning attribute. Upper limit can
+    | only be greater than 1 if owning attribute has a cardinality of more than 1. Only set if
+    | it overrides the parent archetype in the case of specialised archetypes, or else the
+    | occurrences inferred from the underlying reference model existence and/or cardinality of
+    | the containing attribute.
     |
     prop occurrences :? Multiplicity_interval ;
 
     |
-    | Semantic identifier of this node, used to distinguish sibling nodes.
+    | Semantic identifier of this node, used to distinguish sibling nodes. All nodes must have a
+    | `_node_id_`; for nodes under a container `C_ATTRIBUTE`. For at-coded archetypes
+    | `_node_id_` must be an at-code defined in the archetype terminology and for valid
+    | structures all node ids are at-codes. For id-coded archetypes `_node_id_` must be an id-
+    | code defined in the archetype terminology and for valid structures all node ids are id-
+    | codes.
+    |
+    | For `C_PRIMITIVE_OBJECTs` represented in ADL inline form, this attribute will have the
+    | special value `Primitive_node_id`; otherwise it will have the node id read during parsing.
     |
     prop node_id : String ;
 
     |
-    | Additional identifiers of this node, e.g. original ADL2 id-codes.
+    | Additional identifiers of this node. openEHR archetypes can carry original ALD2 id-codes
+    | in this attribute and it can also carry human readable codes for future use. Alternative
+    | ids must be unique within the archetype.
     |
     prop alternative_ids :? List<String> ;
 
@@ -43,17 +57,27 @@ feature_group ("access")
     prop is_deprecated :? Boolean ;
 
     |
-    | Optional indicator of order of this node with respect to another sibling.
+    | Optional indicator of order of this node with respect to another sibling. Only meaningful
+    | in a specialised archetype for a `C_OBJECT` within a `C_ATTRIBUTE` with `_is_multiple_ =
+    | True`.
     |
     prop sibling_order :? SIBLING_ORDER ;
 
     |
-    | Level of specialisation of this archetype node, based on its node_id.
+    | Level of specialisation of this archetype node, based on its `_node_id_`. The value 0
+    | corresponds to non-specialised, 1 to first-level specialisation and so on. The level is
+    | the same as the number of ‘.’ characters in the node_id code. If `_node_id_` is not set,
+    | the return value is -1, signifying that the specialisation level should be determined from
+    | the nearest parent `C_OBJECT` node having a node_id.
     |
     func specialisation_depth : Integer ;
 
     |
-    | Compute effective occurrences, where no local occurrences constraint is set.
+    | Compute effective occurrences, where no local occurrences constraint set. If the owning
+    | `C_ATTRIBUTE._cardinality_` is set, use its upper value, else use RM multiplicity of the
+    | owning attribute.
+    |
+    | If local `occurrences` not set, always assume 0 as the lower bound.
     |
     func effective_occurrences : Multiplicity_interval ;
 
@@ -78,7 +102,7 @@ feature_group ("access")
     func node_id_conforms_to (other : C_OBJECT) : Boolean ;
 
     |
-    | True if this C_OBJECT node is prohibited, i.e. if its occurrences is 0..0.
+    | True if this `C_OBJECT` node is prohibited, i.e. if its `_occurrences_` is `0..0`.
     |
     func is_prohibited : Boolean ;
 

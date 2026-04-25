@@ -19,7 +19,7 @@ builtin class Real
 feature_group ("access")
 
     |
-    | The greatest integer no greater than the value of this object.
+    | Return the greatest integer no greater than the value of this object.
     |
     func floor : Integer ;
 
@@ -68,7 +68,7 @@ feature_group ("operators")
         ;
 
     |
-    | Unary negation of current Real value.
+    | Generate negative of current Real value.
     |
     func negative : Real
         alias "-" ;

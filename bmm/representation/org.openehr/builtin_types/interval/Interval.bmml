@@ -19,48 +19,65 @@ abstract class Interval<T: Ordered>
 feature_group ("access")
 
     |
-    | Lower bound.
+    | Lower bound. lower bound.
     |
     prop lower :? T ;
 
     |
-    | Upper bound.
+    | Upper bound. Upper bound.
     |
     prop upper :? T ;
 
     |
-    | True if lower boundary is open (i.e. = -infinity).
+    | True if `_lower_` boundary open (i.e. = `-infinity`). lower boundary open (i.e. =
+    | -infinity)
     |
     prop lower_unbounded : Boolean ;
 
     |
-    | True if upper boundary is open (i.e. = +infinity).
+    | True if `_upper_` boundary open (i.e. = `+infinity`). upper boundary open (i.e. =
+    | +infinity)
     |
     prop upper_unbounded : Boolean ;
 
     |
-    | True if lower boundary value is included in range, if not lower_unbounded.
+    | True if `_lower_` boundary value included in range, if `not _lower_unbounded_`. lower
+    | boundary value included in range if not lower_unbounded.
     |
     prop lower_included : Boolean ;
 
     |
-    | True if upper boundary value is included in range, if not upper_unbounded.
+    | True if `_upper_` boundary value included in range if `not _upper_unbounded_`. upper
+    | boundary value included in range if not upper_unbounded.
     |
     prop upper_included : Boolean ;
 
     |
-    | True if the value is properly contained in this Interval.
+    | True if the value `e` is properly contained in this Interval. True if (lower_unbounded or
+    | ((lower_included and v >= lower) or v > lower)) and (upper_unbounded or ((upper_included
+    | and v \<= upper or v < upper)))
     |
     func has : Boolean ;
 
     |
-    | True if there is any overlap between intervals.
+    | True if there is any overlap between intervals represented by Current and `_other_`. True
+    | if at least one limit of `_other_` is strictly inside the limits of this interval.
     |
     func intersects : Boolean ;
 
     |
-    | True if current interval properly contains other.
+    | True if current interval properly contains `_other_`? True if all points of `_other_` are
+    | inside the current interval.
     |
     func contains : Boolean ;
+
+invariant
+    lower_included_valid: lower_unbounded ⇒ ¬lower_included
+
+    upper_included_valid: upper_unbounded ⇒ ¬upper_included
+
+    limits_consistent: (¬upper_unbounded ∧ ¬lower_unbounded) ⇒ lower \<= upper
+
+    limits_comparable: (¬upper_unbounded ∧ ¬lower_unbounded) ⇒ lower.strictly_comparable_to (upper)
 
 end

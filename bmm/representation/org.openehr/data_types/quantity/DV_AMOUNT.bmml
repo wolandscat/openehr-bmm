@@ -19,13 +19,23 @@ abstract class DV_AMOUNT
 feature_group ("access")
 
     |
-    | Accuracy of measurement, expressed either as a half-range percent value or a half-range quantity.
+    | Accuracy of measurement, expressed either as a half-range percent value
+    | (`_accuracy_is_percent_` = `True`) or a half-range quantity. A value of `0` means that
+    | accuracy is 100%, i.e. no error.
+    |
+    | A value of `_unknown_accuracy_value_` means that accuracy was not recorded.
     |
     prop accuracy :? Real ;
 
     |
-    | If True, accuracy was recorded as a percent value; if False, as an absolute quantity.
+    | If `True`, indicates that when this object was created, `_accuracy_` was recorded as a
+    | percent value; if `False`, as an absolute quantity value.
     |
     prop accuracy_is_percent :? Boolean ;
+
+invariant
+    accuracy_is_percent_validity: accuracy = 0 ⇒ ¬accuracy_is_percent
+
+    accuracy_validity: accuracy_is_percent ⇒ valid_percentage (accuracy)
 
 end

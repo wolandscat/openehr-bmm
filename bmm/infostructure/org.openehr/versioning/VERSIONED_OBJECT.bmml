@@ -17,13 +17,15 @@ class VERSIONED_OBJECT<T>
 feature_group ("access")
 
     |
-    | Unique identifier of this version container as a UID with no extension; the same
-    | in all instances of the same container in a distributed environment.
+    | Unique identifier of this version container in the form of a UID with no extension. This
+    | id will be the same in all instances of the same container in a distributed environment,
+    | meaning that it can be understood as the uid of the virtual version tree.
     |
     prop uid : HIER_OBJECT_ID ;
 
     |
-    | Reference to object to which this version container belongs, e.g. the containing EHR.
+    | Reference to object to which this version container belongs, e.g. the id of the containing
+    | EHR or other relevant owning entity.
     |
     prop owner_id : OBJECT_REF ;
 
@@ -78,7 +80,7 @@ feature_group ("access")
     func revision_history : REVISION_HISTORY ;
 
     |
-    | Return the most recently added version (on trunk or any branch).
+    | Return the most recently added version (i.e. on trunk or any branch).
     |
     func latest_version : VERSION<T> ;
 
@@ -88,8 +90,20 @@ feature_group ("access")
     func latest_trunk_version : VERSION<T> ;
 
     |
-    | Return the lifecycle state from the latest trunk version.
+    | Return the lifecycle state from the latest trunk version. Useful for determining if the
+    | version container is logically deleted.
     |
     func trunk_lifecycle_state : DV_CODED_TEXT ;
+
+invariant
+    version_count_valid: version_count >= 0
+
+    all_version_ids_valid: all_version_ids.count = version_count
+
+    all_versions_valid: all_versions.count = version_count
+
+    latest_version_valid: version_count > 0 ⇒ ∃latest_version
+
+    uid_validity: extension.is_empty
 
 end

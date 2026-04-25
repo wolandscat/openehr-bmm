@@ -24,7 +24,8 @@ feature_group ("access")
     prop target_path : String ;
 
     |
-    | True if target occurrences are to be used as the value of occurrences in this object.
+    | True if target occurrences are to be used as the value of occurrences in this object; by
+    | the time of runtime use, the target occurrences value has to be set into this object.
     |
     func use_target_occurrences : Boolean ;
 

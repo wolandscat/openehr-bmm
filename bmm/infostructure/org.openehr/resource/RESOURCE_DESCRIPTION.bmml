@@ -18,12 +18,13 @@ feature_group ("access")
 
     |
     | Long-form descriptive title of the resource, typically needed in templates and
-    | specialised archetypes where the root name alone is insufficient.
+    | occasionally in specialised archetypes where the root archetype/template name is not
+    | descriptive enough to disambiguate from similar archetypes/templates.
     |
     prop title :? String ;
 
     |
-    | Original author of this resource, with all relevant details including organisation.
+    | Original author of this resource, with all relevant details, including organisation.
     |
     prop original_author : Hash<String, String> ;
 
@@ -48,12 +49,13 @@ feature_group ("access")
     prop parent_resource : AUTHORED_RESOURCE ;
 
     |
-    | Lifecycle state of the resource, e.g. initial, in_development, published, obsolete.
+    | Lifecycle state of the resource, typically using macro-states such as: unmanaged,
+    | in_development, release_candidate, published, rejected, deprecated.
     |
     prop lifecycle_state : String ;
 
     |
-    | Namespace in reverse internet id form of current custodian organisation.
+    | Namespace in reverse internet id form, of current custodian organisation.
     |
     prop custodian_namespace :? String ;
 
@@ -68,18 +70,26 @@ feature_group ("access")
     prop copyright :? String ;
 
     |
-    | Licence of current artefact, in format "short licence name <URL of licence>".
+    | Licence of current artefact, in format "short licence name <URL of licence>", e.g. "Apache
+    | 2.0 License <http://www.apache.org/licenses/LICENSE-2.0.html>"
     |
     prop licence :? String ;
 
     |
-    | List of acknowledgements of other IP directly referenced in this archetype,
-    | e.g. terminology codes, keyed by widely known IP source name.
+    | List of acknowledgements of other IP directly referenced in this archetype, typically
+    | terminology codes, ontology ids etc. Recommended keys are the widely known name or
+    | namespace for the IP source, as shown in the following example:
+    |
+    | ---- ip_acknowledgements = < ["loinc"] = <"This content from LOINC® is copyright © 1995
+    | Regenstrief Institute, Inc. and the LOINC Committee, and available at no cost under the
+    | license at http://loinc.org/terms-of-use"> ["snomedct"] = <"Content from SNOMED CT® is
+    | copyright © 2007 IHTSDO <ihtsdo.org>"> > ----
     |
     prop ip_acknowledgements :? Hash<String, String> ;
 
     |
-    | List of references of material on which this artefact is based, as keyed strings.
+    | List of references of material on which this artefact is based, as a keyed list of
+    | strings. The keys should be in a standard citation format.
     |
     prop references :? Hash<String, String> ;
 
@@ -89,13 +99,18 @@ feature_group ("access")
     prop resource_package_uri :? String ;
 
     |
-    | Details related to conversion process that generated this model from an original.
+    | Details related to conversion process that generated this model from an original, if
+    | relevant, as a list of name/value pairs. Typical example with recommended tags:
+    |
+    | ---- conversion_details = < ["source_model"] = <"CEM model xyz
+    | <http://location.in.clinicalelementmodels.com>"> ["tool"] = <"cem2adl v6.3.0"> ["time"] =
+    | <"2014-11-03T09:05:00"> > ----
     |
     prop conversion_details :? Hash<String, String> ;
 
     |
-    | Details of all parts of resource description that are natural language-dependent,
-    | keyed by language code.
+    | Details of all parts of resource description that are natural language-dependent, keyed by
+    | language code.
     |
     prop details :? Hash<String, RESOURCE_DESCRIPTION_ITEM> ;
 

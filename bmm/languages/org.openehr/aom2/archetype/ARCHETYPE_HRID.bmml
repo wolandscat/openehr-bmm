@@ -27,7 +27,8 @@ feature_group ("access")
     prop rm_publisher : String ;
 
     |
-    | Name of the package in whose reachability graph the rm_class is found.
+    | Name of the package in whose reachability graph the `_rm_class_` class is found (there can
+    | be more than one possibility in many reference models).
     |
     prop rm_package : String ;
 
@@ -37,17 +38,22 @@ feature_group ("access")
     prop rm_class : String ;
 
     |
-    | The short concept name of the archetype as used in the multi-axial archetype_hrid.
+    | The short concept name of the archetype as used in the multi-axial `_archetype_hrid_`.
     |
     prop concept_id : String ;
 
     |
-    | The full numeric version of this archetype consisting of 3 parts, e.g. "1.8.2".
+    | The full numeric version of this archetype consisting of 3 parts, e.g. `"1.8.2"`.
     |
     prop release_version : String ;
 
     |
-    | The status of the version: released, release_candidate, alpha, or beta.
+    | The status of the version, i.e.:
+    |
+    | * released: (empty string)
+    | * release_candidate: `"rc"`
+    | * alpha: `"alpha"`
+    | * beta: `"beta"`
     |
     prop version_status : VERSION_STATUS ;
 
@@ -62,28 +68,42 @@ feature_group ("access")
     func semantic_id : String ;
 
     |
-    | The 'physical' form of the HRID, i.e. with complete version information.
+    | The 'physical' form of the HRID, i.e. with complete version information specified by
+    | `_version_id()_`.
     |
     func physical_id : String ;
 
     |
-    | Full version identifier string, based on release_version, version_status, and build_count.
+    | Full version identifier string, based on `_release_version_`, `_version_status_`, and
+    | `_build_count_` e.g. `"1.8.2-rc.4"`.
     |
     func version_id : String ;
 
     |
-    | Major version of this archetype, extracted from release_version.
+    | Major version of this archetype, extracted from `_release_version_`.
     |
     func major_version : String ;
 
     |
-    | Minor version of this archetype, extracted from release_version.
+    | Minor version of this archetype, extracted from `_release_version_`.
     |
     func minor_version : String ;
 
     |
-    | Patch version of this archetype, extracted from release_version.
+    | Patch version of this archetype, extracted from `_release_version_`. Equivalent to patch
+    | version in patch version in `semver.org` sytem.
     |
     func patch_version : String ;
+
+invariant
+    inv_rm_publisher_validity: ¬rm_publisher.is_empty
+
+    inv_rm_package_validity: ¬rm_package.is_empty
+
+    inv_class_name_validity: ¬rm_class.is_empty
+
+    inv_concept_id_validity: ¬concept_id.is_empty
+
+    inv_release_version_validity: valid_version (release_version)
 
 end

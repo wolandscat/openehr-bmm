@@ -19,15 +19,18 @@ class PARTY_IDENTITY
 feature_group ("access")
 
     |
-    | The value of the identity. This will often take the form of a parseable string or
-    | a small structure of strings.
+    | The value of the identity. This will often taken the form of a parseable string or a small
+    | structure of strings.
     |
     prop details : ITEM_STRUCTURE ;
 
     |
-    | Purpose of identity, e.g. legal, stagename, nickname, tribal name, trading name.
-    | Taken from value of inherited name attribute.
+    | Purpose of identity, e.g. legal , stagename, nickname, tribal name, trading name. Taken
+    | from value of inherited `_name_` attribute.
     |
     func purpose : DV_TEXT ;
+
+invariant
+    purpose_valid: purpose = name
 
 end

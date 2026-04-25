@@ -17,20 +17,22 @@ abstract class AUTHORED_RESOURCE
 feature_group ("access")
 
     |
-    | Unique identifier of the family of archetypes having the same interface identifier
-    | (same major version).
+    | Unique identifier of the family of archetypes having the same interface identifier (same
+    | major version).
     |
     prop uid :? UUID ;
 
     |
-    | Language in which this resource was initially authored. Required to ensure natural
-    | language translations can preserve quality.
+    | Language in which this resource was initially authored. Although there is no language
+    | primacy of resources overall, the language of original authoring is required to ensure
+    | natural language translations can preserve quality. Language is relevant in both the
+    | description and ontology sections.
     |
     prop original_language : Terminology_code «iso.iso_639-1» ;
 
     |
-    | True if this resource is under any kind of change control, in which case revision
-    | history is created.
+    | True if this resource is under any kind of change control (even file copying), in which
+    | case revision history is created.
     |
     prop is_controlled :? Boolean ;
 
@@ -40,20 +42,34 @@ feature_group ("access")
     prop description :? RESOURCE_DESCRIPTION ;
 
     |
-    | Annotations on individual items within the resource, keyed by path.
+    | Annotations on individual items within the resource, keyed by path. The inner table takes
+    | the form of a Hash table of String values keyed by String tags.
     |
     prop annotations :? RESOURCE_ANNOTATIONS ;
 
     |
-    | List of details for each natural language translation made of this resource,
-    | keyed by language code.
+    | List of details for each natural translation made of this resource, keyed by language
+    | code. For each translation listed here, there must be corresponding sections in all
+    | language-dependent parts of the resource. The `_original_language_` does not appear in
+    | this list.
     |
     prop translations :? Hash<String, TRANSLATION_DETAILS> ;
 
     |
-    | Total list of languages available in this resource, derived from original_language
-    | and translations.
+    | Total list of languages available in this resource, derived from original_language and
+    | translations.
     |
     func languages_available : List<String> ;
+
+invariant
+    original_language_valid: code_set (Code_set_id_languages).has_code (original_language.as_string)
+
+    current_revision_valid: (∃current_revision ∧ ¬is_controlled) ⇒ current_revision.is_equal ("(uncontrolled)")
+
+    translations_valid: ∃translations ⇒ (¬translations.is_empty ∧ ¬translations.has (orginal_language.code_string))
+
+    description_valid: ∃translations ⇒ (description.details.∀ (d &#124;
+
+    languages_available_valid: languages_available.has (original_language)
 
 end

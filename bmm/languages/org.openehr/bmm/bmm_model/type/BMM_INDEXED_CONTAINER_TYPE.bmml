@@ -19,13 +19,13 @@ class BMM_INDEXED_CONTAINER_TYPE
 feature_group ("access")
 
     |
-    | Type of the element index, typically String or Integer, but may be any type from
-    | which a hash value can be derived.
+    | Type of the element index, typically `String` or `Integer`, but may be a numeric type or
+    | indeed any type from which a hash value can be derived.
     |
     prop index_type : BMM_SIMPLE_TYPE ;
 
     |
-    | Return full type name, e.g. HashMap<String, ELEMENT>.
+    | Return full type name, e.g. `HashMap<String, ELEMENT>`.
     |
     func type_name : String ;
 

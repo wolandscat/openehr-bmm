@@ -21,7 +21,8 @@ class EXTRACT_MANIFEST
 feature_group ("access")
 
     |
-    | List of entity manifests; UIDs of items included in the Extract.
+    | List of entity manifests uids of items included in the Extract; for openEHR data, these
+    | are uids identifying the version containers.
     |
     prop entities : List<EXTRACT_ENTITY_MANIFEST> ;
 

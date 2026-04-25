@@ -19,12 +19,12 @@ builtin class Hash<K: Ordered, V>
 feature_group ("access")
 
     |
-    | Test for presence of a key.
+    | Test for presence of `_a_key_`.
     |
     func has_key : Boolean ;
 
     |
-    | Return item for key.
+    | Return item for key `_a_key_`.
     |
     func item : V ;
 

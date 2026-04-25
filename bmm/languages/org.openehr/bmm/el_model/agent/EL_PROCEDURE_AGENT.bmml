@@ -18,12 +18,13 @@ class EL_PROCEDURE_AGENT
 feature_group ("access")
 
     |
-    | Reference to definition of a routine for which this is a procedure agent.
+    | Reference to definition of routine for which this is a call instance.
     |
     prop definition :? BMM_PROCEDURE ;
 
     |
-    | Eval type is the procedure type signature.
+    | Eval type is the signature corresponding to the (remaining) open arguments and return
+    | type, if any.
     |
     func eval_type : BMM_PROCEDURE_TYPE ;
 

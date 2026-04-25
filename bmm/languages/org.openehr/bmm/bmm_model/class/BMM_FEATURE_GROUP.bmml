@@ -23,8 +23,8 @@ feature_group ("access")
     prop name : String ;
 
     |
-    | Set of properties of this group, represented as name/value pairs. These are
-    | understood to apply logically to all of the features contained within the group.
+    | Set of properties of this group, represented as name/value pairs. These are understood to
+    | apply logically to all of the features contained within the group.
     |
     prop properties : Hash<String, String> ;
 

@@ -20,19 +20,21 @@ class FOLDER
 feature_group ("access")
 
     |
-    | Sub-folders of this FOLDER.
+    | Sub-folders of this `FOLDER`.
     |
     prop folders :? List<FOLDER> ;
 
     |
-    | The list of references to other (usually) versioned objects logically in this
-    | folder.
+    | The list of references to other (usually) versioned objects logically in this folder.
     |
     prop items :? List<OBJECT_REF> ;
 
     |
-    | Archetypable meta-data for FOLDER.
+    | Archetypable meta-data for `FOLDER`.
     |
     prop details :? ITEM_STRUCTURE ;
+
+invariant
+    folders_valid: ¬folders.is_empty
 
 end

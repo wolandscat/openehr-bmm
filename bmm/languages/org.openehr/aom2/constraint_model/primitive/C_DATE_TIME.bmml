@@ -21,13 +21,16 @@ class C_DATE_TIME
 feature_group ("access")
 
     |
-    | Formal constraint on Iso8601_date_time, in the form of one or more
-    | Interval<Iso8601_date_time>.
+    | Formal constraint on the assumed primitive `Iso8601_date_time` type, in the form of one or
+    | more `Interval<Iso8601_date_time>`.
+    |
+    | For a pattern constraint or no constraint, use an empty list.
     |
     prop constraint :? List<Interval<Iso8601_date_time>> ;
 
     |
-    | Default value set in a template, and present in an operational template.
+    | Default value set in a template, and present in an operational template. Generally limited
+    | to leaf and near-leaf nodes.
     |
     prop default_value :? Iso8601_date_time ;
 
@@ -76,5 +79,8 @@ feature_group ("access")
     | Validity of timezone in constrained date/time.
     |
     func timezone_validity : VALIDITY_KIND ;
+
+invariant
+    pattern_validity: ∃pattern ⇒ valid_iso8601_date_time_constraint_pattern(pattern)
 
 end

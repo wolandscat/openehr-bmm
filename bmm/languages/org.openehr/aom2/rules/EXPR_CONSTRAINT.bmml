@@ -19,7 +19,7 @@ class EXPR_CONSTRAINT
 feature_group ("access")
 
     |
-    | The constraint (redefined from Any).
+    | The constraint.
     |
     prop item : C_PRIMITIVE_OBJECT ;
 

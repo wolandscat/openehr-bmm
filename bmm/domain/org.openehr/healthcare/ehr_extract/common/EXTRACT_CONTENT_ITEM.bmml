@@ -23,20 +23,20 @@ abstract class EXTRACT_CONTENT_ITEM
 feature_group ("access")
 
     |
-    | True if the content item carried in this container was part of the primary set
-    | for the Extract, i.e. not added due to link-following.
+    | True if the content item carried in this container was part of the primary set for the
+    | Extract, i.e. not added due to link-following.
     |
     prop is_primary : Boolean ;
 
     |
-    | True if the content item carried in this container is any kind of change since
-    | last send, in repeat sending situations.
+    | True if the content item carried in this container is any kind of change since last send,
+    | in repeat sending situations.
     |
     prop is_changed :? Boolean ;
 
     |
-    | True if the content of this item has not been included due to insufficient access
-    | rights of requestor.
+    | True if the content of this item has not been included due to insufficient access rights
+    | of requestor.
     |
     prop is_masked :? Boolean ;
 
@@ -44,5 +44,8 @@ feature_group ("access")
     | Content object.
     |
     prop item :? LOCATABLE ;
+
+invariant
+    item_validity: is_masked ⊻ ∃item
 
 end

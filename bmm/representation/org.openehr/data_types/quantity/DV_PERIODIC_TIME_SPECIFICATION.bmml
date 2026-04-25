@@ -20,6 +20,7 @@ feature_group ("access")
 
     |
     | The period of the repetition, computationally derived from the syntax representation.
+    | Extracted from the value' attribute.
     |
     func period : DV_DURATION ;
 
@@ -37,5 +38,8 @@ feature_group ("access")
     | Extracted from value.
     |
     func institution_specified : Boolean ;
+
+invariant
+    value_valid: value.formalism.is_equal (“HL7:PIVL”) ∨ value.formalism. is_equal (“HL7:EIVL”)
 
 end

@@ -23,25 +23,34 @@ class EXTRACT_PARTICIPATION
 feature_group ("access")
 
     |
-    | The time interval during which the participation took place, or the intended time
-    | interval when used in future contexts.
+    | The time interval during which the participation took place, if it is used in an
+    | observational context (i.e. recording facts about the past); or the intended time interval
+    | of the participation when used in future contexts, such as EHR Instructions.
     |
     prop time :? DV_INTERVAL<DV_DATE_TIME> ;
 
     |
-    | The function of the Party in this participation.
+    | The function of the Party in this participation (note that a given party might participate
+    | in more than one way in a particular activity). This attribute should be coded, but cannot
+    | be limited to the HL7v3:ParticipationFunction vocabulary, since it is too limited and
+    | hospital-oriented.
     |
     prop function : DV_TEXT ;
 
     |
-    | The mode of the performer / activity interaction, e.g. present, by telephone,
-    | by email.
+    | The mode of the performer / activity interaction, e.g. present, by telephone, by email
+    | etc.
     |
     prop mode :? DV_CODED_TEXT ;
 
     |
-    | UID of demographic entity within Extract who performed this participation.
+    | Uid of demographic entity within Extract who performed this participation.
     |
     prop performer : String ;
+
+invariant
+    function_valid: ∃function ∧ function.generating_type.is_equal (“DV_CODED_TEXT”) ⇒ terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_participation_function, function.defining_code)
+
+    mode_valid: ∃mode ∧ terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_participation_mode, mode.defining_code)
 
 end

@@ -15,4 +15,7 @@
 class DV_EHR_URI
     is_a DV_URI
 
+invariant
+    scheme_valid: scheme.is_equal (Ehr_scheme)
+
 end

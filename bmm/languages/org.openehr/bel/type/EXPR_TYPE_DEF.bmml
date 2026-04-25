@@ -23,8 +23,8 @@ feature_group ("access")
     prop type_name : String ;
 
     |
-    | Attribute of the openEHR primitive type (or Any) corresponding to this type
-    | definition meta-type.
+    | Attribute of the openEHR primitive type (or Any) corresponding to this type definition
+    | meta-type.
     |
     prop type_anchor : Any ;
 

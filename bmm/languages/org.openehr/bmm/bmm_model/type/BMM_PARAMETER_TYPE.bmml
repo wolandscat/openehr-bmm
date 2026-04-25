@@ -18,8 +18,7 @@ class BMM_PARAMETER_TYPE
 feature_group ("access")
 
     |
-    | Name of the parameter, e.g. 'T' etc. The name is limited to 1 character and
-    | upper-case.
+    | Name of the parameter, e.g. 'T' etc. The name is limited to 1 character and upper-case.
     |
     prop name : String ;
 
@@ -34,40 +33,44 @@ feature_group ("access")
     prop inheritance_precursor :? BMM_PARAMETER_TYPE ;
 
     |
-    | Result is either conforms_to_type or inheritance_precursor.flattened_conforms_to_type.
+    | Result is either `_conforms_to_type_` or
+    | `_inheritance_precursor.flattened_conforms_to_type_`.
     |
     func flattened_conforms_to_type : BMM_EFFECTIVE_TYPE ;
 
     |
-    | Signature form of the open type, including constrainer type if there is one,
-    | e.g. T:Ordered.
+    | Signature form of the open type, including constrainer type if there is one, e.g.
+    | `T:Ordered`.
     |
     func type_signature : String ;
 
     |
-    | Result = False - generic parameters are understood by definition to be non-primitive.
+    | Result = `False` - generic parameters are understood by definition to be non-primitive.
     |
     func is_primitive : Boolean ;
 
     |
-    | Result = False - generic parameters are understood by definition to be non-abstract.
+    | Result = `False` - generic parameters are understood by definition to be non-abstract.
     |
     func is_abstract : Boolean ;
 
     |
-    | Return name.
+    | Return `_name_`.
     |
     func type_name : String ;
 
     |
-    | Result is either flattened_conforms_to_type.flattened_type_list or the Any type.
+    | Result is either `_flattened_conforms_to_type.flattened_type_list_` or the `Any` type.
     |
     func flattened_type_list : List<String> ;
 
     |
-    | Generate ultimate conformance type, which is either flattened_conforms_to_type
-    | or if not set, 'Any'.
+    | Generate ultimate conformance type, which is either `_flattened_conforms_to_type_` or if
+    | not set, `'Any'`.
     |
     func effective_type : BMM_EFFECTIVE_TYPE ;
+
+invariant
+    inv_generic_name: name.count = 1 ∧ name.is_upper
 
 end

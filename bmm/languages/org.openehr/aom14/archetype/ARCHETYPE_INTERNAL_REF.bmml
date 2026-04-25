@@ -24,4 +24,9 @@ feature_group ("access")
     |
     prop target_path : String ;
 
+invariant
+    consistency: ¬any_allowed
+
+    target_path_valid: ∃target_path ∧ ¬target_path.is_empty
+
 end

@@ -22,7 +22,8 @@ feature_group ("access")
     prop code : String ;
 
     |
-    | Hash of keys ("text", "description" etc) and corresponding values.
+    | Hash of keys (“text”, “description” etc) and corresponding values. Hash of keys ("text",
+    | "description" etc) and corresponding values.
     |
     prop items :? Hash<String,String> ;
 
@@ -30,5 +31,8 @@ feature_group ("access")
     | List of all keys used in this term.
     |
     func keys : List<String> ;
+
+invariant
+    code_valid: ¬code.is_empty
 
 end

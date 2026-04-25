@@ -25,14 +25,16 @@ feature_group ("access")
     func type_name : String ;
 
     |
-    | Signature form of the type name, which for generics includes generic parameter
-    | constrainer types, e.g. Interval<T:Ordered>.
+    | Signature form of the type name, which for generics includes generic parameter constrainer
+    | types E.g. `Interval<T:Ordered>`.
+    |
+    | Defaults to the value of `_type_name()_`.
     |
     func type_signature : String ;
 
     |
-    | If true, indicates a type based on an abstract class, i.e. a type that cannot be
-    | directly instantiated.
+    | If true, indicates a type based on an abstract class, i.e. a type that cannot be directly
+    | instantiated.
     |
     func is_abstract : Boolean ;
 

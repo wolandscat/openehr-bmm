@@ -20,7 +20,7 @@ class BMM_CONTAINER_TYPE
 feature_group ("access")
 
     |
-    | The type of the container. This converts to the root_type in BMM_GENERIC_TYPE.
+    | The type of the container. This converts to the `_root_type_` in `BMM_GENERIC_TYPE`.
     |
     prop container_class : BMM_GENERIC_CLASS ;
 
@@ -31,17 +31,19 @@ feature_group ("access")
 
     |
     | True indicates that order of the items in the container attribute is considered
-    | significant and must be preserved, e.g. across sessions, serialisation etc.
+    | significant and must be preserved, e.g. across sessions, serialisation, deserialisation
+    | etc. Otherwise known as 'list' semantics.
     |
     prop is_ordered :? Boolean ;
 
     |
-    | True indicates that only unique instances of items in the container are allowed.
+    | True indicates that only unique instances of items in the container are allowed. Otherwise
+    | known as 'set' semantics.
     |
     prop is_unique :? Boolean ;
 
     |
-    | Return full type name, e.g. List<ELEMENT>.
+    | Return full type name, e.g. `List<ELEMENT>`.
     |
     func type_name : String ;
 
@@ -51,22 +53,22 @@ feature_group ("access")
     func is_abstract : Boolean ;
 
     |
-    | Flattened list of type names of item_type, i.e. item_type.flattened_type_list().
+    | Flattened list of type names of `_item_type_`, i.e. `_item_type.flattened_type_list_()`.
     |
     func flattened_type_list : List<String> ;
 
     |
-    | Return item_type.
+    | Return `_item_type_`.
     |
     func unitary_type : BMM_UNITARY_TYPE ;
 
     |
-    | True if item_type is primitive.
+    | True if `_item_type_` is primitive.
     |
     func is_primitive : Boolean ;
 
     |
-    | Return item_type.effective_type().
+    | Return `_item_type.effective_type_()`.
     |
     func effective_type : BMM_EFFECTIVE_TYPE ;
 

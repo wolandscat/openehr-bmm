@@ -17,13 +17,13 @@ class EL_TUPLE_ITEM
 feature_group ("access")
 
     |
-    | Reference to value entity. If Void, indicates that the item in this position
-    | is Void, e.g. within a routine call parameter list.
+    | Reference to value entity. If Void, this indicates that the item in this position is Void,
+    | e.g. within a routine call parameter list.
     |
     prop item :? EL_EXPRESSION ;
 
     |
-    | Optional name of the tuple item.
+    | Optional name of tuple item.
     |
     prop name :? String ;
 

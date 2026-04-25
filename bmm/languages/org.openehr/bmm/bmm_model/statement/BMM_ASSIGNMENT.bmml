@@ -19,13 +19,16 @@ class BMM_ASSIGNMENT
 feature_group ("access")
 
     |
-    | The target variable on the left-hand side of this assignment.
+    | The target variable on the notional left-hand side of this assignment.
     |
     prop target : EL_VALUE_GENERATOR ;
 
     |
-    | Source (right-hand side) of the assignment.
+    | Source right hand side) of the assignment.
     |
     prop source : EL_EXPRESSION ;
+
+invariant
+    inv_target_writable: target.is_writable
 
 end

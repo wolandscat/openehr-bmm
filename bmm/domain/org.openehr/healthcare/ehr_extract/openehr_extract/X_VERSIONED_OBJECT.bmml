@@ -20,40 +20,40 @@ class X_VERSIONED_OBJECT<T:LOCATABLE>
 feature_group ("access")
 
     |
-    | UID of original VERSIONED_OBJECT.
+    | Uid of original `VERSIONED_OBJECT`.
     |
     prop uid : HIER_OBJECT_ID ;
 
     |
-    | Owner_id from original VERSIONED_OBJECT, which identifies source EHR.
+    | Owner_id from original `VERSIONED_OBJECT`, which identifies source EHR.
     |
     prop owner_id : OBJECT_REF ;
 
     |
-    | Creation time of original VERSIONED_OBJECT.
+    | Creation time of original `VERSIONED_OBJECT`.
     |
     prop time_created : DV_DATE_TIME ;
 
     |
-    | Total number of versions in original VERSIONED_OBJECT at time of creation of this
-    | X_VERSIONED_OBJECT.
+    | Total number of versions in original `VERSIONED_OBJECT` at time of creation of this
+    | `X_VERSIONED_OBJECT`.
     |
     prop total_version_count : Integer ;
 
     |
-    | The number of Versions in this extract for this Versioned object. May be 0 if
-    | only revision history is requested.
+    | The number of Versions in this extract for this Versioned object, i.e. the count of items
+    | in the versions attribute. May be 0 if only revision history is requested.
     |
     prop extract_version_count : Integer ;
 
     |
-    | Optional revision history of the original VERSIONED_OBJECT. If included, it is
-    | the complete revision history.
+    | Optional revision history of the original `VERSIONED_OBJECT`. If included, it is the
+    | complete revision history.
     |
     prop revision_history :? REVISION_HISTORY ;
 
     |
-    | 0 or more Versions from the original VERSIONED_OBJECT, according to the Extract
+    | 0 or more Versions from the original `VERSIONED_OBJECT`, according to the Extract
     | specification.
     |
     prop versions :? List<ORIGINAL_VERSION<T>> ;

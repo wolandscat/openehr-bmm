@@ -23,9 +23,12 @@ feature_group ("access")
     prop details : ITEM_STRUCTURE ;
 
     |
-    | Type of address, e.g. electronic, locality. Taken from value of inherited name
+    | Type of address, e.g. electronic, locality. Taken from value of inherited `_name_`
     | attribute.
     |
     func type : DV_TEXT ;
+
+invariant
+    type_valid: type = name
 
 end

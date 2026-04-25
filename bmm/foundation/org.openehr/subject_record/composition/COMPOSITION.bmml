@@ -20,30 +20,41 @@ class COMPOSITION
 feature_group ("access")
 
     |
-    | Mandatory indicator of the localised language in which this Composition is written.
-    | Coded from openEHR Code Set languages.
+    | Mandatory indicator of the localised language in which this Composition is written. Coded
+    | from openEHR Code Set `languages`. The language of an Entry if different from the
+    | Composition is indicated in `ENTRY._language_`.
     |
     prop language : CODE_PHRASE «iso.iso_639-1» ;
 
     |
-    | Name of territory in which this Composition was written. Coded from openEHR
-    | countries code set, which is an expression of the ISO 3166 standard.
+    | Name of territory in which this Composition was written. Coded from openEHR countries code
+    | set, which is an expression of the ISO 3166 standard.
     |
     prop territory : CODE_PHRASE «iso.iso_3166-1-alpha2» ;
 
     |
-    | Temporal category of this Composition, e.g. persistent, episodic, event.
+    | Temporal category of this Composition, i.e.
+    |
+    | * `431&#124;persistent&#124;` - of potential life-time validity;
+    | * `451&#124;episodic&#124;` - valid over the life of a care episode;
+    | * `433&#124;event&#124;` - valid at the time of recording (long-term validity requires
+    | subsequent clinical assessment).
+    |
+    | or any other code defined in the openEHR terminology group 'category'.
     |
     prop category : DV_CODED_TEXT ;
 
     |
-    | The person primarily responsible for the content of the Composition.
+    | The person primarily responsible for the content of the Composition (but not necessarily
+    | its committal into the EHR system). This is the identifier which should appear on the
+    | screen. It may or may not be the person who entered the data. When it is the patient, the
+    | special self instance of `PARTY_PROXY` will be used.
     |
     prop composer : PARTY_PROXY ;
 
     |
-    | The clinical session context of this Composition, i.e. the contextual attributes
-    | of the clinical session.
+    | The clinical session context of this Composition, i.e. the contextual attributes of the
+    | clinical session.
     |
     prop context :? EVENT_CONTEXT ;
 
@@ -53,8 +64,20 @@ feature_group ("access")
     prop content :? List<CONTENT_ITEM> ;
 
     |
-    | True if category is persistent, False otherwise.
+    | True if category is `431&#124;persistent&#124;`, False otherwise. Useful for finding
+    | Compositions in an EHR which are guaranteed to be of interest to most users.
     |
     func is_persistent : Boolean ;
+
+invariant
+    category_validity: terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_composition_category, category.defining_code)
+
+    territory_valid: code_set(Code_set_id_countries).has_code(territory)
+
+    language_valid: code_set(Code_set_id_languages).has_code(language)
+
+    content_valid: ∃content ⇒ ¬content.is_empty
+
+    is_archetype_root: is_archetype_root
 
 end

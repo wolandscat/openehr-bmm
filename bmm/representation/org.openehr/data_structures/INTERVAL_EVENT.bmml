@@ -18,7 +18,8 @@ class INTERVAL_EVENT<T>
 feature_group ("access")
 
     |
-    | Duration of the time interval during which the values recorded under data are true.
+    | Duration of the time interval during which the values recorded under `data` are true and,
+    | if set, the values recorded under `state` are true. Void if an instantaneous event.
     |
     prop width : DV_DURATION ;
 
@@ -28,7 +29,10 @@ feature_group ("access")
     prop sample_count :? Integer ;
 
     |
-    | Mathematical function of the data of this event, e.g. maximum, mean etc.
+    | Mathematical function of the data of this event, e.g. maximum, mean etc. Coded using https
+    | ://github.com/openEHR/terminology/blob/master/openEHR_RM/en/openehr_terminology.xml[openEH
+    | R vocabulary `event math function`]. Default value `640&#124;actual&#124;`, meaning
+    | 'actual value'.
     |
     prop math_function : DV_CODED_TEXT ;
 
@@ -36,5 +40,10 @@ feature_group ("access")
     | Start time of the interval of this event.
     |
     func interval_start_time : DV_DATE_TIME ;
+
+invariant
+    math_function_validity: terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_event_math_function, math_function.defining_code)
+
+    interval_start_time_valid: interval_start_time = time - width
 
 end

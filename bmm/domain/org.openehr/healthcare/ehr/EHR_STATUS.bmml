@@ -22,26 +22,31 @@ class EHR_STATUS
 feature_group ("access")
 
     |
-    | The subject of this EHR. The external_ref attribute can be used to contain a
-    | direct reference to the subject in a demographic or identity service.
+    | The subject of this EHR. The `_external_ref_` attribute can be used to contain a direct
+    | reference to the subject in a demographic or identity service. Alternatively, the
+    | association between patients and their records may be done elsewhere for security reasons.
     |
     prop subject : PARTY_SELF ;
 
     |
-    | True if this EHR should be included in population queries, i.e. if this EHR is
-    | considered active in the population.
+    | True if this EHR should be included in population queries, i.e. if this EHR is considered
+    | active in the population.
     |
     prop is_queryable : Boolean ;
 
     |
-    | True if the EHR, other than the EHR_STATUS object, is allowed to be written to.
+    | True if the EHR, other than the `EHR_STATUS` object, is allowed to be written to. The
+    | `EHR_STATUS` object itself can always be written to.
     |
     prop is_modifiable : Boolean ;
 
     |
     | Any other details of the EHR summary object, in the form of an archetyped
-    | ITEM_STRUCTURE.
+    | `ITEM_STRUCTURE`.
     |
     prop other_details :? ITEM_STRUCTURE ;
+
+invariant
+    is_archetype_root: is_archetype_root
 
 end

@@ -19,7 +19,7 @@ class DV_CODED_TEXT
 feature_group ("access")
 
     |
-    | The term of which the value attribute is the textual rendition (rubric).
+    | The term of which the `_value_` attribute is the textual rendition (i.e. rubric).
     |
     prop defining_code : CODE_PHRASE ;
 

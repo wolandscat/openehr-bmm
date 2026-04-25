@@ -18,7 +18,7 @@ class RESOURCE_ANNOTATIONS
 feature_group ("access")
 
     |
-    | Documentary annotations in a multi-level keyed structure: language, path, tag.
+    | Documentary annotations in a multi-level keyed structure.
     |
     prop documentation : Hash<String, Hash<String, Hash<String, String>>> ;
 

@@ -22,7 +22,7 @@ feature_group ("access")
     prop position : BMM_OPERATOR_POSITION ;
 
     |
-    | Set of String symbols that may be used to represent this operator in a textual
+    | Set of `String` symbols that may be used to represent this operator in a textual
     | representation of a BMM model.
     |
     prop symbols : List<String> ;

@@ -18,8 +18,11 @@ class C_STRING
 feature_group ("access")
 
     |
-    | String constraint - a list of literal strings and/or regular expression strings
-    | delimited by the '/' character.
+    | String constraint - a list of literal strings and / or regular expression strings
+    | delimited by the ‘/’ character.
+    |
+    | To represent no constraint, use an empty list, or alternatively, a regex 'any' pattern,
+    | i.e. `/.*/`.
     |
     prop constraint :? List<String> ;
 
@@ -34,8 +37,6 @@ feature_group ("access")
     prop assumed_value :? String ;
 
     |
-    | Prototype String value.
-    |
     func prototype_value : String ;
 
     |
@@ -44,7 +45,7 @@ feature_group ("access")
     func valid_value (a_value : String) : Boolean ;
 
     |
-    | True if constraint is empty or else contains one String for the regex 'any' pattern.
+    | True if `_constraint_` is empty or else contains one String for the regex 'any' pattern.
     |
     func any_allowed : Boolean ;
 

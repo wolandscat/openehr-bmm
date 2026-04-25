@@ -18,7 +18,7 @@ class EL_STATIC_REF
 feature_group ("access")
 
     |
-    | Constant or singleton definition within the class.
+    | Constant definition (within class).
     |
     prop definition : BMM_STATIC ;
 

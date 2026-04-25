@@ -18,7 +18,7 @@ class X_CONTRIBUTION
 feature_group ("access")
 
     |
-    | UID of Contribution in source system.
+    | Uid of Contribution in source system.
     |
     prop uid : HIER_OBJECT_ID ;
 

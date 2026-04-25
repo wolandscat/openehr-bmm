@@ -39,12 +39,13 @@ feature_group ("access")
     func timezone : Iso8601_timezone ;
 
     |
-    | Indicates whether month in year is unknown.
+    | Indicates whether month in year is unknown. If so, the date is of the form `"YYYY"`.
     |
     func month_unknown : Boolean ;
 
     |
-    | Indicates whether day in month is unknown.
+    | Indicates whether day in month is unknown. If so, and month is known, the date is of the
+    | form `"YYYY-MM"` or `"YYYYMM"`.
     |
     func day_unknown : Boolean ;
 
@@ -52,5 +53,14 @@ feature_group ("access")
     | Return string value in extended format.
     |
     func as_string : String ;
+
+invariant
+    year_valid: valid_year (year)
+
+    month_valid: ¬month_unknown ⇒ valid_month (month)
+
+    day_valid: ¬day_unknown ⇒ valid_day (year, month, day)
+
+    partial_validity: month_unknown ⇒ day_unknown
 
 end

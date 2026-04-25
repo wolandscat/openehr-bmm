@@ -30,7 +30,9 @@ feature_group ("access")
     prop closed_args :? EL_TUPLE ;
 
     |
-    | Optional list of names of open arguments of the call.
+    | Optional list of names of open arguments of the call. If not provided, and the `_name_`
+    | refers to a routine with more arguments than supplied in `_closed_args_`, the missing
+    | arguments are inferred from the `_definition_`.
     |
     prop open_args :? List<String> ;
 
@@ -40,13 +42,11 @@ feature_group ("access")
     prop definition :? BMM_ROUTINE ;
 
     |
-    | False since agents are not writable.
-    |
     prop is_writable : Boolean ;
 
     |
-    | Eval type is the signature corresponding to the remaining open arguments and
-    | return type, if any.
+    | Eval type is the signature corresponding to the (remaining) open arguments and return
+    | type, if any.
     |
     func eval_type : BMM_ROUTINE_TYPE ;
 

@@ -28,45 +28,54 @@ feature_group ("access")
     prop signature :? String ;
 
     |
-    | Audit trail corresponding to the committal of this version to the VERSIONED_OBJECT.
+    | Audit trail corresponding to the committal of this version to the `VERSIONED_OBJECT`.
     |
     prop commit_audit : AUDIT_DETAILS ;
 
     |
-    | Unique identifier of this VERSION as a {object_id, version_tree_id, creating_system_id} triple.
+    | Unique identifier of this `VERSION`, in the form of an `{object_id, a version_tree_id,
+    | creating_system_id}` triple, where the `_object_id_` has the same value as the containing
+    | `VERSIONED_OBJECT _uid_`.
     |
     func uid : OBJECT_VERSION_ID ;
 
     |
-    | Unique identifier of the version of which this version is a modification;
-    | Void if this is the first version.
+    | Unique identifier of the version of which this version is a modification; Void if this is
+    | the first version.
     |
     func preceding_version_uid : OBJECT_VERSION_ID ;
 
     |
-    | The data of this Version.
+    | The data of this Version. Original content of this Version.
     |
     func data : T ;
 
     |
-    | Lifecycle state of this version; coded by openEHR vocabulary version lifecycle state.
+    | Lifecycle state of this version; coded by openEHR vocabulary `version lifecycle state`.
     |
     func lifecycle_state : DV_CODED_TEXT ;
 
     |
-    | A canonical serial form of this Version, suitable for generating reliable hashes
-    | and signatures.
+    | A canonical serial form of this Version, suitable for generating reliable hashes and
+    | signatures. Canonical form of Version object, created by serialising all attributes except
+    | signature.
     |
     func canonical_form : String ;
 
     |
-    | Copy of the owning VERSIONED_OBJECT uid value; extracted from the local uid property.
+    | Copy of the owning `VERSIONED_OBJECT._uid_` value; extracted from the local `_uid_`
+    | property's `_object_id_`.
     |
     func owner_id : HIER_OBJECT_ID ;
 
     |
-    | True if this Version represents a branch. Derived from uid attribute.
+    | True if this Version represents a branch. Derived from `_uid_` attribute.
     |
     func is_branch : Boolean ;
+
+invariant
+    preceding_version_uid_validity: uid.version_tree_id.is_first ⊻ ∃preceding_version_uid
+
+    lifecycle_state__valid: ∃lifecycle_state ∧ terminology (Term_id_openehr).has_code_for_group_id (Group_id_version_lifecycle_state, lifecycle_state.defining_code)
 
 end

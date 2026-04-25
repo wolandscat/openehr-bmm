@@ -28,7 +28,8 @@ feature_group ("access")
     prop author : PARTY_PROXY ;
 
     |
-    | Details of who actually created the message and when.
+    | Details of who actually created the message and when. This is the person who entered the
+    | data or otherwise caused the message to be created, or might be a piece of software.
     |
     prop audit : AUDIT_DETAILS ;
 
@@ -38,7 +39,9 @@ feature_group ("access")
     prop content : MESSAGE_CONTENT ;
 
     |
-    | Optional signature by the author of message content in openPGP format.
+    | Optional signature by the author of message content in openPGP format. The signature is
+    | created as a Hash and optional signing of the serialisation of this message object with
+    | this signature field Void.
     |
     prop signature :? String ;
 

@@ -19,7 +19,7 @@ builtin class Double
 feature_group ("access")
 
     |
-    | The greatest integer no greater than the value of this object.
+    | Return the greatest integer no greater than the value of this object.
     |
     func floor : Integer ;
 
@@ -68,7 +68,7 @@ feature_group ("operators")
         ;
 
     |
-    | Unary negation of current Double value.
+    | Generate negative of current Double value.
     |
     func negative : Double
         alias "-" ;

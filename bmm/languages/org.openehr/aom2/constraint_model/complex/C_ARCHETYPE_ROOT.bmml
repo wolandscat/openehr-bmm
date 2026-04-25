@@ -19,7 +19,8 @@ class C_ARCHETYPE_ROOT
 feature_group ("access")
 
     |
-    | Reference to archetype being used to fill a slot or redefine an external reference.
+    | Reference to archetype is being used to fill a slot or redefine an external reference.
+    | Typically an 'interface' archetype id, i.e. identifier with partial version information.
     |
     prop archetype_ref : String ;
 

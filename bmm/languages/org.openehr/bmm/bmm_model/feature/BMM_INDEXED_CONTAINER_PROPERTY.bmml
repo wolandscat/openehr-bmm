@@ -23,7 +23,7 @@ feature_group ("access")
     prop type : BMM_INDEXED_CONTAINER_TYPE ;
 
     |
-    | Name of this property in form name: ContainerTypeName<IndexTypeName, ...>.
+    | Name of this property in form `name: ContainerTypeName<IndexTypeName, ...>`.
     |
     func display_name : String ;
 

@@ -18,12 +18,10 @@ class ITEM_SINGLE
 feature_group ("access")
 
     |
-    | The single item in this structure.
-    |
     prop item : ELEMENT ;
 
     |
-    | Generate a CEN EN13606-compatible hierarchy consisting of a single ELEMENT.
+    | Generate a CEN EN13606-compatible hierarchy consisting of a single `ELEMENT`.
     |
     func as_hierarchy : ELEMENT ;
 

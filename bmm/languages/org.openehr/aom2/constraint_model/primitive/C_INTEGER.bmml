@@ -18,12 +18,15 @@ class C_INTEGER
 feature_group ("access")
 
     |
-    | Formal constraint on Integer, in the form of one or more Interval<Integer>.
+    | Formal constraint on `Integer`, in the form of one or more `Interval<Integer>`.
+    |
+    | To represent no constraint, use an empty list.
     |
     prop constraint :? List<Interval<Integer>> ;
 
     |
-    | Default value set in a template, and present in an operational template.
+    | Default value set in a template, and present in an operational template. Generally limited
+    | to leaf and near-leaf nodes.
     |
     prop default_value :? Integer ;
 

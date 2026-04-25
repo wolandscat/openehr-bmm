@@ -24,8 +24,6 @@ feature_group ("access")
     func is_subset_of (other : ARCHETYPE_CONSTRAINT) : Boolean ;
 
     |
-    | True if this constraint is valid.
-    |
     func is_valid : Boolean ;
 
     |

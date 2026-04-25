@@ -23,12 +23,12 @@ feature_group ("access")
     func has : Boolean ;
 
     |
-    | Number of items in the container.
+    | Number of items in container.
     |
     func count : Integer ;
 
     |
-    | True if the container is empty.
+    | True if container is empty.
     |
     func is_empty : Boolean ;
 

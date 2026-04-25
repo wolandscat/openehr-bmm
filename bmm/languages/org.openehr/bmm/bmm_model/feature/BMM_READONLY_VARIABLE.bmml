@@ -16,4 +16,7 @@ import org.openehr:representation;
 abstract class BMM_READONLY_VARIABLE
     is_a BMM_VARIABLE
 
+invariant
+    inv_not_nullable: is_nullable = False
+
 end

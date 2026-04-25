@@ -18,12 +18,12 @@ class EXPR_BINARY_OPERATOR
 feature_group ("access")
 
     |
-    | Left operand of the binary operator.
+    | Left operand node.
     |
     prop left_operand : EXPR_ITEM ;
 
     |
-    | Right operand of the binary operator.
+    | Right operand node.
     |
     prop right_operand : EXPR_ITEM ;
 

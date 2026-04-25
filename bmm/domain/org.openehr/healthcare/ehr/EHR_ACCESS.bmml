@@ -21,15 +21,20 @@ class EHR_ACCESS
 feature_group ("access")
 
     |
-    | Access control settings for the EHR. Instance is a subtype of
-    | ACCESS_CONTROL_SETTINGS, allowing for the use of different access control schemes.
+    | Access control settings for the EHR. Instance is a subtype of the type
+    | `ACCESS_CONTROL_SETTINGS`, allowing for the use of different access control schemes.
     |
     prop settings :? ACCESS_CONTROL_SETTINGS ;
 
     |
-    | The name of the access control scheme in use; corresponds to the concrete instance
-    | of the settings attribute.
+    | The name of the access control scheme in use; corresponds to the concrete instance of the
+    | settings attribute.
     |
     func scheme : String ;
+
+invariant
+    scheme_valid: ¬scheme.is_empty
+
+    is_archetype_root: is_archetype_root
 
 end

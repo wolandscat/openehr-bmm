@@ -31,19 +31,23 @@ feature_group ("access")
     prop item_type_version :? String ;
 
     |
-    | Reference to a demographic entity elsewhere in this Extract representing the
-    | author of the item version.
+    | Reference to a demographic entity elsewhere in this Extract representing the author of the
+    | item version. The reference should be a UID corresponding to the UID of a
+    | `GENERIC_CONTENT_ITEM` containing the demographic information.
     |
     prop author :? String ;
 
     |
-    | Time of creation of this item version on the original system.
+    | Time of creation of this item version on the original system. This may be an earlier
+    | commit time, or it may be the time at which the item was created during the Extract
+    | generation process.
     |
     prop creation_time :? Iso8601_date_time ;
 
     |
-    | Reference to a demographic entity elsewhere in this Extract representing an
-    | authoriser of the item version, if relevant.
+    | Reference to a demographic entity elsewhere in this Extract representing an authoriser of
+    | the item version, if relevant. The reference should be a UID corresponding to the UID of a
+    | `GENERIC_CONTENT_ITEM` containing the demographic information.
     |
     prop authoriser :? String ;
 
@@ -68,7 +72,8 @@ feature_group ("access")
     prop version_set_id :? String ;
 
     |
-    | Identifier of EMR or other system from which the item was created / extracted.
+    | Identifier of EMR or other system from which the item was created / extracted. Typically
+    | in the form of a domain name.
     |
     prop system_id :? String ;
 
@@ -78,7 +83,7 @@ feature_group ("access")
     prop other_details :? Hash<String, String> ;
 
     |
-    | Content object; redefined from EXTRACT_CONTENT_ITEM.item.
+    | Content object.
     |
     prop item :? LOCATABLE ;
 

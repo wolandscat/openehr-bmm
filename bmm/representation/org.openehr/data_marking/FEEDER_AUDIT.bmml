@@ -44,7 +44,8 @@ feature_group ("access")
     prop originating_system_audit : FEEDER_AUDIT_DETAILS ;
 
     |
-    | Audit information from gateway system, if any.
+    | Any audit information for the information item from the feeder system, if different from
+    | the originating system.
     |
     prop feeder_system_audit :? FEEDER_AUDIT_DETAILS ;
 

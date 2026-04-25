@@ -23,8 +23,8 @@ feature_group ("access")
     prop tag :? String ;
 
     |
-    | String form of expression, in case an expression evaluator taking String expressions
-    | is used for evaluation.
+    | String form of expression, in case an expression evaluator taking String expressions is
+    | used for evaluation.
     |
     prop string_expression :? String ;
 

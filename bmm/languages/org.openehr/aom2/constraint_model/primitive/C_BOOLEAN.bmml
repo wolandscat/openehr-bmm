@@ -39,7 +39,8 @@ feature_group ("access")
     func prototype_value : Boolean ;
 
     |
-    | True if any value (i.e. instance) of the reference model type would be allowed.
+    | True if any value (i.e. instance) of the reference model type would be allowed. Redefined
+    | in descendants.
     |
     func any_allowed : Boolean ;
 

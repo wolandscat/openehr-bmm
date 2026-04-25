@@ -19,7 +19,8 @@ class EXPR_FUNCTION_CALL
 feature_group ("access")
 
     |
-    | Arguments of this function, which can be from 0 to any number.
+    | Arguments of this function, which can be from 0 to any number. Functions with no arguments
+    | are typically used to represent real world varying values like 'current time' and so on.
     |
     prop arguments :? List<EXPRESSION> ;
 

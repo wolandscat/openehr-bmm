@@ -38,9 +38,15 @@ feature_group ("access")
     prop source : PARTY_REF ;
 
     |
-    | Type of relationship, such as employment, authority, health provision. Taken from
-    | value of inherited name attribute.
+    | Type of relationship, such as employment, authority, health provision
     |
     func type : DV_TEXT ;
+
+invariant
+    source_valid: ∃source ∧ source.relationships.has (self)
+
+    target_valid: ∃target ∧ ¬target.reverse_relationships.has (self)
+
+    type_validity: type = name
 
 end

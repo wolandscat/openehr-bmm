@@ -19,8 +19,11 @@ class CONSTRAINT_REF
 feature_group ("access")
 
     |
-    | Reference to an archetype constraint, in the form of an archetype path.
+    | Reference to a constraint in the archetype local ontology.
     |
     prop reference : String ;
+
+invariant
+    consistency: ¬any_allowed
 
 end

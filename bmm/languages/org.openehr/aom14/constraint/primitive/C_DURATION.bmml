@@ -21,8 +21,6 @@ class C_DURATION
 feature_group ("access")
 
     |
-    | True if years are allowed in the constrained Duration.
-    |
     prop years_allowed :? Boolean ;
 
     |
@@ -30,8 +28,6 @@ feature_group ("access")
     |
     prop months_allowed :? Boolean ;
 
-    |
-    | True if weeks are allowed in the constrained Duration.
     |
     prop weeks_allowed :? Boolean ;
 
@@ -51,8 +47,6 @@ feature_group ("access")
     prop minutes_allowed :? Boolean ;
 
     |
-    | True if seconds are allowed in the constrained Duration.
-    |
     prop seconds_allowed :? Boolean ;
 
     |
@@ -66,8 +60,8 @@ feature_group ("access")
     prop range :? Interval<Iso8601_duration> ;
 
     |
-    | The value to assume if this item is not included in data, due to being part of an
-    | optional structure.
+    | The value to assume if this item is not included in data, due to being part of an optional
+    | structure.
     |
     prop assumed_value :? Iso8601_duration ;
 

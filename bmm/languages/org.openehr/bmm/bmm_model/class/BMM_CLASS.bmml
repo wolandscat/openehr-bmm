@@ -31,12 +31,14 @@ feature_group ("access")
     prop package : BMM_PACKAGE ;
 
     |
-    | Reference to original source schema defining this class.
+    | Reference to original source schema defining this class. Useful for UI tools to determine
+    | which original schema file to open for a given class for manual editing.
     |
     prop source_schema_id : String ;
 
     |
-    | List of computed references to base classes of immediate inheritance descendants.
+    | List of computed references to base classes of immediate inheritance descendants, derived
+    | when members of `_ancestors_` are attached at creation time.
     |
     prop immediate_descendants :? List<BMM_CLASS> ;
 
@@ -46,12 +48,14 @@ feature_group ("access")
     prop is_override : Boolean ;
 
     |
-    | True if this class represents a type considered to be primitive in the type system.
+    | True if this class represents a type considered to be primitive in the type system, i.e.
+    | any typically built-in or standard library type such as `String`, `Date`, `Hash<K,V>` etc.
     |
     prop is_primitive :? Boolean ;
 
     |
-    | True if this class is marked as abstract, i.e. direct instances cannot be created.
+    | True if this class is marked as abstract, i.e. direct instances cannot be created from its
+    | direct type.
     |
     prop is_abstract :? Boolean ;
 
@@ -66,7 +70,7 @@ feature_group ("access")
     func all_ancestors : List<String> ;
 
     |
-    | Compute all descendants by following immediate_descendants.
+    | Compute all descendants by following `_immediate_descendants_`.
     |
     func all_descendants : List<String> ;
 
@@ -76,14 +80,19 @@ feature_group ("access")
     func flat_properties : List<BMM_PROPERTY> ;
 
     |
-    | Fully qualified package name, of form: package.package.
+    | Fully qualified package name, of form: `package.package`.
     |
     func package_path : String ;
 
     |
-    | Fully qualified class name, of form: package.package.CLASS with package path in
-    | lower-case and class in original case.
+    | Fully qualified class name, of form: `package.package.CLASS` with package path in lower-
+    | case and class in original case.
     |
     func class_path : String ;
+
+invariant
+    inv_constructors: ∀p in creators : procedures.has(p)
+
+    inv_converters: ∀p in converters : creators.has(p) ∧ p.arity() = 1
 
 end

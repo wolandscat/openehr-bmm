@@ -17,7 +17,8 @@ class RM_ATTRIBUTE_VISIBILITY
 feature_group ("access")
 
     |
-    | Visibility setting of a non-archetyped RM attribute.
+    | Visibility setting of a non-archetyped RM attribute (RM attributes that are constrained or
+    | within the archetyped structure are visible by default).
     |
     prop visibility :? VISIBILITY_TYPE ;
 

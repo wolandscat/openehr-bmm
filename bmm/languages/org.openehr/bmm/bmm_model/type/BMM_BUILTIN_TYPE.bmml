@@ -33,12 +33,12 @@ feature_group ("access")
     func is_primitive : Boolean ;
 
     |
-    | Return base_name.
+    | Return `_base_name_`.
     |
     func type_base_name : String ;
 
     |
-    | Return base_name.
+    | Return `_base_name_`.
     |
     func type_name : String ;
 

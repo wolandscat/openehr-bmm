@@ -18,7 +18,7 @@ class DV_BOOLEAN
 feature_group ("access")
 
     |
-    | Boolean value of this item.
+    | Boolean value of this item. Actual values may be language or implementation dependent.
     |
     prop value : Boolean ;
 

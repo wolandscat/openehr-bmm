@@ -23,7 +23,7 @@ feature_group ("access")
     prop operand : EL_VALUE_GENERATOR ;
 
     |
-    | Returns the Boolean type definition.
+    | Return `{BMM_MODEL}._boolean_type_definition_()`.
     |
     func eval_type : BMM_SIMPLE_TYPE ;
 

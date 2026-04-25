@@ -24,8 +24,8 @@ feature_group ("access")
     prop expression : EL_BOOLEAN_EXPRESSION ;
 
     |
-    | Optional tag, typically used to designate design intention of the assertion,
-    | e.g. "Inv_all_members_valid".
+    | Optional tag, typically used to designate design intention of the assertion, e.g.
+    | `"Inv_all_members_valid"`.
     |
     prop tag :? String ;
 

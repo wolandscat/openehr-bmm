@@ -19,13 +19,10 @@ class EXPR_ARCHETYPE_REF
 feature_group ("access")
 
     |
-    | The path to the archetype node. Paths with a leading '/' are in the definition
-    | section; paths with no leading '/' are in the outer archetype (e.g. archetype_id/value).
+    | The path to the archetype node.
     |
     prop path : String ;
 
-    |
-    | The referenced archetype constraint node (redefined from Any).
     |
     prop item : ARCHETYPE_CONSTRAINT ;
 

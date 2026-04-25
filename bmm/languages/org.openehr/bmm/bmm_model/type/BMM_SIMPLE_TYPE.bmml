@@ -23,17 +23,17 @@ feature_group ("access")
     prop base_class : BMM_SIMPLE_CLASS ;
 
     |
-    | Result is base_class.name.
+    | Result is `_base_class.name_`.
     |
     func type_name : String ;
 
     |
-    | Result is base_class.is_abstract.
+    | Result is `_base_class.is_abstract_`.
     |
     func is_abstract : Boolean ;
 
     |
-    | Result is base_class.name.
+    | Result is `_base_class.name_` .
     |
     func flattened_type_list : List<String> ;
 

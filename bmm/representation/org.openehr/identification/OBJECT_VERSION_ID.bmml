@@ -19,7 +19,9 @@ class OBJECT_VERSION_ID
 feature_group ("access")
 
     |
-    | Unique identifier for logical object of which this identifier identifies one version.
+    | Unique identifier for logical object of which this identifier identifies one version;
+    | normally the `_object_id_` will be the unique identifier of the version container
+    | containing the version referred to by this `OBJECT_VERSION_ID` instance.
     |
     func object_id : UID ;
 
@@ -29,7 +31,8 @@ feature_group ("access")
     func creating_system_id : UID ;
 
     |
-    | Tree identifier of this version with respect to other versions in the same version tree.
+    | Tree identifier of this version with respect to other versions in the same version tree,
+    | as either 1 or 3 part dot-separated numbers, e.g. 1 , 2.1.4 .
     |
     func version_tree_id : VERSION_TREE_ID ;
 

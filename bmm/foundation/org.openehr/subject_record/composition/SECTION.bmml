@@ -21,9 +21,14 @@ class SECTION
 feature_group ("access")
 
     |
-    | Ordered list of content items under this section, which may include more SECTIONs
-    | or ENTRYs.
+    | Ordered list of content items under this section, which may include:
+    |
+    | * more `SECTIONs`;
+    | * `ENTRYs`.
     |
     prop items :? List<CONTENT_ITEM> ;
+
+invariant
+    items_valid: ∃items ⇒ ¬items.is_empty
 
 end

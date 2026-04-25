@@ -17,12 +17,17 @@ class ARCHETYPE_ONTOLOGY
 feature_group ("access")
 
     |
-    | List of all term codes in the ontology, corresponding to "at" codes in ADL archetypes.
+    | List of all term codes in the ontology. Most of these correspond to “at” codes in an ADL
+    | archetype, which are the node_ids on C_OBJECT descendants. There may be an extra one, if a
+    | different term is used as the overall archetype concept from that used as the node_id of
+    | the outermost C_OBJECT in the definition part.
     |
     prop term_codes : List<String> ;
 
     |
-    | List of all constraint codes in the ontology, corresponding to "ac" codes in ADL.
+    | List of all term codes in the ontology. These correspond to the “ac” codes in an ADL
+    | archetype, or equivalently, the CONSTRAINT_REF.reference values in the archetype
+    | definition.
     |
     prop constraint_codes : List<String> ;
 
@@ -37,12 +42,11 @@ feature_group ("access")
     prop terminologies_available :? List<String> ;
 
     |
-    | Specialisation depth of this archetype; unspecialised archetypes have depth 0.
+    | Specialisation depth of this archetype. Unspecialised archetypes have depth 0, with each
+    | additional level of specialisation adding 1 to the specialisation_depth.
     |
     prop specialisation_depth : Integer ;
 
-    |
-    | Names of term attributes defined in this ontology.
     |
     prop term_attribute_names : List<String> ;
 
@@ -87,5 +91,14 @@ feature_group ("access")
     | a_terminology_id, as a string (usually a formal query expression).
     |
     func constraint_binding (a_terminology_id : String, a_code : String) : String ;
+
+invariant
+    original_language_validity: code_set (Code_set_id_languages).has_concept_id (original_language)
+
+    concept_code_validity: id_codes.has (concept_code)
+
+    term_bindings_validity: bindings /= void ⇒ ¬bindings.is_empty
+
+    parent_archetype_valid: parent_archetype.ontology = Current
 
 end

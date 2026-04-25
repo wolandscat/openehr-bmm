@@ -24,20 +24,23 @@ class PARTICIPATION
 feature_group("access")
 
     |
-    | Function of performer in participation, e.g. 'resuscitation/CPR' in emergency situation
+    | The function of the Party in this participation (note that a given party might participate
+    | in more than one way in a particular activity). This attribute should be coded, but cannot
+    | be limited to the HL7v3:ParticipationFunction vocabulary, since it is too limited and
+    | hospital-oriented.
     |
     prop function : DV_TEXT «openehr.Participation_function» ;
 
     |
-    | Optional field for recording the 'mode' of the performer / activity interaction,
-    | e.g. present, by telephone, by email etc.
+    | Optional field for recording the 'mode' of the performer / activity interaction, e.g.
+    | present, by telephone, by email etc.
     |
     prop mode :? DV_CODED_TEXT «openehr.Participation_mode» ;
 
     |
     | The time interval during which the participation took place, if it is used in an
-    | observational context (i.e. recording facts about the past); or the intended time
-    | interval of the participation when used in future contexts, such as EHR Instructions.
+    | observational context (i.e. recording facts about the past); or the intended time interval
+    | of the participation when used in future contexts, such as EHR Instructions.
     |
     prop time :? DV_INTERVAL<DV_DATE_TIME> ;
 
@@ -46,8 +49,9 @@ feature_group("access")
     |
     prop performer : PARTY_PROXY ;
 
+invariant
+    function_valid: function.generating_type.is_equal ("DV_CODED_TEXT") ⇒
+
+    mode_valid: ∃mode ⇒ terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_participation_mode, mode.defining_code)
+
 end
-
-
-
-

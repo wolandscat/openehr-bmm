@@ -19,7 +19,8 @@ class EL_CONDITION_CHAIN<T: EL_TERMINAL>
 feature_group ("access")
 
     |
-    | Members of the chain, equivalent to branches in an if/then/else chain.
+    | Members of the chain, equivalent to branches in an if/then/else chain and cases in a case
+    | statement.
     |
     prop items : List<EL_CONDITIONAL_EXPRESSION<T>> ;
 

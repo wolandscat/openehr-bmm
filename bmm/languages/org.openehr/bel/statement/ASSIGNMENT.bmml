@@ -24,7 +24,7 @@ feature_group ("access")
     prop target : VARIABLE_DECLARATION ;
 
     |
-    | Source (right hand side) of the assignment.
+    | Source right hand side) of the assignment.
     |
     prop source : EXPR_VALUE ;
 

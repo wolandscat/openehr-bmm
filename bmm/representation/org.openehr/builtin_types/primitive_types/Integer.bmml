@@ -67,7 +67,7 @@ feature_group ("operators")
         ;
 
     |
-    | Unary negation of current Integer value.
+    | Generate negative of current Integer value.
     |
     func negative : Integer
         alias "-" ;

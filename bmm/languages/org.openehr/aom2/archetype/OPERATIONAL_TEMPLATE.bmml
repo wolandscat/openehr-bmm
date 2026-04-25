@@ -22,14 +22,14 @@ class OPERATIONAL_TEMPLATE
 feature_group ("access")
 
     |
-    | Compendium of flattened terminologies of archetypes referenced from this template,
-    | keyed by archetype identifier.
+    | Compendium of flattened terminologies of archetypes referenced from this template, keyed
+    | by archetype identifier. This will almost always be present in a template.
     |
     prop component_terminologies :? Hash<String,ARCHETYPE_TERMINOLOGY> ;
 
     |
-    | Compendium of flattened terminology extracts from archetypes referenced from this
-    | template, keyed by archetype identifier.
+    | Compendium of flattened terminology extracts (i.e. from external terminologies) from
+    | archetypes referenced from this template, keyed by archetype identifier.
     |
     prop terminology_extracts :? Hash<String,ARCHETYPE_TERMINOLOGY> ;
 
@@ -37,5 +37,8 @@ feature_group ("access")
     | Return the component terminology for the archetype with identifier an_id.
     |
     func component_terminology (an_id : String) : ARCHETYPE_TERMINOLOGY ;
+
+invariant
+    specialisation_validity: is_specialised
 
 end

@@ -19,7 +19,9 @@ class GENERIC_ID
 feature_group ("access")
 
     |
-    | Name of the scheme to which this identifier conforms.
+    | Name of the scheme to which this identifier conforms. Ideally this name will be
+    | recognisable globally but realistically it may be a local ad hoc scheme whose name is not
+    | controlled or standardised in any way.
     |
     prop scheme : String ;
 

@@ -23,7 +23,9 @@ feature_group ("access")
     prop class_definitions :? List<String> ;
 
     |
-    | List of other models 'used' (i.e. 'imported') by this model.
+    | List of other models 'used' (i.e. 'imported' by this model). Classes in the current model
+    | may refer to classes in a used model by specifying the other class's `_scope_` meta-
+    | attribute.
     |
     prop used_models :? List<BMM_MODEL> ;
 
@@ -33,7 +35,11 @@ feature_group ("access")
     prop modules :? Hash<String, BMM_MODULE> ;
 
     |
-    | Identifier of this model, lower-case, formed from rm_publisher_model_name_rm_release.
+    | Identifier of this model, lower-case, formed from:
+    |
+    | `<rm_publisher>_<model_name>_<rm_release>`
+    |
+    | E.g. `"openehr_ehr_1.0.4"`.
     |
     func model_id : String ;
 
@@ -58,12 +64,12 @@ feature_group ("access")
     func enumeration_definition (a_name : String) : BMM_ENUMERATION ;
 
     |
-    | List of keys in class_definitions of items marked as primitive types.
+    | List of keys in `_class_definitions_` of items marked as primitive types.
     |
     func primitive_types : List<String> ;
 
     |
-    | List of keys in class_definitions of items that are enumeration types.
+    | List of keys in `_class_definitions_` of items that are enumeration types.
     |
     func enumeration_types : List<String> ;
 
@@ -71,5 +77,8 @@ feature_group ("access")
     | True if a_class_name is a descendant in the model of a_parent_class_name.
     |
     func is_descendant_of (a_class_name : String, a_parent_class_name : String) : Boolean ;
+
+invariant
+    inv_top_level_scope: scope = self
 
 end

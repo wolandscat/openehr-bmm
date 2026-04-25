@@ -19,7 +19,7 @@ class HISTORY<T: ITEM_STRUCTURE>
 feature_group ("access")
 
     |
-    | Time origin of this event history.
+    | Time origin of this event history. The first event is not necessarily at the origin point.
     |
     prop origin : DV_DATE_TIME ;
 
@@ -29,17 +29,21 @@ feature_group ("access")
     prop period :? DV_DURATION ;
 
     |
-    | Duration of the entire History.
+    | Duration of the entire History; either corresponds to the duration of all the events,
+    | and/or the duration represented by the summary, if it exists.
     |
     prop duration :? DV_DURATION ;
 
     |
     | Optional summary data that aggregates, organizes, reduces and transforms the event series.
+    | This may be a text or image that presents a graphical presentation, or some data that
+    | assists with the interpretation of the data.
     |
     prop summary :? ITEM_STRUCTURE ;
 
     |
-    | The events in the series.
+    | The events in the series. This attribute is of a generic type whose parameter must be a
+    | descendant of `ITEM_SUTRUCTURE`.
     |
     prop events :? List<EVENT<T>> ;
 
@@ -47,5 +51,12 @@ feature_group ("access")
     | Indicates whether history is periodic.
     |
     func is_periodic : Boolean ;
+
+invariant
+    events_valid: (∃events ∧ ¬events.is_empty) ∨ ∃summary
+
+    periodic_validity: is_periodic ⊻ ¬∃period
+
+    period_consistency: is_periodic ⇒ events.∀ (e: EVENT &#124; e.offset. to_seconds.mod(period.to_seconds) = 0)
 
 end

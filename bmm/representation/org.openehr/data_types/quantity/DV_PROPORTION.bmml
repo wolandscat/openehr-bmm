@@ -19,7 +19,7 @@ class DV_PROPORTION
 feature_group ("access")
 
     |
-    | Numerator of ratio.
+    | Numerator of ratio
     |
     prop numerator : Real ;
 
@@ -34,7 +34,9 @@ feature_group ("access")
     prop type : Integer ;
 
     |
-    | Precision to which numerator and denominator values are expressed.
+    | Precision to which the `_numerator_` and `_denominator_` values of the proportion are
+    | expressed, in terms of number of decimal places. The value 0 implies an integral quantity.
+    | The value -1 implies no limit, i.e. any number of decimal places.
     |
     prop precision :? Integer ;
 
@@ -44,7 +46,8 @@ feature_group ("access")
     prop normal_range :? DV_INTERVAL<DV_PROPORTION> ;
 
     |
-    | Optional tagged other reference ranges.
+    | Optional tagged other reference ranges for this value in its particular measurement
+    | context.
     |
     prop other_reference_ranges :? List<REFERENCE_RANGE<DV_PROPORTION>> ;
 
@@ -54,8 +57,24 @@ feature_group ("access")
     func magnitude : Real ;
 
     |
-    | True if numerator and denominator values are integers.
+    | True if the `_numerator_` and `_denominator_` values are integers, i.e. if `_precision_`
+    | is 0.
     |
     func is_integral : Boolean ;
+
+invariant
+    type_validity: valid_proportion_kind (type)
+
+    precision_validity: precision = 0 ⇒ is_integral
+
+    is_integral_validity: is_integral ⇒ (numerator.floor = numerator ∧ denominator.floor = denominator)
+
+    fraction_validity: (type = pk_fraction ∨ type = pk_integer_fraction) ⇒ is_integral
+
+    unitary_validity: type = pk_unitary ⇒ denominator = 1
+
+    percent_validity: type = pk_percent ⇒ denominator = 100
+
+    valid_denominator: denominator /= 0.0
 
 end

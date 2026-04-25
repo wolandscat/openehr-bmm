@@ -15,4 +15,7 @@
 class Proper_Interval<T: Ordered>
     is_a Interval<T>
 
+invariant
+    inv_not_point: lower /= upper
+
 end

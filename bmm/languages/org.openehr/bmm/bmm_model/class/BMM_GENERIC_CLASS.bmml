@@ -18,14 +18,14 @@ class BMM_GENERIC_CLASS
 feature_group ("access")
 
     |
-    | List of formal generic parameters, keyed by name. These are defined either directly
-    | on this class or by the inclusion of an ancestor class which is generic.
+    | List of formal generic parameters, keyed by name. These are defined either directly on
+    | this class or by the inclusion of an ancestor class which is generic.
     |
     prop generic_parameters : Hash<String, BMM_PARAMETER_TYPE> ;
 
     |
-    | Generate a fully open BMM_GENERIC_TYPE instance that corresponds to this class
-    | definition.
+    | Generate a fully open `BMM_GENERIC_TYPE` instance that corresponds to this class
+    | definition
     |
     func type : BMM_GENERIC_TYPE ;
 

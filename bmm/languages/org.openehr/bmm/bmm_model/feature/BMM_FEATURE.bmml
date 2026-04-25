@@ -18,8 +18,8 @@ abstract class BMM_FEATURE
 feature_group ("access")
 
     |
-    | True if this feature was synthesised due to generic substitution in an inherited
-    | type, or further constraining of a formal generic parameter.
+    | True if this feature was synthesised due to generic substitution in an inherited type, or
+    | further constraining of a formal generic parameter.
     |
     prop is_synthesised_generic :? Boolean ;
 

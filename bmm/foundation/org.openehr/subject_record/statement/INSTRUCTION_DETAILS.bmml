@@ -28,10 +28,19 @@ feature_group ("access")
     prop activity_id : String ;
 
     |
-    | Various workflow engine state details, potentially including condition that fired
-    | to cause this Action, list of notifications which occurred, and other workflow
-    | engine state.
+    | Various workflow engine state details, potentially including such things as:
+    |
+    | * condition that fired to cause this Action to be done (with actual variables
+    | substituted);
+    | * list of notifications which actually occurred (with all variables substituted);
+    | * other workflow engine state.
+    |
+    | This specification does not currently define the actual structure or semantics of this
+    | field.
     |
     prop wf_details :? ITEM_STRUCTURE ;
+
+invariant
+    activity_path_valid: ¬activity_id.is_empty
 
 end

@@ -23,12 +23,18 @@ feature_group ("access")
     prop parameters :? List<BMM_PARAMETER> ;
 
     |
-    | Boolean conditions that must evaluate to True for the routine to execute correctly.
+    | Boolean conditions that must evaluate to True for the routine to execute correctly, May be
+    | used to generate exceptions if included in run-time build.
+    |
+    | A False pre-condition implies an error in the passed parameters.
     |
     prop pre_conditions :? List<BMM_ASSERTION> ;
 
     |
-    | Boolean conditions that will evaluate to True if the routine executed correctly.
+    | Boolean conditions that will evaluate to True if the routine executed correctly, May be
+    | used to generate exceptions if included in run-time build.
+    |
+    | A False post-condition implies an error (i.e. bug) in routine code.
     |
     prop post_conditions :? List<BMM_ASSERTION> ;
 

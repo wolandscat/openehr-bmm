@@ -18,8 +18,7 @@ class CONTACT
 feature_group ("access")
 
     |
-    | A set of address alternatives for this contact purpose and time validity
-    | combination.
+    | A set of address alternatives for this contact purpose and time validity combination.
     |
     prop addresses : List<ADDRESS> ;
 
@@ -29,9 +28,12 @@ feature_group ("access")
     prop time_validity :? DV_INTERVAL<DV_DATE> ;
 
     |
-    | Purpose for which this contact is used, e.g. mail, daytime phone. Taken from
-    | value of inherited name attribute.
+    | Purpose for which this contact is used, e.g. mail, daytime phone, etc. Taken from value of
+    | inherited `_name_` attribute.
     |
     func purpose : DV_TEXT ;
+
+invariant
+    purpose_valid: purpose = name
 
 end

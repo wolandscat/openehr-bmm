@@ -17,8 +17,8 @@ class ARCHETYPE_ID_CONSTRAINT
 feature_group ("access")
 
     |
-    | Right hand side of the constraint expression, in the form of a C_STRING value
-    | constrainer.
+    | Right hand side of the constraint expression, in the form of a `C_STRING`, i.e. string
+    | value constrainer.
     |
     prop constraint : C_STRING ;
 

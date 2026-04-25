@@ -19,7 +19,7 @@ class BMM_STATEMENT_BLOCK
 feature_group ("access")
 
     |
-    | Child statement items of the current block.
+    | Child blocks of the current block.
     |
     prop items :? List<BMM_STATEMENT_ITEM> ;
 

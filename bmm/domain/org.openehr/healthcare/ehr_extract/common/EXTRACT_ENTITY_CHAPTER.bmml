@@ -19,8 +19,8 @@ class EXTRACT_ENTITY_CHAPTER
 feature_group ("access")
 
     |
-    | Reference to entity, usually a demographic entity such as a patient that the
-    | content of this chapter relates to.
+    | Reference to entity, usually a demographic entity such as a patient that the content of
+    | this chapter relates to.
     |
     prop extract_id_key : String ;
 

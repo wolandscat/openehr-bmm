@@ -18,8 +18,12 @@ class PARTY_RELATED
 feature_group ("access")
 
     |
-    | Relationship of subject of this ENTRY to the subject of the record. May be coded.
+    | Relationship of subject of this ENTRY to the subject of the record. May be coded. If it is
+    | the patient, coded as self.
     |
     prop relationship : DV_CODED_TEXT ;
+
+invariant
+    relationship_valid: terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_subject_relationship, relationship.defining_code)
 
 end

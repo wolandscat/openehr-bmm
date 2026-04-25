@@ -22,17 +22,18 @@ feature_group ("access")
     prop code : String ;
 
     |
-    | Text name of the term in its owning terminology.
+    | Short term text, typically for display.
     |
     prop text : String ;
 
     |
-    | Description of the term.
+    | Full description text.
     |
     prop description : String ;
 
     |
-    | Other items in the term definition, keyed by item name.
+    | Hash of keys and corresponding values for other items in a term, e.g. provenance. Hash of
+    | keys ("text", "description" etc) and corresponding values.
     |
     prop other_items :? Hash<String,String> ;
 

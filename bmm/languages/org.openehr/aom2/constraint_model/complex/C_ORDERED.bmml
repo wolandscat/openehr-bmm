@@ -22,12 +22,14 @@ abstract class C_ORDERED<T: Ordered>
 feature_group ("access")
 
     |
-    | Constraint in the form of a List of Intervals of the parameter type T.
+    | Constraint in the form of a List of Intervals of the parameter type T. Concrete types
+    | generated in descendants via template binding.
     |
     prop constraint :? List<Interval<T>> ;
 
     |
-    | Default value set in a template, and present in an operational template.
+    | Default value set in a template, and present in an operational template. Generally limited
+    | to leaf and near-leaf nodes.
     |
     prop default_value :? T ;
 
@@ -37,7 +39,8 @@ feature_group ("access")
     prop assumed_value :? T ;
 
     |
-    | True if any value (i.e. instance) of the reference model type would be allowed.
+    | True if any value (i.e. instance) of the reference model type would be allowed. Redefined
+    | in descendants.
     |
     func any_allowed : Boolean ;
 

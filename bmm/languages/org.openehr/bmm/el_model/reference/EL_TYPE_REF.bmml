@@ -20,17 +20,15 @@ class EL_TYPE_REF
 feature_group ("access")
 
     |
-    | The type being referenced, directly from the name.
+    | Type, directly from the name of the reference, e.g. `{SOME_TYPE}`.
     |
     prop type : BMM_TYPE ;
 
     |
-    | Defined to return False.
-    |
     prop is_mutable : Boolean ;
 
     |
-    | Return type.
+    | Return `_type_`.
     |
     func eval_type : BMM_TYPE ;
 

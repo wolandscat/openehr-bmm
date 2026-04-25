@@ -25,8 +25,9 @@ feature_group ("access")
     prop narrative : DV_TEXT ;
 
     |
-    | Optional expiry date/time to assist determination of when an Instruction can be
-    | assumed to have expired.
+    | Optional expiry date/time to assist determination of when an Instruction can be assumed to
+    | have expired. This helps prevent false listing of Instructions as Active when they clearly
+    | must have been terminated in some way or other.
     |
     prop expiry_time :? DV_DATE_TIME ;
 
@@ -39,5 +40,8 @@ feature_group ("access")
     | List of all activities in Instruction.
     |
     prop activities :? List<ACTIVITY> ;
+
+invariant
+    activities_valid: ∃activities ⇒ ¬activities.is_empty
 
 end

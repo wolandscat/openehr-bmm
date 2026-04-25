@@ -18,7 +18,7 @@ class CLUSTER
 feature_group ("access")
 
     |
-    | Ordered list of CLUSTER or ELEMENT items under this CLUSTER.
+    | Ordered list of items - `CLUSTER` or `ELEMENT` objects - under this `CLUSTER`.
     |
     prop items : List<ITEM> ;
 

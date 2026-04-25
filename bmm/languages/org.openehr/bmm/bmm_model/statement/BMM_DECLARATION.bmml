@@ -18,12 +18,8 @@ class BMM_DECLARATION
 feature_group ("access")
 
     |
-    | Name of the declared variable.
-    |
     prop name : String ;
 
-    |
-    | The resulting writable variable entity.
     |
     prop result : EL_WRITABLE_VARIABLE ;
 

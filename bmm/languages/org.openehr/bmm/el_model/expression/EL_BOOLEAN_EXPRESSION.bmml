@@ -15,4 +15,7 @@ import org.openehr:representation;
 class EL_BOOLEAN_EXPRESSION
     is_a EL_CONSTRAINED
 
+invariant
+    inv_boolean_expression: base_expression.is_boolean()
+
 end

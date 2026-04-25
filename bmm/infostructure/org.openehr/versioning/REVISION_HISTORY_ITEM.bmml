@@ -23,8 +23,8 @@ feature_group ("access")
     prop version_id : OBJECT_VERSION_ID ;
 
     |
-    | The audits for this revision; includes at least one commit audit, and optionally
-    | further attestations.
+    | The audits for this revision; there will always be at least one commit audit (which may
+    | itself be an `ATTESTATION`), there may also be further attestations.
     |
     prop audits : List<AUDIT_DETAILS> ;
 

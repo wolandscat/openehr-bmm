@@ -19,18 +19,24 @@ abstract class UID_BASED_ID
 feature_group ("access")
 
     |
-    | The identifier of the conceptual namespace in which the object exists. Returns the part to the left of the first '::' separator.
+    | The identifier of the conceptual namespace in which the object exists, within the
+    | identification scheme. Returns the part to the left of the first '::' separator, if any,
+    | or else the whole string.
     |
     func root : UID ;
 
     |
-    | Optional local identifier of the object within the context of the root identifier.
+    | Optional local identifier of the object within the context of the root identifier. Returns
+    | the part to the right of the first '::' separator if any, or else any empty String.
     |
     func extension : String ;
 
     |
-    | True if not extension.is_empty().
+    | True if not `_extension_.is_empty()`.
     |
     func has_extension : Boolean ;
+
+invariant
+    has_extension_valid: extension.is_empty ⊻ has_extension
 
 end

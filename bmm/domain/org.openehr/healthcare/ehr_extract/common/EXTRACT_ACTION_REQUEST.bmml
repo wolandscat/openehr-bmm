@@ -20,18 +20,16 @@ class EXTRACT_ACTION_REQUEST
 feature_group ("access")
 
     |
-    | Identifier of previous EXTRACT_REQUEST.
+    | Identifier of previous `EXTRACT_REQUEST`.
     |
     prop request_id : OBJECT_REF ;
 
     |
-    | Requested action: cancel | resend | send new. Coded by openEHR Terminology group
-    | extract action type.
+    | Requested action: `cancel &#124; resend &#124; send new`. Coded by openEHR Terminology
+    | group `'extract action type'`.
     |
     prop action : DV_CODED_TEXT ;
 
-    |
-    | Identifier of this action request.
     |
     prop uid : HIER_OBJECT_ID ;
 

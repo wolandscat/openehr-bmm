@@ -19,22 +19,22 @@ class Multiplicity_Interval
 feature_group ("access")
 
     |
-    | True if this interval imposes no constraints, i.e. is set to 0..*.
+    | True if this interval imposes no constraints, i.e. is set to `0..*`.
     |
     func is_open : Boolean ;
 
     |
-    | True if this interval expresses optionality, i.e. 0..1.
+    | True if this interval expresses optionality, i.e. `0..1`.
     |
     func is_optional : Boolean ;
 
     |
-    | True if this interval expresses mandation, i.e. 1..1.
+    | True if this interval expresses mandation, i.e. `1..1`.
     |
     func is_mandatory : Boolean ;
 
     |
-    | True if this interval is set to 0..0.
+    | True if this interval is set to `0..0`.
     |
     func is_prohibited : Boolean ;
 

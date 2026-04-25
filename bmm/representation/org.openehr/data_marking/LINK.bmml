@@ -17,17 +17,26 @@ class LINK
 feature_group ("access")
 
     |
-    | Description of the relationship, usually in clinical terms, such as "problem" or "issue".
+    | Used to describe the relationship, usually in clinical terms, such as in response to (the
+    | relationship between test results and an order), follow-up to and so on. Such
+    | relationships can represent any clinically meaningful connection between pieces of
+    | information. Values for meaning include those described in Annex C, ENV 13606 pt 2 under
+    | the categories of generic , documenting and reporting , organisational , clinical ,
+    | circumstancial , and view management .
     |
     prop meaning : DV_TEXT ;
 
     |
-    | Clinical or domain-level meaning for the kind of link, e.g. problem or issue.
+    | The type attribute is used to indicate a clinical or domain-level meaning for the kind of
+    | link, for example problem or issue . If type values are designed appropriately, they can
+    | be used by the requestor of EHR extracts to categorise links which must be followed and
+    | which can be broken when the extract is created.
     |
     prop type : DV_TEXT ;
 
     |
-    | The logical 'to' object in the link relation.
+    | The logical to object in the link relation, as per the linguistic sense of the meaning
+    | attribute.
     |
     prop target : DV_EHR_URI ;
 

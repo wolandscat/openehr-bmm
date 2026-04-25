@@ -19,9 +19,11 @@ class C_SINGLE_ATTRIBUTE
 feature_group ("access")
 
     |
-    | List of alternative constraints for the single child of this attribute within the
-    | data.
+    | List of alternative constraints for the single child of this attribute within the data.
     |
     func alternatives : List<C_OBJECT> ;
+
+invariant
+    members_valid: ∃alternatives ∧ alternatives.∀(co: C_OBJECT &#124; co.occurrences.upper \<= 1)
 
 end

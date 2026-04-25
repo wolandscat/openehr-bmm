@@ -19,7 +19,7 @@ class EL_CASE<T: EL_TERMINAL>
 feature_group ("access")
 
     |
-    | Constraint on the input value for this case branch.
+    | Constraint on
     |
     prop value_constraint : C_OBJECT ;
 

@@ -20,18 +20,19 @@ class EXTERNAL_QUERY
 feature_group ("access")
 
     |
-    | Optional name of context, allowing basic separation of query types, e.g. "patient",
-    | "medications".
+    | Optional name of context. This allows a basic separation of query types to be done in more
+    | sophisticated environments. Possible values might be “patient”, “medications” and so on.
+    | Not yet standardised.
     |
     prop context : String ;
 
     |
-    | Identifier of query in the external context, e.g. "date_of_birth".
+    | Identifier of query in the external context, e.g. “date_of_birth”. Not yet standardised.
     |
     prop query_id : String ;
 
     |
-    | Optional arguments to query.
+    | Optional arguments to query. Not yet standardised.
     |
     prop query_args :? List<String> ;
 

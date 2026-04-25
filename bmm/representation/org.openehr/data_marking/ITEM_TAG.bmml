@@ -29,12 +29,13 @@ feature_group ("access")
     prop value :? String ;
 
     |
-    | Identifier of target, which may be a VERSIONED_OBJECT<T> or a VERSION<T>.
+    | Identifier of target, which may be a `VERSIONED_OBJECT<T>` or a `VERSION<T>`.
     |
     prop target : UID_BASED_ID ;
 
     |
-    | Optional archetype (AQL) or RM path within target, used to tag a fine-grained element.
+    | Optional archetype (i.e. AQL) or RM path within `_target_`, used to tag a fine-grained
+    | element.
     |
     prop target_path :? String ;
 
@@ -42,5 +43,10 @@ feature_group ("access")
     | Identifier of owner object, such as EHR.
     |
     prop owner_id : OBJECT_REF ;
+
+invariant
+    inv_key_valid: ¬key.is_empty ∧ key.is_justified
+
+    inv_value_valid: ∃value ⇒ ¬value.is_empty
 
 end

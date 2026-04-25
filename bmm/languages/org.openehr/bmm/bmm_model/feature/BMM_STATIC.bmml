@@ -15,4 +15,7 @@ import org.openehr:representation;
 abstract class BMM_STATIC
     is_a BMM_INSTANTIABLE_FEATURE
 
+invariant
+    inv_not_nullable: is_nullable = False
+
 end

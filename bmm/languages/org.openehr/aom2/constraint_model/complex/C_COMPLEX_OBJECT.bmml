@@ -28,7 +28,8 @@ feature_group ("access")
     prop attribute_tuples :? List<C_ATTRIBUTE_TUPLE> ;
 
     |
-    | True if any value (i.e. instance) of the reference model type would be allowed.
+    | True if any value (i.e. instance) of the reference model type would be allowed. Redefined
+    | in descendants.
     |
     func any_allowed : Boolean ;
 

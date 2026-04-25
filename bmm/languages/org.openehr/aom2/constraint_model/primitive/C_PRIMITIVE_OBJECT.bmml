@@ -24,12 +24,14 @@ feature_group ("access")
     prop assumed_value :? Any ;
 
     |
-    | True if this object represents a constraint on an enumerated type from the reference model.
+    | True if this object represents a constraint on an enumerated type from the reference
+    | model, where the latter is assumed to be based on a primitive type, generally Integer or
+    | String.
     |
     prop is_enumerated_type_constraint :? Boolean ;
 
     |
-    | Constraint represented by this object; redefined in descendants.
+    | Constraint represented by this object; redefine in descendants.
     |
     prop constraint : Any ;
 
@@ -39,7 +41,9 @@ feature_group ("access")
     func has_assumed_value : Boolean ;
 
     |
-    | Generate name of native type that is constrained by this C_XXX type.
+    | Generate name of native type that is constrained by this `C_XXX` type. For most types, it
+    | is the `C_XXX` typename without the `C_`, i.e. `XXX`. E.g. `C_INTEGER` -> `Integer`. For
+    | the date/time types the mapping is different.
     |
     func constrained_typename : String ;
 
@@ -62,5 +66,8 @@ feature_group ("access")
     | True if this node expresses the same value constraint as other.
     |
     func c_value_congruent_to (other : C_PRIMITIVE_OBJECT) : Boolean ;
+
+invariant
+    inv_valid_assumed_value: valid_value (assumed_value)
 
 end

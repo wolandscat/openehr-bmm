@@ -18,7 +18,9 @@ class AUDIT_DETAILS
 feature_group ("access")
 
     |
-    | Identifier of the logical EHR system where the change was committed.
+    | Identifier of the logical EHR system where the change was committed. This is almost always
+    | owned by the organisation legally responsible for the EHR, and is distinct from any
+    | application, or any hosting infrastructure.
     |
     prop system_id : String ;
 
@@ -33,14 +35,21 @@ feature_group ("access")
     prop change_type : DV_CODED_TEXT ;
 
     |
-    | Reason for committal. May be used to qualify the value in the change_type field.
+    | Reason for committal. This may be used to qualify the value in the `_change_type_` field.
+    | For example, if the change affects only the EHR directory, this field might be used to
+    | indicate 'Folder "episode 2018-02-16" added' or similar.
     |
     prop description :? DV_TEXT ;
 
     |
-    | Identity and optional reference into identity management service of the user
-    | who committed the item.
+    | Identity and optional reference into identity management service, of user who committed
+    | the item.
     |
     prop committer : PARTY_PROXY ;
+
+invariant
+    system_id_valid: ¬system_id.is_empty
+
+    change_type_valid: terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_audit_change_type, change_type.defining_code)
 
 end

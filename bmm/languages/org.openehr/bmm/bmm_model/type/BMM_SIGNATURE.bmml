@@ -25,8 +25,8 @@ feature_group ("access")
     prop result_type : BMM_TYPE ;
 
     |
-    | Return the logical set consisting of argument_types.flattened_type_list() and
-    | result_type.flattened_type_list().
+    | Return the logical set (i.e. unique items) consisting of
+    | `_argument_types.flattened_type_list_()` and `_result_type.flattened_type_list_()`.
     |
     func flattened_type_list : List<String> ;
 

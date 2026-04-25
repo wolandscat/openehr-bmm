@@ -18,13 +18,17 @@ class REFERENCE_RANGE<T>
 feature_group ("access")
 
     |
-    | Term whose value indicates the meaning of this range, e.g. normal, critical, therapeutic.
+    | Term whose value indicates the meaning of this range, e.g. normal, critical, therapeutic
+    | etc.
     |
     prop meaning : DV_TEXT ;
 
     |
-    | The data range for this meaning.
+    | The data range for this meaning, e.g. critical etc.
     |
     prop range : DV_INTERVAL<T> ;
+
+invariant
+    range_is_simple: (range.lower_unbounded ∨ range.lower.is_simple) ∧ (range.upper_unbounded ∨ range.upper.is_simple)
 
 end

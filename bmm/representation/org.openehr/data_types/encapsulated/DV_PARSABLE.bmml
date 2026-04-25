@@ -23,7 +23,7 @@ feature_group ("access")
     prop value : String ;
 
     |
-    | Name of the formalism, e.g. GLIF 1.0, Proforma etc.
+    | Name of the formalism, e.g. GLIF 1.0 , Proforma etc.
     |
     prop formalism : String ;
 
@@ -31,5 +31,10 @@ feature_group ("access")
     | Size in bytes of value.
     |
     func size : Integer ;
+
+invariant
+    formalism_valid: ¬formalism.is_empty
+
+    size_valid: size >= 0
 
 end

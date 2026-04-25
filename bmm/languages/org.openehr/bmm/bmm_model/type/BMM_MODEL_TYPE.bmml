@@ -18,8 +18,6 @@ abstract class BMM_MODEL_TYPE
 feature_group ("access")
 
     |
-    | Optional value set constraint on this type.
-    |
     prop value_constraint :? BMM_VALUE_SET_SPEC ;
 
     |
@@ -28,12 +26,12 @@ feature_group ("access")
     prop base_class : BMM_CLASS ;
 
     |
-    | Result = base_class.name.
+    | Result = `_base_class.name_`.
     |
     func type_base_name : String ;
 
     |
-    | Result = base_class.is_primitive.
+    | Result = `_base_class.is_primitive_`.
     |
     func is_primitive : Boolean ;
 

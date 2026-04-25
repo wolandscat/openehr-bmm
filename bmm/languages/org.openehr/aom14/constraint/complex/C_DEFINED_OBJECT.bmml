@@ -44,8 +44,12 @@ feature_group ("access")
     func default_value : Any ;
 
     |
-    | True if any value of the reference model type being constrained is allowed.
+    | True if any value of the reference model type being constrained is allowed. Redefine in
+    | descendants.
     |
     func any_allowed : Boolean ;
+
+invariant
+    assumed_value_valid: has_assumed_value ⇒ valid_value(assumed_value)
 
 end

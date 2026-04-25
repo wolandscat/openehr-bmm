@@ -18,8 +18,6 @@ abstract class EL_VALUE_GENERATOR
 feature_group ("access")
 
     |
-    | True if this entity can be written to.
-    |
     prop is_writable : Boolean ;
 
     |
@@ -28,8 +26,8 @@ feature_group ("access")
     prop name : String ;
 
     |
-    | Generated full reference name, based on constituent parts of the entity.
-    | Default version outputs name field.
+    | Generated full reference name, based on constituent parts of the entity. Default version
+    | outputs `_name_` field.
     |
     func reference : String ;
 

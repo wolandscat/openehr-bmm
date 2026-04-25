@@ -19,7 +19,9 @@ abstract class ARCHETYPE
 feature_group ("access")
 
     |
-    | Archetype reference of the specialisation parent of this archetype, if applicable.
+    | Archetype reference of the specialisation parent of this archetype, if applicable. May
+    | take the form of an archetype interface identifier, i.e. the identifier up to the major
+    | version only, or may be a full archetype identifier.
     |
     prop parent_archetype_id :? String ;
 
@@ -29,7 +31,8 @@ feature_group ("access")
     prop archetype_id : ARCHETYPE_HRID ;
 
     |
-    | Flag indicating whether this archetype is differential or flat in its contents.
+    | Flag indicating whether this archetype is differential or flat in its contents. Top-level
+    | source archetypes have this flag set to True.
     |
     prop is_differential : Boolean ;
 
@@ -44,19 +47,24 @@ feature_group ("access")
     prop terminology : ARCHETYPE_TERMINOLOGY ;
 
     |
-    | Rules relating to this archetype. Statements are expressed in first order predicate logic.
+    | Rules relating to this archetype. Statements are expressed in first order predicate logic,
+    | and usually refer to at least two attributes.
     |
     prop rules :? List<STATEMENT_SET> ;
 
+    |
     prop rm_overlay :? RM_OVERLAY ;
 
     |
-    | The concept code of the root object of the archetype, also standing for the concept of the archetype as a whole.
+    | The concept code of the root object of the archetype, also standing for the concept of the
+    | archetype as a whole.
     |
     func concept_code : String ;
 
     |
-    | Set of language-independent paths extracted from archetype. Paths obey Xpath-like syntax.
+    | Set of language-independent paths extracted from archetype. Paths obey Xpath-like syntax
+    | and are formed from alternations of `C_OBJECT._node_id_` and
+    | `C_ATTRIBUTE._rm_attribute_name_` values.
     |
     func physical_paths : List<String> ;
 
@@ -67,6 +75,7 @@ feature_group ("access")
 
     |
     | Specialisation depth of this archetype; larger than 0 if this archetype has a parent.
+    | Derived from terminology.specialisation_depth.
     |
     func specialisation_depth : Integer ;
 
@@ -74,5 +83,10 @@ feature_group ("access")
     | True if this archetype is a specialisation of another.
     |
     func is_specialised : Boolean ;
+
+invariant
+    invariant_concept_valid: terminology.has_term_code (concept_code)
+
+    invariant_specialisation_validity: is_specialised ⇒ specialisation_depth > 0
 
 end

@@ -19,17 +19,16 @@ abstract class ARCHETYPE_CONSTRAINT
 feature_group ("access")
 
     |
-    | Parent node of this constraint.
+    | Parent node, except in the case of the top of a tree, i.e. root `C_COMPLEX_OBJECT` of an
+    | archetype definition.
     |
     prop parent :? ARCHETYPE_CONSTRAINT ;
 
     |
-    | Owning second-order constraint, if any.
-    |
     prop soc_parent :? C_SECOND_ORDER ;
 
     |
-    | True if this constraint node is prohibited, i.e. occurrence is 0..0.
+    | True if this node is prohibited. Implemented in subtypes.
     |
     func is_prohibited : Boolean ;
 
@@ -55,17 +54,17 @@ feature_group ("access")
     func c_congruent_to (other : ARCHETYPE_CONSTRAINT) : Boolean ;
 
     |
-    | True if this node is under a second-order constraint.
+    | True if there is a second order constraint such as a tuple constraint on this node.
     |
     func is_second_order_constrained : Boolean ;
 
     |
-    | True if this node is the root of the archetype.
+    | True if this node is the root of the tree.
     |
     func is_root : Boolean ;
 
     |
-    | True if this node is a leaf node.
+    | True if this node is a terminal node in the tree structure, i.e. having no child nodes.
     |
     func is_leaf : Boolean ;
 

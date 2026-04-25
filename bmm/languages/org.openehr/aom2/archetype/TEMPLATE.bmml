@@ -20,9 +20,12 @@ class TEMPLATE
 feature_group ("access")
 
     |
-    | Overlay archetypes, i.e. partial archetypes that include full definition and
-    | terminology, but logically derive all their meta-data from the owning template.
+    | Overlay archetypes, i.e. partial archetypes that include full definition and terminology,
+    | but logically derive all their meta-data from the owning template.
     |
     prop overlays :? List<TEMPLATE_OVERLAY> ;
+
+invariant
+    inv_is_specialised: is_specialised
 
 end

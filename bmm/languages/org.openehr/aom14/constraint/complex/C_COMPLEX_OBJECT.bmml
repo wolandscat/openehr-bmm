@@ -18,8 +18,7 @@ class C_COMPLEX_OBJECT
 feature_group ("access")
 
     |
-    | List of constraints on attributes of the reference model type represented by this
-    | object.
+    | List of constraints on attributes of the reference model type represented by this object.
     |
     prop attributes :? List<C_ATTRIBUTE> ;
 
@@ -27,5 +26,8 @@ feature_group ("access")
     | True if any value of the reference model type being constrained is allowed.
     |
     func any_allowed : Boolean ;
+
+invariant
+    attributes_valid: any_allowed ⊻ (∃attributes ∧ ¬attributes.is_empty)
 
 end

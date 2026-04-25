@@ -21,8 +21,8 @@ class SYNC_EXTRACT_SPEC
 feature_group ("access")
 
     |
-    | True if the Versions from the Contribution are included; False if just the
-    | Contribution and its Audit are included.
+    | True if the Versions from the Contribution are included; False if just the Contribution
+    | and its Audit are included.
     |
     prop includes_versions : Boolean ;
 

@@ -19,7 +19,8 @@ abstract class EVENT<T: ITEM_STRUCTURE>
 feature_group ("access")
 
     |
-    | Time of this event.
+    | Time of this event. If the width is non-zero, it is the time point of the trailing edge of
+    | the event.
     |
     prop time : DV_DATE_TIME ;
 
@@ -37,5 +38,8 @@ feature_group ("access")
     | Offset of this event from origin, computed as time.diff(parent.origin).
     |
     func offset : DV_DURATION ;
+
+invariant
+    offset_validity1: ∃offset ∧ offset = time.diff (parent.origin)
 
 end

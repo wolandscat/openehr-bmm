@@ -24,7 +24,7 @@ feature_group ("access")
     prop tuples :? List<C_PRIMITIVE_TUPLE> ;
 
     |
-    | List of C_ATTRIBUTEs forming the definition of the tuple.
+    | List of `C_ATTRIBUTEs` forming the definition of the tuple.
     |
     prop members :? List<C_ATTRIBUTE> ;
 

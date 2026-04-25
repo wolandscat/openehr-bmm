@@ -19,13 +19,20 @@ class PARTY_IDENTIFIED
 feature_group ("access")
 
     |
-    | Optional human-readable name.
+    | Optional human-readable name (in String form).
     |
     prop name :? String ;
 
     |
-    | One or more formal identifiers.
+    | One or more formal identifiers (possibly computable).
     |
     prop identifiers :? List<DV_IDENTIFIER> ;
+
+invariant
+    basic_validity: ∃name ∨ ∃identifiers ∨ ∃external_ref
+
+    name_valid: ∃name ⇒ ¬name.is_empty
+
+    identifiers_valid: ∃identifiers ⇒ ¬identifiers.is_empty
 
 end

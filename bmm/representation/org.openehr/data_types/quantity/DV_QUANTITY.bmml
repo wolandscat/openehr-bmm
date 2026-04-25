@@ -24,22 +24,45 @@ feature_group ("access")
     prop magnitude : Real ;
 
     |
-    | Quantity units, expressed as a code or syntax string from UCUM or specified units system.
+    | Quantity units, expressed as a code or syntax string from either UCUM (the default) or the
+    | units system specified in `_units_system_`, when set.
+    |
+    | In either case, the value is the code or syntax - normally formed of standard ASCII -
+    | which is in principal not the same as the display string, although in simple cases such as
+    | 'm' (for meters) it will be.
+    |
+    | If the `_units_display_name_` field is set, this may be used for display. If not, the
+    | implementations must effect the resolution of the `_units_` value to a display form
+    | locally, e.g. by lookup of reference tables, request to a terminology service etc.
+    |
+    | Example values from UCUM: "kg/m^2", “mm[Hg]", "ms-1", "km/h".
     |
     prop units : String ;
 
     |
-    | Precision to which the value is expressed in decimal places. 0 = integral; -1 = no limit.
+    | Precision to which the value of the quantity is expressed, in terms of number of decimal
+    | places. The value 0 implies an integral quantity. The value -1 implies no limit, i.e. any
+    | number of decimal places.
     |
     prop precision :? Integer ;
 
     |
-    | Optional field to specify a units system from which codes in units are defined.
+    | Optional field used to specify a units system from which codes in `_units_` are defined.
+    | Value is a URI identifying a terminology containing units concepts from the
+    | (https://www.hl7.org/fhir/terminologies-systems.html[HL7 FHIR terminologies list]).
+    |
+    | If not set, the UCUM standard (case-sensitive codes) is assumed as the units system.
     |
     prop units_system :? String ;
 
     |
-    | Optional field containing the displayable form of the units field.
+    | Optional field containing the displayable form of the `_units_` field, e.g. `'°C'`.
+    |
+    | If not set, the application environment needs to determine the displayable form.
+    |
+    | NOTE: The display name may be language-dependent for various older and non-systematic
+    | units. For this reason, it is not recommended to add unit display names to archetypes,
+    | only to templates (for localisation purposes).
     |
     prop units_display_name :? String ;
 
@@ -49,12 +72,13 @@ feature_group ("access")
     prop normal_range :? DV_INTERVAL<DV_QUANTITY> ;
 
     |
-    | Optional tagged other reference ranges.
+    | Optional tagged other reference ranges for this value in its particular measurement
+    | context.
     |
     prop other_reference_ranges :? List<REFERENCE_RANGE<DV_QUANTITY>> ;
 
     |
-    | True if precision = 0, meaning magnitude is a whole number.
+    | True if `_precision_` = 0, meaning that the `_magnitude_` is a whole number.
     |
     func is_integral : Boolean ;
 

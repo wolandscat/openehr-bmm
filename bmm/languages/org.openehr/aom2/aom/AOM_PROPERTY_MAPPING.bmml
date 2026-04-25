@@ -17,12 +17,12 @@ class AOM_PROPERTY_MAPPING
 feature_group ("access")
 
     |
-    | Name of the property in the source class.
+    | Name of property in source class.
     |
     prop source_property_name : String ;
 
     |
-    | Name of the property in the target class.
+    | Name of property in target class.
     |
     prop target_property_name : String ;
 

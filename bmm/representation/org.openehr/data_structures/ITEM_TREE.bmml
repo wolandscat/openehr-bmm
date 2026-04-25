@@ -19,7 +19,8 @@ class ITEM_TREE
 feature_group ("access")
 
     |
-    | The items comprising the ITEM_TREE.
+    | The items comprising the `ITEM_TREE`. Can include 0 or more `CLUSTERs` and/or 0 or more
+    | individual `ELEMENTs`.
     |
     prop items :? List<ITEM> ;
 
@@ -34,7 +35,8 @@ feature_group ("access")
     func element_at_path (a_path : String) : ELEMENT ;
 
     |
-    | Generate a CEN EN13606-compatible hierarchy, same as physical representation.
+    | Generate a CEN EN13606-compatible hierarchy, which is the same as the tree's physical
+    | representation.
     |
     func as_hierarchy : CLUSTER ;
 

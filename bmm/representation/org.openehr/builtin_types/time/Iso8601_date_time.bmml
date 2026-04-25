@@ -19,7 +19,7 @@ class Iso8601_date_time
 feature_group ("access")
 
     |
-    | Extract the year part of the date/time as an Integer.
+    | Extract the year part of the date as an Integer.
     |
     func year : Integer ;
 
@@ -44,12 +44,14 @@ feature_group ("access")
     func minute : Integer ;
 
     |
-    | Extract the integral seconds part of the date/time as an Integer, or return 0.
+    | Extract the integral seconds part of the date/time (i.e. prior to any decimal sign) as an
+    | Integer, or return 0 if not present.
     |
     func second : Integer ;
 
     |
-    | Extract the fractional seconds part of the date/time as a Real.
+    | Extract the fractional seconds part of the date/time (i.e. following to any decimal sign)
+    | as a Real, or return 0.0 if not present.
     |
     func fractional_second : Real ;
 
@@ -59,8 +61,33 @@ feature_group ("access")
     func timezone : Iso8601_timezone ;
 
     |
-    | Return string value in extended format.
+    | Return the string value in extended format.
     |
     func as_string : String ;
+
+invariant
+    year_valid: valid_year (year)
+
+    month_valid: valid_month (month)
+
+    day_valid: valid_day(year, month, day)
+
+    hour_valid: valid_hour (hour, minute, second)
+
+    minute_valid: ¬minute_unknown ⇒ valid_minute(minute)
+
+    second_valid: ¬second_unknown ⇒ valid_second (second)
+
+    fractional_second_valid: has_fractional_second ⇒ (¬second_unknown ∧ valid_fractional_second (fractional_second))
+
+    partial_validity_year: ¬month_unknown
+
+    partial_validity_month: ¬month_unknown
+
+    partial_validity_day: ¬day_unknown
+
+    partial_validity_hour: ¬hour_unknown
+
+    partial_validity_minute: minute_unknown ⇒ second_unknown
 
 end

@@ -25,8 +25,8 @@ feature_group ("access")
     prop sender : String ;
 
     |
-    | Identification of message used by sender. This will be the same no matter how
-    | many times this message is sent to these recipients.
+    | Identification of message used by sender. This will be the same no matter how many times
+    | this message is sent to these recipients.
     |
     prop sender_reference : String ;
 
@@ -36,8 +36,11 @@ feature_group ("access")
     prop addressees : List<String> ;
 
     |
-    | Urgency with which destination should deal with message: -1 = low, 0 = normal,
-    | 1 = high.
+    | Urgency with which destination should deal with message:
+    |
+    | * -1 - low
+    | * 0 - normal
+    | * 1 - high
     |
     prop urgency :? Integer ;
 

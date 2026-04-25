@@ -19,13 +19,13 @@ abstract class EL_FEATURE_REF
 feature_group ("access")
 
     |
-    | Scoping expression, which must be an EL_VALUE_GENERATOR.
+    | Scoping expression, which must be a `EL_VALUE_GENERATOR`.
     |
     prop scoper :? EL_VALUE_GENERATOR ;
 
     |
-    | Generated full reference name, consisting of scoping elements and name
-    | concatenated using dot notation.
+    | Generated full reference name, consisting of scoping elements and `_name_` concatenated
+    | using dot notation.
     |
     func reference : String ;
 

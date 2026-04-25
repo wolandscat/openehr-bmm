@@ -18,27 +18,27 @@ class Iso8601_timezone
 feature_group ("access")
 
     |
-    | Extract the hour part of timezone as an Integer in range 00-14.
+    | Extract the hour part of timezone, as an Integer in the range `00 - 14`.
     |
     func hour : Integer ;
 
     |
-    | Extract the minute part of timezone as an Integer, usually 0 or 30.
+    | Extract the hour part of timezone, as an Integer, usually either 0 or 30.
     |
     func minute : Integer ;
 
     |
-    | Direction of timezone expressed as +1 or -1.
+    | Direction of timezone expresssed as +1 or -1.
     |
     func sign : Integer ;
 
     |
-    | Indicates whether minute part is known.
+    | Indicates whether minute part known.
     |
     func minute_unknown : Boolean ;
 
     |
-    | True if timezone is UTC, i.e. +0000.
+    | True if timezone is UTC, i.e. `+0000`.
     |
     func is_gmt : Boolean ;
 
@@ -46,5 +46,14 @@ feature_group ("access")
     | Return timezone string in extended format.
     |
     func as_string : String ;
+
+invariant
+    min_hour_valid: sign = -1 ⇒ hour > 0 ∧ hour \<= Min_timezone_hour
+
+    max_hour_valid: sign = 1 ⇒ hour > 0 ∧ hour \<= Max_timezone_hour
+
+    minute_valid: ¬minute_unknown ⇒ valid_minute (minute)
+
+    sign_valid: sign = 1 ∨ sign = -1
 
 end

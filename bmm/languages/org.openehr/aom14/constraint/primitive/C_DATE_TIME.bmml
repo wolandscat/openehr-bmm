@@ -61,14 +61,38 @@ feature_group ("access")
     prop range :? Interval<Iso8601_date_time> ;
 
     |
-    | The value to assume if this item is not included in data, due to being part of an
-    | optional structure.
+    | The value to assume if this item is not included in data, due to being part of an optional
+    | structure.
     |
     prop assumed_value :? Iso8601_date_time ;
 
     |
-    | True if validity is in the form of a range.
+    | True if validity is in the form of a range; useful for developers to check which kind of
+    | constraint has been set.
     |
     func validity_is_range : Boolean ;
+
+invariant
+    month_validity_optional:: month_validity = {VALIDITY_KIND}.optional ⇒ (day_validity = {VALIDITY_KIND}.optional ∨ day_validity = {VALIDITY_KIND}.disallowed)
+
+    month_validity_disallowed: month_validity = {VALIDITY_KIND}.disallowed ⇒ day_validity = {VALIDITY_KIND}.disallowed
+
+    day_validity_optional: day_validity = {VALIDITY_KIND}.optional ⇒ (hour_validity = {VALIDITY_KIND}.optional ∨ hour_validity = {VALIDITY_KIND}.disallowed)
+
+    day_validity_disallowed: day_validity = {VALIDITY_KIND}.disallowed ⇒ hour_validity = {VALIDITY_KIND}.disallowed
+
+    hour_validity_optional: hour_validity = {VALIDITY_KIND}.optional ⇒ (minute_validity = {VALIDITY_KIND}.optional ∨ minute_validity = {VALIDITY_KIND}.disallowed)
+
+    hour_validity_disallowed: hour_validity = {VALIDITY_KIND}.disallowed ⇒ minute_validity = {VALIDITY_KIND}.disallowed
+
+    minute_validity_optional: minute_validity = {VALIDITY_KIND}.optional ⇒ (second_validity = {VALIDITY_KIND}.optional ∨ second_validity = {VALIDITY_KIND}.disallowed)
+
+    minute_validity_disallowed: minute_validity = {VALIDITY_KIND}.disallowed ⇒ second_validity = {VALIDITY_KIND}.disallowed
+
+    second_validity_optional: second_validity = {VALIDITY_KIND}.optional ⇒ (millisecond_validity = {VALIDITY_KIND}.optional ∨ millisecond_validity = {VALIDITY_KIND}.disallowed)
+
+    second_validity_disallowed: second_validity = {VALIDITY_KIND}.disallowed ⇒ millisecond_validity = {VALIDITY_KIND}.disallowed
+
+    validity_is_range: validity_is_range = (∃range)
 
 end

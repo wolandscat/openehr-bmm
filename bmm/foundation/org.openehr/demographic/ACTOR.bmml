@@ -18,8 +18,8 @@ abstract class ACTOR
 feature_group ("access")
 
     |
-    | Languages which can be used to communicate with this actor, in preferred order of
-    | use (if known, else order irrelevant).
+    | Languages which can be used to communicate with this actor, in preferred order of use (if
+    | known, else order irrelevant).
     |
     prop languages :? List<DV_TEXT> ;
 

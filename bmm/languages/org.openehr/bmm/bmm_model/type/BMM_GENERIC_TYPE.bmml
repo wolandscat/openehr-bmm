@@ -18,8 +18,9 @@ class BMM_GENERIC_TYPE
 feature_group ("access")
 
     |
-    | Generic parameters of the root_type in this type specifier. The order must match
-    | the order of the owning class's formal generic parameter declarations.
+    | Generic parameters of the `_root_type_` in this type specifier. The order must match the
+    | order of the owning class's formal generic parameter declarations, and the types may be
+    | defined types or formal parameter types.
     |
     prop generic_parameters : List<BMM_UNITARY_TYPE> ;
 
@@ -29,23 +30,25 @@ feature_group ("access")
     prop base_class : BMM_GENERIC_CLASS ;
 
     |
-    | Return the full name of the type including generic parameters, e.g. DV_INTERVAL<T>.
+    | Return the full name of the type including generic parameters, e.g. `DV_INTERVAL<T>`,
+    | `TABLE<List<THING>,String>`.
     |
     func type_name : String ;
 
     |
-    | Signature form of the type, which for generics includes generic parameter
-    | constrainer types, e.g. Interval<T:Ordered>.
+    | Signature form of the type, which for generics includes generic parameter constrainer
+    | types E.g. `Interval<T:Ordered>`.
     |
     func type_signature : String ;
 
     |
-    | True if base_class.is_abstract or if any (non-open) parameter type is abstract.
+    | True if `_base_class.is_abstract_` or if any (non-open) parameter type is abstract.
     |
     func is_abstract : Boolean ;
 
     |
-    | Result is base_class.name followed by names of all generic parameter type names.
+    | Result is `_base_class.name_` followed by names of all generic parameter type names, which
+    | may be open or closed.
     |
     func flattened_type_list : List<String> ;
 
@@ -60,8 +63,8 @@ feature_group ("access")
     func effective_base_class : BMM_GENERIC_CLASS ;
 
     |
-    | True if all generic parameters from ancestor generic types have been substituted
-    | in this type.
+    | True if all generic parameters from ancestor generic types have been substituted in this
+    | type.
     |
     func is_open : Boolean ;
 

@@ -19,17 +19,18 @@ class EL_TUPLE
 feature_group ("access")
 
     |
-    | Items in the tuple, potentially with names.
+    | Items in the tuple, potentially with names. Typical use is to represent an argument list
+    | to routine call.
     |
     prop items :? List<EL_TUPLE_ITEM> ;
 
     |
-    | Static type inferred from the literal value.
+    | Static type inferred from literal value.
     |
     prop type : BMM_TUPLE_TYPE ;
 
     |
-    | Return type.
+    | Return `_type_`.
     |
     func eval_type : BMM_TYPE ;
 

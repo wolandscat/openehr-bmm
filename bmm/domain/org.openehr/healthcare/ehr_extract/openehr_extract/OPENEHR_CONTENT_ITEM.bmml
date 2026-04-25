@@ -19,7 +19,7 @@ class OPENEHR_CONTENT_ITEM
 feature_group ("access")
 
     |
-    | Content object; redefined from EXTRACT_CONTENT_ITEM.item.
+    | Content object.
     |
     prop item :? X_VERSIONED_OBJECT<LOCATABLE> ;
 

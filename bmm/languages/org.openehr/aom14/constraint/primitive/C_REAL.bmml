@@ -28,8 +28,8 @@ feature_group ("access")
     prop range :? Interval<Real> ;
 
     |
-    | The value to assume if this item is not included in data, due to being part of an
-    | optional structure.
+    | The value to assume if this item is not included in data, due to being part of an optional
+    | structure.
     |
     prop assumed_value :? Real ;
 

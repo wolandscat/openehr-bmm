@@ -19,12 +19,13 @@ class EL_CASE_TABLE<T: EL_TERMINAL>
 feature_group ("access")
 
     |
-    | Members of the case table, equivalent to cases in a case statement.
+    | Members of the chain, equivalent to branches in an if/then/else chain and cases in a case
+    | statement.
     |
     prop items : List<EL_CASE<T>> ;
 
     |
-    | Expression generating the input value for the case table.
+    | Expressing generating the input value for the case table.
     |
     prop test_value : EL_VALUE_GENERATOR ;
 

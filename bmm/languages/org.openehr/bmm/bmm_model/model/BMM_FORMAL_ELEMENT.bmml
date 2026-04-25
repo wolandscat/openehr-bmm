@@ -24,17 +24,22 @@ feature_group ("access")
 
     |
     | True if this element can be null (Void) at execution time. May be interpreted as
-    | optionality in subtypes.
+    | optionality in subtypes..
     |
     prop is_nullable :? Boolean ;
 
     |
-    | Formal signature of this element, in the form: name [arg1_name: T_arg1, ...][:T_value].
+    | Formal signature of this element, in the form:
+    |
+    | `name [arg1_name: T_arg1, ...][:T_value]`
+    |
+    | Specific implementations in descendants.
     |
     func signature : BMM_SIGNATURE ;
 
     |
-    | True if type is notionally Boolean.
+    | True if `_type_` is notionally Boolean (i.e. a `BMM_SIMPLE_TYPE` with `_type_name()_` =
+    | `'Boolean'`).
     |
     func is_boolean : Boolean ;
 

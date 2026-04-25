@@ -19,7 +19,8 @@ class ITEM_TABLE
 feature_group ("access")
 
     |
-    | Physical representation of the table as a list of CLUSTERs, each containing one row.
+    | Physical representation of the table as a list of `CLUSTERs`, each containing the data of
+    | one row of the table.
     |
     prop rows :? List<CLUSTER> ;
 
@@ -79,8 +80,12 @@ feature_group ("access")
     func element_at_cell_ij (i : Integer, j : Integer) : ELEMENT ;
 
     |
-    | Generate a CEN EN13606-compatible hierarchy.
+    | Generate a CEN EN13606-compatible hierarchy consisting of a single `CLUSTER` containing
+    | the `CLUSTERs` representing the columns of this table.
     |
     func as_hierarchy : CLUSTER ;
+
+invariant
+    valid_structure: rows.∀ (items.∀ (instance_of ("ELEMENT")))
 
 end

@@ -18,7 +18,7 @@ abstract class EL_DECISION_BRANCH<T: EL_TERMINAL>
 feature_group ("access")
 
     |
-    | Result expression of this decision branch, if its condition evaluates to True.
+    | Result expression of conditional, if its `_condition_` evaluates to True.
     |
     prop result : T ;
 

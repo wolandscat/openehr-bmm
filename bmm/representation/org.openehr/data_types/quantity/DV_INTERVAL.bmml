@@ -16,4 +16,7 @@
 class DV_INTERVAL<T: DV_ORDERED>
     is_a DATA_VALUE, Interval<T>
 
+invariant
+    limits_consistent: (¬upper_unbounded ∧ ¬lower_unbounded) ⇒ (lower.is_strictly_comparable_to(upper) ∧ lower \<= upper)
+
 end

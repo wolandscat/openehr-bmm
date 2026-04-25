@@ -19,22 +19,25 @@ abstract class DV_TIME_SPECIFICATION
 feature_group ("access")
 
     |
-    | The specification, in the HL7v3 syntax for PIVL or EIVL types.
+    | The specification, in the HL7v3 syntax for `PIVL` or `EIVL` types.
     |
     prop value : DV_PARSABLE ;
 
     |
-    | Indicates what prototypical calendar point the specification is aligned to.
+    | Indicates what prototypical point in the calendar the specification is aligned to, e.g.
+    | 5th of the month . Empty if not aligned. Extracted from the value' attribute.
     |
     func calendar_alignment : String ;
 
     |
-    | Indicates what real-world event the specification is aligned to.
+    | Indicates what real-world event the specification is aligned to if any. Extracted from the
+    | value' attribute.
     |
     func event_alignment : String ;
 
     |
-    | Indicates if the specification is aligned with institution schedules.
+    | Indicates if the specification is aligned with institution schedules, e.g. a hospital
+    | nursing changeover or meal serving times. Extracted from the value' attribute.
     |
     func institution_specified : Boolean ;
 

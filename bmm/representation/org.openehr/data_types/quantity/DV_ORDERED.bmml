@@ -18,8 +18,10 @@ abstract class DV_ORDERED
 feature_group ("access")
 
     |
-    | Optional normal status indicator of value with respect to normal range. Coded as HHH, HH, H,
-    | (nothing), L, LL, LLL.
+    | Optional normal status indicator of value with respect to normal range for this value.
+    | Often included by lab, even if the normal range itself is not included. Coded by ordinals
+    | in series HHH, HH, H, (nothing), L, LL, LLL; see openEHR terminology group
+    | `normal_status`.
     |
     prop normal_status :? CODE_PHRASE ;
 
@@ -29,7 +31,8 @@ feature_group ("access")
     prop normal_range :? DV_INTERVAL<DV_ORDERED> ;
 
     |
-    | Optional tagged other reference ranges.
+    | Optional tagged other reference ranges for this value in its particular measurement
+    | context.
     |
     prop other_reference_ranges :? List<REFERENCE_RANGE<DV_ORDERED>> ;
 
@@ -49,8 +52,18 @@ feature_group ("access")
     func is_simple : Boolean ;
 
     |
-    | True if value is in the normal range.
+    | Value is in the normal range, determined by comparison of the value to `_normal_range_` if
+    | present, or by the `_normal_status_` marker if present.
     |
     func is_normal : Boolean ;
+
+invariant
+    other_reference_ranges_validity: ∃other_reference_ranges ⇒ ¬other_reference_ranges.is_empty
+
+    is_simple_validity: (¬∃normal_range ∧ ¬∃other_reference_ranges) ⇒ is_simple
+
+    normal_status_validity: ∃normal_status ⇒ code_set (Code_set_id_normal_statuses).has_code (normal_status)
+
+    normal_range_and_status_consistency: (∃normal_range ∧ ∃normal_status) ⇒ (normal_status.code_string.is_equal (“N”) ⊻ ¬normal_range.has (self))
 
 end

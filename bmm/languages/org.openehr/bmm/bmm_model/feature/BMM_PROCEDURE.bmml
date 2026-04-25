@@ -25,7 +25,11 @@ feature_group ("access")
     prop type : BMM_STATUS_TYPE ;
 
     |
-    | Formal signature of this element.
+    | Formal signature of this element, in the form:
+    |
+    | `name [arg1_name: T_arg1, ...][:T_value]`
+    |
+    | Specific implementations in descendants.
     |
     func signature : BMM_PROCEDURE_TYPE ;
 

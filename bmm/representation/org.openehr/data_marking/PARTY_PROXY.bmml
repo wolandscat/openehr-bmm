@@ -18,7 +18,8 @@ abstract class PARTY_PROXY
 feature_group ("access")
 
     |
-    | Optional reference to more detailed demographic or identification information for this party.
+    | Optional reference to more detailed demographic or identification information for this
+    | party, in an external system.
     |
     prop external_ref :? PARTY_REF ;
 

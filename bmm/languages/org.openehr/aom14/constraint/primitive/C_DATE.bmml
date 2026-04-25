@@ -36,9 +36,16 @@ feature_group ("access")
     prop range :? Interval<Iso8601_date> ;
 
     |
-    | The value to assume if this item is not included in data, due to being part of an
-    | optional structure.
+    | The value to assume if this item is not included in data, due to being part of an optional
+    | structure.
     |
     prop assumed_value :? Iso8601_date ;
+
+invariant
+    month_validity_optional: month_validity = {VALIDITY_KIND}.optional ⇒ (day_validity = {VALIDITY_KIND}.optional ∨ day_validity = {VALIDITY_KIND}.disallowed)
+
+    month_validity_disallowed: month_validity = {VALIDITY_KIND}.disallowed ⇒ day_validity = {VALIDITY_KIND}.disallowed
+
+    validity_is_range: validity_is_range = (∃range)
 
 end

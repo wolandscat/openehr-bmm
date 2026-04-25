@@ -24,27 +24,32 @@ feature_group ("access")
     prop interval : Multiplicity_Interval ;
 
     |
-    | True if the members of the container attribute are ordered.
+    | True if the members of the container attribute to which this cardinality refers are
+    | ordered.
     |
     prop is_ordered : Boolean ;
 
     |
-    | True if the members of the container attribute are unique.
+    | True if the members of the container attribute to which this cardinality refers are
+    | unique.
     |
     prop is_unique : Boolean ;
 
     |
-    | True if the semantics represent a bag (unordered, non-unique membership).
+    | True if the semantics of this cardinality represent a bag, i.e. unordered, non-unique
+    | membership.
     |
     func is_bag : Boolean ;
 
     |
-    | True if the semantics represent a list (ordered, non-unique membership).
+    | True if the semantics of this cardinality represent a list, i.e. ordered, non-unique
+    | membership.
     |
     func is_list : Boolean ;
 
     |
-    | True if the semantics represent a set (unordered, unique membership).
+    | True if the semantics of this cardinality represent a set, i.e. unordered, unique
+    | membership.
     |
     func is_set : Boolean ;
 

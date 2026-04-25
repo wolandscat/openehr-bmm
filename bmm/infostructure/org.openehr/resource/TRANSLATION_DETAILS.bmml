@@ -17,7 +17,9 @@ class TRANSLATION_DETAILS
 feature_group ("access")
 
     |
-    | Language of the translation, encoded using ISO 639-1 language codes.
+    | Language of the translation, encoded following the RFC 5646 standard, using ISO 639-1
+    | (two-character) language codes, e.g. "en". It may include a region subtag conforming to
+    | ISO 3166-1 alpha-2 (two-character country codes), e.g. "pt-br" for Brazilian Portuguese.
     |
     prop language : Terminology_code «iso.iso_639-1» ;
 
@@ -27,23 +29,26 @@ feature_group ("access")
     prop author : Hash<String, String> ;
 
     |
-    | Accreditation of primary translator or group, usually a national translator's
-    | registration or association membership id.
+    | Accreditation of primary translator or group, usually a national translator's registration
+    | or association membership id.
     |
     prop accreditation :? String ;
 
     |
-    | Version of this resource last time it was translated into this language.
+    | Version of this resource last time it was translated into the language represented by this
+    | `TRANSLATION_DETAILS` object.
     |
     prop version_last_translated :? String ;
 
     |
-    | Additional contributors to this translation.
+    | Additional contributors to this translation, each listed in the preferred format of the
+    | relevant organisation for the artefacts in question. A typical default is `"name <email>"`
+    | if nothing else is specified.
     |
     prop other_contributors :? List<String> ;
 
     |
-    | Any other meta-data about this translation.
+    | Any other meta-data.
     |
     prop other_details :? Hash<String, String> ;
 

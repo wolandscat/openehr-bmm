@@ -21,7 +21,7 @@ class ADMIN_ENTRY
 feature_group ("access")
 
     |
-    | Content of the Admin Entry.
+    | Content of the Admin Entry. The data of the Entry; modelled in archetypes.
     |
     prop data : ITEM_STRUCTURE ;
 

@@ -24,4 +24,7 @@ feature_group ("access")
     |
     prop agent : EL_PROCEDURE_AGENT ;
 
+invariant
+    inv_valid_agent: agent.is_callable()
+
 end

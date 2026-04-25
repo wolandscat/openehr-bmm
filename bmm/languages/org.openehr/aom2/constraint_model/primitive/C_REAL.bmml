@@ -18,12 +18,15 @@ class C_REAL
 feature_group ("access")
 
     |
-    | Formal constraint on Real, in the form of one or more Interval<Real>.
+    | Formal constraint on `Real`, in the form of one or more `Interval<Real>`.
+    |
+    | To represent no constraint, use an empty list.
     |
     prop constraint :? List<Interval<Real>> ;
 
     |
-    | Default value set in a template, and present in an operational template.
+    | Default value set in a template, and present in an operational template. Generally limited
+    | to leaf and near-leaf nodes.
     |
     prop default_value :? Real ;
 

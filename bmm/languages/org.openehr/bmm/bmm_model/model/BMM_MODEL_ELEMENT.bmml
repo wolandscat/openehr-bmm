@@ -27,6 +27,17 @@ feature_group ("access")
     |
     | Optional documentation of this element, as a keyed list.
     |
+    | It is strongly recommended to use the following key /type combinations for the relevant
+    | purposes:
+    |
+    | * `"purpose": String`
+    | * `"keywords": List<String>`
+    | * `"use": String`
+    | * `"misuse": String`
+    | * `"references": String`
+    |
+    | Other keys and value types may be freely added.
+    |
     prop documentation :? Hash<String, Any> ;
 
     |
@@ -35,8 +46,7 @@ feature_group ("access")
     prop scope : BMM_MODEL_ELEMENT ;
 
     |
-    | Optional meta-data of this element, as a keyed list. May be used to extend the
-    | meta-model.
+    | Optional meta-data of this element, as a keyed list. May be used to extend the meta-model.
     |
     prop extensions :? Hash<String, Any> ;
 

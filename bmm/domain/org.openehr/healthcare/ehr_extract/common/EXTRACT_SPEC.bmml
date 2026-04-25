@@ -22,8 +22,9 @@ class EXTRACT_SPEC
 feature_group ("access")
 
     |
-    | Specification of which versions of information items to include in the Extract.
-    | If Void, the default is latest versions only.
+    | Specification of which versions of information items to include in the Extract. If Void,
+    | the default is latest versions only (which is reasonable for non-versioning systems as
+    | well).
     |
     prop version_spec :? EXTRACT_VERSION_SPEC ;
 
@@ -33,25 +34,43 @@ feature_group ("access")
     prop manifest : EXTRACT_MANIFEST ;
 
     |
-    | Coded term indicating the type of content required, e.g. openehr-ehr,
-    | openehr-demographic, generic-emr.
+    | Coded term indicating the type of content required, e.g.
+    |
+    | * `&#124;openehr-ehr&#124;`
+    | * `&#124;openehr-demographic&#124;`
+    | * `&#124;generic-emr&#124;`
+    | * `&#124;other&#124;`
+    |
+    | Coded by openEHR Terminology group `'extract content type'`.
     |
     prop extract_type : DV_CODED_TEXT ;
 
     |
-    | Indicates whether in-line instances of DV_MULTIMEDIA in the source data are
-    | included or not.
+    | Indicates whether in-line instances of `DV_MULTIMEDIA` in the source data are included or
+    | not.
     |
     prop include_multimedia : Boolean ;
 
     |
-    | Requested priority of this request to be handled by server.
+    | Requested priority of this request to be handled by server. Priority schemes are likely to
+    | be local, and use values agreed by both ends.
+    |
+    | TBD: alternative is standard coded terms
     |
     prop priority : Integer ;
 
     |
-    | Degree of links to follow emanating from content items specified for inclusion.
-    | 0 = don't follow; 1 = follow first degree links; n = follow nth degree links.
+    | Degree of links to follow emanating from content items specified for inclusion. The kind
+    | of links to follow is dependent on the type of Extract.
+    |
+    | All items at the target end of followed links at the given depth are also included in the
+    | extract; `EXTRACT_CONTENT_ITEM._is_primary_` is used to differentiate.
+    |
+    | * 0 = don't follow;
+    | * 1 = follow first degree links;
+    | * 2 = follow 2nd degree links;
+    | * ....
+    | * n = follow nth degree links
     |
     prop link_depth : Integer ;
 

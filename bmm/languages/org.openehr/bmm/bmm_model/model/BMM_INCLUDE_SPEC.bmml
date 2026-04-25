@@ -17,7 +17,7 @@ class BMM_INCLUDE_SPEC
 feature_group ("access")
 
     |
-    | Full identifier of the included schema, e.g. "openehr_primitive_types_1.0.2".
+    | Full identifier of the included schema, e.g. `"openehr_primitive_types_1.0.2"`.
     |
     prop id : String ;
 

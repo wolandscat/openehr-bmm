@@ -29,7 +29,7 @@ feature_group ("access")
     func is_integer : Boolean ;
 
     |
-    | The integer corresponding to the integer value represented in this string.
+    | Return the integer corresponding to the integer value represented in this string.
     |
     func as_integer : Integer ;
 

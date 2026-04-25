@@ -30,14 +30,17 @@ feature_group ("access")
     prop is_writable : Boolean ;
 
     |
-    | Return the agent's definition type.
+    | Return `_agent.definition.type_`.
     |
     func eval_type : BMM_TYPE ;
 
     |
-    | Generated full reference name, consisting of any scoping elements, function name
-    | and routine parameters enclosed in parentheses.
+    | Generated full reference name, consisting of any scoping elements, function name and
+    | routine parameters enclosed in parentheses.
     |
     func reference : String ;
+
+invariant
+    inv_valid_agent: agent.is_callable()
 
 end

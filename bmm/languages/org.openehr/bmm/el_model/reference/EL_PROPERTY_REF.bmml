@@ -18,7 +18,7 @@ class EL_PROPERTY_REF
 feature_group ("access")
 
     |
-    | Property definition within the class.
+    | Property definition (within class).
     |
     prop definition : BMM_PROPERTY ;
 
@@ -28,7 +28,9 @@ feature_group ("access")
     prop is_writable : Boolean ;
 
     |
-    | Type of the property, inferred from the definition.
+    | Type definition (i.e. BMM meta-type definition object) of the constant, property or
+    | variable, inferred by inspection of the current scoping instance. Return
+    | `_definition.type_`.
     |
     func eval_type : BMM_TYPE ;
 

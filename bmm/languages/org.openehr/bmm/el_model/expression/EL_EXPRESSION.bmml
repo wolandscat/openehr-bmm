@@ -17,13 +17,15 @@ abstract class EL_EXPRESSION
 feature_group ("access")
 
     |
-    | Meta-type of this expression entity, used in type-checking and evaluation.
+    | Meta-type of expression entity used in type-checking and evaluation.
+    |
     | Effected in descendants.
     |
     func eval_type : BMM_TYPE ;
 
     |
-    | True if eval_type is notionally Boolean.
+    | True if `_eval_type_` is notionally Boolean (i.e. a `BMM_SIMPLE_TYPE` with `_type_name()_`
+    | = `Boolean`).
     |
     func is_boolean : Boolean ;
 

@@ -18,8 +18,8 @@ class BMM_ACTION_TABLE
 feature_group ("access")
 
     |
-    | A specialised decision table whose outputs can only be procedure agents. In
-    | execution, the matched agent will be invoked.
+    | A specialised decision table whose outputs can only be procedure agents. In execution, the
+    | matched agent will be invoked.
     |
     prop decision_table : BMM_ACTION_DECISION_TABLE ;
 

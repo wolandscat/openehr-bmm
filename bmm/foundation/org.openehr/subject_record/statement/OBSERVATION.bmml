@@ -22,14 +22,15 @@ class OBSERVATION
 feature_group ("access")
 
     |
-    | The data of this observation, in the form of a history of values which may be of
-    | any complexity.
+    | The data of this observation, in the form of a history of values which may be of any
+    | complexity.
     |
     prop data : HISTORY<ITEM_STRUCTURE> ;
 
     |
-    | Optional recording of the state of subject of this observation during the
-    | observation process, in the form of a separate history of values.
+    | Optional recording of the state of subject of this observation during the observation
+    | process, in the form of a separate history of values which may be of any complexity. State
+    | may also be recorded within the History of the data attribute.
     |
     prop state :? HISTORY<ITEM_STRUCTURE> ;
 
