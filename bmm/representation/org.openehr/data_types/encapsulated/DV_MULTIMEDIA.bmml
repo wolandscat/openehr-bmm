@@ -92,16 +92,16 @@ feature_group ("access")
     func has_integrity_check : Boolean ;
 
 invariant
-    not_empty: is_inline ∨ is_external
+    not_empty: is_inline ∨ is_external;
 
-    media_type_valid: ∃media_type ∧ code_set (Code_set_id_media_types).has_code (media_type)
+    media_type_valid: ∃media_type ∧ code_set (Code_set_id_media_types).has_code (media_type);
 
-    compression_algorithm_validity: ∃compression_algorithm ⇒ code_set (Code_set_id_compression_algorithms).has_code (compression_algorithm)
+    compression_algorithm_validity: ∃compression_algorithm ⇒ code_set (Code_set_id_compression_algorithms).has_code (compression_algorithm);
 
-    integrity_check_validity: ∃integrity_check ⇒ ∃integrity_check_algorithm
+    integrity_check_validity: ∃integrity_check ⇒ ∃integrity_check_algorithm;
 
-    integrity_check_algorithm_validity: ∃integrity_check_algorithm ⇒ code_set (Code_set_id_integrity_check_algorithms).has_code (integrity_check_algorithm)
+    integrity_check_algorithm_validity: ∃integrity_check_algorithm ⇒ code_set (Code_set_id_integrity_check_algorithms).has_code (integrity_check_algorithm);
 
-    size_valid: size >= 0
+    size_valid: size >= 0;
 
 end

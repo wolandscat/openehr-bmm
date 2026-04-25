@@ -29,6 +29,6 @@ feature_group ("access")
     func type : DV_TEXT ;
 
 invariant
-    type_valid: type = name
+    type_valid: type = name;
 
 end

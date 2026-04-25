@@ -58,12 +58,12 @@ feature_group ("access")
     func is_normal : Boolean ;
 
 invariant
-    other_reference_ranges_validity: ∃other_reference_ranges ⇒ ¬other_reference_ranges.is_empty
+    other_reference_ranges_validity: ∃other_reference_ranges ⇒ ¬other_reference_ranges.is_empty;
 
-    is_simple_validity: (¬∃normal_range ∧ ¬∃other_reference_ranges) ⇒ is_simple
+    is_simple_validity: (¬∃normal_range ∧ ¬∃other_reference_ranges) ⇒ is_simple;
 
-    normal_status_validity: ∃normal_status ⇒ code_set (Code_set_id_normal_statuses).has_code (normal_status)
+    normal_status_validity: ∃normal_status ⇒ code_set (Code_set_id_normal_statuses).has_code (normal_status);
 
-    normal_range_and_status_consistency: (∃normal_range ∧ ∃normal_status) ⇒ (normal_status.code_string.is_equal (“N”) ⊻ ¬normal_range.has (self))
+    normal_range_and_status_consistency: (∃normal_range ∧ ∃normal_status) ⇒ (normal_status.code_string.is_equal ("N") ⊻ ¬normal_range.has (self));
 
 end

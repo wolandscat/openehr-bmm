@@ -62,14 +62,14 @@ feature_group ("access")
     func languages_available : List<String> ;
 
 invariant
-    original_language_valid: code_set (Code_set_id_languages).has_code (original_language.as_string)
+    original_language_valid: code_set (Code_set_id_languages).has_code (original_language.as_string);
 
-    current_revision_valid: (∃current_revision ∧ ¬is_controlled) ⇒ current_revision.is_equal ("(uncontrolled)")
+    current_revision_valid: (∃current_revision ∧ ¬is_controlled) ⇒ current_revision.is_equal ("(uncontrolled)");
 
-    translations_valid: ∃translations ⇒ (¬translations.is_empty ∧ ¬translations.has (orginal_language.code_string))
+    translations_valid: ∃translations ⇒ (¬translations.is_empty ∧ ¬translations.has (orginal_language.code_string));
 
-    description_valid: ∃translations ⇒ (description.details.∀ (d &#124;
+    description_valid: ∃translations ⇒ ∀ d:description.details ¦ translations.has_key (d.language.code_string));
 
-    languages_available_valid: languages_available.has (original_language)
+    languages_available_valid: languages_available.has (original_language);
 
 end

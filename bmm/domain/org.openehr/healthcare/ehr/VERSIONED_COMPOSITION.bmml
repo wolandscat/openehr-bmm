@@ -26,8 +26,8 @@ feature_group ("access")
     func is_persistent : Boolean ;
 
 invariant
-    archetype_node_id_valid: ∀v in all_versions &#124; v.archetype_node_id.is_equal (all_versions.first.archetype_node_id)
+    archetype_node_id_valid: ∀ v:all_versions ¦ v.archetype_node_id.is_equal (all_versions.first.archetype_node_id);
 
-    persistent_validity: ∀v in all_versions &#124; v.is_persistent = all_versions.first.data.is_persistent
+    persistent_validity: ∀ v:all_versions ¦ v.is_persistent = all_versions.first.data.is_persistent;
 
 end

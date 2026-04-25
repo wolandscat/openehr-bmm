@@ -76,18 +76,18 @@ feature_group ("access")
     prop tags :? List<OBJECT_REF> ;
 
 invariant
-    contributions_valid: ∀c in contributions &#124; c.type.is_equal("CONTRIBUTION")
+    contributions_valid: ∀ c:contributions ¦ c.type.is_equal("CONTRIBUTION");
 
-    ehr_access_valid: ehr_access.type.is_equal ("VERSIONED_EHR_ACCESS")
+    ehr_access_valid: ehr_access.type.is_equal ("VERSIONED_EHR_ACCESS");
 
-    ehr_status_valid: ehr_status.type.is_equal("VERSIONED_EHR_STATUS")
+    ehr_status_valid: ehr_status.type.is_equal("VERSIONED_EHR_STATUS");
 
-    compositions_valid: ∀c in compositions &#124; c.type.is_equal ("VERSIONED_COMPOSITION")
+    compositions_valid: ∀ c:compositions ¦ c.type.is_equal ("VERSIONED_COMPOSITION");
 
-    directory_valid: ∃directory ⇒ directory.type.is_equal ("VERSIONED_FOLDER")
+    directory_valid: ∃directory ⇒ directory.type.is_equal ("VERSIONED_FOLDER");
 
-    folders_valid: ∃folders ⇒ ∀f in folders &#124; f.type.is_equal("VERSIONED_FOLDER")
+    folders_valid: ∃folders ⇒ ∀ f:folders ¦ f.type.is_equal("VERSIONED_FOLDER");
 
-    directory_in_folders: ∃folders ⇒ folders.item(1) = directory
+    directory_in_folders: ∃folders ⇒ folders.item(1) = directory;
 
 end

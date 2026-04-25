@@ -58,6 +58,6 @@ feature_group ("access")
     prop participations :? List<EXTRACT_PARTICIPATION> ;
 
 invariant
-    sequence_nr_valid: sequence_nr >= 1
+    sequence_nr_valid: sequence_nr >= 1;
 
 end

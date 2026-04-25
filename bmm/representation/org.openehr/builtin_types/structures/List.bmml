@@ -28,8 +28,8 @@ feature_group ("access")
     func last : T ;
 
 invariant
-    first_validity: ¬is_empty ⇒ ∃first
+    first_validity: ¬is_empty ⇒ ∃first;
 
-    last_validity: ¬is_empty ⇒ ∃last
+    last_validity: ¬is_empty ⇒ ∃last;
 
 end
