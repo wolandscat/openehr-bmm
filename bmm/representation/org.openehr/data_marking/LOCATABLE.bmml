@@ -72,10 +72,10 @@ feature_group ("access")
     func is_archetype_root : Boolean ;
 
 invariant
-    links_valid: ∃links ⇒ ¬links.is_empty
+    links_valid: ∃links ⇒ ¬links.is_empty;
 
-    archetyped_valid: is_archetype_root ⊻ ¬∃archetype_details
+    archetyped_valid: is_archetype_root ⊻ ¬∃archetype_details;
 
-    archetype_node_id_valid: ¬archetype_node_id.is_empty
+    archetype_node_id_valid: ¬archetype_node_id.is_empty;
 
 end
