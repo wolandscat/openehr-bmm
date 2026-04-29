@@ -10,9 +10,11 @@
 import org.openehr:representation;
 
 |
-| Ancestor of all Party types, including real world entities and their roles. A Party
-| is any entity which can participate in an activity. The name attribute inherited from
-| LOCATABLE is used to indicate the actual type of party.
+| Ancestor of all Party types, including real world entities and their roles. A Party is any
+| entity which can participate in an activity. The `name` attribute inherited from
+| `LOCATABLE` is used to indicate the actual type of party (note that the actual names, i.e.
+| identities of parties are indicated in the `identities` attribute, not the `name`
+| attribute).
 |
 | NOTE: It is strongly recommended that the inherited attribute uid be populated in `PARTY` objects,
 |       using the UID copied from the `object_id()` of the `uid` field of the enclosing `VERSION`
@@ -48,7 +50,7 @@ feature_group ("access")
 
     |
     | Type of party, such as `PERSON`, `ORGANISATION`, etc. Role name, e.g. general practitioner
-    | , nurse , private citizen . Taken from inherited `_name_` attribute.
+    | , nurse , private citizen . Taken from inherited `name` attribute.
     |
     func type : DV_TEXT ;
 

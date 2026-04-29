@@ -10,7 +10,7 @@
 import org.openehr:representation;
 
 |
-| Representation of a term (coded concept) in an archetype terminology.
+| Representation of any coded entity (term or constraint) in the archetype ontology.
 |
 class ARCHETYPE_TERM
 

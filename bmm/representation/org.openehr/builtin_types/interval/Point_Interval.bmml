@@ -10,8 +10,8 @@
 
 
 |
-| Type representing an Interval that is a point value. Provides an efficient
-| representation substitutable for Interval<T> where needed.
+| Type representing an Interval that happens to be a point value. Provides an efficient
+| representation that is substitutable for `Interval<T>` where needed.
 |
 class Point_Interval<T: Ordered>
     is_a Interval<T>

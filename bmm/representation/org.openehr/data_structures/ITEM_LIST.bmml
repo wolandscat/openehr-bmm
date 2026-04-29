@@ -10,8 +10,14 @@
 
 
 |
-| Logical list data structure, where each item has a value and can be referred to by a name and
-| a positional index.
+| Logical list data structure, where each item has a value and can be referred to by a name
+| and a positional index in the list. The list may be empty.
+|
+| `ITEM_LIST` is used to represent any data which is logically a list of values, such as
+| blood pressure, most protocols, many blood tests etc.
+|
+| Not to be used for time-based lists, which should be represented with the proper temporal
+| class, i.e. `HISTORY`.
 |
 class ITEM_LIST
     is_a ITEM_STRUCTURE
@@ -34,12 +40,12 @@ feature_group ("access")
     func names : List<DV_TEXT> ;
 
     |
-    | Retrieve the item with name a_name.
+    | Retrieve the item with name 'a_name'.
     |
     func named_item (a_name : String) : ELEMENT ;
 
     |
-    | Retrieve the i-th item.
+    | Retrieve the i-th item with name.
     |
     func ith_item (i : Integer) : ELEMENT ;
 

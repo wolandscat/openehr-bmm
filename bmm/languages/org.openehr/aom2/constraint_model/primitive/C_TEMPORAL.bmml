@@ -10,7 +10,7 @@
 import org.openehr:representation;
 
 |
-| Abstract parent of C_ORDERED types whose base type is an ISO date/time type.
+| Purpose Abstract parent of `C_ORDERED` types whose base type is an ISO date/time type.
 |
 abstract class C_TEMPORAL<T: Temporal>
     is_a C_ORDERED<T>
@@ -24,12 +24,13 @@ feature_group ("access")
     prop pattern_constraint :? String ;
 
     |
-    | True if a_pattern is a valid constraint. Defined in concrete descendants.
+    | True if `a_pattern` is a valid constraint. Define in concrete descendants.
     |
     func valid_pattern_constraint (a_pattern : String) : Boolean ;
 
     |
-    | True if a_pattern can be replaced by an_other_pattern in a specialised constraint.
+    | Return True if `a_pattern` can be replaced by `an_other_pattern` in a specialised
+    | constraint. Define in concrete subtypes.
     |
     func valid_pattern_constraint_replacement (a_pattern : String, an_other_pattern : String) : Boolean ;
 
@@ -37,16 +38,20 @@ feature_group ("access")
     | True if any value (i.e. instance) of the reference model type would be allowed. Redefined
     | in descendants.
     |
-    func any_allowed : Boolean ;
+    func any_allowed : Boolean
+        post_cond
+            Result = precursor ∧ pattern_constraint.is_empty;
+        ;
 
     |
-    | True if precursor() or else other.pattern_constraint is empty, or else pattern_constraint
-    | is a valid (narrower) replacement for other.pattern_constraint.
+    | True if `precursor()` or else `other.pattern_constraint` is empty, or else
+    | `pattern_constraint` is a valid (narrower) replacement for `other.pattern_constraint`.
     |
     func c_value_conforms_to (other : C_ORDERED) : Boolean ;
 
     |
-    | True if precursor (other) and pattern_constraint ~ other.pattern_constraint.
+    | True if `precursor (other)` and `pattern_constraint_ ~ _other.pattern_constraint`, i.e.
+    | either both `Void` or else both non-`Void` and identical.
     |
     func c_value_congruent_to (other : C_ORDERED) : Boolean ;
 

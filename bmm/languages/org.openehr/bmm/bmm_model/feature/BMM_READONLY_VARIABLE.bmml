@@ -10,8 +10,8 @@
 import org.openehr:representation;
 
 |
-| Meta-type for read-only variables, including routine parameters and the special
-| variable Self.
+| Meta-type for writable variables, including routine parameters and the special variable
+| `Self`.
 |
 abstract class BMM_READONLY_VARIABLE
     is_a BMM_VARIABLE

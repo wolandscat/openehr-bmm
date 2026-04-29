@@ -10,8 +10,8 @@
 
 
 |
-| An Interval of Integer, used to represent multiplicity, cardinality and
-| optionality in models.
+| An Interval of Integer, used to represent multiplicity, cardinality and optionality in
+| models.
 |
 class Multiplicity_Interval
     is_a Proper_Interval<Integer>

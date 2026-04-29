@@ -18,49 +18,49 @@ builtin class Integer64
 feature_group ("operators")
 
     |
-    | 64-bit integer addition.
+    | Large integer addition.
     |
     func add (other : Integer64) : Integer64
         alias "+" ;
         ;
 
     |
-    | 64-bit integer subtraction.
+    | Large integer subtraction.
     |
     func subtract (other : Integer64) : Integer64
         alias "-" ;
         ;
 
     |
-    | 64-bit integer multiplication.
+    | Large integer multiplication.
     |
     func multiply (other : Integer64) : Integer64
         alias "*" ;
         ;
 
     |
-    | 64-bit integer division.
+    | Large integer division.
     |
     func divide (other : Integer64) : Double
         alias "/" ;
         ;
 
     |
-    | 64-bit integer exponentiation.
+    | Large integer exponentiation.
     |
     func exponent (other : Double) : Double
         alias "^" ;
         ;
 
     |
-    | 64-bit integer modulo — remainder of integer division.
+    | Large integer modulus.
     |
     func modulo (mod : Integer64) : Integer64
         alias "mod" ;
         ;
 
     |
-    | Returns True if current Integer64 is less than other.
+    | Returns True if current Integer is less than `other`.
     |
     func less_than (other : Integer64) : Boolean
         alias "<" ;

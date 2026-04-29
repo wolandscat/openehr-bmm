@@ -10,7 +10,8 @@
 import org.openehr:representation;
 
 |
-| Local terminology of an archetype. Defines the semantics of the terminology of an archetype.
+| Local terminology of an archetype. This class defines the semantics of the terminology of
+| an archetype.
 |
 class ARCHETYPE_TERMINOLOGY
 
@@ -31,7 +32,7 @@ feature_group ("access")
     |
     | Term code defining the meaning of the artefact as a whole, and always used as the at-code
     | (at-coded archetypes) or id-code (id-coded archetypes) on the root node of the artefact.
-    | Must be defined in the `_term_definitions_` property.
+    | Must be defined in the `term_definitions` property.
     |
     prop concept_code : String ;
 
@@ -76,9 +77,9 @@ feature_group ("access")
 
     |
     | For at-coded archetypes: list of all at codes in the terminology., i.e. the 'at' codes in
-    | an ADL archetype, which are the `_node_id_` values on `C_OBJECT` descendants. For id-coded
+    | an ADL archetype, which are the `node_id` values on `C_OBJECT` descendants. For id-coded
     | archetypes: list of all id codes in the terminology., i.e. the 'id' codes in an ADL
-    | archetype, which are the `_node_id_` values on `C_OBJECT` descendants.
+    | archetype, which are the `node_id` values on `C_OBJECT` descendants.
     |
     func node_codes : List<String> ;
 
@@ -95,29 +96,37 @@ feature_group ("access")
     func value_set_codes : List<String> ;
 
     |
-    | True if language a_lang is present in archetype terminology.
+    | True if language `a_lang` is present in archetype terminology.
     |
     func has_language (a_lang : String) : Boolean ;
 
     |
-    | True if there are bindings to terminology a_terminology_id present.
+    | True if there are bindings to terminology `a_terminology_id` present. True if
+    | terminology `a_terminology' is present in archetype ontology.
     |
     func has_terminology (a_terminology_id : String) : Boolean ;
 
     |
-    | True if code a_code is defined in this terminology.
+    | True if code `a_code` defined in this terminology.
     |
     func has_term_code (a_code : String) : Boolean ;
 
     |
     | Term definition for a code, in a specified language.
     |
-    func term_definition (a_lang : String, a_code : String) : ARCHETYPE_TERM ;
+    func term_definition (a_lang : String, a_code : String) : ARCHETYPE_TERM
+        pre_cond
+            valid_code: has_term_definition (a_lang, a_code);
+        ;
 
     |
-    | Binding of constraint corresponding to a_code in target external terminology.
+    | Binding of constraint corresponding to `a_code` in target external terminology
+    | `a_terminology_id`, as a string, which is usually a formal query expression.
     |
-    func term_binding (a_terminology : String, a_code : String) : Uri ;
+    func term_binding (a_terminology : String, a_code : String) : Uri
+        pre_cond
+            valid_code: has_term_binding (a_terminology_id, a_code);
+        ;
 
     |
     | List of terminologies to which term or constraint bindings exist in this terminology,
@@ -126,9 +135,12 @@ feature_group ("access")
     func terminologies_available : List<String> ;
 
     |
-    | Return an ARCHETYPE_TERM from specified terminology extract, for specified term code.
+    | Return an `ARCHETYPE_TERM` from specified terminology extract, for specified term code.
     |
-    func terminology_extract_term (a_terminology_id : String, a_code : String) : ARCHETYPE_TERM ;
+    func terminology_extract_term (a_terminology_id : String, a_code : String) : ARCHETYPE_TERM
+        pre_cond
+            valid_code: has_terminology_extract (a_terminology_id) ∧ has_terminology_extract_code (a_code);
+        ;
 
     |
     | True if there is a provided terminology extract present.

@@ -10,8 +10,8 @@
 import org.openehr:representation;
 
 |
-| External routine meta-type, containing sufficient meta-data to enable a routine in
-| an external library to be called.
+| External routine meta-type, containing sufficient meta-data to enable a routine in an
+| external library to be called.
 |
 class BMM_EXTERNAL_ROUTINE
     is_a BMM_ROUTINE_DEFINITION

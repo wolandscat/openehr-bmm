@@ -10,7 +10,7 @@
 
 
 |
-| Identifier for templates.
+| Identifier for templates. Lexical form to be determined.
 |
 abstract class TEMPLATE_ID
     is_a OBJECT_ID

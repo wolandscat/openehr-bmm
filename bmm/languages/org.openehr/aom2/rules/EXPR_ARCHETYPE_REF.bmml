@@ -10,8 +10,14 @@
 import org.openehr:representation;
 
 |
-| Expression tree leaf item representing a reference to a value found in data at a
-| location specified by a path in the archetype definition.
+| Expression tree leaf item representing a reference to a value found in data at a location
+| specified by a path in the archetype definition.
+|
+| * A path referring to a value in the archetype (paths with a leading '/' are in the
+| definition section.
+| * Paths with no leading '/' are in the outer part of the archetype, e.g.
+| "archetype_id/value" refers to the String value of the archetype_id attribute of the
+| enclosing archetype.
 |
 class EXPR_ARCHETYPE_REF
     is_a EXPR_VALUE_REF

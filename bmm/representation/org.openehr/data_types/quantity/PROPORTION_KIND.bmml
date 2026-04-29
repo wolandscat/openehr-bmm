@@ -10,7 +10,7 @@
 
 
 |
-| Enumeration of proportion kinds: ratio, unitary, percent, fraction, integer fraction.
+| Class of enumeration constants defining types of proportion for the `DV_PROPORTION` class.
 |
 enumeration PROPORTION_KIND
     base_type Integer

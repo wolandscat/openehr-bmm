@@ -25,7 +25,10 @@ feature_group ("access")
     |
     | True if any value of the type being constrained in item is allowed.
     |
-    func any_allowed : Boolean ;
+    func any_allowed : Boolean
+        post_cond
+            Result = ¬∃item;
+        ;
 
 invariant
     item_valid: any_allowed ⊻ ∃item;

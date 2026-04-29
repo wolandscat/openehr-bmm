@@ -10,8 +10,11 @@
 
 
 |
-| Specifies periodic points in time, linked to the calendar or a real world repeating event such
-| as breakfast. Based on HL7v3 PIVL<T> and EIVL<T>.
+| Specifies periodic points in time, linked to the calendar (phase-linked), or a real world
+| repeating event, such as breakfast (event-linked). Based on the HL7v3 data types `PIVL<T>`
+| and `EIVL<T>`.
+|
+| Used in therapeutic prescriptions, expressed as `INSTRUCTIONs` in the openEHR model.
 |
 class DV_PERIODIC_TIME_SPECIFICATION
     is_a DV_TIME_SPECIFICATION

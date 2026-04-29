@@ -50,29 +50,38 @@ feature_group ("access")
     func all_versions : List<VERSION<T>> ;
 
     |
-    | True if a version for time a_time exists.
+    | True if a version for time `a_time` exists.
     |
     func has_version_at_time (a_time : DV_DATE_TIME) : Boolean ;
 
     |
-    | True if a version with a_version_uid exists.
+    | True if a version with `a_version_uid` exists.
     |
     func has_version_id (a_version_uid : OBJECT_VERSION_ID) : Boolean ;
 
     |
-    | Return the version with uid = a_version_uid.
+    | Return the version with `uid` = `a_version_uid`.
     |
-    func version_with_id (a_version_uid : OBJECT_VERSION_ID) : VERSION<T> ;
+    func version_with_id (a_version_uid : OBJECT_VERSION_ID) : VERSION<T>
+        pre_cond
+            version_valid: has_version_id (a_ver_id);
+        ;
 
     |
-    | Return the version for time a_time.
+    | Return the version for time `a_time`.
     |
-    func version_at_time (a_time : DV_DATE_TIME) : VERSION<T> ;
+    func version_at_time (a_time : DV_DATE_TIME) : VERSION<T>
+        pre_cond
+            time_valid: has_version_at_time (a_time);
+        ;
 
     |
-    | True if version with a_version_uid is an ORIGINAL_VERSION.
+    | True if version with `a_version_uid` is an `ORIGINAL_VERSION`.
     |
-    func is_original_version (a_version_uid : OBJECT_VERSION_ID) : Boolean ;
+    func is_original_version (a_version_uid : OBJECT_VERSION_ID) : Boolean
+        pre_cond
+            version_valid: has_version_id(a_ver_id);
+        ;
 
     |
     | History of all audits and attestations in this versioned repository.
@@ -93,7 +102,10 @@ feature_group ("access")
     | Return the lifecycle state from the latest trunk version. Useful for determining if the
     | version container is logically deleted.
     |
-    func trunk_lifecycle_state : DV_CODED_TEXT ;
+    func trunk_lifecycle_state : DV_CODED_TEXT
+        post_cond
+            validity: Result = latest_trunk_version.lifecycle_state;
+        ;
 
 invariant
     version_count_valid: version_count >= 0;

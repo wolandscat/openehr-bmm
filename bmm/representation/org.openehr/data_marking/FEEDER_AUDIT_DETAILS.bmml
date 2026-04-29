@@ -12,8 +12,11 @@
 import org.openehr:base ;
 
 |
-| Audit details for any system in a feeder system chain. Records who/where/when the information
-| item was created.
+| Audit details for any system in a feeder system chain. Audit details here means the
+| general notion of who/where/when the information item to which the audit is attached was
+| created. None of the attributes is defined as mandatory, however, in different scenarios,
+| various combinations of attributes will usually be mandatory. This can be controlled by
+| specifying feeder audit details in legacy archetypes.
 |
 class FEEDER_AUDIT_DETAILS
 

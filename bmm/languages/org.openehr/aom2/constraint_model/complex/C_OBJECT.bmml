@@ -33,9 +33,9 @@ feature_group ("access")
 
     |
     | Semantic identifier of this node, used to distinguish sibling nodes. All nodes must have a
-    | `_node_id_`; for nodes under a container `C_ATTRIBUTE`. For at-coded archetypes
-    | `_node_id_` must be an at-code defined in the archetype terminology and for valid
-    | structures all node ids are at-codes. For id-coded archetypes `_node_id_` must be an id-
+    | `node_id`; for nodes under a container `C_ATTRIBUTE`. For at-coded archetypes
+    | `node_id` must be an at-code defined in the archetype terminology and for valid
+    | structures all node ids are at-codes. For id-coded archetypes `node_id` must be an id-
     | code defined in the archetype terminology and for valid structures all node ids are id-
     | codes.
     |
@@ -58,15 +58,15 @@ feature_group ("access")
 
     |
     | Optional indicator of order of this node with respect to another sibling. Only meaningful
-    | in a specialised archetype for a `C_OBJECT` within a `C_ATTRIBUTE` with `_is_multiple_ =
+    | in a specialised archetype for a `C_OBJECT` within a `C_ATTRIBUTE` with `is_multiple_ =
     | True`.
     |
     prop sibling_order :? SIBLING_ORDER ;
 
     |
-    | Level of specialisation of this archetype node, based on its `_node_id_`. The value 0
+    | Level of specialisation of this archetype node, based on its `node_id`. The value 0
     | corresponds to non-specialised, 1 to first-level specialisation and so on. The level is
-    | the same as the number of ‘.’ characters in the node_id code. If `_node_id_` is not set,
+    | the same as the number of '.' characters in the node_id code. If `node_id` is not set,
     | the return value is -1, signifying that the specialisation level should be determined from
     | the nearest parent `C_OBJECT` node having a node_id.
     |
@@ -74,7 +74,7 @@ feature_group ("access")
 
     |
     | Compute effective occurrences, where no local occurrences constraint set. If the owning
-    | `C_ATTRIBUTE._cardinality_` is set, use its upper value, else use RM multiplicity of the
+    | `C_ATTRIBUTE._cardinality` is set, use its upper value, else use RM multiplicity of the
     | owning attribute.
     |
     | If local `occurrences` not set, always assume 0 as the lower bound.
@@ -82,28 +82,44 @@ feature_group ("access")
     func effective_occurrences : Multiplicity_interval ;
 
     |
-    | True if constraints represented by this node are narrower or the same as other.
+    | True if constraints represented by this node, ignoring any sub-parts, are narrower or the
+    | same as other. Typically used during validation of specialised archetype nodes.
+    |
+    | .Parameters + [horizontal] `rmcc`:: Reference Model conformance checker agent (lambda).
     |
     func c_conforms_to (other : C_OBJECT) : Boolean ;
 
     |
-    | True if constraints represented by this node contain no further redefinitions with respect to other.
+    | True if constraints represented by this node contain no further redefinitions with respect
+    | to the node `other`, with the exception of `node_id` redefinition in `C_OBJECT` nodes.
+    |
+    | Typically used to test if an inherited node locally contains any constraints.
     |
     func c_congruent_to (other : ARCHETYPE_CONSTRAINT) : Boolean ;
 
     |
-    | True if this node occurrences conforms to other.occurrences.
+    | True if this node `occurrences` conforms to `other.occurrences`; `other` is assumed to
+    | be in a flat archetype.
+    |
+    | .Parameters + [horizontal] `other`:: `C_OBJECT` from a flat parent archetype.
     |
     func occurrences_conforms_to (other : C_OBJECT) : Boolean ;
 
     |
-    | True if this node id conforms to other.node_id.
+    | True if this node id conforms to `other.node_id`, which includes the ids being
+    | identical; `other` is assumed to be in a flat archetype.
     |
-    func node_id_conforms_to (other : C_OBJECT) : Boolean ;
+    func node_id_conforms_to (other : C_OBJECT) : Boolean
+        post_cond
+            Result = codes_conformant (node_id, other.node_id);
+        ;
 
     |
-    | True if this `C_OBJECT` node is prohibited, i.e. if its `_occurrences_` is `0..0`.
+    | True if this `C_OBJECT` node is prohibited, i.e. if its `occurrences` is `0..0`.
     |
-    func is_prohibited : Boolean ;
+    func is_prohibited : Boolean
+        post_cond
+            Result = ∃occurrences ∧ occurrences.is_prohibited;
+        ;
 
 end

@@ -25,7 +25,10 @@ feature_group ("access")
     |
     | True if any value of the reference model type being constrained is allowed.
     |
-    func any_allowed : Boolean ;
+    func any_allowed : Boolean
+        post_cond
+            valid_result: Result = attributes.is_empty;
+        ;
 
 invariant
     attributes_valid: any_allowed ⊻ (∃attributes ∧ ¬attributes.is_empty);

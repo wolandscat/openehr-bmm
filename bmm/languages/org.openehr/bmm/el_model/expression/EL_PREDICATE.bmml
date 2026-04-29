@@ -10,7 +10,7 @@
 import org.openehr:representation;
 
 |
-| Parent type of predicates on any object reference.
+| Parent type of predicate of any object reference.
 |
 abstract class EL_PREDICATE
     is_a EL_SIMPLE

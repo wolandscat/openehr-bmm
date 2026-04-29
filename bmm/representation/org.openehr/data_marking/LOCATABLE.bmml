@@ -10,8 +10,10 @@
 
 
 |
-| Root class of all information model classes that can be archetyped. Defines the idea of locatability
-| in an archetyped structure.
+| Root class of all information model classes that can be archetyped. Most classes in the
+| openEHR reference model inherit from the `LOCATABLE` class, which defines the idea of
+| locatability in an archetyped structure. `LOCATABLE` defines a runtime name and an
+| `archetype_node_id`.
 |
 abstract class LOCATABLE
     is_a PATHABLE
@@ -30,7 +32,7 @@ feature_group ("infrastructure")
     | archetype local terminology.
     |
     | At an archetype root point, the value of this attribute is always the stringified form of
-    | the `_archetype_id_` found in the `_archetype_details_` object.
+    | the `archetype_id` found in the `archetype_details` object.
     |
     prop archetype_node_id : String ;
 

@@ -10,8 +10,8 @@
 import org.openehr:representation;
 
 |
-| Literal value of any type known in the model, including primitive types. Defined
-| via a BMM_LITERAL_VALUE.
+| Literal value of any type known in the model, including primitive types. Defined via a
+| `BMM_LITERAL_VALUE`.
 |
 class EL_LITERAL
     is_a EL_SIMPLE
@@ -24,7 +24,7 @@ feature_group ("access")
     prop value : BMM_LITERAL_VALUE<BMM_TYPE> ;
 
     |
-    | Return `_value.type_`.
+    | Return `value.type`.
     |
     func eval_type : BMM_TYPE ;
 

@@ -10,8 +10,14 @@
 
 
 |
-| Represents a coded term mapped to a DV_TEXT, and the relative match of the target term with
-| respect to the mapped item.
+| Represents a coded term mapped to a `DV_TEXT`, and the relative match of the target term
+| with respect to the mapped item. Plain or coded text items may appear in the EHR for which
+| one or mappings in alternative terminologies are required. Mappings are only used to
+| enable computer processing, so they can only be instances of `DV_CODED_TEXT`.
+|
+| Used for adding classification terms (e.g. adding ICD classifiers to SNOMED descriptive
+| terms), or mapping into equivalents in other terminologies (e.g. across nursing
+| vocabularies).
 |
 class TERM_MAPPING
 
@@ -47,12 +53,18 @@ feature_group ("access")
     |
     | The mapping is to a narrower term.
     |
-    func narrower : Boolean ;
+    func narrower : Boolean
+        post_cond
+            validity: match = '<' ⇒ Result;
+        ;
 
     |
     | The mapping is to a broader term.
     |
-    func broader : Boolean ;
+    func broader : Boolean
+        post_cond
+            validity: match = '>' ⇒ Result;
+        ;
 
     |
     | The mapping is to an equivalent term.
@@ -62,12 +74,18 @@ feature_group ("access")
     |
     | The kind of mapping is unknown.
     |
-    func unknown : Boolean ;
+    func unknown : Boolean
+        post_cond
+            validity: match = '?' ⇒ Result;
+        ;
 
     |
-    | True if match is valid (>, =, <, or ?).
+    | True if match valid.
     |
-    func is_valid_match_code (c : Character) : Boolean ;
+    func is_valid_match_code (c : Character) : Boolean
+        post_cond
+            validity: Result = (c = '>' ∨ c = '=' ∨ c = '<' ∨ c = '?');
+        ;
 
 invariant
     purpose_valid: ∃purpose ⇒ terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_term_mapping_purpose, purpose.defining_code);

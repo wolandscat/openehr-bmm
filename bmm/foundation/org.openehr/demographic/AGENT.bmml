@@ -10,8 +10,8 @@
 import org.openehr:representation;
 
 |
-| Generic concept of any kind of agent, including devices, software systems, but not
-| humans or organisations.
+| Generic concept of any kind of agent, including devices, software systems, but not humans
+| or organisations.
 |
 class AGENT
     is_a ACTOR

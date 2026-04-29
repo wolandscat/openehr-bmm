@@ -26,7 +26,7 @@ feature_group ("access")
 
     |
     | The symbol actually used in the expression, or intended to be used for serialisation. Must
-    | be a member of `OPERATOR_DEF._symbols_`.
+    | be a member of `OPERATOR_DEF._symbols`.
     |
     prop symbol :? String ;
 
@@ -37,7 +37,7 @@ feature_group ("access")
     prop call : EL_FUNCTION_CALL ;
 
     |
-    | Operator definition derived from `_definition.operator_definition()_`.
+    | Operator definition derived from `definition.operator_definition()`.
     |
     func operator_definition : BMM_OPERATOR ;
 

@@ -10,8 +10,8 @@
 
 
 |
-| Leaf type representing a standalone term from a terminology, consisting of the
-| term text and the code, i.e. a concept reference.
+| Leaf type representing a standalone term from a terminology, which consists of the term
+| text and the code, i.e. a concept reference.
 |
 class Terminology_term
     is_a Any

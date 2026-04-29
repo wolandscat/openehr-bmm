@@ -10,8 +10,7 @@
 import org.openehr:representation;
 
 |
-| A logical group of features, with a name and set of properties that applies to
-| the group.
+| A logical group of features, with a name and set of properties that applies to the group.
 |
 class BMM_FEATURE_GROUP
 

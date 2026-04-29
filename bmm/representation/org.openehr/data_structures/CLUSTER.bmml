@@ -10,7 +10,8 @@
 
 
 |
-| The grouping variant of ITEM, which may contain further instances of ITEM, in an ordered list.
+| The grouping variant of `ITEM`, which may contain further instances of `ITEM`, in an
+| ordered list.
 |
 class CLUSTER
     is_a ITEM

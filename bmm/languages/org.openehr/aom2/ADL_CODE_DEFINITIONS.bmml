@@ -10,80 +10,119 @@
 import org.openehr:representation;
 
 |
-| Definitions relating to the internal code system of archetypes. ADL2 uses at-codes for
-| node identification, at-codes for values, and ac-codes for value sets, matching the ADL1.4
-| code system. openEHR systems must support at least the at-coded ADL2 archetypes.
+| Definitions relating to the internal code system of archetypes.
 |
 class ADL_CODE_DEFINITIONS
 
 feature_group ("values")
 
+    |
     | String leader of 'identifier' codes used to identify at-coded archetype nodes.
-    At_code_leader ;
+    |
+    const At_code_leaderr: String = "at" ;
 
+    |
     | String leader of 'identifier' codes used to identify id-coded archetype nodes.
-    Id_code_leader ;
+    |
+    const Id_code_leader: String = "id" ;
 
+    |
     | String leader of 'value' codes used to identify code values and value set members.
-    Value_code_leader ;
+    |
+    const Value_code_leader: String = "at" ;
 
+    |
     | String leader of 'value set' codes used to identify value sets.
-    Value_set_code_leader ;
+    |
+    const Value_set_code_leader: String = "ac" ;
 
+    |
     | Character used to separate numeric parts of codes belonging to different specialisation
     | levels.
-    Specialisation_separator ;
+    |
+    const Specialisation_separator: Character = '.' ;
 
+    |
     | Regex defining the legal numeric part of any archetype code.
-    Code_regex_pattern ;
+    |
+    const Code_regex_pattern: String = "(0|[1-9][0-9]*)(\.(0|[1-9][0-9]*))*" ;
 
+    |
     | Regex pattern of the root code of any archetype.
-    Root_code_regex_pattern ;
+    |
+    const Root_code_regex_pattern: String = "^id(\.1)*$" ;
 
+    |
     | Code id used for C_PRIMITIVE_OBJECT nodes on creation.
-    Primitive_node_id ;
+    |
+    const Primitive_node_id: String = "id9999" ;
 
 feature_group ("access")
 
     |
-    | True if a_child_code conforms to a_parent_code in the sense of specialisation.
+    | True if `a_child_code` conforms to `a_parent_code` in the sense of specialisation,
+    | i.e. is `a_child_code` the same as or more specialised than `a_parent_code`?
     |
-    func codes_conformant (a_child_code : String, a_parent_code : String) : Boolean ;
+    func codes_conformant (a_child_code : String, a_parent_code : String) : Boolean
+        ;
 
     |
-    | True if a_code is any kind of ADL archetype local code.
+    | True if `a_code` is any kind of ADL archetype local code.
     |
-    func is_adl_code (a_code : String) : Boolean ;
+    func is_adl_code (a_code : String) : Boolean
+        post_cond
+            result_validity: Result = is_at_code (a_code) ∨ is_id_code (a_code) ∨ is_value_code (a_code) ∨ is_value_set_code (a_code);
+        ;
 
     |
-    | True if a_code is an 'at' code.
+    | True if `a_code` is an 'at' code.
     |
-    func is_at_code (a_code : String) : Boolean ;
+    func is_at_code (a_code : String) : Boolean
+        post_cond
+            result_validity: Result = a_code.starts_with (At_code_leader);
+        ;
 
     |
-    | True if a_code is an 'id' code.
+    | True if `a_code` is an 'id' code.
     |
-    func is_id_code (a_code : String) : Boolean ;
+    func is_id_code (a_code : String) : Boolean
+        post_cond
+            result_validity: Result = a_code.starts_with (Id_code_leader);
+        ;
 
     |
-    | True if a_code is an 'at' code representing a single terminology item.
+    | True if `a_code` is an 'at' code representing a single terminology item.
     |
-    func is_value_code (a_code : String) : Boolean ;
+    func is_value_code (a_code : String) : Boolean
+        post_cond
+            result_validity: Result = a_code.starts_with (Value_code_leader);
+        ;
 
     |
-    | True if a_code is an 'ac' code referring to a terminology value set.
+    | True if `a_code` is an 'ac' code, i.e. a code referring to a terminology value set.
     |
-    func is_value_set_code (a_code : String) : Boolean ;
+    func is_value_set_code (a_code : String) : Boolean
+        post_cond
+            result_validity: Result = a_code.starts_with (Value_set_code_leader);
+        ;
 
     |
-    | True if a_code has been specialised, i.e. has a non-zero code index above the last
-    | index.
+    | A code has been specialised if there is a non-zero code index anywhere above the last
+    | index e.g.
     |
-    func is_redefined_code (a_code : String) : Boolean ;
+    | * `at0.0.1` -> False
+    | * `at1.0.1` -> True
+    |
+    func is_redefined_code (a_code : String) : Boolean
+        ;
 
     |
-    | True if a_code is valid at level a_level or less in the specialisation hierarchy.
+    | Is `a_code` valid at level `a_level` or less, i.e. if we remove its trailing
+    | specialised part corresponding to specialisation below `a_level`, and then any trailing
+    | '.0' pieces, do we end up with a valid code? If so it means that the code corresponds to a
+    | real node from `a_level` or higher.
     |
-    func code_exists_at_level (a_code : String, a_level : Integer) : Boolean ;
+    func code_exists_at_level (a_code : String, a_level : Integer) : Boolean
+        ;
 
 end

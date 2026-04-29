@@ -11,8 +11,8 @@ import org.openehr:representation;
 
 |
 | Class representing a single object tuple instance in a tuple constraint. Each such
-| instance is a vector of object constraints, where each member (each C_PRIMITIVE_OBJECT)
-| corresponds to one of the C_ATTRIBUTEs referred to by the owning C_ATTRIBUTE_TUPLE.
+| instance is a vector of object constraints, where each member (each `C_PRIMITIVE_OBJECT`)
+| corresponds to one of the `C_ATTRIBUTEs` referred to by the owning `C_ATTRIBUTE_TUPLE`.
 |
 class C_PRIMITIVE_TUPLE
     is_a C_SECOND_ORDER
@@ -25,12 +25,17 @@ feature_group ("access")
     prop members : List<C_PRIMITIVE_OBJECT> ;
 
     |
-    | True if constraints represented by this node are narrower or the same as other.
+    | True if constraints represented by this node, ignoring any sub-parts, are narrower or the
+    | same as other. Typically used during validation of specialised archetype nodes.
+    |
+    | .Parameters + [horizontal] `rmcc`:: RM conformance checker agent.
     |
     func c_conforms_to (other : C_PRIMITIVE_TUPLE) : Boolean ;
 
     |
-    | True if constraints represented by this node contain no further redefinitions with respect to other.
+    | True if constraints represented by this node contain no further redefinitions with respect
+    | to the node other. Typically used to test if an inherited node locally contains any
+    | constraints.
     |
     func c_congruent_to (other : C_SECOND_ORDER) : Boolean ;
 

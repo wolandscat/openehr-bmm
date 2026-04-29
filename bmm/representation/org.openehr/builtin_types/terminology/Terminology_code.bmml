@@ -10,9 +10,9 @@
 
 
 |
-| Primitive type representing a standalone reference to a terminology concept, in
-| the form of a terminology identifier, optional version, and a code or code string
-| from the terminology.
+| Primitive type representing a standalone reference to a terminology concept, in the form
+| of a terminology identifier, optional version, and a code or code string from the
+| terminology.
 |
 class Terminology_code
     is_a Any

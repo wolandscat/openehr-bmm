@@ -10,7 +10,7 @@
 import org.openehr:representation;
 
 |
-| Constraint on instances of String.
+| Constraint on instances of STRING.
 |
 class C_STRING
     is_a C_PRIMITIVE
@@ -39,7 +39,8 @@ feature_group ("access")
     prop assumed_value :? String ;
 
     |
-    | True if a_value is valid with respect to constraint expressed in this object.
+    | True if a_value is valid with respect to constraint expressed in concrete instance of this
+    | type.
     |
     func valid_value (a_value : String) : Boolean ;
 

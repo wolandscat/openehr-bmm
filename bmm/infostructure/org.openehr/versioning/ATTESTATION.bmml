@@ -10,9 +10,15 @@
 import org.openehr:representation;
 
 |
-| Record an attestation by a party (the committer) to item(s) of record content.
-| Used for authorisation of controlled substances, witnessing of content, or
-| indicating acknowledgement of content by an intended recipient.
+| Record an attestation of a party (the committer) to item(s) of record content. An
+| attestation is an explicit signing by one healthcare agent of particular content for
+| various particular purposes, including:
+|
+| * for authorisation of a controlled substance or procedure (e.g. sectioning of patient
+| under mental health act);
+| * witnessing of content by senior clinical professional;
+| * indicating acknowledgement of content by intended recipient, e.g. GP who ordered a test
+| result.
 |
 class ATTESTATION
     is_a AUDIT_DETAILS

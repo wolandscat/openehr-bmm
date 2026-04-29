@@ -10,7 +10,7 @@
 
 
 |
-| The leaf variant of ITEM, to which a DATA_VALUE instance is attached.
+| The leaf variant of `ITEM`, to which a `DATA_VALUE` instance is attached.
 |
 class ELEMENT
     is_a ITEM
@@ -30,7 +30,7 @@ feature_group ("access")
     prop null_flavour :? DV_CODED_TEXT ;
 
     |
-    | Optional specific reason for null value; if set, `_null_flavour_` must be set. Null reason
+    | Optional specific reason for null value; if set, `null_flavour` must be set. Null reason
     | may apply only to a minority of clinical data, commonly needed in reporting contexts.
     |
     prop null_reason :? DV_TEXT ;

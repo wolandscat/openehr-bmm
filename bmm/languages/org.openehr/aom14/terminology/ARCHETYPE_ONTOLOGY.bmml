@@ -17,7 +17,7 @@ class ARCHETYPE_ONTOLOGY
 feature_group ("access")
 
     |
-    | List of all term codes in the ontology. Most of these correspond to “at” codes in an ADL
+    | List of all term codes in the ontology. Most of these correspond to "at" codes in an ADL
     | archetype, which are the node_ids on C_OBJECT descendants. There may be an extra one, if a
     | different term is used as the overall archetype concept from that used as the node_id of
     | the outermost C_OBJECT in the definition part.
@@ -25,7 +25,7 @@ feature_group ("access")
     prop term_codes : List<String> ;
 
     |
-    | List of all term codes in the ontology. These correspond to the “ac” codes in an ADL
+    | List of all term codes in the ontology. These correspond to the "ac" codes in an ADL
     | archetype, or equivalently, the CONSTRAINT_REF.reference values in the archetype
     | definition.
     |
@@ -51,12 +51,12 @@ feature_group ("access")
     prop term_attribute_names : List<String> ;
 
     |
-    | True if terminology a_lang is present in archetype ontology.
+    | True if terminology 'a_terminology' is present in archetype ontology.
     |
     func has_language (a_lang : String) : Boolean ;
 
     |
-    | True if terminology a_terminology_id is present in archetype ontology.
+    | True if terminology `a_terminology' is present in archetype ontology.
     |
     func has_terminology (a_terminology_id : String) : Boolean ;
 
@@ -73,22 +73,33 @@ feature_group ("access")
     |
     | Term definition for a code, in a specified language.
     |
-    func term_definition (a_lang : String, a_code : String) : ARCHETYPE_TERM ;
+    func term_definition (a_lang : String, a_code : String) : ARCHETYPE_TERM
+        pre_cond
+            valid_language: has_language (a_lang);
+            valid_code: has_term_code (a_code);
+        ;
 
     |
     | Constraint definition for a code, in a specified language.
     |
-    func constraint_definition (a_code : String, a_lang : String) : ARCHETYPE_TERM ;
-
-    |
-    | Binding of term corresponding to a_code in target external terminology a_terminology,
-    | as a CODE_PHRASE.
-    |
-    func term_binding (a_terminology : String, a_code : String) : CODE_PHRASE ;
+    func constraint_definition (a_code : String, a_lang : String) : ARCHETYPE_TERM
+        pre_cond
+            valid_language: has_language (a_lang);
+            valid_code: has_constraint_code (a_code);
+        ;
 
     |
     | Binding of constraint corresponding to a_code in target external terminology
-    | a_terminology_id, as a string (usually a formal query expression).
+    | a_terminology_id, as a string, which is usually a formal query expression.
+    |
+    func term_binding (a_terminology : String, a_code : String) : CODE_PHRASE
+        pre_cond
+            valid_binding: has_term_binding (a_terminology_id, a_code);
+        ;
+
+    |
+    | Binding of constraint corresponding to a_code in target external terminology
+    | a_terminology_id, as a string, which is usually a formal query expression.
     |
     func constraint_binding (a_terminology_id : String, a_code : String) : String ;
 

@@ -10,9 +10,10 @@
 import org.openehr:representation;
 
 |
-| A formal element with signature of the form: name ({arg:TArg}*):TStatus, where
-| TStatus is the built-in type BMM_STATUS_TYPE. A procedure is a computed (rather than
-| data) element, generally assumed to be state-changing.
+| A formal element with signature of the form: `name ({arg:TArg}*):TStatus`, where `TStatus`
+| is the built-in type `BMM_STATUS_TYPE`.. A procedure is a computed (rather than data)
+| element, generally assumed to be state-changing, and is usually called in the form `name
+| ({arg:TArg}*)`.
 |
 class BMM_PROCEDURE
     is_a BMM_ROUTINE

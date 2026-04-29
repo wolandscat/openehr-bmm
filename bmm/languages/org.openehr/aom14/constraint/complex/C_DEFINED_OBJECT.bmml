@@ -24,7 +24,8 @@ feature_group ("access")
     prop assumed_value :? Any ;
 
     |
-    | True if a_value is valid with respect to constraint expressed in this object.
+    | True if a_value is valid with respect to constraint expressed in concrete instance of this
+    | type.
     |
     func valid_value (a_value : Any) : Boolean ;
 
@@ -47,7 +48,10 @@ feature_group ("access")
     | True if any value of the reference model type being constrained is allowed. Redefine in
     | descendants.
     |
-    func any_allowed : Boolean ;
+    func any_allowed : Boolean
+        post_cond
+            valid_result: Result = attributes.is_empty;
+        ;
 
 invariant
     assumed_value_valid: has_assumed_value ⇒ valid_value(assumed_value);

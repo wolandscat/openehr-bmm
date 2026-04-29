@@ -10,8 +10,8 @@
 import org.openehr:representation;
 
 |
-| Form of routine specific to procedure object signatures, with result_type being the
-| special Status meta-type.
+| Form of routine specific to procedure object signatures, with `result_type` being the
+| special Status meta-type
 |
 class BMM_PROCEDURE_TYPE
     is_a BMM_ROUTINE_TYPE

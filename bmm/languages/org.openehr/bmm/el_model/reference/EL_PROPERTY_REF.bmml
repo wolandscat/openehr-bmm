@@ -30,7 +30,7 @@ feature_group ("access")
     |
     | Type definition (i.e. BMM meta-type definition object) of the constant, property or
     | variable, inferred by inspection of the current scoping instance. Return
-    | `_definition.type_`.
+    | `definition.type`.
     |
     func eval_type : BMM_TYPE ;
 

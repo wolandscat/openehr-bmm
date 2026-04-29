@@ -10,7 +10,8 @@
 
 
 |
-| A fully coordinated term from a terminology service.
+| A fully coordinated (i.e. all coordination has been performed) term from a terminology
+| service (as distinct from a particular terminology).
 |
 class CODE_PHRASE
 
@@ -31,7 +32,7 @@ feature_group ("access")
 
     |
     | Optional attribute to carry preferred term corresponding to the code or expression in
-    | `_code_string_`. Typical use in integration situations which create mappings, and
+    | `code_string`. Typical use in integration situations which create mappings, and
     | representing data for which both a (non-preferred) actual term and a preferred term are
     | both required.
     |

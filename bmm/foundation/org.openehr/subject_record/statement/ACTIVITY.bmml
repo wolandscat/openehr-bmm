@@ -28,10 +28,10 @@ feature_group ("access")
     |
     | May be omitted if:
     |
-    | * timing is represented structurally in the `_description_` attribute (e.g. via archetyped
+    | * timing is represented structurally in the `description` attribute (e.g. via archetyped
     | elements), or
-    | * unavailable, e.g. imported legacy data; in such cases, the `INSTRUCTION._narrative_`
-    | should carry text that indicates the timing of its `_activities_`.
+    | * unavailable, e.g. imported legacy data; in such cases, the `INSTRUCTION._narrative`
+    | should carry text that indicates the timing of its `activities`.
     |
     prop timing :? DV_PARSABLE ;
 

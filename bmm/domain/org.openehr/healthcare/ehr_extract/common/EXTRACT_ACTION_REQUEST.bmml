@@ -11,8 +11,7 @@ import org.openehr:representation ;
 import org.openehr:foundation ;
 
 |
-| Request for an action relating to a previous Extract request, such as cancel,
-| resend, or send new.
+| Generic model of a Request for an Extract, containing an Extract specification.
 |
 class EXTRACT_ACTION_REQUEST
     is_a LOCATABLE

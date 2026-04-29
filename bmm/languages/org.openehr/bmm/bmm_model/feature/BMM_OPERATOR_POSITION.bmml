@@ -10,8 +10,8 @@
 import org.openehr:representation;
 
 |
-| Enumeration of possible position of operator in a syntactic representation for
-| operators associated with 1- and 2- degree functions.
+| Enumeration of possible position of operator in a syntactic representation for operators
+| associated with 1- and 2- degree functions.
 |
 enumeration BMM_OPERATOR_POSITION
     base_type String

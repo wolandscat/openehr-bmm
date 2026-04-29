@@ -10,8 +10,19 @@
 
 
 |
-| Models a ratio of values where numerator and denominator are both pure numbers. Used for titers,
-| concentration ratios, percentages.
+| Models a ratio of values, i.e. where the numerator and denominator are both pure numbers.
+| The `valid_proportion_kind` property of the `PROPORTION_KIND` class is used to control
+| the type attribute to be one of a defined set.
+|
+| Used for recording titers (e.g. 1:128), concentration ratios, e.g. Na:K (unitary
+| denominator), albumin:creatinine ratio, and percentages, e.g. red cell distirbution width
+| (RDW).
+|
+| Misuse: Should not be used to represent things like blood pressure which are often written
+| using a '/' character, giving the misleading impression that the item is a ratio, when in
+| fact it is a structured value. Similarly, visual acuity, often written as (e.g.) "6/24" in
+| clinical notes is not a ratio but an ordinal (which includes non-numeric symbols like CF =
+| count fingers etc). Should not be used for formulations.
 |
 class DV_PROPORTION
     is_a DV_AMOUNT
@@ -34,7 +45,7 @@ feature_group ("access")
     prop type : Integer ;
 
     |
-    | Precision to which the `_numerator_` and `_denominator_` values of the proportion are
+    | Precision to which the `numerator` and `denominator` values of the proportion are
     | expressed, in terms of number of decimal places. The value 0 implies an integral quantity.
     | The value -1 implies no limit, i.e. any number of decimal places.
     |
@@ -57,7 +68,7 @@ feature_group ("access")
     func magnitude : Real ;
 
     |
-    | True if the `_numerator_` and `_denominator_` values are integers, i.e. if `_precision_`
+    | True if the `numerator` and `denominator` values are integers, i.e. if `precision`
     | is 0.
     |
     func is_integral : Boolean ;

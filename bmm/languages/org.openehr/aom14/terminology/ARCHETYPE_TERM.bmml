@@ -22,7 +22,7 @@ feature_group ("access")
     prop code : String ;
 
     |
-    | Hash of keys (“text”, “description” etc) and corresponding values. Hash of keys ("text",
+    | Hash of keys ("text", "description" etc) and corresponding values. Hash of keys ("text",
     | "description" etc) and corresponding values.
     |
     prop items :? Hash<String,String> ;

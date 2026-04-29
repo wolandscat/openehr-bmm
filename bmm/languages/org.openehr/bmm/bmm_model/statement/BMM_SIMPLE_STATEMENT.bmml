@@ -10,8 +10,8 @@
 import org.openehr:representation;
 
 |
-| Simple statement, i.e. statement with one logical element - a single expression,
-| procedure call etc.
+| Simple statement, i.e. statement with one logical element - a single expression, procedure
+| call etc.
 |
 abstract class BMM_SIMPLE_STATEMENT
     is_a BMM_STATEMENT

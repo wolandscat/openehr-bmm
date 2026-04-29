@@ -31,15 +31,24 @@ feature_group ("access")
     | True if any value (i.e. instance) of the reference model type would be allowed. Redefined
     | in descendants.
     |
-    func any_allowed : Boolean ;
+    func any_allowed : Boolean
+        post_cond
+            Result = attributes.is_empty ∧ ¬is_prohibited;
+        ;
 
     |
-    | True if constraints represented by this node are narrower or the same as other.
+    | True if constraints represented by this node, ignoring any sub-parts, are narrower or the
+    | same as other. Typically used during validation of specialised archetype nodes.
+    |
+    | .Parameters + [horizontal] `rmcc`:: Reference Model conformance checker agent (lambda).
     |
     func c_conforms_to (other : C_COMPLEX_OBJECT) : Boolean ;
 
     |
-    | True if constraints represented by this node contain no further redefinitions with respect to other.
+    | True if constraints represented by this node contain no further redefinitions with respect
+    | to the node `other`, with the exception of `node_id` redefinition in `C_OBJECT` nodes.
+    |
+    | Typically used to test if an inherited node locally contains any constraints.
     |
     func c_congruent_to (other : C_COMPLEX_OBJECT) : Boolean ;
 

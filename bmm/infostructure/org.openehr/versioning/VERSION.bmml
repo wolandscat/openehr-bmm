@@ -34,8 +34,8 @@ feature_group ("access")
 
     |
     | Unique identifier of this `VERSION`, in the form of an `{object_id, a version_tree_id,
-    | creating_system_id}` triple, where the `_object_id_` has the same value as the containing
-    | `VERSIONED_OBJECT _uid_`.
+    | creating_system_id}` triple, where the `object_id` has the same value as the containing
+    | `VERSIONED_OBJECT _uid`.
     |
     func uid : OBJECT_VERSION_ID ;
 
@@ -63,13 +63,16 @@ feature_group ("access")
     func canonical_form : String ;
 
     |
-    | Copy of the owning `VERSIONED_OBJECT._uid_` value; extracted from the local `_uid_`
-    | property's `_object_id_`.
+    | Copy of the owning `VERSIONED_OBJECT._uid` value; extracted from the local `uid`
+    | property's `object_id`.
     |
-    func owner_id : HIER_OBJECT_ID ;
+    func owner_id : HIER_OBJECT_ID
+        post_cond
+            valid_result: Result.value.is_equal (uid.object_id.value);
+        ;
 
     |
-    | True if this Version represents a branch. Derived from `_uid_` attribute.
+    | True if this Version represents a branch. Derived from `uid` attribute.
     |
     func is_branch : Boolean ;
 

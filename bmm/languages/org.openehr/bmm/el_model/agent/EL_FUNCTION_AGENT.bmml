@@ -27,6 +27,9 @@ feature_group ("access")
     | Eval type is the signature corresponding to the (remaining) open arguments and return
     | type, if any.
     |
-    func eval_type : BMM_FUNCTION_TYPE ;
+    func eval_type : BMM_FUNCTION_TYPE
+        post_cond
+            Result = definition.signature;
+        ;
 
 end

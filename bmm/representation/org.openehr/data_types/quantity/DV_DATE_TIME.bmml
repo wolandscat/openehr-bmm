@@ -10,7 +10,11 @@
 
 
 |
-| Represents an absolute point in time, specified to the second. ISO 8601 semantics.
+| Represents an absolute point in time, specified to the second. Semantics defined by ISO
+| 8601.
+|
+| Used for recording a precise point in real world time, and for approximate time stamps,
+| e.g. the origin of a `HISTORY` in an `OBSERVATION` which is only partially known.
 |
 class DV_DATE_TIME
     is_a DV_TEMPORAL
@@ -39,7 +43,7 @@ feature_group ("access")
     func subtract (a_diff : DV_DURATION) : DV_DATE_TIME ;
 
     |
-    | Difference between this Date/time and other.
+    | Difference between this Date/time and `other`.
     |
     func diff (other : DV_DATE_TIME) : DV_DURATION ;
 

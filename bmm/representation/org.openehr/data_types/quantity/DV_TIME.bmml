@@ -10,8 +10,13 @@
 
 
 |
-| Represents an absolute point in time from an origin usually interpreted as start of the current
-| day, specified to a fraction of a second. ISO 8601 semantics.
+| Represents an absolute point in time from an origin usually interpreted as meaning the
+| start of the current day, specified to a fraction of a second. Semantics defined by ISO
+| 8601.
+|
+| Used for recording real world times, rather than scientifically measured fine amounts of
+| time. The partial form is used for approximate times of events and substance
+| administrations.
 |
 class DV_TIME
     is_a DV_TEMPORAL
@@ -39,7 +44,7 @@ feature_group ("access")
     func subtract (a_diff : DV_DURATION) : DV_TIME ;
 
     |
-    | Difference between this Time and other.
+    | Difference between this Time and `other`.
     |
     func diff (other : DV_TIME) : DV_DURATION ;
 

@@ -10,8 +10,8 @@
 
 
 |
-| Abstract ancestor type of ISO 8601 types, defining interface for 'extended'
-| and 'partial' concepts from ISO 8601.
+| Abstract ancestor type of ISO 8601 types, defining interface for 'extended' and 'partial'
+| concepts from ISO 8601.
 |
 abstract class Iso8601_type
     is_a Temporal, Time_Definitions

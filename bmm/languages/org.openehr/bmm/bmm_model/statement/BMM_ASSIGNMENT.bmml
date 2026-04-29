@@ -10,8 +10,11 @@
 import org.openehr:representation;
 
 |
-| Statement type representing an assignment from a value-generating source to a
-| writable entity (a variable reference or property).
+| Statement type representing an assignment from a value-generating source to a writable
+| entity, i.e. a variable reference or property.
+|
+| At the meta-model level, may be understood as an initialisation of an existing meta-model
+| instance.
 |
 class BMM_ASSIGNMENT
     is_a BMM_SIMPLE_STATEMENT

@@ -18,51 +18,66 @@ builtin class Boolean
 feature_group ("operators")
 
     |
-    | Logical conjunction of Self with other.
+    | Logical conjunction of this with `other`.
     |
     func conjunction (other : Boolean) : Boolean
         alias
             "and", "∧" ;
+        post_cond
+            non_contradiction: Result = ¬ (¬self ∨ ¬other);
+            valid_result: Result = (other ∧ self);
         ;
 
     |
-    | Logical semi-strict conjunction of Self with other.
+    | Boolean semi-strict conjunction with `other`.
     |
     func semistrict_conjunction (other : Boolean) : Boolean
         alias
             "and then" ;
+        post_cond
+            valid_result: Result = ¬ (¬self ∨ ¬other);
         ;
 
     |
-    | Logical disjunction of Self with other.
+    | Boolean disjunction with `other`.
     |
     func disjunction (other : Boolean) : Boolean
         alias
             "or", "∨" ;
+        post_cond
+            non_contradiction: Result = ¬ (¬self ∧ ¬other);
+            valid_result: Result = (other ∨ self);
+            reflexivity: Result ⇒ (self ∨ other);
         ;
 
     |
-    | Logical semi-strict disjunction of Self with other.
+    | Boolean semi-strict disjunction with `other`.
     |
     func semistrict_disjunction (other : Boolean) : Boolean
         alias
             "or else" ;
+        post_cond
+            valid_result: Result = ¬ (¬self ∧ ¬other);
         ;
 
     |
-    | Logical exclusive or of Self with other.
+    | Boolean exclusive or with `other`.
     |
     func exclusive_disjunction (other : Boolean) : Boolean
         alias
             "xor", "⊻" ;
+        post_cond
+            valid_result: Result = ((self ∨ other) ∧ ¬ (self ∧ other));
         ;
 
     |
-    | Boolean implication of other (semi-strict).
+    | Boolean implication of `other` (semi-strict)
     |
     func implication (other : Boolean) : Boolean
         alias
             "implies", "⇒" ;
+        post_cond
+            valid_result: Result = (¬self ∨ other);
         ;
 
     |

@@ -11,7 +11,7 @@ import org.openehr:representation ;
 import org.openehr:foundation ;
 
 |
-| Form of X_VERSIONED_OBJECT for EHR_ACCESS EHR object.
+| Form of `X_VERSIONED_OBJECT` for `EHR_ACCESS` EHR object.
 |
 class X_VERSIONED_EHR_ACCESS
     is_a X_VERSIONED_OBJECT<EHR_ACCESS>

@@ -10,8 +10,9 @@
 import org.openehr:representation;
 
 |
-| Any kind of statement element that can be evaluated. The type will either be supplied
-| in descendant types or inferred by an assignment statement linked to a typed variable.
+| Any kind of statement element that can be evaluated. The type will either be supplied in
+| descendant types or else will be inferred by an assignment statement linked to a typed
+| variable.
 |
 abstract class EXPR_VALUE
 

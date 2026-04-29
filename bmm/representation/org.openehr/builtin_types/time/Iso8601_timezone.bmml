@@ -10,7 +10,15 @@
 
 
 |
-| ISO8601 timezone string, in format Z | ±hh[mm], where Z is UTC.
+| ISO8601 timezone string, in format:
+|
+| * `Z | ±hh[mm]`
+|
+| where:
+|
+| * `hh` is "00" - "23" (0-filled to two digits)
+| * `mm` is "00" - "59" (0-filled to two digits)
+| * `Z` is a literal meaning UTC (modern replacement for GMT), i.e. timezone `+0000`
 |
 class Iso8601_timezone
     is_a Iso8601_type

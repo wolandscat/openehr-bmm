@@ -10,10 +10,14 @@
 import org.openehr:representation;
 
 |
-| Definition of an enumeration class, understood as a class whose value range is
-| constrained extensionally, i.e. by an explicit enumeration of named singleton
-| instances. Only one inheritance ancestor is allowed in order to provide the base
-| type to which the range constraint is applied.
+| Definition of an enumeration class, understood as a class whose value range is constrained
+| extensionally, i.e. by an explicit enumeration of named singleton instances.
+|
+| Only one inheritance ancestor is allowed in order to provide the base type to which the
+| range constraint is applied.
+|
+| The common notion of a set of literals with no explicit defined values is represented as
+| the degenerate subtype `BMM_ENUMERATION_INTEGER`, whose values are 0, 1, ...
 |
 class BMM_ENUMERATION
     is_a BMM_SIMPLE_CLASS
@@ -27,7 +31,7 @@ feature_group ("access")
     prop item_names :? List<String> ;
 
     |
-    | Optional list of specific values. Must be 1:1 with `_item_names_` list.
+    | Optional list of specific values. Must be 1:1 with `item_names` list.
     |
     prop item_values :? List<BMM_PRIMITIVE_VALUE> ;
 

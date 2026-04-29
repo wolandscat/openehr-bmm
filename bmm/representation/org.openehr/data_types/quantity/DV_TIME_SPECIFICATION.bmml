@@ -10,8 +10,9 @@
 
 
 |
-| Abstract class of which all timing specifications are specialisations. Specifies points in time,
-| possibly linked to the calendar or a real world repeating event.
+| This is an abstract class of which all timing specifications are specialisations.
+| Specifies points in time, possibly linked to the calendar, or a real world repeating
+| event, such as breakfast.
 |
 abstract class DV_TIME_SPECIFICATION
     is_a DATA_VALUE

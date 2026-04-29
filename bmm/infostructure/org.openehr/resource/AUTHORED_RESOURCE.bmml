@@ -50,7 +50,7 @@ feature_group ("access")
     |
     | List of details for each natural translation made of this resource, keyed by language
     | code. For each translation listed here, there must be corresponding sections in all
-    | language-dependent parts of the resource. The `_original_language_` does not appear in
+    | language-dependent parts of the resource. The `original_language` does not appear in
     | this list.
     |
     prop translations :? Hash<String, TRANSLATION_DETAILS> ;
@@ -63,13 +63,9 @@ feature_group ("access")
 
 invariant
     original_language_valid: code_set (Code_set_id_languages).has_code (original_language.as_string);
-
     current_revision_valid: (∃current_revision ∧ ¬is_controlled) ⇒ current_revision.is_equal ("(uncontrolled)");
-
     translations_valid: ∃translations ⇒ ¬translations.is_empty()∧ ¬translations.has (orginal_language.code_string);
-
     description_valid: ∃translations ⇒ ∀ d:description.details ¦ translations.has_key (d.language.code_string);
-
     languages_available_valid: languages_available.has (original_language);
 
 end

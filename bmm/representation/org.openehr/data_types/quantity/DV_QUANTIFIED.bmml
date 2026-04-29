@@ -10,8 +10,8 @@
 
 
 |
-| Abstract class defining the concept of true quantified values, i.e. values which are not only
-| ordered but have a precise magnitude.
+| Abstract class defining the concept of true quantified values, i.e. values which are not
+| only ordered, but which have a precise magnitude.
 |
 abstract class DV_QUANTIFIED
     is_a DV_ORDERED
@@ -24,7 +24,7 @@ feature_group ("access")
     | * `"="` : magnitude is a point value
     | * `"<"` : value is < magnitude
     | * `">"` : value is > magnitude
-    | * `"\<="` : value is \<= magnitude
+    | * `"<="` : value is <= magnitude
     | * `">="` : value is >= magnitude
     | * `"~"` : value is approximately magnitude
     |

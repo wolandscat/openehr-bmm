@@ -8,10 +8,14 @@
 +---------------------------------------------------------------------------------
 
 
-
 |
-| Represents an ISO 8601 date, including partial and extended forms. Value may be
-| YYYY-MM-DD (extended, preferred), YYYYMMDD (compact), or a partial invariant.
+| Represents an ISO 8601 date, including partial and extended forms. Value may be:
+|
+| * `YYYY-MM-DD` (extended, preferred)
+| * `YYYYMMDD` (compact)
+| * a partial invariant.
+|
+| See `Time_definitions._valid_iso8601_date()` for validity.
 |
 class Iso8601_date
     is_a Iso8601_type
@@ -26,12 +30,18 @@ feature_group ("access")
     |
     | Extract the month part of the date as an Integer, or return 0 if not present.
     |
-    func month : Integer ;
+    func month : Integer
+        pre_cond
+            month_known: ¬month_unknown;
+        ;
 
     |
     | Extract the day part of the date as an Integer, or return 0 if not present.
     |
-    func day : Integer ;
+    func day : Integer
+        pre_cond
+            day_known: ¬day_unknown;
+        ;
 
     |
     | Timezone; may be Void.
@@ -56,11 +66,8 @@ feature_group ("access")
 
 invariant
     year_valid: valid_year (year);
-
     month_valid: ¬month_unknown ⇒ valid_month (month);
-
     day_valid: ¬day_unknown ⇒ valid_day (year, month, day);
-
     partial_validity: month_unknown ⇒ day_unknown;
 
 end

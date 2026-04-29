@@ -10,8 +10,8 @@
 import org.openehr:representation;
 
 |
-| Meta-type of a writable property definition within a class definition of an object
-| model. The is_composition attribute indicates whether the property has sub-part or an
+| Meta-type of a writable property definition within a class definition of an object model.
+| The `is_composition` attribute indicates whether the property has sub-part or an
 | association semantics with respect to the owning class.
 |
 abstract class BMM_PROPERTY
@@ -20,12 +20,12 @@ abstract class BMM_PROPERTY
 feature_group ("access")
 
     |
-    | True if this property is marked with info model `_im_runtime_` property.
+    | True if this property is marked with info model `im_runtime` property.
     |
     prop is_im_runtime :? Boolean ;
 
     |
-    | True if this property was marked with info model `_im_infrastructure_` flag.
+    | True if this property was marked with info model `im_infrastructure` flag.
     |
     prop is_im_infrastructure :? Boolean ;
 
@@ -37,7 +37,7 @@ feature_group ("access")
     prop is_composition :? Boolean ;
 
     |
-    | Interval form of `0..1`, `1..1` etc, derived from `_is_nullable_`.
+    | Interval form of `0..1`, `1..1` etc, derived from `is_nullable`.
     |
     func existence : Multiplicity_interval ;
 

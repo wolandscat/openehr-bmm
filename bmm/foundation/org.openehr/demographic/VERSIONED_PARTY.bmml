@@ -10,7 +10,7 @@
 import org.openehr:representation;
 
 |
-| Static type formed by binding the generic parameter of VERSIONED_OBJECT<T> to PARTY.
+| Static type formed by binding generic parameter of `VERSIONED_OBJECT<T>` to `PARTY`.
 |
 class VERSIONED_PARTY
     is_a VERSIONED_OBJECT<PARTY>

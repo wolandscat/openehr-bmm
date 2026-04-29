@@ -10,8 +10,8 @@
 import org.openehr:representation;
 
 |
-| Definition of a simple class, i.e. a class that has no generic parameters and is
-| 1:1 with the type it generates.
+| Definition of a simple class, i.e. a class that has no generic parameters and is 1:1 with
+| the type it generates.
 |
 class BMM_SIMPLE_CLASS
     is_a BMM_CLASS

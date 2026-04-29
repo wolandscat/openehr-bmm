@@ -33,8 +33,8 @@ feature_group ("access")
     prop inheritance_precursor :? BMM_PARAMETER_TYPE ;
 
     |
-    | Result is either `_conforms_to_type_` or
-    | `_inheritance_precursor.flattened_conforms_to_type_`.
+    | Result is either `conforms_to_type` or
+    | `inheritance_precursor.flattened_conforms_to_type`.
     |
     func flattened_conforms_to_type : BMM_EFFECTIVE_TYPE ;
 
@@ -55,17 +55,17 @@ feature_group ("access")
     func is_abstract : Boolean ;
 
     |
-    | Return `_name_`.
+    | Return `name`.
     |
     func type_name : String ;
 
     |
-    | Result is either `_flattened_conforms_to_type.flattened_type_list_` or the `Any` type.
+    | Result is either `flattened_conforms_to_type.flattened_type_list` or the `Any` type.
     |
     func flattened_type_list : List<String> ;
 
     |
-    | Generate ultimate conformance type, which is either `_flattened_conforms_to_type_` or if
+    | Generate ultimate conformance type, which is either `flattened_conforms_to_type` or if
     | not set, `'Any'`.
     |
     func effective_type : BMM_EFFECTIVE_TYPE ;

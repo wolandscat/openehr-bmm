@@ -10,8 +10,8 @@
 import org.openehr:representation;
 
 |
-| Meta-type for a concrete, unitary type that can be used as an actual parameter type
-| in a generic type declaration.
+| Meta-type for a concrete, unitary type that can be used as an actual parameter type in a
+| generic type declaration.
 |
 abstract class BMM_EFFECTIVE_TYPE
     is_a BMM_UNITARY_TYPE

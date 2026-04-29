@@ -10,8 +10,8 @@
 import org.openehr:representation;
 
 |
-| Meta-type defining a generalised module concept. Descendants define actual structure
-| and contents.
+| Meta-type defining a generalised module concept. Descendants define actual structure and
+| contents.
 |
 abstract class BMM_MODULE
     is_a BMM_MODEL_ELEMENT

@@ -18,7 +18,7 @@ class BMM_ENUMERATION_INTEGER
 feature_group ("access")
 
     |
-    | Optional list of specific values. Must be 1:1 with `_item_names_` list.
+    | Optional list of specific values. Must be 1:1 with `item_names` list.
     |
     prop item_values :? List<BMM_INTEGER_VALUE> ;
 

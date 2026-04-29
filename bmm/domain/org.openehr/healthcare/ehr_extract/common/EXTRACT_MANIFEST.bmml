@@ -13,8 +13,8 @@ import org.openehr:foundation ;
 
 
 |
-| Specification of the candidate entities and optionally top-level items to be included
-| in the Extract.
+| Specification of the candidate entities and optionally top-level items (e.g. Compositions)
+| to be included in the Extract.
 |
 class EXTRACT_MANIFEST
 

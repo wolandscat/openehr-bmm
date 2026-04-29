@@ -10,7 +10,7 @@
 import org.openehr:representation;
 
 |
-| An ordinal type that maps a set of integers to terminology codes.
+| Constrainer object representing a single Ordinal value.
 |
 class ORDINAL
 

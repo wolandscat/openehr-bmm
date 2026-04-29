@@ -35,7 +35,7 @@ feature_group ("access")
     prop change_type : DV_CODED_TEXT ;
 
     |
-    | Reason for committal. This may be used to qualify the value in the `_change_type_` field.
+    | Reason for committal. This may be used to qualify the value in the `change_type` field.
     | For example, if the change affects only the EHR directory, this field might be used to
     | indicate 'Folder "episode 2018-02-16" added' or similar.
     |

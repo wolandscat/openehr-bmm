@@ -10,7 +10,7 @@
 import org.openehr:representation;
 
 |
-| Reference to a static feature, either a constant or computed property.
+| Reference to a writable property, either a constant or computed.
 |
 class EL_STATIC_REF
     is_a EL_FEATURE_REF

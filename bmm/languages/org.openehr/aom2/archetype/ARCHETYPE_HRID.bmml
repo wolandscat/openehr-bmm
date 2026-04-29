@@ -27,7 +27,7 @@ feature_group ("access")
     prop rm_publisher : String ;
 
     |
-    | Name of the package in whose reachability graph the `_rm_class_` class is found (there can
+    | Name of the package in whose reachability graph the `rm_class` class is found (there can
     | be more than one possibility in many reference models).
     |
     prop rm_package : String ;
@@ -38,7 +38,7 @@ feature_group ("access")
     prop rm_class : String ;
 
     |
-    | The short concept name of the archetype as used in the multi-axial `_archetype_hrid_`.
+    | The short concept name of the archetype as used in the multi-axial `archetype_hrid`.
     |
     prop concept_id : String ;
 
@@ -69,28 +69,28 @@ feature_group ("access")
 
     |
     | The 'physical' form of the HRID, i.e. with complete version information specified by
-    | `_version_id()_`.
+    | `version_id()`.
     |
     func physical_id : String ;
 
     |
-    | Full version identifier string, based on `_release_version_`, `_version_status_`, and
-    | `_build_count_` e.g. `"1.8.2-rc.4"`.
+    | Full version identifier string, based on `release_version`, `version_status`, and
+    | `build_count` e.g. `"1.8.2-rc.4"`.
     |
     func version_id : String ;
 
     |
-    | Major version of this archetype, extracted from `_release_version_`.
+    | Major version of this archetype, extracted from `release_version`.
     |
     func major_version : String ;
 
     |
-    | Minor version of this archetype, extracted from `_release_version_`.
+    | Minor version of this archetype, extracted from `release_version`.
     |
     func minor_version : String ;
 
     |
-    | Patch version of this archetype, extracted from `_release_version_`. Equivalent to patch
+    | Patch version of this archetype, extracted from `release_version`. Equivalent to patch
     | version in patch version in `semver.org` sytem.
     |
     func patch_version : String ;

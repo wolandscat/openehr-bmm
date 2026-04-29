@@ -10,7 +10,10 @@
 
 
 |
-| Countable quantities. Used for countable types such as pregnancies, steps, number of cigarettes.
+| Countable quantities. Used for countable types such as pregnancies and steps (taken by a
+| physiotherapy patient), number of cigarettes smoked in a day.
+|
+| Misuse: Not to be used for amounts of physical entities (which all have units).
 |
 class DV_COUNT
     is_a DV_AMOUNT

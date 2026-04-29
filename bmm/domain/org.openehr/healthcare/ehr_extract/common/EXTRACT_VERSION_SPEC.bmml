@@ -12,9 +12,12 @@ import org.openehr:foundation ;
 
 
 |
-| Specification of what versions should be included in an Extract. By default, only
-| latest versions are included. The include_all_versions and commit_time_interval
-| attributes are used to modify this behaviour.
+| Specification of what versions should be included in an Extract. By default, only latest
+| versions are included in the Extract, in which case this part of the Extract specification
+| is not needed at all. The attributes `include_all_versions` and `commit_time_interval`
+| are used to modify this; the former forces all versions to be included; the latter limits
+| the versions to be those latest versions committed in the time interval, or if
+| `include_all_versions` is `True`, all versions committed in the time interval.
 |
 class EXTRACT_VERSION_SPEC
 
@@ -43,7 +46,7 @@ feature_group ("access")
     | `True` if the data of items matched by the content spec should be included. This is the
     | default. If `False`, only revision history is included in serialised versions. Turning
     | this option on in openEHR systems causes `X_VERSIONED_OBJECTs` to have
-    | `_revision_history_` set, but versions Void. Useful for interrogating a server without
+    | `revision_history` set, but versions Void. Useful for interrogating a server without
     | having to look at any content data. In other systems it may or may not have a sensible
     | meaning.
     |

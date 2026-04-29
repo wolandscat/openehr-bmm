@@ -38,7 +38,7 @@ feature_group ("access")
     prop children :? List<C_OBJECT> ;
 
     |
-    | Path to the parent object of this attribute (i.e. doesn’t include the name of this
+    | Path to the parent object of this attribute (i.e. doesn't include the name of this
     | attribute). Used only for attributes in differential form, specialised archetypes. Enables
     | only the re-defined parts of a specialised archetype to be expressed, at the path where
     | they occur.
@@ -60,12 +60,18 @@ feature_group ("access")
     | True if there is no effective constraint on the children of the RM attribute to which this
     | `C_ATTRIBUTE` refers.
     |
-    func any_allowed : Boolean ;
+    func any_allowed : Boolean
+        post_cond
+            valid_result: Result = children.is_empty ∧ ¬is_prohibited;
+        ;
 
     |
     | True if this `C_ATTRIBUTE` has an existence constraint of 1..1, i.e. mandation.
     |
-    func is_mandatory : Boolean ;
+    func is_mandatory : Boolean
+        post_cond
+            valid_result: Result = ∃existence ∧ existence.is_mandatory;
+        ;
 
     |
     | Path of this attribute with respect to owning `C_OBJECT`, including differential path
@@ -75,23 +81,36 @@ feature_group ("access")
 
     |
     | True if this node logically represents a single-valued attribute. Evaluated as not
-    | `_is_multiple_`.
+    | `is_multiple`.
     |
     func is_single : Boolean ;
 
     |
-    | True if constraints represented by this node contain no further redefinitions with respect to other.
+    | True if constraints represented by this node contain no further redefinitions with respect
+    | to the node other, with the exception of `node_id` redefinition in `C_OBJECT` nodes.
     |
-    func c_congruent_to (other : ARCHETYPE_CONSTRAINT) : Boolean ;
+    | Typically used to test if an inherited node locally contains any constraints.
+    |
+    func c_congruent_to (other : ARCHETYPE_CONSTRAINT) : Boolean
+        post_cond
+            valid_result: Result = ¬∃existence ∧ ((is_single ∧ other.is_single) ∨ (is_multiple ∧ other.is_multiple ∧ ¬∃cardinality));
+        ;
 
     |
-    | True if constraints represented by this node are narrower or the same as other.
+    | True if constraints represented by this node, ignoring any sub-parts, are narrower or the
+    | same as other. Typically used during validation of specialised archetype nodes.
     |
-    func c_conforms_to (other : ARCHETYPE_CONSTRAINT) : Boolean ;
+    func c_conforms_to (other : ARCHETYPE_CONSTRAINT) : Boolean
+        post_cond
+            valid_result: Result = existence_conforms_to (other) ∧ ((is_single ∧ other.is_single) ∨ (is_multiple ∧ cardinality_conforms_to (other)));
+        ;
 
     |
     | True if this `C_ATTRIBUTE` has an existence constraint of `0..0`, i.e. prohibition.
     |
-    func is_prohibited : Boolean ;
+    func is_prohibited : Boolean
+        post_cond
+            valid_result: Result = ∃existence ∧ existence.is_prohibited;
+        ;
 
 end

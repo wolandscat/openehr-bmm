@@ -10,8 +10,13 @@
 
 
 |
-| Represents an ISO 8601 duration, which may have multiple parts from years down
-| to seconds. Value format: P[nnY][nnM][nnW][nnD][T[nnH][nnM][nnS]].
+| Represents an ISO 8601 duration, which may have multiple parts from years down to seconds.
+| The `value` attribute is a String in the format:
+|
+| * `P[nnY][nnM][nnW][nnD][T[nnH][nnM][nnS]]`
+|
+| NOTE: two deviations from ISO 8601 are supported, the first, to allow a negative sign, and
+| the second allowing the 'W' designator to be mixed with other designators.
 |
 class Iso8601_duration
     is_a Iso8601_type
@@ -19,48 +24,48 @@ class Iso8601_duration
 feature_group ("access")
 
     |
-    | Number of years in the `_value_`, i.e. the number preceding the `'Y'` in the `'YMD'` part,
+    | Number of years in the `value`, i.e. the number preceding the `'Y'` in the `'YMD'` part,
     | if one exists.
     |
     func years : Integer ;
 
     |
-    | Number of months in the `_value_`, i.e. the value preceding the `'M'` in the `'YMD'` part,
+    | Number of months in the `value`, i.e. the value preceding the `'M'` in the `'YMD'` part,
     | if one exists.
     |
     func months : Integer ;
 
     |
-    | Number of weeks in the `_value_`, i.e. the value preceding the `W`, if one exists.
+    | Number of weeks in the `value`, i.e. the value preceding the `W`, if one exists.
     |
     func weeks : Integer ;
 
     |
-    | Number of days in the `_value_`, i.e. the number preceding the `'D'` in the `'YMD'` part,
+    | Number of days in the `value`, i.e. the number preceding the `'D'` in the `'YMD'` part,
     | if one exists.
     |
     func days : Integer ;
 
     |
-    | Number of hours in the `_value_`, i.e. the number preceding the `'H'` in the `'HMS'` part,
+    | Number of hours in the `value`, i.e. the number preceding the `'H'` in the `'HMS'` part,
     | if one exists.
     |
     func hours : Integer ;
 
     |
-    | Number of minutes in the `_value_`, i.e. the number preceding the `'M'` in the `'HMS'`
+    | Number of minutes in the `value`, i.e. the number preceding the `'M'` in the `'HMS'`
     | part, if one exists.
     |
     func minutes : Integer ;
 
     |
-    | Number of seconds in the `_value_`, i.e. the integer number preceding the `'S'` in the
+    | Number of seconds in the `value`, i.e. the integer number preceding the `'S'` in the
     | `'HMS'` part, if one exists.
     |
     func seconds : Integer ;
 
     |
-    | Fractional seconds in the `_value_`, i.e. the decimal part of the number preceding the
+    | Fractional seconds in the `value`, i.e. the decimal part of the number preceding the
     | `'S'` in the `'HMS'` part, if one exists.
     |
     func fractional_seconds : Real ;

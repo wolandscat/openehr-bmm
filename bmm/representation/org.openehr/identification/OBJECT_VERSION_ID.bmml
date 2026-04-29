@@ -10,8 +10,8 @@
 
 
 |
-| Globally unique identifier for one version of a versioned object. Lexical form:
-| object_id '::' creating_system_id '::' version_tree_id.
+| Globally unique identifier for one version of a versioned object; lexical form: `object_id
+| '::' creating_system_id '::' version_tree_id`.
 |
 class OBJECT_VERSION_ID
     is_a UID_BASED_ID
@@ -20,7 +20,7 @@ feature_group ("access")
 
     |
     | Unique identifier for logical object of which this identifier identifies one version;
-    | normally the `_object_id_` will be the unique identifier of the version container
+    | normally the `object_id` will be the unique identifier of the version container
     | containing the version referred to by this `OBJECT_VERSION_ID` instance.
     |
     func object_id : UID ;

@@ -10,8 +10,8 @@
 
 
 |
-| A Tuple type used, among other things, for representing two typed arguments
-| within a Routine signature.
+| A Tuple type used, among other things, for representing two typed arguments within a
+| Routine signature.
 |
 class TUPLE2<A: Any, B: Any>
     is_a TUPLE

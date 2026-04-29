@@ -19,35 +19,37 @@ abstract builtin class Numeric
 feature_group ("operators")
 
     |
-    | Sum with other. Actual type of result depends on arithmetic balancing rules.
+    | Sum with `other` (commutative). Actual type of result depends on arithmetic balancing
+    | rules.
     |
     func add (other : Numeric) : Numeric
         alias "+" ;
         ;
 
     |
-    | Result of subtracting other. Actual type of result depends on arithmetic balancing rules.
+    | Result of subtracting `other`. Actual type of result depends on arithmetic balancing
+    | rules.
     |
     func subtract (other : Numeric) : Numeric
         alias "-" ;
         ;
 
     |
-    | Product by other. Actual type of result depends on arithmetic balancing rules.
+    | Product by `other`. Actual type of result depends on arithmetic balancing rules.
     |
     func multiply (other : Numeric) : Numeric
         alias "*" ;
         ;
 
     |
-    | Divide by other. Actual type of result depends on arithmetic balancing rules.
+    | Divide by`other`. Actual type of result depends on arithmetic balancing rules.
     |
     func divide (other : Numeric) : Numeric
         alias "/" ;
         ;
 
     |
-    | Exponentiation of current value by other.
+    | Expontiation of this by `other`.
     |
     func exponent (other : Numeric) : Numeric
         alias "^" ;

@@ -12,8 +12,8 @@ import org.openehr:foundation ;
 
 
 |
-| Variety of Extract content that is a sharable data-oriented version of
-| VERSIONED_OBJECT<T>.
+| Variety of Extract content that consists is a sharable data-oriented version of
+| `VERSIONED_OBJECT<T>`.
 |
 class X_VERSIONED_OBJECT<T:LOCATABLE>
 

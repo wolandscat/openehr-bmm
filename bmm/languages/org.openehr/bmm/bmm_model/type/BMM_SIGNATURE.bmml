@@ -10,9 +10,9 @@
 import org.openehr:representation;
 
 |
-| Built-in meta-type that expresses the type structure of any referenceable element
-| of a model. Consists of potential arguments and result, with constraints in
-| descendants determining the exact form.
+| Built-in meta-type that expresses the type structure of any referenceable element of a
+| model. Consists of potential `arguments` and `result`, with constraints in descendants
+| determining the exact form.
 |
 class BMM_SIGNATURE
     is_a BMM_BUILTIN_TYPE
@@ -26,7 +26,7 @@ feature_group ("access")
 
     |
     | Return the logical set (i.e. unique items) consisting of
-    | `_argument_types.flattened_type_list_()` and `_result_type.flattened_type_list_()`.
+    | `argument_types.flattened_type_list_()` and `result_type.flattened_type_list_()`.
     |
     func flattened_type_list : List<String> ;
 

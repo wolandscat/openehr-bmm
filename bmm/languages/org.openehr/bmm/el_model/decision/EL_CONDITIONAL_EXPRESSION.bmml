@@ -10,9 +10,9 @@
 import org.openehr:representation;
 
 |
-| Conditional structure used in condition chain expressions. Evaluated by evaluating
-| its condition, which is a Boolean-returning expression, and if True, the result is
-| the evaluation result of result.
+| Conditional structure used in condition chain expressions. Evaluated by evaluating its
+| `condition`, which is a Boolean-returning expression, and if this returns True, the
+| result is the evaluation result of `expression`.
 |
 class EL_CONDITIONAL_EXPRESSION<T: EL_TERMINAL>
     is_a EL_DECISION_BRANCH<T>

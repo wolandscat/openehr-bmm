@@ -10,7 +10,8 @@
 
 
 |
-| Concrete type corresponding to hierarchical identifiers of the form defined by UID_BASED_ID.
+| Concrete type corresponding to hierarchical identifiers of the form defined by
+| `UID_BASED_ID`.
 |
 class HIER_OBJECT_ID
     is_a UID_BASED_ID

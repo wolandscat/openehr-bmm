@@ -10,10 +10,10 @@
 import org.openehr:representation;
 
 |
-| Abstract idea of specifying a type in some context. This is not the same as
-| 'defining' a class. A type specification is essentially a reference of some kind,
-| that defines the type of an attribute, or function result or argument. It may
-| include generic parameters that might or might not be bound.
+| Abstract idea of specifying a type in some context. This is not the same as 'defining' a
+| class. A type specification is essentially a reference of some kind, that defines the type
+| of an attribute, or function result or argument. It may include generic parameters that
+| might or might not be bound. See subtypes.
 |
 abstract class BMM_TYPE
 
@@ -28,7 +28,7 @@ feature_group ("access")
     | Signature form of the type name, which for generics includes generic parameter constrainer
     | types E.g. `Interval<T:Ordered>`.
     |
-    | Defaults to the value of `_type_name()_`.
+    | Defaults to the value of `type_name()`.
     |
     func type_signature : String ;
 

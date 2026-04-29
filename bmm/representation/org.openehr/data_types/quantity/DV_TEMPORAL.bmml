@@ -10,7 +10,7 @@
 
 
 |
-| Specialised temporal variant of DV_ABSOLUTE_QUANTITY whose diff type is DV_DURATION.
+| Specialised temporal variant of `DV_ABSOLUTE_QUANTITY` whose diff type is `DV_DURATION`.
 |
 abstract class DV_TEMPORAL
     is_a DV_ABSOLUTE_QUANTITY

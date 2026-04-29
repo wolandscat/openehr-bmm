@@ -11,9 +11,9 @@ import org.openehr:representation ;
 import org.openehr:foundation ;
 
 |
-| Abstract model of a wrapper for one content item in an Extract, containing various
-| meta-data. Indicates whether it was part of the primary set and what its original
-| path was. Intended to be subtyped for wrappers of specific types of content.
+| Abstract model of a wrapper for one content item in an Extract, containing various meta-
+| data. Indicates whether it was part of the primary set and what its original path was.
+| Intended to be subtyped for wrappers of specific types of content.
 |
 abstract class EXTRACT_CONTENT_ITEM
     is_a EXTRACT_ITEM

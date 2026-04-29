@@ -34,21 +34,21 @@ feature_group ("access")
     func as_integer : Integer ;
 
     |
-    | True if this String contains other (case-sensitive).
+    | Return True if this String contains `other` (case-sensitive).
     |
     func contains (other : String) : Boolean ;
 
 feature_group ("operators")
 
     |
-    | Concatenation — result of appending other to this string.
+    | Concatenation operator - causes `other` to be appended to this string.
     |
     func append (other : String) : String
         alias "+" ;
         ;
 
     |
-    | Lexical comparison based on ordering in the relevant character set.
+    | Lexical comparison of string content based on ordering in relevant character set.
     |
     func less_than (other : String) : Boolean
         alias "<" ;

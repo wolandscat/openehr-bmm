@@ -12,8 +12,14 @@ import org.openehr:foundation ;
 
 
 |
-| EHR-wide access control object. All access decisions to data in the EHR must be made
-| in accordance with the policies and rules in this object.
+| EHR-wide access control object. All access decisions to data in the EHR must be made in
+| accordance with the policies and rules in this object.
+|
+| NOTE: It is strongly recommended that the inherited attribute `uid` be populated in
+| `EHR_ACCESS` objects, using the UID copied from the `object_id()` of the `uid` field
+| of the enclosing `VERSION` object. + For example, the `ORIGINAL_VERSION.uid`
+| `87284370-2D4B-4e3d-A3F3-F303D2F4F34B::uk.nhs.ehr1::2` would be copied to the `uid`
+| field of the `EHR_ACCESS` object.
 |
 class EHR_ACCESS
     is_a LOCATABLE

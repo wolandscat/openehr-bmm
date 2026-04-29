@@ -10,8 +10,9 @@
 
 
 |
-| Represents an absolute point in time, as measured on the Gregorian calendar, specified only to
-| the day. ISO 8601 semantics.
+| Represents an absolute point in time, as measured on the Gregorian calendar, and specified
+| only to the day. Semantics defined by ISO 8601. Used for recording dates in real world
+| time. The partial form is used for approximate birth dates, dates of death, etc.
 |
 class DV_DATE
     is_a DV_TEMPORAL
@@ -39,7 +40,7 @@ feature_group ("access")
     func subtract (a_diff : DV_DURATION) : DV_DATE ;
 
     |
-    | Difference between this Date and other.
+    | Difference between this Date and `other`.
     |
     func diff (other : DV_DATE) : DV_DURATION ;
 

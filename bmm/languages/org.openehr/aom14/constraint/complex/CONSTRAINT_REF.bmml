@@ -10,8 +10,9 @@
 import org.openehr:representation;
 
 |
-| Reference to a constraint described elsewhere in the same archetype. Used to
-| allow the same C_OBJECT definition to be used in more than one place.
+| Reference to a constraint described in the same archetype, but outside the main constraint
+| structure. This is used to refer to constraints expressed in terms of external resources,
+| such as constraints on terminology value sets.
 |
 class CONSTRAINT_REF
     is_a C_REFERENCE_OBJECT

@@ -10,8 +10,8 @@
 import org.openehr:representation;
 
 |
-| Definition of a range-constrained class whose value range is defined by reference
-| to a 'value set' within an external resource, e.g. a reference data service.
+| Definition of a range-constrained class whose value range is defined by reference to a
+| 'value set' within an external resource, e.g. a reference data service.
 |
 class BMM_VALUE_SET_SPEC
 
@@ -24,7 +24,7 @@ feature_group ("access")
     prop resource_id : String ;
 
     |
-    | Identifier of a value set within the resource identified by `_resource_id_`, which
+    | Identifier of a value set within the resource identified by `resource_id`, which
     | specifies the set of legal values of a type. This might be a URI, but need not be.
     |
     prop value_set_id : String ;

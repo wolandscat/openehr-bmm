@@ -10,10 +10,19 @@
 import org.openehr:representation;
 
 |
-| ISO 8601-compatible constraint on instances of Duration. Constraints are of the form
-| "PWD" (weeks and/or days), "PDTHMS" (days, hours, minutes, seconds) etc. Both range
-| and pattern can be set simultaneously, e.g. "PWD/|P0W..P50W|". openEHR allows the
-| 'W' designator to be mixed in and permits negated values in interval constraints.
+| ISO 8601-compatible constraint on instances of Duration. In ISO 8601 terms, constraints
+| might are of the form "PWD" (weeks and/or days), "PDTHMS" (days, hours, minutes, seconds)
+| and so on.
+|
+| Both range and the constraint pattern can be set at the same time, corresponding to the
+| ADL constraint `"PWD/|;P0W..P50W|;"`.
+|
+| As for all of openEHR, two ISO 8601 exceptions are allowed:
+|
+| * the 'W' (week) designator can be mixed in - the allowed patterns are:
+| `P[Y|;y][M|;m][D|;d][T[H|;h][M|;m][S|;s]]` and `P[W|;w]`;
+| * the values used in an interval constraint may be negated, i.e. a leading minus (`'-'`)
+| sign may be used.
 |
 class C_DURATION
     is_a C_PRIMITIVE

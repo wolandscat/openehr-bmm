@@ -10,9 +10,10 @@
 import org.openehr:representation;
 
 |
-| Version whose content is an ORIGINAL_VERSION copied from another location.
-| Inherits commit_audit and contribution from VERSION<T>, providing imported
-| versions with their own audit trail and Contribution.
+| Versions whose content is an `ORIGINAL_VERSION` copied from another location; this class
+| inherits `commit_audit` and `contribution` from `VERSION<T>`, providing imported
+| versions with their own audit trail and Contribution, distinct from those of the imported
+| `ORIGINAL_VERSION`.
 |
 class IMPORTED_VERSION<T>
     is_a VERSION<T>
@@ -25,18 +26,24 @@ feature_group ("access")
     prop item : ORIGINAL_VERSION<T> ;
 
     |
-    | Computed version of inheritance precursor, derived as `_item.uid_`.
+    | Computed version of inheritance precursor, derived as `item.uid`.
     |
-    func uid : OBJECT_VERSION_ID ;
+    func uid : OBJECT_VERSION_ID
+        post_cond
+            valid_result: Result = item.uid;
+        ;
 
     |
-    | Computed version of inheritance precursor, derived as `_item.preceding_version_uid_`.
+    | Computed version of inheritance precursor, derived as `item.preceding_version_uid`.
     |
-    func preceding_version_uid : OBJECT_VERSION_ID ;
+    func preceding_version_uid : OBJECT_VERSION_ID
+        post_cond
+            valid_result: Result = item.preceding_version_uid;
+        ;
 
     |
     | Lifecycle state of the content item in wrapped `ORIGINAL_VERSION`, derived as
-    | `_item.lifecycle_state_`; coded by openEHR vocabulary `version lifecycle state`.
+    | `item.lifecycle_state`; coded by openEHR vocabulary `version lifecycle state`.
     |
     func lifecycle_state : DV_CODED_TEXT ;
 

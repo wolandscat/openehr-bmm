@@ -18,8 +18,8 @@ abstract class ARCHETYPE_CONSTRAINT
 feature_group ("access")
 
     |
-    | True if constraints represented by this node, ignoring any sub-parts, are narrower or
-    | the same as other.
+    | True if constraints represented by this node, ignoring any sub-parts, are narrower or the
+    | same as other. Typically used during validation of special-ised archetype nodes.
     |
     func is_subset_of (other : ARCHETYPE_CONSTRAINT) : Boolean ;
 

@@ -10,9 +10,10 @@
 import org.openehr:representation;
 
 |
-| Universal quantification operator, usually known as for_all, whose operand is a
-| collection of items referenced by an EXPR_VALUE_REF. The condition attribute represents
-| an assertion applied to every member of the collection at runtime.
+| Universal quantification operator, usually known as `for_all`, whose operand is a
+| collection of items referenced by an `EXPR_VALUE_REF`. The `condition` attribute
+| represents an assertion that is applied to every member of the collection at runtime to
+| determine the result.
 |
 class EXPR_FOR_ALL
     is_a EXPR_OPERATOR

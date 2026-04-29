@@ -12,7 +12,8 @@
 import org.openehr:base ;
 
 |
-| A tag with optional value associated with a target information entity identified by a UID.
+| A tag with optional value that is associated with a target information entity identified
+| by a UID.
 |
 class ITEM_TAG
 
@@ -34,7 +35,7 @@ feature_group ("access")
     prop target : UID_BASED_ID ;
 
     |
-    | Optional archetype (i.e. AQL) or RM path within `_target_`, used to tag a fine-grained
+    | Optional archetype (i.e. AQL) or RM path within `target`, used to tag a fine-grained
     | element.
     |
     prop target_path :? String ;

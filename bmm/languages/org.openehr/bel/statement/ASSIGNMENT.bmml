@@ -10,8 +10,8 @@
 import org.openehr:representation;
 
 |
-| Meta-type representing the assignment statement, which associates a named variable with
-| an expression, and produces no value.
+| Meta-type representing the assignment statement, which associates a named variable with an
+| expression, and produces no value.
 |
 class ASSIGNMENT
     is_a STATEMENT

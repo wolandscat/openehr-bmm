@@ -10,8 +10,8 @@
 
 
 |
-| Abstract model of UID-based identifiers consisting of a root part and an optional extension.
-| Lexical form: root '::' extension.
+| Abstract model of UID-based identifiers consisting of a root part and an optional
+| extension; lexical form: `root '::' extension`.
 |
 abstract class UID_BASED_ID
     is_a OBJECT_ID
@@ -32,7 +32,7 @@ feature_group ("access")
     func extension : String ;
 
     |
-    | True if not `_extension_.is_empty()`.
+    | True if not `extension_.is_empty()`.
     |
     func has_extension : Boolean ;
 

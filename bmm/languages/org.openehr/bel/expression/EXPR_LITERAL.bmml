@@ -10,8 +10,8 @@
 import org.openehr:representation;
 
 |
-| Literal value expression tree leaf item. Represents a literal value of any primitive
-| type included in the PRIMITIVE_TYPE enumeration.
+| Literal value expression tree leaf item. This can represent a literal value of any
+| primitive type included in the `PRIMITIVE_TYPE` enumeration.
 |
 class EXPR_LITERAL
     is_a EXPR_LEAF

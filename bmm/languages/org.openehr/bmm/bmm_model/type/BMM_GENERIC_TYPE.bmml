@@ -10,7 +10,7 @@
 import org.openehr:representation;
 
 |
-| Meta-type based on a non-container generic class, e.g. Packet<Header>.
+| Meta-type based on a non-container generic class, e.g. `Packet<Header>`.
 |
 class BMM_GENERIC_TYPE
     is_a BMM_MODEL_TYPE
@@ -18,7 +18,7 @@ class BMM_GENERIC_TYPE
 feature_group ("access")
 
     |
-    | Generic parameters of the `_root_type_` in this type specifier. The order must match the
+    | Generic parameters of the `root_type` in this type specifier. The order must match the
     | order of the owning class's formal generic parameter declarations, and the types may be
     | defined types or formal parameter types.
     |
@@ -42,12 +42,12 @@ feature_group ("access")
     func type_signature : String ;
 
     |
-    | True if `_base_class.is_abstract_` or if any (non-open) parameter type is abstract.
+    | True if `base_class.is_abstract` or if any (non-open) parameter type is abstract.
     |
     func is_abstract : Boolean ;
 
     |
-    | Result is `_base_class.name_` followed by names of all generic parameter type names, which
+    | Result is `base_class.name` followed by names of all generic parameter type names, which
     | may be open or closed.
     |
     func flattened_type_list : List<String> ;

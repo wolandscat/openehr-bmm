@@ -10,8 +10,8 @@
 
 
 |
-| Generic identifier type for identifiers whose format is otherwise unknown to openEHR. Includes
-| an attribute for naming the identification scheme.
+| Generic identifier type for identifiers whose format is otherwise unknown to openEHR.
+| Includes an attribute for naming the identification scheme (which may well be local).
 |
 class GENERIC_ID
     is_a OBJECT_ID

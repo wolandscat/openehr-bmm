@@ -10,9 +10,9 @@
 import org.openehr:representation;
 
 |
-| Container object for archetype statements relating to RM attributes, which may be
-| directly on objects constrained within the archetype, or at deeper non-constrained RM
-| paths from an object or the root.
+| Container object for archetype statements relating to RM attributes, which may be directly
+| on objects constrained within the archetype, or at deeper non-constrained RM paths from an
+| object or the root.
 |
 class RM_OVERLAY
 

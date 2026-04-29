@@ -10,8 +10,8 @@
 import org.openehr:representation;
 
 |
-| A reference that is scoped by a containing entity and requires a context qualifier
-| if it is not the currently scoping entity.
+| A reference that is scoped by a containing entity and requires a context qualifier if it
+| is not the currently scoping entity.
 |
 abstract class EL_FEATURE_REF
     is_a EL_VALUE_GENERATOR
@@ -24,7 +24,7 @@ feature_group ("access")
     prop scoper :? EL_VALUE_GENERATOR ;
 
     |
-    | Generated full reference name, consisting of scoping elements and `_name_` concatenated
+    | Generated full reference name, consisting of scoping elements and `name` concatenated
     | using dot notation.
     |
     func reference : String ;

@@ -38,9 +38,12 @@ feature_group ("access")
     func signature : BMM_SIGNATURE ;
 
     |
-    | True if `_type_` is notionally Boolean (i.e. a `BMM_SIMPLE_TYPE` with `_type_name()_` =
+    | True if `type` is notionally Boolean (i.e. a `BMM_SIMPLE_TYPE` with `type_name()` =
     | `'Boolean'`).
     |
-    func is_boolean : Boolean ;
+    func is_boolean : Boolean
+        post_cond
+            Result = type().equal( {BMM_MODEL}.boolean_type_definition());
+        ;
 
 end

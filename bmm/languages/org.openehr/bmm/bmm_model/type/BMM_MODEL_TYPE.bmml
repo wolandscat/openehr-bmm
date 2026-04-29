@@ -26,12 +26,12 @@ feature_group ("access")
     prop base_class : BMM_CLASS ;
 
     |
-    | Result = `_base_class.name_`.
+    | Result = `base_class.name`.
     |
     func type_base_name : String ;
 
     |
-    | Result = `_base_class.is_primitive_`.
+    | Result = `base_class.is_primitive`.
     |
     func is_primitive : Boolean ;
 

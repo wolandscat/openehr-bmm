@@ -10,7 +10,7 @@
 import org.openehr:representation;
 
 |
-| Constraint on instances of String.
+| Constraint on instances of `String`.
 |
 class C_STRING
     is_a C_PRIMITIVE_OBJECT
@@ -19,7 +19,7 @@ feature_group ("access")
 
     |
     | String constraint - a list of literal strings and / or regular expression strings
-    | delimited by the ‘/’ character.
+    | delimited by the '/' character.
     |
     | To represent no constraint, use an empty list, or alternatively, a regex 'any' pattern,
     | i.e. `/.*/`.
@@ -40,24 +40,28 @@ feature_group ("access")
     func prototype_value : String ;
 
     |
-    | True if a_value is valid with respect to constraint expressed in this object.
+    | True if a_value is valid with respect to constraint expressed in concrete instance of this
+    | type.
     |
     func valid_value (a_value : String) : Boolean ;
 
     |
-    | True if `_constraint_` is empty or else contains one String for the regex 'any' pattern.
+    | True if `constraint` is empty or else contains one String for the regex 'any' pattern.
     |
-    func any_allowed : Boolean ;
+    func any_allowed : Boolean
+        post_cond
+            Result = constraint.is_empty ∨ constraint.count = 1 ∧ constraint.first.is_equal (Regex_any_string);
+        ;
 
     |
-    | True if other.any_allowed or else every constraint in the constraint list exists in
-    | other.constraint.
+    | True if `other.any_allowed` or else every constraint in the `constraint` list exists
+    | in the `other.constraint`.
     |
     func c_value_conforms_to (other : C_STRING) : Boolean ;
 
     |
-    | True if the items in constraint are equal in number and identical pair-wise with those
-    | in other.constraint.
+    | True if the items in `constraint` are equal in number and identical pair-wise with those
+    | in `other.constraint`.
     |
     func c_value_congruent_to (other : C_STRING) : Boolean ;
 

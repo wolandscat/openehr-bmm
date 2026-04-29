@@ -10,8 +10,7 @@
 import org.openehr:representation;
 
 |
-| Abstract ancestor of all concrete content types. A fresh instance of CONTENT_ITEM
-| is never created; only instances of its subtypes.
+| Abstract ancestor of all concrete content types.
 |
 abstract class CONTENT_ITEM
     is_a LOCATABLE

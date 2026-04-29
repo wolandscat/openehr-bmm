@@ -10,8 +10,8 @@
 import org.openehr:representation;
 
 |
-| Meta-type representing instantiable features, i.e. features that are created as
-| value objects.
+| Meta-type representing instantiable features, i.e. features that are created as value
+| objects.
 |
 abstract class BMM_INSTANTIABLE_FEATURE
     is_a BMM_FEATURE

@@ -10,16 +10,19 @@
 import org.openehr:representation;
 
 |
-| Defines the order indicator that can be used on a C_OBJECT within a container attribute
+| Defines the order indicator that can be used on a `C_OBJECT` within a container attribute
 | in a specialised archetype to indicate its order with respect to a sibling defined in a
 | higher specialisation level.
+|
+| Misuse: This type cannot be used on a `C_OBJECT` other than one within a container
+| attribute in a specialised archetype.
 |
 class SIBLING_ORDER
 
 feature_group ("access")
 
     |
-    | True if the order relationship is ‘before’, if False, it is ‘after’.
+    | True if the order relationship is 'before', if False, it is 'after'.
     |
     prop is_before : Boolean ;
 
@@ -29,7 +32,7 @@ feature_group ("access")
     prop sibling_node_id : String ;
 
     |
-    | True if the order relationship is `_after_`, computed as the negation of `_is_before_`.
+    | True if the order relationship is `after`, computed as the negation of `is_before`.
     |
     func is_after : Boolean ;
 

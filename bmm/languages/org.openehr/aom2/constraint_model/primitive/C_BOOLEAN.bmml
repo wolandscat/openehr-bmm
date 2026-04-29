@@ -10,8 +10,8 @@
 import org.openehr:representation;
 
 |
-| Constraint on instances of Boolean. Both attributes cannot be set to False, since this
-| would mean that the Boolean value being constrained cannot be True or False.
+| Constraint on instances of `Boolean`. Both attributes cannot be set to False, since this
+| would mean that the Boolean value being constrained cannot be `True` or `False`.
 |
 class C_BOOLEAN
     is_a C_PRIMITIVE_OBJECT
@@ -42,17 +42,20 @@ feature_group ("access")
     | True if any value (i.e. instance) of the reference model type would be allowed. Redefined
     | in descendants.
     |
-    func any_allowed : Boolean ;
+    func any_allowed : Boolean
+        post_cond
+            Result = constraint.is_empty;
+        ;
 
     |
-    | True if other.any_allowed or else every constraint in the constraint list exists in
-    | other.constraint.
+    | True if `other.any_allowed` or else every constraint in the `constraint` list exists
+    | in the `other.constraint`.
     |
     func c_value_conforms_to (other : C_BOOLEAN) : Boolean ;
 
     |
-    | True if the items in constraint are equal in number and identical pair-wise with those
-    | in other.constraint.
+    | True if the items in `constraint` are equal in number and identical pair-wise with those
+    | in `other.constraint`.
     |
     func c_value_congruent_to (other : C_BOOLEAN) : Boolean ;
 

@@ -9,8 +9,8 @@
 
 import org.openehr:representation;
 |
-| Ancestor of all real-world types, including people and organisations. An actor is
-| any real-world entity capable of taking on a role.
+| Ancestor of all real-world types, including people and organisations. An actor is any
+| real-world entity capable of taking on a role.
 |
 abstract class ACTOR
     is_a PARTY

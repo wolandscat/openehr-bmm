@@ -30,8 +30,9 @@ feature_group ("access")
     func type : BMM_GENERIC_TYPE ;
 
     |
-    | For a generic class, type to which generic parameter a_name conforms e.g. if this
-    | class is Interval<T:Comparable> then the Result will be the single type Comparable.
+    | For a generic class, type to which generic parameter `a_name` conforms e.g. if this class
+    | is `Interval <T:Comparable>` then the Result will be the single type `Comparable`. For an
+    | unconstrained type `T`, the Result will be `Any`.
     |
     func generic_parameter_conformance_type (a_name : String) : String ;
 

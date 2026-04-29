@@ -48,7 +48,7 @@ feature_group ("access")
 
     |
     | Number of this Extract response in sequence of responses to Extract request identified by
-    | `_request_id_`. If this is the sole response, or there was no request, value is 1.
+    | `request_id`. If this is the sole response, or there was no request, value is 1.
     |
     prop sequence_nr : Integer ;
 

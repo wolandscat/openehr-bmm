@@ -10,7 +10,7 @@
 import org.openehr:representation;
 
 |
-| Abstract parent of classes defining second order constraints on object nodes.
+| Abstract parent of classes defining second order constraints.
 |
 abstract class C_SECOND_ORDER
 
@@ -22,12 +22,21 @@ feature_group ("access")
     prop members :? List<ARCHETYPE_CONSTRAINT> ;
 
     |
-    | True if constraints represented by this node are narrower or the same as other.
+    | True if constraints represented by this node, ignoring any sub-parts, are narrower or the
+    | same as other. Typically used during validation of specialised archetype nodes.
+    |
+    | .Parameters + [horizontal] `rmcc`:: RM conformance checker agent - a lambda (i.e.
+    | function object) that can compute conformance of type-names within the Reference Model on
+    | which the current archetype is based. The signature provides two arguments representing
+    | respectively, the `rm_type_name` of the current node and the `rm_type_name` of the
+    | node being redefined in a specialisation parent archetype.
     |
     func c_conforms_to (other : C_SECOND_ORDER) : Boolean ;
 
     |
-    | True if constraints represented by this node contain no further redefinitions with respect to other.
+    | True if constraints represented by this node contain no further redefinitions with respect
+    | to the node other. Typically used to test if an inherited node locally contains any
+    | constraints.
     |
     func c_congruent_to (other : C_SECOND_ORDER) : Boolean ;
 

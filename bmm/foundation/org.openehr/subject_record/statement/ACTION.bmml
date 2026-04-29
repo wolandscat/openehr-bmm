@@ -21,9 +21,9 @@ feature_group ("access")
 
     |
     | Point in time at which this action completed. To indicate an unknown time, use a
-    | `DV_DATE_TIME` instance with `_value_` set to the time of creation (or some other known
+    | `DV_DATE_TIME` instance with `value` set to the time of creation (or some other known
     | time before which the Action is known to have occurred, e.g. data accession timestamp from
-    | integration engine), and `_magnitude_status_` set to `<`.
+    | integration engine), and `magnitude_status` set to `<`.
     |
     prop time : DV_DATE_TIME ;
 

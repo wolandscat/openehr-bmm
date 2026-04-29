@@ -10,7 +10,7 @@
 import org.openehr:representation;
 
 |
-| Abstract parent type of C_OBJECT subtypes that are defined by value, i.e. whose
+| Abstract parent type of `C_OBJECT` subtypes that are defined by value, i.e. whose
 | definitions are actually in the archetype rather than being by reference.
 |
 abstract class C_DEFINED_OBJECT
@@ -31,7 +31,8 @@ feature_group ("access")
     func any_allowed : Boolean ;
 
     |
-    | True if a_value is valid with respect to constraint expressed in concrete instance of this type.
+    | True if `a_value` is valid with respect to constraint expressed in concrete instance of
+    | this type.
     |
     func valid_value (a_value : Any) : Boolean ;
 

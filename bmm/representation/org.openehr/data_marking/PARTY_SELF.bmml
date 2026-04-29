@@ -10,7 +10,8 @@
 
 
 |
-| Party proxy representing the subject of the record. Indicates the party is the owner of the EHR.
+| Party proxy representing the subject of the record. Used to indicate that the party is the
+| owner of the record. May or may not have `external_ref` set.
 |
 class PARTY_SELF
     is_a PARTY_PROXY

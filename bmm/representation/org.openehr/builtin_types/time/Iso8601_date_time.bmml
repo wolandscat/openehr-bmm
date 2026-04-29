@@ -10,8 +10,20 @@
 
 
 |
-| Represents an ISO 8601 date/time, including partial and extended forms. Value may
-| be YYYY-MM-DDThh:mm:ss (extended, preferred) or compact, or partial variants.
+| Represents an ISO 8601 date/time, including partial and extended forms. Value may be:
+|
+| * `YYYY-MM-DDThh:mm:ss[(,|.)sss][Z | ±hh[:mm]]` (extended, preferred) or
+| * `YYYYMMDDThhmmss[(,|.)sss][Z |; ±hh[mm]]` (compact)
+| * or a partial variant.
+|
+| See `valid_iso8601_date_time()` for validity.
+|
+| Note that this class includes 2 deviations from ISO 8601:2004:
+|
+| * for partial date/times, any part of the date/time up to the month may be missing, not
+| just seconds and minutes as in the standard;
+| * the time `24:00:00` is not allowed, since it would mean the date was really on the next
+| day.
 |
 class Iso8601_date_time
     is_a Iso8601_type
@@ -26,28 +38,43 @@ feature_group ("access")
     |
     | Extract the month part of the date/time as an Integer, or return 0 if not present.
     |
-    func month : Integer ;
+    func month : Integer
+        pre_cond
+            month_known: ¬month_unknown;
+        ;
 
     |
     | Extract the day part of the date/time as an Integer, or return 0 if not present.
     |
-    func day : Integer ;
+    func day : Integer
+        pre_cond
+            day_known: ¬day_unknown;
+        ;
 
     |
     | Extract the hour part of the date/time as an Integer, or return 0 if not present.
     |
-    func hour : Integer ;
+    func hour : Integer
+        pre_cond
+            hour_known: ¬hour_unknown;
+        ;
 
     |
     | Extract the minute part of the date/time as an Integer, or return 0 if not present.
     |
-    func minute : Integer ;
+    func minute : Integer
+        pre_cond
+            minute_known: ¬minute_unknown;
+        ;
 
     |
     | Extract the integral seconds part of the date/time (i.e. prior to any decimal sign) as an
     | Integer, or return 0 if not present.
     |
-    func second : Integer ;
+    func second : Integer
+        pre_cond
+            second_known: ¬second_unknown;
+        ;
 
     |
     | Extract the fractional seconds part of the date/time (i.e. following to any decimal sign)

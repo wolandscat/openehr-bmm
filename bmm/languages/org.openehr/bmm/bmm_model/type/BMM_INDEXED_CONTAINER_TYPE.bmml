@@ -10,8 +10,8 @@
 import org.openehr:representation;
 
 |
-| Meta-type of linear container type that indexes the contained items in the manner of
-| a standard Hash table, map or dictionary.
+| Meta-type of linear container type that indexes the contained items in the manner of a
+| standard Hash table, map or dictionary.
 |
 class BMM_INDEXED_CONTAINER_TYPE
     is_a BMM_CONTAINER_TYPE

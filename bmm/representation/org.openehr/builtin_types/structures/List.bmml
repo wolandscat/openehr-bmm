@@ -29,7 +29,6 @@ feature_group ("access")
 
 invariant
     first_validity: ¬is_empty ⇒ ∃first;
-
     last_validity: ¬is_empty ⇒ ∃last;
 
 end

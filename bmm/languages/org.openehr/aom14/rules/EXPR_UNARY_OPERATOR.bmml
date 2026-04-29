@@ -10,7 +10,7 @@
 import org.openehr:representation;
 
 |
-| Unary expression operator, i.e. one taking a single operand.
+| Unary operator expression node.
 |
 class EXPR_UNARY_OPERATOR
     is_a EXPR_OPERATOR

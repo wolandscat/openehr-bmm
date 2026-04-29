@@ -13,7 +13,7 @@ import org.openehr:infostructure;
 
 |
 | Version-controlled composition abstraction, defined by inheriting
-| VERSIONED_OBJECT<COMPOSITION>.
+| `VERSIONED_OBJECT<COMPOSITION>`.
 |
 class VERSIONED_COMPOSITION
     is_a VERSIONED_OBJECT<COMPOSITION>

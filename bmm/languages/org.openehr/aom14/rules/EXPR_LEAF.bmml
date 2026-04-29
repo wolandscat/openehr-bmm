@@ -10,8 +10,12 @@
 import org.openehr:representation;
 
 |
-| Expression leaf items, i.e. an atomic value. There are three kinds: a constant value,
-| an attribute reference, and a function call.
+| Expression tree leaf item representing one of:
+|
+| * a manifest constant of any primitive type;
+| * a path referring to a value in the archetype;
+| * a constraint;
+| * a variable reference.
 |
 class EXPR_LEAF
     is_a EXPR_ITEM
@@ -19,16 +23,16 @@ class EXPR_LEAF
 feature_group ("access")
 
     |
-    | Type of reference: “constant”, “attribute”, “function”, “constraint”. The first three are
+    | Type of reference: "constant", "attribute", "function", "constraint". The first three are
     | used to indicate the referencing mechanism for an operand. The last is used to indicate a
-    | constraint operand, as happens in the case of the right-hand operand of the ‘matches’
+    | constraint operand, as happens in the case of the right-hand operand of the 'matches'
     | operator.
     |
     prop reference_type : String ;
 
     |
     | The value referred to; a manifest constant, an attribute path (in the form of a String),
-    | or for the right-hand side of a ‘matches’ node, a constraint, often a C_PRIMITIVE_OBJECT.
+    | or for the right-hand side of a 'matches' node, a constraint, often a C_PRIMITIVE_OBJECT.
     |
     prop item : Any ;
 

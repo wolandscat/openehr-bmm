@@ -10,7 +10,7 @@
 import org.openehr:representation;
 
 |
-| Meta-type for a locally declared routine body.
+| Meta-type for locally declared routine body.
 |
 class BMM_LOCAL_ROUTINE
     is_a BMM_ROUTINE_DEFINITION

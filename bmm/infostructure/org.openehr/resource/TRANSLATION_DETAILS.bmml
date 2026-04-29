@@ -10,7 +10,7 @@
 import org.openehr:representation;
 
 |
-| Class providing details of a natural language translation of a resource.
+| Class providing details of a natural language translation.
 |
 class TRANSLATION_DETAILS
 

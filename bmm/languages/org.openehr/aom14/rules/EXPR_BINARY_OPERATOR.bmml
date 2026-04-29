@@ -10,7 +10,7 @@
 import org.openehr:representation;
 
 |
-| Binary expression operator, i.e. one taking two operands.
+| Binary operator expression node.
 |
 class EXPR_BINARY_OPERATOR
     is_a EXPR_OPERATOR

@@ -10,7 +10,8 @@
 
 
 |
-| Proxy type for identifying a party and its relationship to the subject of the record.
+| Proxy type for identifying a party and its relationship to the subject of the record. Use
+| where the relationship between the party and the subject of the record must be known.
 |
 class PARTY_RELATED
     is_a PARTY_IDENTIFIED

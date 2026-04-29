@@ -11,10 +11,13 @@ import org.openehr:representation;
 
 |
 | Root object of an operational template. An operational template is derived from a
-| TEMPLATE definition and the ARCHETYPEs and/or TEMPLATE_OVERLAYs mentioned by that
+| `TEMPLATE` definition and the `ARCHETYPEs` and/or `TEMPLATE_OVERLAYs` mentioned by that
 | template by a process of flattening, and potentially removal of unneeded languages and
-| terminologies. Used for generating and validating RM-canonical instance data and as a
-| source artefact for generating XML schemas, APIs and UI form definitions.
+| terminologies.
+|
+| An operational template is used for generating and validating RM-canonical instance data,
+| and also as a source artefact for generating other downstream technical artefacts,
+| including XML schemas, APIs and UI form definitions.
 |
 class OPERATIONAL_TEMPLATE
     is_a AUTHORED_ARCHETYPE

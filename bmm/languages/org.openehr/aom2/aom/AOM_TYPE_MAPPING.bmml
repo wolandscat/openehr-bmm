@@ -10,7 +10,7 @@
 import org.openehr:representation;
 
 |
-| Data object expressing a mapping between two types: an AOM built-in type and an RM type.
+| Data object expressing a mapping between two types.
 |
 class AOM_TYPE_MAPPING
 

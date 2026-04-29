@@ -10,9 +10,12 @@
 import org.openehr:representation;
 
 |
-| Built-in meta-type representing the type of a tuple, i.e. an array of any number of
-| other types. This includes both container and unitary types, since tuple instances
-| represent concrete objects.
+| Built-in meta-type representing the type of a tuple, i.e. an array of any number of other
+| types. This includes both container and unitary types, since tuple instances represent
+| concrete objects.
+|
+| Note that both open and closed generic parameters are allowed, as with any generic type,
+| but open generic parameters are only valid within the scope of a generic class.
 |
 class BMM_TUPLE_TYPE
     is_a BMM_BUILTIN_TYPE
@@ -25,8 +28,8 @@ feature_group ("access")
     prop item_types : Hash<String, BMM_TYPE> ;
 
     |
-    | Return the logical set (i.e. unique types) from the merge of `_flattened_type_list_()`
-    | called on each member of `_item_types_`.
+    | Return the logical set (i.e. unique types) from the merge of `flattened_type_list_()`
+    | called on each member of `item_types`.
     |
     func flattened_type_list : List<String> ;
 

@@ -10,8 +10,10 @@
 import org.openehr:representation;
 
 |
-| Abstraction of a package as a tree structure whose nodes can contain other packages
-| and classes. The name may be qualified if it is a top-level package.
+| Abstraction of a package as a tree structure whose nodes can contain other packages and
+| classes.
+|
+| The `name` may be qualified if it is a top-level package.
 |
 class BMM_PACKAGE
     is_a BMM_PACKAGE_CONTAINER

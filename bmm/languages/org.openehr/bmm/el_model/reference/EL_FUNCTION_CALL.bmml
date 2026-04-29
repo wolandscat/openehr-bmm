@@ -10,8 +10,8 @@
 import org.openehr:representation;
 
 |
-| A call made on a closed function agent, returning a result. Equivalent to an
-| 'application' of a function in lambda calculus.
+| A call made on a closed function agent, returning a result. Equivalent to an 'application'
+| of a function in Lambda calculus.
 |
 class EL_FUNCTION_CALL
     is_a EL_FEATURE_REF
@@ -30,7 +30,7 @@ feature_group ("access")
     prop is_writable : Boolean ;
 
     |
-    | Return `_agent.definition.type_`.
+    | Return `agent.definition.type`.
     |
     func eval_type : BMM_TYPE ;
 

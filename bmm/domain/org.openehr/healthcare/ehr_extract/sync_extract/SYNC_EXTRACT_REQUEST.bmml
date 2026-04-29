@@ -13,8 +13,7 @@ import org.openehr:foundation ;
 
 
 |
-| Type of request designed for synchronisation of Contributions between openEHR
-| servers.
+| Type of request designed for synchronisation of Contributions between openEHR servers.
 |
 class SYNC_EXTRACT_REQUEST
     is_a MESSAGE_CONTENT

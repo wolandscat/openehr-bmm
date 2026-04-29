@@ -10,7 +10,8 @@
 
 
 |
-| Status of a versioned artefact: alpha, beta, release_candidate, released, or build.
+| Status of a versioned artefact, as one of a number of possible values: uncontrolled,
+| prerelease, release, build.
 |
 enumeration VERSION_STATUS
     base_type String

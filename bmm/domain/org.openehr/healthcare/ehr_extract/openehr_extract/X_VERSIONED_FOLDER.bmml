@@ -11,7 +11,7 @@ import org.openehr:representation ;
 import org.openehr:foundation ;
 
 |
-| Form of X_VERSIONED_OBJECT for FOLDER EHR object.
+| Form of `X_VERSIONED_OBJECT` for `FOLDER` EHR object.
 |
 class X_VERSIONED_FOLDER
     is_a X_VERSIONED_OBJECT<FOLDER>

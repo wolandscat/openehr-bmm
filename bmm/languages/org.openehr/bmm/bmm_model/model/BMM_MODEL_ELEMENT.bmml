@@ -10,10 +10,10 @@
 import org.openehr:representation;
 
 |
-| Abstract meta-type of BMM declared model elements. A declaration is an element of a
-| model within a context, which defines the scope of the element. Thus, a class
-| definition and its property and routine definitions are model elements, but Types are
-| not, since they are derived from model elements.
+| Abstract meta-type of BMM declared model elements. A _declaration_ is a an element of a
+| model within a context, which defines the _scope_ of the element. Thus, a class definition
+| and its property and routine definitions are model elements, but Types are not, since they
+| are derived from model elements.
 |
 abstract class BMM_MODEL_ELEMENT
 
@@ -53,6 +53,9 @@ feature_group ("access")
     |
     | True if this model element is the root of a model structure hierarchy.
     |
-    func is_root_scope : Boolean ;
+    func is_root_scope : Boolean
+        post_cond
+            Result = (scope = self);
+        ;
 
 end

@@ -10,8 +10,10 @@
 import org.openehr:representation;
 
 |
-| A statement that asserts the truth of its expression. If the expression evaluates to
-| False the execution generates an exception (depending on run-time settings).
+| A statement that asserts the truth of its expression. If the expression evaluates to False
+| the execution generates an exception (depending on run-time settings).
+|
+| May be rendered in syntax as `assert condition` or similar.
 |
 class BMM_ASSERTION
     is_a BMM_SIMPLE_STATEMENT

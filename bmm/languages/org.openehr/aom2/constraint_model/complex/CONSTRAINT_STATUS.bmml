@@ -10,8 +10,8 @@
 import org.openehr:representation;
 
 |
-| Status of constraint, with values allowing for 'soft' constraints which are effectively
-| different kinds of suggestions.
+| Status of `constraint`, with values allowing for 'soft' constraints, which are
+| effectively different kinds of suggestions.
 |
 enumeration CONSTRAINT_STATUS
     base_type Integer

@@ -10,8 +10,8 @@
 import org.openehr:representation;
 
 |
-| Capability of a role, such as ehr modifier or health care provider. Capability should
-| be backed up by credentials.
+| Capability of a role, such as ehr modifier, health care provider. Capability should be
+| backed up by credentials.
 |
 class CAPABILITY
     is_a LOCATABLE

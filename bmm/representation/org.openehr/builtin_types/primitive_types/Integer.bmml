@@ -53,14 +53,14 @@ feature_group ("operators")
         ;
 
     |
-    | Integer modulo — remainder of integer division.
+    | Return self modulo other.
     |
     func modulo (mod : Integer) : Integer
         alias "mod" ;
         ;
 
     |
-    | Returns True if current Integer is less than other.
+    | Returns True if current Integer is less than `other`.
     |
     func less_than (other : Integer) : Boolean
         alias "<" ;

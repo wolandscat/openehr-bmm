@@ -12,8 +12,12 @@ import org.openehr:representation;
 |
 | Entry subtype for administrative information, i.e. information about setting up the
 | clinical process, but not itself clinically relevant. Archetypes will define contained
-| information. Used for administrative details of admission, episode, ward location,
-| discharge, appointment. Not to be used for any clinically significant information.
+| information.
+|
+| Used for administrative details of admission, episode, ward location, discharge,
+| appointment (if not stored in a practice management or appointments system).
+|
+| Not to be used for any clinically significant information.
 |
 class ADMIN_ENTRY
     is_a ENTRY

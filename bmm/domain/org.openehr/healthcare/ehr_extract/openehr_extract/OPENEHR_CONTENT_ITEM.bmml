@@ -11,7 +11,7 @@ import org.openehr:representation ;
 import org.openehr:foundation ;
 
 |
-| Form of EXTRACT_ITEM containing openEHR serialised VERSIONED_OBJECTs.
+| Form of `EHR EXTRACT_ITEM` containing openEHR serialised `VERSIONED_OBJECTs`.
 |
 class OPENEHR_CONTENT_ITEM
     is_a EXTRACT_CONTENT_ITEM

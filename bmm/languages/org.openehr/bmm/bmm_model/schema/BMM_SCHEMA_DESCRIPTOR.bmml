@@ -10,8 +10,8 @@
 import org.openehr:representation;
 
 |
-| Descriptor for a BMM schema. Contains a meta-data table of attributes obtained from
-| a mini-ODIN parse of the schema file.
+| Descriptor for a BMM schema. Contains a meta-data table of attributes obtained from a
+| mini-ODIN parse of the schema file.
 |
 abstract class BMM_SCHEMA_DESCRIPTOR
 
@@ -52,7 +52,7 @@ feature_group ("access")
 
     |
     | True if this is a top-level schema, i.e. is the root schema of a 'model'. True if
-    | `_bmm_schema_ /= Void and then _bmm_schema.model_name_ /= Void`.
+    | `bmm_schema_ /= Void and then _bmm_schema.model_name_ /= Void`.
     |
     func is_top_level : Boolean ;
 

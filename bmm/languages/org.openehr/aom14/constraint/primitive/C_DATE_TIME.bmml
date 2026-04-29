@@ -11,9 +11,10 @@ import org.openehr:representation;
 
 |
 | ISO 8601-compatible constraint on instances of Date_Time. There is no validity flag for
-| 'year', since it must always be mandatory for a sensible date/time. Syntax expressions
-| include "YYYY-MM-DDT??:??:??" (date/time with optional time) and
-| "YYYY-MM-DDTHH:MM:xx" (date/time, seconds not allowed).
+| 'year', since it must always be by definition mandatory in order to have a sensible
+| date/time at all. Syntax expressions of instances of this class include "YYYY-MM-
+| DDT??:??:??" (date/time with optional time) and "YYYY-MMDDTHH:MM:xx" (date/time, seconds
+| not allowed).
 |
 class C_DATE_TIME
     is_a C_PRIMITIVE

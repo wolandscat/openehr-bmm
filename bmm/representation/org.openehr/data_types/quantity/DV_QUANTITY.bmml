@@ -10,8 +10,15 @@
 
 
 |
-| Quantified type representing scientific quantities expressed as a magnitude and units. Units
-| expressed in UCUM syntax by default.
+| Quantitified type representing scientific quantities, i.e. quantities expressed as a
+| magnitude and units. Units are expressed in the UCUM syntax
+| (http://unitsofmeasure.org/ucum.html[Unified Code for Units of Measure (UCUM)], by Gunther
+| Schadow and Clement J. McDonald of The Regenstrief Institute) (case-sensitive form) by
+| default, or another system if `units_system` is set.
+|
+| Can also be used for time durations, where it is more convenient to treat these as simply
+| a number of seconds rather than days, months, years (in the latter case, `DV_DURATION` may
+| be used).
 |
 class DV_QUANTITY
     is_a DV_AMOUNT
@@ -25,17 +32,17 @@ feature_group ("access")
 
     |
     | Quantity units, expressed as a code or syntax string from either UCUM (the default) or the
-    | units system specified in `_units_system_`, when set.
+    | units system specified in `units_system`, when set.
     |
     | In either case, the value is the code or syntax - normally formed of standard ASCII -
     | which is in principal not the same as the display string, although in simple cases such as
     | 'm' (for meters) it will be.
     |
-    | If the `_units_display_name_` field is set, this may be used for display. If not, the
-    | implementations must effect the resolution of the `_units_` value to a display form
+    | If the `units_display_name` field is set, this may be used for display. If not, the
+    | implementations must effect the resolution of the `units` value to a display form
     | locally, e.g. by lookup of reference tables, request to a terminology service etc.
     |
-    | Example values from UCUM: "kg/m^2", “mm[Hg]", "ms-1", "km/h".
+    | Example values from UCUM: "kg/m^2", "mm[Hg]", "ms-1", "km/h".
     |
     prop units : String ;
 
@@ -47,7 +54,7 @@ feature_group ("access")
     prop precision :? Integer ;
 
     |
-    | Optional field used to specify a units system from which codes in `_units_` are defined.
+    | Optional field used to specify a units system from which codes in `units` are defined.
     | Value is a URI identifying a terminology containing units concepts from the
     | (https://www.hl7.org/fhir/terminologies-systems.html[HL7 FHIR terminologies list]).
     |
@@ -56,7 +63,7 @@ feature_group ("access")
     prop units_system :? String ;
 
     |
-    | Optional field containing the displayable form of the `_units_` field, e.g. `'°C'`.
+    | Optional field containing the displayable form of the `units` field, e.g. `'°C'`.
     |
     | If not set, the application environment needs to determine the displayable form.
     |
@@ -78,7 +85,7 @@ feature_group ("access")
     prop other_reference_ranges :? List<REFERENCE_RANGE<DV_QUANTITY>> ;
 
     |
-    | True if `_precision_` = 0, meaning that the `_magnitude_` is a whole number.
+    | True if `precision` = 0, meaning that the `magnitude` is a whole number.
     |
     func is_integral : Boolean ;
 

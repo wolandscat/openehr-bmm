@@ -32,7 +32,8 @@ feature_group ("access")
     func has_assumed_value : Boolean ;
 
     |
-    | True if a_value is valid with respect to constraint expressed in this object.
+    | True if a_value is valid with respect to constraint expressed in concrete instance of this
+    | type.
     |
     func valid_value (a_value : Any) : Boolean ;
 

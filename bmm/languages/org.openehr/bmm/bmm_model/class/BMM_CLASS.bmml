@@ -10,10 +10,13 @@
 import org.openehr:representation;
 
 |
-| Meta-type corresponding a class definition in an object model. Inheritance is
-| specified by the ancestors attribute, which contains a list of types rather than
-| classes. Inheritance is thus understood in BMM as a stated relationship between
-| classes. The equivalent relationship between types is conformance.
+| Meta-type corresponding a class definition in an object model. Inheritance is specified by
+| the `ancestors` attribute, which contains a list of _types_ rather than classes.
+| Inheritance is thus understood in BMM as a stated relationship between classes. The
+| equivalent relationship between types is conformance.
+|
+| NOTE: unlike UML, the `name` is just the root name, even if the class is generic. Use
+| `type_name()` to obtain the qualified type name.
 |
 abstract class BMM_CLASS
     is_a BMM_MODULE
@@ -38,7 +41,7 @@ feature_group ("access")
 
     |
     | List of computed references to base classes of immediate inheritance descendants, derived
-    | when members of `_ancestors_` are attached at creation time.
+    | when members of `ancestors` are attached at creation time.
     |
     prop immediate_descendants :? List<BMM_CLASS> ;
 
@@ -70,7 +73,7 @@ feature_group ("access")
     func all_ancestors : List<String> ;
 
     |
-    | Compute all descendants by following `_immediate_descendants_`.
+    | Compute all descendants by following `immediate_descendants`.
     |
     func all_descendants : List<String> ;
 

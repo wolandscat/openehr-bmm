@@ -10,7 +10,8 @@
 
 
 |
-| Abstract parent of all DV_ data value types.
+| Abstract parent of all `DV_` data value types. Serves as a common ancestor of all data
+| value types in openEHR models.
 |
 abstract class DATA_VALUE
 

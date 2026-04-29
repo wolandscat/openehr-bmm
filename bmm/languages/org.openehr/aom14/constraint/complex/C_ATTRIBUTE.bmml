@@ -39,13 +39,14 @@ feature_group ("access")
     | True if any value (i.e. instance) of the reference model attribute represented by this
     | C_ATTIRBUTE is allowed.
     |
-    func any_allowed : Boolean ;
+    func any_allowed : Boolean
+        post_cond
+            valid_result: Result := ¬∃children ∨ children.is_empty;
+        ;
 
 invariant
     rm_attribute_name_valid: ¬rm_attribute_name.is_empty();
-
     existence_set: existence.lower >= 0 ∧ existence.upper <= 1;
-
     children_validity: any_allowed ⊻ ∃children;
 
 end

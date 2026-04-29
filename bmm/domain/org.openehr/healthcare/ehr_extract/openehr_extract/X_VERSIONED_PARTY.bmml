@@ -11,7 +11,7 @@ import org.openehr:representation ;
 import org.openehr:foundation ;
 
 |
-| Form of X_VERSIONED_OBJECT for PARTY demographic object.
+| Form of `X_VERSIONED_OBJECT` for `PARTY` demographic object.
 |
 class X_VERSIONED_PARTY
     is_a X_VERSIONED_OBJECT<PARTY>

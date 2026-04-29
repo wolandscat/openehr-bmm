@@ -61,7 +61,7 @@ feature_group ("operators")
         ;
 
     |
-    | Returns True if current Real is less than other.
+    | Returns True if current Real is less than `other`.
     |
     func less_than (other : Real) : Boolean
         alias "<" ;

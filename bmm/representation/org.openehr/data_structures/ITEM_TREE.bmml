@@ -10,8 +10,8 @@
 
 
 |
-| Logical tree data structure. Used for data which is logically a tree such as audiology results,
-| microbiology results.
+| Logical tree data structure. The tree may be empty. Used for representing data which are
+| logically a tree such as audiology results, microbiology results, biochemistry results.
 |
 class ITEM_TREE
     is_a ITEM_STRUCTURE
@@ -25,12 +25,12 @@ feature_group ("access")
     prop items :? List<ITEM> ;
 
     |
-    | True if path a_path is a valid leaf path.
+    | True if path a_path' is a valid leaf path.
     |
     func has_element_path (a_path : String) : Boolean ;
 
     |
-    | Return the leaf element at the path a_path.
+    | Return the leaf element at the path a_path'.
     |
     func element_at_path (a_path : String) : ELEMENT ;
 

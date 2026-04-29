@@ -26,42 +26,42 @@ feature_group ("access")
 feature_group ("operators")
 
     |
-    | Double-precision addition.
+    | Double-precision real number addition.
     |
     func add (other : Double) : Double
         alias "+" ;
         ;
 
     |
-    | Double-precision subtraction.
+    | Double-precision real number subtraction.
     |
     func subtract (other : Double) : Double
         alias "-" ;
         ;
 
     |
-    | Double-precision multiplication.
+    | Double-precision real number multiplication.
     |
     func multiply (other : Double) : Double
         alias "*" ;
         ;
 
     |
-    | Double-precision division.
+    | Double-precision real number division.
     |
     func divide (other : Double) : Double
         alias "/" ;
         ;
 
     |
-    | Double-precision exponentiation.
+    | Double-precision real number exponentiation.
     |
     func exponent (other : Double) : Double
         alias "^" ;
         ;
 
     |
-    | Returns True if current Double is less than other.
+    | Returns True if current Double is less than `other`.
     |
     func less_than (other : Double) : Boolean
         alias "<" ;

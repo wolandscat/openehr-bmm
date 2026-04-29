@@ -10,10 +10,12 @@
 import org.openehr:representation;
 
 |
-| Constraint on instances representing times, in the form either of a set of validity
-| values, or else time ranges based on the C_ORDERED list constraint. There is no
-| validity flag for hour, since it must always be mandatory for a sensible time.
-| Syntax expressions include "HH:??:xx" (time with optional minutes, seconds not allowed).
+| Constraint on instances representing times in the form either of a set of validity values,
+| or else time ranges based on the `C_ORDERED` list constraint.
+|
+| There is no validity flag for `hour`, since it must always be by definition mandatory in
+| order to have a sensible time at all. Syntax expressions of instances of this class
+| include `"HH:??:xx"` (time with optional minutes and seconds not allowed).
 |
 class C_TIME
     is_a C_TEMPORAL
@@ -60,13 +62,14 @@ feature_group ("access")
     func timezone_validity : VALIDITY_KIND ;
 
     |
-    | Return valid_iso8601_time_constraint_pattern (a_pattern).
+    | Return `valid_iso8601_time_constraint_pattern (a_pattern)`
     |
     func valid_pattern_constraint (a_pattern : String) : Boolean ;
 
     |
-    | Return true if a_pattern can be validly replaced by an_other_pattern in a specialised
-    | constraint, based on valid_time_constraint_replacements.
+    | Return `valid_time_constraint_replacements.has(an_other_pattern.as_upper) and then
+    | valid_time_constraint_replacements.item (an_other_pattern.as_upper).has
+    | (a_pattern.as_upper)`.
     |
     func valid_pattern_constraint_replacement (a_pattern : String, an_other_pattern : String) : Boolean ;
 

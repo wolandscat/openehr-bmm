@@ -10,7 +10,7 @@
 import org.openehr:representation;
 
 |
-| Constraint describing a 'slot' where another archetype can occur.
+| Constraint describing a slot' where another archetype can occur.
 |
 class ARCHETYPE_SLOT
     is_a C_REFERENCE_OBJECT

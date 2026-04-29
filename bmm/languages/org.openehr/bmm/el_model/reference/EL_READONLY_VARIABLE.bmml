@@ -10,8 +10,8 @@
 import org.openehr:representation;
 
 |
-| Meta-type of read-only variables, including routine parameters and the special
-| variable 'Self'.
+| Meta-type of read-only variables, including routine parameter and the special variable
+| 'Self'.
 |
 class EL_READONLY_VARIABLE
     is_a EL_VARIABLE

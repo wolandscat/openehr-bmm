@@ -10,8 +10,8 @@
 import org.openehr:representation;
 
 |
-| Specialised form of decision table that allows only procedure call agents (lambdas)
-| as the result of branches.
+| Specialised form of Decision Table that allows only procedure call agents (lambdas) as the
+| result of branches.
 |
 class BMM_ACTION_DECISION_TABLE
 

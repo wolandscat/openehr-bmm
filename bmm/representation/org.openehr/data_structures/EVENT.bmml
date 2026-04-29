@@ -10,8 +10,9 @@
 
 
 |
-| Defines the abstract notion of a single event in a series. Generic, allowing types to be locked
-| to particular spatial types.
+| Defines the abstract notion of a single event in a series. This class is generic, allowing
+| types to be generated which are locked to particular spatial types, such as
+| `EVENT<ITEM_LIST>`. Subtypes express point or intveral data.
 |
 abstract class EVENT<T: ITEM_STRUCTURE>
     is_a LOCATABLE
@@ -37,7 +38,10 @@ feature_group ("access")
     |
     | Offset of this event from origin, computed as time.diff(parent.origin).
     |
-    func offset : DV_DURATION ;
+    func offset : DV_DURATION
+        post_cond
+            valid_result: Result = time.diff(parent.origin);
+        ;
 
 invariant
     offset_validity1: ∃offset ∧ offset = time.diff (parent.origin);

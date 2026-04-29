@@ -10,7 +10,7 @@
 import org.openehr:representation;
 
 |
-| Meta-type of for properties of linear container type, such as Hash<Index_type, T> etc.
+| Meta-type of for properties of linear container type, such as `Hash<Index_type, T>` etc.
 |
 class BMM_INDEXED_CONTAINER_PROPERTY
     is_a BMM_CONTAINER_PROPERTY

@@ -12,9 +12,9 @@
 import org.openehr:base ;
 
 |
-| The `FEEDER_AUDIT` class defines the semantics of an audit trail which is constructed
-| to describe the origin of data that have been transformed into openEHR form and committed
-| to the system.
+| The `FEEDER_AUDIT` class defines the semantics of an audit trail which is constructed to
+| describe the origin of data that have been transformed into openEHR form and committed to
+| the system.
 |
 class FEEDER_AUDIT
 

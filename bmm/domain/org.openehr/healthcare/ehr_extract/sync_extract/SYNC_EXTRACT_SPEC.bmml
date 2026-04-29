@@ -13,8 +13,8 @@ import org.openehr:foundation ;
 
 
 |
-| Details of specification of Extract, used in a request to specify an Extract, or in
-| a response, to describe what is actually in the Extract.
+| Details of specification of Extract, used in a request to specify an Extract, or in a
+| response, to describe what is actually in the Extract.
 |
 class SYNC_EXTRACT_SPEC
 

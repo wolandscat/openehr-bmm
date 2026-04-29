@@ -10,7 +10,7 @@
 import org.openehr:representation;
 
 |
-| Abstract class representing an operator in an expression tree.
+| Abstract parent of operator types.
 |
 abstract class EXPR_OPERATOR
     is_a EXPR_ITEM

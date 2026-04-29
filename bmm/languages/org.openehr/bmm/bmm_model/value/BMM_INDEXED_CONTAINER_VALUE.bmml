@@ -10,7 +10,8 @@
 import org.openehr:representation;
 
 |
-| Meta-type for literals whose concrete type is an indexed container, i.e. Hash table, Map etc.
+| Meta-type for literals whose concrete type is an indexed container, i.e. Hash table, Map
+| etc.
 |
 class BMM_INDEXED_CONTAINER_VALUE
     is_a BMM_LITERAL_VALUE

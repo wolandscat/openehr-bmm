@@ -10,8 +10,8 @@
 
 
 |
-| Abstract class defining the concept of quantified entities whose values are absolute with respect
-| to an origin. Dates and Times are the main example.
+| Abstract class defining the concept of quantified entities whose values are absolute with
+| respect to an origin. Dates and Times are the main example.
 |
 abstract class DV_ABSOLUTE_QUANTITY
     is_a DV_QUANTIFIED

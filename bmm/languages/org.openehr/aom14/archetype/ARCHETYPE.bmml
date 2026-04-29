@@ -45,7 +45,7 @@ feature_group ("access")
 
     |
     | The normative meaning of the archetype as a whole, expressed as a local archetype code,
-    | typically “at0000”.
+    | typically "at0000".
     |
     prop concept : String ;
 
@@ -61,9 +61,13 @@ feature_group ("access")
     prop invariants :? List<ASSERTION> ;
 
     |
-    | The concept name of the archetype in language a_lang.
+    | The concept name of the archetype in language a_lang; corresponds to the term definition
+    | of the concept attribute in the archetype ontology.
     |
-    func concept_name (a_lang : String) : String ;
+    func concept_name (a_lang : String) : String
+        post_cond
+            valid_result: Result.is_equal (definition.node_id);
+        ;
 
     |
     | Set of language-independent paths extracted from archetype. Paths obey Xpath-like syntax
@@ -73,8 +77,8 @@ feature_group ("access")
     func physical_paths : List<String> ;
 
     |
-    | Set of language-dependent paths extracted from archetype, with node_ids replaced by
-    | their meanings from the ontology.
+    | Set of language-dependent paths extracted from archetype. Paths obey the same syntax as
+    | physical_paths, but with node_ids replaced by their meanings from the ontology.
     |
     func logical_paths (lang : String) : List<String> ;
 
@@ -82,18 +86,27 @@ feature_group ("access")
     | Specialisation depth of this archetype; larger than 0 if this archetype has a parent.
     | Derived from terminology.specialisation_depth.
     |
-    func specialisation_depth : Integer ;
+    func specialisation_depth : Integer
+        post_cond
+            valid_result: Result = terminology.specialisation_depth;
+        ;
 
     |
     | True if this archetype is a specialisation of another.
     |
-    func is_specialised : Boolean ;
+    func is_specialised : Boolean
+        post_cond
+            valid_result: Result ⇒ ∃parent_archetype_id;
+        ;
 
     |
     | True if the archetype is valid overall; various tests should be used, including checks on
     | node_ids, internal references, and constraint references.
     |
-    func is_valid : Boolean ;
+    func is_valid : Boolean
+        post_cond
+            valid_result: ¬ (node_ids_valid ∧ internal_references_valid ∧ constraint_references_valid) ⇒ ¬Result;
+        ;
 
     |
     | True if every node_id found on a C_OBJECT node is found in ontology.term_codes.
@@ -122,22 +135,15 @@ feature_group ("access")
     |
     func short_concept_name : String ;
 
-    |
     func version : String ;
 
 invariant
     inv_concept_valid: ontology.has_term_code (concept_code);
-
     inv_specialisation_validity: is_specialised ⇒ specialisation_depth > 0;
-
     inv_invariants_valid: ∃invariants ⇒ ¬invariants.is_empty();
-
     inv_uid_validity: ∃uid ⇒ ¬uid.is_empty();
-
     inv_version_validity: ∃version ∧ version.is_equal(archetype_id.version_id);
-
     inv_description_valid: ∃description;
-
     inv_original_language_valid: ∃original_language ∧ ∃language;
 
 end

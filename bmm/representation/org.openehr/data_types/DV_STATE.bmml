@@ -10,8 +10,12 @@
 
 
 |
-| For representing state values which obey a defined state machine. Values driven by
-| archetype-defined state machines.
+| For representing state values which obey a defined state machine, such as a variable
+| representing the states of an instruction or care process.
+|
+| DV_STATE is expressed as a String but its values are driven by archetype-defined state
+| machines. This provides a powerful way of capturing stateful complex processes in simple
+| data.
 |
 class DV_STATE
     is_a DATA_VALUE

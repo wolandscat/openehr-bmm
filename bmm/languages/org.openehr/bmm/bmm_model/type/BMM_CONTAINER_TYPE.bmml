@@ -10,9 +10,9 @@
 import org.openehr:representation;
 
 |
-| Meta-type that specifies linear containers with a generic parameter corresponding to
-| the type of contained item, and whose container type is a generic type such as
-| List<T>, Set<T> etc.
+| Meta-type that specifies linear containers with a generic parameter corresponding to the
+| type of contained item, and whose container type is a generic type such as `List<T>`,
+| `Set<T>` etc.
 |
 class BMM_CONTAINER_TYPE
     is_a BMM_TYPE
@@ -20,7 +20,7 @@ class BMM_CONTAINER_TYPE
 feature_group ("access")
 
     |
-    | The type of the container. This converts to the `_root_type_` in `BMM_GENERIC_TYPE`.
+    | The type of the container. This converts to the `root_type` in `BMM_GENERIC_TYPE`.
     |
     prop container_class : BMM_GENERIC_CLASS ;
 
@@ -50,25 +50,34 @@ feature_group ("access")
     |
     | True if the container class is abstract.
     |
-    func is_abstract : Boolean ;
+    func is_abstract : Boolean
+        post_cond
+            valid_result: Result = container_type.is_abstract;
+        ;
 
     |
-    | Flattened list of type names of `_item_type_`, i.e. `_item_type.flattened_type_list_()`.
+    | Flattened list of type names of `item_type`, i.e. `item_type.flattened_type_list_()`.
     |
-    func flattened_type_list : List<String> ;
+    func flattened_type_list : List<String>
+        post_cond
+            valid_result: Result = item_type.flattened_type_list;
+        ;
 
     |
-    | Return `_item_type_`.
+    | Return `item_type`.
     |
     func unitary_type : BMM_UNITARY_TYPE ;
 
     |
-    | True if `_item_type_` is primitive.
+    | True if `item_type` is primitive.
     |
-    func is_primitive : Boolean ;
+    func is_primitive : Boolean
+        post_cond
+            valid_result: Result = item_type.is_primitive;
+        ;
 
     |
-    | Return `_item_type.effective_type_()`.
+    | Return `item_type.effective_type_()`.
     |
     func effective_type : BMM_EFFECTIVE_TYPE ;
 

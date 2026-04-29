@@ -10,8 +10,9 @@
 import org.openehr:representation;
 
 |
-| An entry in a revision history, corresponding to a version from a versioned
-| container. Consists of AUDIT_DETAILS instances with the revision identifier.
+| An entry in a revision history, corresponding to a version from a versioned container.
+| Consists of `AUDIT_DETAILS` instances with revision identifier of the revision to which
+| the `AUDIT_DETAILS` instance belongs.
 |
 class REVISION_HISTORY_ITEM
 

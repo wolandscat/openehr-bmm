@@ -14,8 +14,15 @@ import org.openehr:foundation ;
 
 |
 | The manifest for one entity (e.g. EHR subject), identifying the entity and optionally
-| specifying top-level items to be included in the Extract. The extract_id_key attribute
-| is used to record the identifier used throughout the Extract for this entity.
+| specifying top-level items to be included in the Extract. The list actually included may
+| be modified by the `version_spec` part of the specification, and also by the link_depth
+| attribute. In repeat (standing order) requests, the final inclusion may be modified by the
+| send_changes_only value for `EXTRACT_UPDATE_SPEC._update_method`.
+|
+| Various identifiers may be provided for the entity; these are to be used by the receiver
+| system to locate the entity. The `extract_id_key` attribute is used to record the
+| identifier that will be used throughout the Extract for this entity, including in
+| instances of `EXTRACT_ENTITY_IDENTIFIER`.
 |
 class EXTRACT_ENTITY_MANIFEST
 
@@ -47,7 +54,7 @@ feature_group ("access")
     |
     | List of Uids of items to be included in the Extract, in cases where individual items are
     | being requested by id. More typically, this attribute is not used, and the
-    | `EXTRACT_SPEC._criteria query_` defines the Extract contents. If set, for openEHR data,
+    | `EXTRACT_SPEC._criteria query` defines the Extract contents. If set, for openEHR data,
     | these are Uids identifying the version containers.
     |
     prop item_list :? List<OBJECT_REF> ;

@@ -10,8 +10,7 @@
 import org.openehr:representation;
 
 |
-| Node representing a function call with 0 or more arguments. Functions with no arguments
-| are typically used to represent real world varying values like 'current time'.
+| Node representing a function call with 0 or more arguments.
 |
 class EXPR_FUNCTION_CALL
     is_a EXPR_LEAF

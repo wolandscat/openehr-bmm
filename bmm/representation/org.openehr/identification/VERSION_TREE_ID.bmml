@@ -10,7 +10,9 @@
 
 
 |
-| Version tree identifier for one version. Lexical form: trunk_version ['.' branch_number '.' branch_version].
+| Version tree identifier for one version. Lexical form:
+|
+| `trunk_version [ '.' branch_number '.' branch_version ]`
 |
 class VERSION_TREE_ID
 
@@ -27,13 +29,13 @@ feature_group ("access")
     func trunk_version : String ;
 
     |
-    | True if this version identifier represents a branch, i.e. has `_branch_number()_` and
-    | `_branch_version()_` parts.
+    | True if this version identifier represents a branch, i.e. has `branch_number()` and
+    | `branch_version()` parts.
     |
     func is_branch : Boolean ;
 
     |
-    | True if this version identifier corresponds to the first version, i.e. `_trunk_version_`
+    | True if this version identifier corresponds to the first version, i.e. `trunk_version`
     | is 1.
     |
     func is_first : Boolean ;

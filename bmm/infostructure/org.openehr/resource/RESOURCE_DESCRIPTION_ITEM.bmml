@@ -10,9 +10,9 @@
 import org.openehr:representation;
 
 |
-| Language-specific detail of resource description. When a resource is translated
-| for use in another language environment, each instance needs to be copied and
-| translated.
+| Language-specific detail of resource description. When a resource is translated for use in
+| another language environment, each `RESOURCE_DESCRIPTION_ITEM` needs to be copied and
+| translated into the new language.
 |
 class RESOURCE_DESCRIPTION_ITEM
 

@@ -10,8 +10,7 @@
 import org.openehr:representation;
 
 |
-| Defines an array of optionally named items, each of any type. Typical use is to
-| represent an argument list to a routine call.
+| Defines an array of optionally named items each of any type.
 |
 class EL_TUPLE
     is_a EL_EXPRESSION
@@ -30,7 +29,7 @@ feature_group ("access")
     prop type : BMM_TUPLE_TYPE ;
 
     |
-    | Return `_type_`.
+    | Return `type`.
     |
     func eval_type : BMM_TYPE ;
 

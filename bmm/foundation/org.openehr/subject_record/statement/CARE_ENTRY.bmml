@@ -10,8 +10,8 @@
 import org.openehr:representation;
 
 |
-| The abstract parent of all clinical ENTRY subtypes. A CARE_ENTRY defines protocol
-| and guideline attributes for all clinical Entry subtypes.
+| The abstract parent of all clinical `ENTRY` subtypes. A `CARE_ENTRY` defines protocol and
+| guideline attributes for all clinical Entry subtypes.
 |
 abstract class CARE_ENTRY
     is_a ENTRY

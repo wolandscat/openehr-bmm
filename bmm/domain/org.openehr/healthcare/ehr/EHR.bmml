@@ -54,7 +54,7 @@ feature_group ("access")
 
     |
     | Optional directory structure for this EHR. If present, this is a reference to the first
-    | member of `_folders_`.
+    | member of `folders`.
     |
     prop directory :? OBJECT_REF ;
 
@@ -64,13 +64,13 @@ feature_group ("access")
     prop time_created : DV_DATE_TIME ;
 
     |
-    | Optional additional Folder structures for this EHR. If set, the `_directory_` attribute
+    | Optional additional Folder structures for this EHR. If set, the `directory` attribute
     | refers to the first member.
     |
     prop folders :? List<OBJECT_REF> ;
 
     |
-    | Optional list of tags associated with this EHR. Tag `_target_` values can only be within
+    | Optional list of tags associated with this EHR. Tag `target` values can only be within
     | the same EHR.
     |
     prop tags :? List<OBJECT_REF> ;

@@ -10,8 +10,8 @@
 import org.openehr:representation;
 
 |
-| Profile of common settings relating to use of reference model(s) and terminology
-| for a given archetype developing organisation.
+| Profile of common settings relating to use of reference model(s) and terminology for a
+| given archetype developing organisation.
 |
 class AOM_PROFILE
 
@@ -40,7 +40,7 @@ feature_group ("access")
     prop archetype_data_value_parent_class :? String ;
 
     |
-    | If `_archetype_parent_class_` is not set, designate a class whose descendants should be
+    | If `archetype_parent_class` is not set, designate a class whose descendants should be
     | made visible in tree and grid renderings of the archetype definition.
     |
     prop archetype_visualise_descendants_of :? String ;
@@ -54,7 +54,7 @@ feature_group ("access")
     |
     | Allowed type substitutions: Actual RM type names keyed by AOM built-in types which can
     | substitute for them in an archetype. E.g. `<key = "ISO8601_DATE", value = "String">` means
-    | that if RM property `TYPE._some_property_` is of type `String`, an `ISO8601_DATE` is
+    | that if RM property `TYPE._some_property` is of type `String`, an `ISO8601_DATE` is
     | allowed at that position in the archetype.
     |
     prop aom_rm_type_substitutions :? Hash<String, String> ;
