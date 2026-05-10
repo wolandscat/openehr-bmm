@@ -111,7 +111,7 @@ feature_group ("access")
     |
     func node_id_conforms_to (other : C_OBJECT) : Boolean
         post_cond
-            Result = codes_conformant (node_id, other.node_id);
+            result_valid: Result = codes_conformant (node_id, other.node_id);
         ;
 
     |
@@ -119,7 +119,7 @@ feature_group ("access")
     |
     func is_prohibited : Boolean
         post_cond
-            Result = ∃occurrences ∧ occurrences.is_prohibited;
+            result_valid: Result = ∃occurrences ∧ occurrences.is_prohibited;
         ;
 
 end

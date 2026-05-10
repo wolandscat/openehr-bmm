@@ -26,7 +26,7 @@ feature_group ("access")
     | True if this element can be null (Void) at execution time. May be interpreted as
     | optionality in subtypes..
     |
-    prop is_nullable :? Boolean ;
+    prop is_nullable : Boolean ;
 
     |
     | Formal signature of this element, in the form:
@@ -43,7 +43,7 @@ feature_group ("access")
     |
     func is_boolean : Boolean
         post_cond
-            Result = type().equal( {BMM_MODEL}.boolean_type_definition());
+            result_valid: Result = type().equal(BMM_MODEL.boolean_type_definition());
         ;
 
 end

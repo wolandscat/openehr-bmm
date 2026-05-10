@@ -19,7 +19,7 @@ feature_group ("values")
     |
     | String leader of 'identifier' codes used to identify at-coded archetype nodes.
     |
-    const At_code_leaderr: String = "at" ;
+    const At_code_leader: String = "at" ;
 
     |
     | String leader of 'identifier' codes used to identify id-coded archetype nodes.
@@ -45,12 +45,12 @@ feature_group ("values")
     |
     | Regex defining the legal numeric part of any archetype code.
     |
-    const Code_regex_pattern: String = "(0|[1-9][0-9]*)(\.(0|[1-9][0-9]*))*" ;
+    const Code_regex_pattern: String = """(0|[1-9][0-9]*)(\.(0|[1-9][0-9]*))*""" ;
 
     |
     | Regex pattern of the root code of any archetype.
     |
-    const Root_code_regex_pattern: String = "^id(\.1)*$" ;
+    const Root_code_regex_pattern: String = """^id(\.1)*$""" ;
 
     |
     | Code id used for C_PRIMITIVE_OBJECT nodes on creation.
@@ -71,7 +71,7 @@ feature_group ("access")
     |
     func is_adl_code (a_code : String) : Boolean
         post_cond
-            result_validity: Result = is_at_code (a_code) ∨ is_id_code (a_code) ∨ is_value_code (a_code) ∨ is_value_set_code (a_code);
+            result_valid: Result = is_at_code (a_code) ∨ is_id_code (a_code) ∨ is_value_code (a_code) ∨ is_value_set_code (a_code);
         ;
 
     |
@@ -79,7 +79,7 @@ feature_group ("access")
     |
     func is_at_code (a_code : String) : Boolean
         post_cond
-            result_validity: Result = a_code.starts_with (At_code_leader);
+            result_valid: Result = a_code.starts_with (At_code_leader);
         ;
 
     |
@@ -87,7 +87,7 @@ feature_group ("access")
     |
     func is_id_code (a_code : String) : Boolean
         post_cond
-            result_validity: Result = a_code.starts_with (Id_code_leader);
+            result_valid: Result = a_code.starts_with (Id_code_leader);
         ;
 
     |
@@ -95,7 +95,7 @@ feature_group ("access")
     |
     func is_value_code (a_code : String) : Boolean
         post_cond
-            result_validity: Result = a_code.starts_with (Value_code_leader);
+            result_valid: Result = a_code.starts_with (Value_code_leader);
         ;
 
     |
@@ -103,7 +103,7 @@ feature_group ("access")
     |
     func is_value_set_code (a_code : String) : Boolean
         post_cond
-            result_validity: Result = a_code.starts_with (Value_set_code_leader);
+            result_valid: Result = a_code.starts_with (Value_set_code_leader);
         ;
 
     |

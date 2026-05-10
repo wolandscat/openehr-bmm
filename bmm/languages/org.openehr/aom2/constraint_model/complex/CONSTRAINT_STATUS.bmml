@@ -18,19 +18,27 @@ enumeration CONSTRAINT_STATUS
 
 feature_group ("values")
 
+    |
     | Data item is required to formally satisfy constraint. Enumeration value = 0.
+    |
     required (0);
 
+    |
     | Data item value should satisfy constraint if it covers the meaning; otherwise another
     | code may be used. Enumeration value = 1.
+    |
     extensible (1);
 
+    |
     | Data item value is by preference one of the codes defined by constraint, but for local
     | reasons may be another code. Enumeration value = 2.
+    |
     preferred (2);
 
+    |
     | The constraint code or value-set is considered purely as an example, and the data
     | item may have any value. Enumeration value = 3.
+    |
     example (3);
 
 end

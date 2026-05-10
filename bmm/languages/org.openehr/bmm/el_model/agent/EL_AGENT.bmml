@@ -56,7 +56,7 @@ feature_group ("access")
     |
     func eval_type : BMM_ROUTINE_TYPE
         post_cond
-            Result = definition.signature;
+            result_validity: Result = definition.signature;
         ;
 
     |
@@ -64,7 +64,7 @@ feature_group ("access")
     |
     func is_callable : Boolean
         post_cond
-            Result = ¬∃open_arguments;
+            result_validity: Result = ¬∃open_arguments;
         ;
 
     |

@@ -18,16 +18,24 @@ enumeration BMM_SCHEMA_STATE
 
 feature_group ("values")
 
+    |
     | Initial state directly after instantiation of schema.
-    State_created ("State_created");
+    |
+    state_created ("State_created");
 
+    |
     | Initial validation pass after instantiation.
-    State_validated_created ("State_validated_created");
+    |
+    state_validated_created ("State_validated_created");
 
+    |
     | State of schema processing if there are still included schemas to process.
-    State_includes_pending ("State_includes_pending");
+    |
+    state_includes_pending ("State_includes_pending");
 
+    |
     | State when all included schemas have been processed.
-    State_includes_processed ("State_includes_processed");
+    |
+    state_includes_processed ("State_includes_processed");
 
 end

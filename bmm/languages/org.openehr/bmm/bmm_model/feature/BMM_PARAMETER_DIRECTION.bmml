@@ -17,13 +17,19 @@ enumeration BMM_PARAMETER_DIRECTION
 
 feature_group ("values")
 
+    |
     | Parameter is an input parameter, and treated as readonly by the receiving routine.
-    in ("in");
+    |
+    pd_in ("in");
 
+    |
     | Parameter is an output parameter, treated as a reference to a writeable entity.
-    out ("out");
+    |
+    pd_out ("out");
 
+    |
     | Parameter is an input and output parameter, treated as a readable and writeable reference.
-    in_out ("in_out");
+    |
+    pd_in_out ("in_out");
 
 end

@@ -29,7 +29,7 @@ feature_group ("access")
     |
     func is_boolean : Boolean
         post_cond
-            Result = eval_type().equal( {BMM_MODEL}.boolean_type_definition());
+            result_validity: Result = eval_type().equal( BMM_MODEL.boolean_type_definition());
         ;
 
 end

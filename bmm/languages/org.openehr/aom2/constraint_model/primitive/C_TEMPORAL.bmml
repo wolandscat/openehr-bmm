@@ -40,7 +40,7 @@ feature_group ("access")
     |
     func any_allowed : Boolean
         post_cond
-            Result = precursor ∧ pattern_constraint.is_empty;
+            result_valid: Result = precursor ∧ pattern_constraint.is_empty;
         ;
 
     |

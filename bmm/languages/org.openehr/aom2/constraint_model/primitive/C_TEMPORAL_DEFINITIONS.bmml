@@ -16,23 +16,97 @@ class C_TEMPORAL_DEFINITIONS
 
 feature_group ("values")
 
-    | List of allowed date constraints, e.g. "YYYY-MM-DD", "YYYY-MM-??", "YYYY-??-??".
-    valid_date_constraint_patterns ;
+    |
+    | List of allowed date constraints.
+    |
+    const Valid_date_constraint_patterns: List<String> = (
+        "YYYY-MM-DD",       // full date required
+        "YYYY-MM-??",       // day optional
+        "YYYY-MM-XX",       // day prohibited
+        "YYYY-??-??",       // any partial or full date
+        "YYYY-??-XX",       // day prohibited, month optional
+        "YYYY-XX-XX"        // year only
+    );
 
-    | List of allowed date constraint replacements in specialised archetypes.
-    valid_date_constraint_replacements ;
+    |
+    | List of allowed date constraint replacements e.g. in specialised archetype. Contains the values:
+    |
+    | An empty list value indicates no replacements possible.
+    |
+    const Valid_date_constraint_replacements: Hash<String, List<String>> = {
+        "YYYY-MM-DD": (),
+        "YYYY-MM-??": ("YYYY-MM-DD",
+                       "YYYY-MM-XX"),
+        "YYYY-MM-XX": (),
+        "YYYY-??-??": ("YYYY-MM-??",
+                       "YYYY-MM-DD",
+                       "YYYY-MM-XX",
+                       "YYYY-??-XX",
+                       "YYYY-XX-XX"),
+        "YYYY-??-XX": ("YYYY-MM-XX",
+                      "YYYY-XX-XX"),
+        "YYYY-XX-XX": ()
+    };
 
-    | List of allowed time constraints, e.g. "HH:MM:SS", "HH:MM:??", "HH:??:??".
-    valid_time_constraint_patterns ;
+    |
+    | List of allowed time constraints.
+    |
+    const Valid_time_constraint_patterns: List<String> = (
+        "HH:MM:SS",     // full time required
+        "HH:MM:??",     // seconds optional
+        "HH:MM:XX",     // minutes required, seconds prohibited
+        "HH:??:??",     // minutes and seconds optional
+        "HH:??:XX"      // minutes optional, seconds prohibited
+    ) ;
 
-    | List of allowed time constraint replacements in specialised archetypes.
-    valid_time_constraint_replacements ;
+    |
+    | List of allowed time constraint replacements e.g. in specialised archetype.
+    | An empty list value indicates no replacements possible.
+    |
+    const Valid_time_constraint_replacements: Hash<String, List<String>> = {
+        "HH:MM:SS": (),
+        "HH:MM:??": ("HH:MM:SS",
+                     "HH:MM:XX"),
+        "HH:MM:XX": (),
+        "HH-??-??": ("HH:MM:??",
+                     "HH:MM:SS",
+                     "HH:MM:XX",
+                     "HH:??:XX"),
+        "HH-??-XX": ("HH:MM:XX")
+    };
 
-    | List of allowed date/time constraints, e.g. "YYYY-MM-DDTHH:MM:SS".
-    valid_date_time_constraint_patterns ;
+    |
+    | List of allowed date/time constraints.
+    |
+    const Valid_date_time_constraint_patterns: List<String> = (
+        "YYYY-MM-DDTHH:MM:SS",  // full date/time required
+        "YYYY-MM-DDTHH:MM:??",  // seconds optional
+        "YYYY-MM-DDTHH:MM:XX",  // seconds prohibited
+        "YYYY-MM-DDTHH:??:??",  // minutes and seconds optional
+        "YYYY-MM-DDTHH:??:XX",  // minutes optional, seconds prohibited
+        "YYYY-??-??T??:??:??"   // any date/time ok
+    );
 
-    | List of allowed date/time constraint replacements in specialised archetypes.
-    valid_date_time_constraint_replacements ;
+    |
+    | List of allowed date/time constraint replacements e.g. in specialised archetype.
+    | An empty list value indicates no replacements possible.
+    |
+    const Valid_date_time_constraint_replacements: Hash<String, List<String>> = {
+        "YYYY-MM-DDTHH:MM:SS": (),
+        "YYYY-MM-DDTHH:MM:??": ("YYYY-MM-DDTHH:MM:SS",
+                                "YYYY-MM-DDTHH:MM:XX"),
+        "YYYY-MM-DDTHH:MM:XX": (),
+        "YYYY-MM-DDTHH:??:??": ("YYYY-MM-DDTHH:??:XX",
+                                "YYYY-MM-DDTHH:MM:SS",
+                                "YYYY-MM-DDTHH:MM:??",
+                                "YYYY-MM-DDTHH:MM:XX"),
+        "YYYY-MM-DDTHH:??:XX": ("YYYY-MM-DDTHH:MM:XX"),
+        "YYYY-??-??T??:??:??": ("YYYY-MM-DDTHH:MM:SS",
+                               "YYYY-MM-DDTHH:MM:??",
+                                "YYYY-MM-DDTHH:MM:XX",
+                                "YYYY-MM-DDTHH:??:??",
+                                "YYYY-MM-DDTHH:??:XX")
+    };
 
 feature_group ("access")
 

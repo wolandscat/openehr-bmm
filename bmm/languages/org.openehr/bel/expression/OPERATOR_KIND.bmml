@@ -17,64 +17,104 @@ enumeration OPERATOR_KIND
 
 feature_group ("values")
 
+    |
     | Equality (equals) operator.
-    eq ("eq");
+    |
+    op_eq ("eq");
 
+    |
     | Inequality (not-equals) operator.
-    ne ("ne");
+    |
+    op_ne ("ne");
 
+    |
     | Less than operator.
-    lt ("lt");
+    |
+    op_lt ("lt");
 
+    |
     | Less than or equals operator.
-    le ("le");
+    |
+    op_le ("le");
 
+    |
     | Greater than operator.
-    gt ("gt");
+    |
+    op_gt ("gt");
 
+    |
     | Greater than or equals operator.
-    ge ("ge");
+    |
+    op_ge ("ge");
 
+    |
     | Matches operator.
-    matches ("matches");
+    |
+    op_matches ("matches");
 
+    |
     | Logical negation (not) operator.
-    not ("not");
+    |
+    op_not ("not");
 
+    |
     | Logical conjunction (and) operator.
-    and ("and");
+    |
+    op_and ("and");
 
+    |
     | Logical inclusive disjunction (or) operator.
-    or ("or");
+    |
+    op_or ("or");
 
+    |
     | Logical exclusive disjunction (exclusive or) operator.
-    xor ("xor");
+    |
+    op_xor ("xor");
 
+    |
     | Logical implication (implies) operator.
-    implies ("implies");
+    |
+    op_implies ("implies");
 
+    |
     | Universal quantification operator.
-    for_all ("for_all");
+    |
+    op_for_all ("for_all");
 
+    |
     | Existential quantification operator.
-    exists ("exists");
+    |
+    op_exists ("exists");
 
+    |
     | Arithmetic addition (plus) operator.
-    plus ("plus");
+    |
+    op_plus ("plus");
 
+    |
     | Arithmetic subtraction (minus) operator.
-    minus ("minus");
+    |
+    op_minus ("minus");
 
+    |
     | Arithmetic multiplication (times) operator.
-    multiply ("multiply");
+    |
+    op_multiply ("multiply");
 
+    |
     | Arithmetic division (divided-by) operator.
-    divide ("divide");
+    |
+    op_divide ("divide");
 
+    |
     | Arithmetic modulo operator.
-    modulo ("modulo");
+    |
+    op_modulo ("modulo");
 
+    |
     | Arithmetic exponent (to the power of) operator.
-    exponent ("exponent");
+    |
+    op_exponent ("exponent");
 
 end

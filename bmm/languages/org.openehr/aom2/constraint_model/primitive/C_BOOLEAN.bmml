@@ -44,7 +44,7 @@ feature_group ("access")
     |
     func any_allowed : Boolean
         post_cond
-            Result = constraint.is_empty;
+            result_valid: Result = constraint.is_empty;
         ;
 
     |

@@ -33,7 +33,7 @@ feature_group ("access")
     |
     func any_allowed : Boolean
         post_cond
-            Result = attributes.is_empty ∧ ¬is_prohibited;
+            reasult_valid: Result = attributes.is_empty ∧ ¬is_prohibited;
         ;
 
     |

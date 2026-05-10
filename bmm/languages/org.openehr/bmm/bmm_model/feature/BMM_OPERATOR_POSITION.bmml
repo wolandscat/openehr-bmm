@@ -18,10 +18,14 @@ enumeration BMM_OPERATOR_POSITION
 
 feature_group ("values")
 
+    |
     | Prefix operator position: operator comes before operand.
+    |
     prefix ("prefix");
 
+    |
     | Infix operator position: operator comes between left and right operands.
+    |
     infix ("infix");
 
 end

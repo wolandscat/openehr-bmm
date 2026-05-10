@@ -14,8 +14,7 @@ import org.openehr:representation;
 | of a function in Lambda calculus.
 |
 class EL_FUNCTION_CALL
-    is_a EL_FEATURE_REF
-    is_a EL_AGENT_CALL
+    is_a EL_FEATURE_REF, EL_AGENT_CALL
 
 feature_group ("access")
 

@@ -14,72 +14,140 @@ import org.openehr:representation;
 |
 class BMM_DEFINITIONS
 
-feature_group ("values")
+feature_group ("definitions")
 
+    |
     | Current internal version of BMM meta-model.
-    Bmm_internal_version : String ;
+    |
+    const Bmm_internal_version : String = "2.3";
 
+    |
     | Delimiter used to separate schema id from package path in a fully qualified path.
-    Schema_name_delimiter : String ;
+    |
+    const Schema_name_delimiter : String  = "::";
 
+    |
     | Delimiter used to separate package names in a package path.
-    Package_name_delimiter : String ;
+    |
+    const Package_name_delimiter : String = ".";
 
+    |
     | Extension used for BMM files.
-    Bmm_schema_file_extension : String ;
+    |
+    const Bmm_schema_file_extension : String = ".bmm";
 
+    |
     | Appears between a name and a type in a declaration or type signature.
-    Type_delimiter : Character ;
+    |
+    const Type_delimiter : Character = ':' ;
 
+    |
     | Left delimiter for generic class and generic type names, as used in List<T>.
-    Generic_left_delimiter : Character ;
+    |
+    const Generic_left_delimiter : Character = '<';
 
+    |
     | Right delimiter for generic class and generic type names, as used in List<T>.
-    Generic_right_delimiter : Character ;
+    |
+    const Generic_right_delimiter : Character = '>';
 
+    |
     | Separator used in Generic types.
-    Generic_separator : Character ;
+    |
+    const Generic_separator : Character = ',';
 
+    |
     | Delimiter between formal type parameter and constraint type, as used in Sortable<T: Ordered>.
-    Generic_constraint_delimiter : Character ;
+    |
+    const Generic_constraint_delimiter : Character = ':' ;
 
+    |
     | Left delimiter of a Tuple type and also instance.
-    Tuple_left_delim : Character ;
+    |
+    const Tuple_left_delim : Character = '[';
 
+    |
     | Right delimiter of a Tuple type and also instance.
-    Tuple_right_delim : Character ;
+    |
+    const Tuple_right_delim : Character = ']';
 
+    |
     | Separator used in Tuple types and instances.
-    Tuple_separator : Character ;
+    |
+    const Tuple_separator : Character = ',';
 
+    |
     | Left delimiter used in serial form of instance constrained enumeration.
-    Constraint_left_delim : Character ;
+    |
+    const Constraint_left_delim : Character = '{';
 
+    |
     | Right delimiter used in serial form of instance constrained enumeration.
-    Constraint_right_delim : Character ;
+    |
+    const Constraint_right_delim : Character = '}';
 
+    |
     | Attribute name of logical attribute 'bmm_version' in .bmm schema file.
-    Metadata_bmm_version : String ;
+    |
+    const Metadata_bmm_version : String = "bmm_version";
 
+    |
     | Attribute name of logical attribute 'schema_name' in .bmm schema file.
-    Metadata_schema_name : String ;
+    |
+    const Metadata_schema_name : String = "schema_name";
 
+    |
     | Attribute name of logical attribute 'rm_publisher' in .bmm schema file.
-    Metadata_rm_publisher : String ;
+    |
+    const Metadata_rm_publisher : String = "rm_publisher";
 
+    |
     | Attribute name of logical attribute 'rm_release' in .bmm schema file.
-    Metadata_rm_release : String ;
+    |
+    const Metadata_rm_release : String = "rm_release";
 
+    |
     | Attribute name of logical attribute 'schema_revision' in .bmm schema file.
-    Metadata_schema_revision : String ;
+    |
+    const Metadata_schema_revision : String = "schema_revision";
 
+    |
     | Attribute name of logical attribute 'schema_lifecycle_state' in .bmm schema file.
-    Metadata_schema_lifecycle_state : String ;
+    |
+    const Metadata_schema_lifecycle_state : String = "schema_lifecycle_state";
 
+    |
     | Attribute name of logical attribute 'schema_description' in .bmm schema file.
-    Metadata_schema_description : String ;
+    |
+    const Metadata_schema_description : String = "schema_description";
 
+    |
     | Path of schema file.
-    Metadata_schema_path : String ;
+    |
+    const Metadata_schema_path : String = "schema_path";
+
+    |
+    | Built-in class definition corresponding to the top `Any` class.
+    |
+    singleton Any_class: BMM_SIMPLE_CLASS
+        ;
+
+    |
+    | Built-in type definition corresponding to the top `Any` type.
+    |
+    singleton Any_class: BMM_SIMPLE_CLASS
+        ;
+
+feature_group ("factory")
+
+    |
+    | Create schema id, formed from:
+    |
+    | `a_model_publisher '-' a_schema_name '-' a_model_release`
+    |
+    | e.g. `openehr_rm_1.0.3`, `openehr_test_1.0.1`, `iso_13606_1_2008_2.1.2`.
+    |
+    func create_schema_id (a_model_publisher: String, a_schema_name: String, a_model_release: String): String
+        ;
 
 end

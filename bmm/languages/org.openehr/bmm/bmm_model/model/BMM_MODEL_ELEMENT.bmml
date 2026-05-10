@@ -55,7 +55,7 @@ feature_group ("access")
     |
     func is_root_scope : Boolean
         post_cond
-            Result = (scope = self);
+            result_valid: Result = (scope = self);
         ;
 
 end

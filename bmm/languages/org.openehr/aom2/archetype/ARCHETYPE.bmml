@@ -63,7 +63,7 @@ feature_group ("access")
     |
     func concept_code : String
         post_cond
-            Result.is_equal (definition.node_id);
+            valid_result: Result.is_equal (definition.node_id);
         ;
 
     |

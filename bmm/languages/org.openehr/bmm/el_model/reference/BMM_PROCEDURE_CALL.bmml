@@ -14,8 +14,7 @@ import org.openehr:representation;
 | achieved from within a program.
 |
 class BMM_PROCEDURE_CALL
-    is_a EL_AGENT_CALL
-    is_a BMM_SIMPLE_STATEMENT
+    is_a EL_AGENT_CALL, BMM_SIMPLE_STATEMENT
 
 feature_group ("access")
 

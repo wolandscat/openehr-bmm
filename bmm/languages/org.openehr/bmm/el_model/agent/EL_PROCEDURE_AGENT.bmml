@@ -28,7 +28,7 @@ feature_group ("access")
     |
     func eval_type : BMM_PROCEDURE_TYPE
         post_cond
-            Result = definition.signature;
+            result_validity: Result = definition.signature;
         ;
 
 end

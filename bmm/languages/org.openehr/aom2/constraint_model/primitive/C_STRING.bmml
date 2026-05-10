@@ -37,6 +37,8 @@ feature_group ("access")
     prop assumed_value :? String ;
 
     |
+    | Generate a prototype value from this constraint object.
+    |
     func prototype_value : String ;
 
     |
@@ -50,7 +52,7 @@ feature_group ("access")
     |
     func any_allowed : Boolean
         post_cond
-            Result = constraint.is_empty ∨ constraint.count = 1 ∧ constraint.first.is_equal (Regex_any_string);
+            result_valid: Result = constraint.is_empty ∨ constraint.count = 1 ∧ constraint.first.is_equal (Regex_any_string);
         ;
 
     |
