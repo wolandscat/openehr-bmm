@@ -6,13 +6,14 @@ This repository contains the openEHR class definitions for most specifications, 
 
 == Creation Method
 
-The library was created via the use of Claude.ai, using the https://github.com/Cadasto/openehr-assistant-mcp[openEHR assistant MCP server^] for extraction of semantics from existing specifications, recently published by Cadasto / Code24 (NL).
-
-The extraction was carried out using the latest trunk versions of the openEHR specification repositories as of 24/04/2026.
+The library was mostly created by scripts used to extract .adoc content from the openEHR specifications-xxx repositories. The extraction was carried out using the latest trunk versions of the openEHR specification repositories as of 24/04/2026.
 
 == Logical Structure
 
-The package structure of the library follows the new 'SPLASH' structure, rather than the traditional openEHR component structure. However, the classes are (barring conversion errors) unchanged from the openEHR specifications.
+The package structure of the library follows the new 'SPLASH' structure, rather than the traditional openEHR component structure. However, the classes are (barring conversion errors) unchanged from the openEHR specifications, except for:
+
+* corrections to pre- and post-conditions and invariants, since they are fully parsed in BMML;
+* some improvements in representation of constants, e.g. in `C_TEMPORAL_DEFINITIONS`.
 
 == Formalism and Tools
 
