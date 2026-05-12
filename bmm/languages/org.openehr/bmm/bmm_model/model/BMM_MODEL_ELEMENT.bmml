@@ -38,7 +38,7 @@ feature_group ("access")
     |
     | Other keys and value types may be freely added.
     |
-    prop documentation :? Hash<String, Any> ;
+    prop documentation :? Map<String, Any> ;
 
     |
     | Model element within which an element is declared.
@@ -48,7 +48,7 @@ feature_group ("access")
     |
     | Optional meta-data of this element, as a keyed list. May be used to extend the meta-model.
     |
-    prop extensions :? Hash<String, Any> ;
+    prop extensions :? Map<String, Any> ;
 
     |
     | True if this model element is the root of a model structure hierarchy.

@@ -49,7 +49,7 @@ feature_group ("access")
     | Mappings from AOM built-in types to actual types in RM: whenever the type name is
     | encountered in an archetype, it is mapped to a specific RM type.
     |
-    prop aom_rm_type_mappings :? Hash<String, AOM_TYPE_MAPPING> ;
+    prop aom_rm_type_mappings :? Map<String, AOM_TYPE_MAPPING> ;
 
     |
     | Allowed type substitutions: Actual RM type names keyed by AOM built-in types which can
@@ -57,7 +57,7 @@ feature_group ("access")
     | that if RM property `TYPE._some_property` is of type `String`, an `ISO8601_DATE` is
     | allowed at that position in the archetype.
     |
-    prop aom_rm_type_substitutions :? Hash<String, String> ;
+    prop aom_rm_type_substitutions :? Map<String, String> ;
 
     |
     | List of mappings of lifecycle state names used in archetypes to AOM lifecycle state names:
@@ -65,7 +65,7 @@ feature_group ("access")
     | * key = source lifecycle state;
     | * value = AOM lifecycle state.
     |
-    prop aom_lifecycle_mappings :? Hash<String, String> ;
+    prop aom_lifecycle_mappings :? Map<String, String> ;
 
     |
     | Equivalences of RM primitive types to in-built set of primitive types. Used to determine
@@ -75,6 +75,6 @@ feature_group ("access")
     | * "Real"        "Double"
     | * "Integer"     "Integer64"
     |
-    prop rm_primitive_type_equivalences :? Hash<String, String> ;
+    prop rm_primitive_type_equivalences :? Map<String, String> ;
 
 end

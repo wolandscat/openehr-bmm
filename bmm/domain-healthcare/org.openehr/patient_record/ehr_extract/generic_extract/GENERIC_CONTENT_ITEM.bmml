@@ -80,7 +80,7 @@ feature_group ("access")
     |
     | Other details about the content item.
     |
-    prop other_details :? Hash<String, String> ;
+    prop other_details :? Map<String, String> ;
 
     |
     | Content object.

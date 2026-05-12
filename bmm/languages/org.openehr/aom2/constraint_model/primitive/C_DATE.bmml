@@ -18,7 +18,7 @@ import org.openehr:representation;
 | include `"YYYY-??-??"` (date with optional month and day).
 |
 class C_DATE
-    is_a C_TEMPORAL
+    is_a C_TEMPORAL<Iso8601_date>
 
 feature_group ("access")
 

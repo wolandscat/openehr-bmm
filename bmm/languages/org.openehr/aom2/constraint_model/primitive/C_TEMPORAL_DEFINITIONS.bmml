@@ -33,7 +33,7 @@ feature_group ("values")
     |
     | An empty list value indicates no replacements possible.
     |
-    const Valid_date_constraint_replacements: Hash<String, List<String>> = {
+    const Valid_date_constraint_replacements: Map<String, List<String>> = {[
         "YYYY-MM-DD": (),
         "YYYY-MM-??": ("YYYY-MM-DD",
                        "YYYY-MM-XX"),
@@ -46,7 +46,7 @@ feature_group ("values")
         "YYYY-??-XX": ("YYYY-MM-XX",
                       "YYYY-XX-XX"),
         "YYYY-XX-XX": ()
-    };
+    ]};
 
     |
     | List of allowed time constraints.
@@ -63,7 +63,7 @@ feature_group ("values")
     | List of allowed time constraint replacements e.g. in specialised archetype.
     | An empty list value indicates no replacements possible.
     |
-    const Valid_time_constraint_replacements: Hash<String, List<String>> = {
+    const Valid_time_constraint_replacements: Map<String, List<String>> = {[
         "HH:MM:SS": (),
         "HH:MM:??": ("HH:MM:SS",
                      "HH:MM:XX"),
@@ -73,7 +73,7 @@ feature_group ("values")
                      "HH:MM:XX",
                      "HH:??:XX"),
         "HH-??-XX": ("HH:MM:XX")
-    };
+    ]};
 
     |
     | List of allowed date/time constraints.
@@ -91,7 +91,7 @@ feature_group ("values")
     | List of allowed date/time constraint replacements e.g. in specialised archetype.
     | An empty list value indicates no replacements possible.
     |
-    const Valid_date_time_constraint_replacements: Hash<String, List<String>> = {
+    const Valid_date_time_constraint_replacements: Map<String, List<String>> = {[
         "YYYY-MM-DDTHH:MM:SS": (),
         "YYYY-MM-DDTHH:MM:??": ("YYYY-MM-DDTHH:MM:SS",
                                 "YYYY-MM-DDTHH:MM:XX"),
@@ -106,7 +106,7 @@ feature_group ("values")
                                 "YYYY-MM-DDTHH:MM:XX",
                                 "YYYY-MM-DDTHH:??:??",
                                 "YYYY-MM-DDTHH:??:XX")
-    };
+    ]};
 
 feature_group ("access")
 

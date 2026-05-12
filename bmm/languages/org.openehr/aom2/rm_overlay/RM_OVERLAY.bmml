@@ -24,6 +24,6 @@ feature_group ("access")
     | archetyped node concatenated with a further pure RM attribute path; may also refer to a
     | non-archetyped attribute.
     |
-    prop rm_visibility :? Hash<String,RM_ATTRIBUTE_VISIBILITY> ;
+    prop rm_visibility :? Map<String,RM_ATTRIBUTE_VISIBILITY> ;
 
 end

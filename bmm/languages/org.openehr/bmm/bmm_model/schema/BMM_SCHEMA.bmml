@@ -65,7 +65,7 @@ feature_group ("access")
     | a namespace via which types from the included schemas are known in this schema. Persisted
     | attribute.
     |
-    prop includes :? Hash<String, BMM_INCLUDE_SPEC> ;
+    prop includes :? Map<String, BMM_INCLUDE_SPEC> ;
 
     |
     | Contributing authors of schema.

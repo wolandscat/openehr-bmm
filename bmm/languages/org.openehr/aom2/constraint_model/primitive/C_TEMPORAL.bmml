@@ -47,12 +47,12 @@ feature_group ("access")
     | True if `precursor()` or else `other.pattern_constraint` is empty, or else
     | `pattern_constraint` is a valid (narrower) replacement for `other.pattern_constraint`.
     |
-    func c_value_conforms_to (other : C_ORDERED) : Boolean ;
+    func c_value_conforms_to (other : C_ORDERED<T>) : Boolean ;
 
     |
     | True if `precursor (other)` and `pattern_constraint_ ~ _other.pattern_constraint`, i.e.
     | either both `Void` or else both non-`Void` and identical.
     |
-    func c_value_congruent_to (other : C_ORDERED) : Boolean ;
+    func c_value_congruent_to (other : C_ORDERED<T>) : Boolean ;
 
 end

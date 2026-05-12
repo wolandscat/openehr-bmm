@@ -18,7 +18,7 @@ import org.openehr:representation;
 | include `"HH:??:xx"` (time with optional minutes and seconds not allowed).
 |
 class C_TIME
-    is_a C_TEMPORAL
+    is_a C_TEMPORAL<Iso8601_time>
 
 feature_group ("access")
 

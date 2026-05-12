@@ -13,7 +13,7 @@ import org.openehr:representation;
 | Constraint on instances of Integer.
 |
 class C_INTEGER
-    is_a C_ORDERED
+    is_a C_ORDERED<Integer>
 
 feature_group ("access")
 

@@ -20,7 +20,7 @@ feature_group ("access")
     |
     | Child packages; keys all in upper case for guaranteed matching.
     |
-    prop packages :? Hash<String, BMM_PACKAGE> ;
+    prop packages :? Map<String, BMM_PACKAGE> ;
 
     |
     | Package at the path `a_path`.

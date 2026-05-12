@@ -33,7 +33,7 @@ feature_group ("access")
     | Table of `{key, value}` of schema meta-data, keys are string values defined by
     | `{BMM_DEFINITIONS}.Metadata_*` constants.
     |
-    prop meta_data : Hash<String, String> ;
+    prop meta_data : Map<String, String> ;
 
     |
     | Persistent form of model.

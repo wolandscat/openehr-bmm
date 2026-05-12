@@ -18,7 +18,7 @@ import org.openehr:representation;
 | (date/time, seconds not allowed).
 |
 class C_DATE_TIME
-    is_a C_TEMPORAL
+    is_a C_TEMPORAL<Iso8601_date_time>
 
 feature_group ("access")
 

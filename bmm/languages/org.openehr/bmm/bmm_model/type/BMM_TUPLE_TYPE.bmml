@@ -25,7 +25,7 @@ feature_group ("access")
     |
     | List of types of the items of the tuple, keyed by purpose in the tuple.
     |
-    prop item_types : Hash<String, BMM_TYPE> ;
+    prop item_types : Map<String, BMM_TYPE> ;
 
     |
     | Return the logical set (i.e. unique types) from the merge of `flattened_type_list_()`

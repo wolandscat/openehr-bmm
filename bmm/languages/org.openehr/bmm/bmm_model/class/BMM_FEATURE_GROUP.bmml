@@ -25,7 +25,7 @@ feature_group ("access")
     | Set of properties of this group, represented as name/value pairs. These are understood to
     | apply logically to all of the features contained within the group.
     |
-    prop properties : Hash<String, String> ;
+    prop properties : Map<String, String> ;
 
     |
     | Set of features in this group.

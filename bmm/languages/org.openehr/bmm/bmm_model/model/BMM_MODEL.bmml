@@ -33,7 +33,7 @@ feature_group ("access")
     |
     | All classes in this model, keyed by type name.
     |
-    prop modules :? Hash<String, BMM_MODULE> ;
+    prop modules :? Map<String, BMM_MODULE> ;
 
     |
     | Identifier of this model, lower-case, formed from:

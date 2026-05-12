@@ -21,11 +21,11 @@ feature_group ("access")
     |
     | External call general meta-data, including target routine name, type mapping etc.
     |
-    prop meta_data : Hash<String, String> ;
+    prop meta_data : Map<String, String> ;
 
     |
     | Optional argument-mapping meta-data.
     |
-    prop argument_mapping :? Hash<String, String> ;
+    prop argument_mapping :? Map<String, String> ;
 
 end

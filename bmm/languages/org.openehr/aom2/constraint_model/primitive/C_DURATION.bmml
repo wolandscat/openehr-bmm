@@ -25,7 +25,7 @@ import org.openehr:representation;
 | sign may be used.
 |
 class C_DURATION
-    is_a C_TEMPORAL
+    is_a C_TEMPORAL<Iso8601_duration>
 
 feature_group ("access")
 

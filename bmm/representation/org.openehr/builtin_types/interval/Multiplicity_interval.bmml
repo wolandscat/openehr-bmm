@@ -13,7 +13,7 @@
 | An Interval of Integer, used to represent multiplicity, cardinality and optionality in
 | models.
 |
-class Multiplicity_Interval
+class Multiplicity_interval
     is_a Proper_Interval<Integer>
 
 feature_group ("access")

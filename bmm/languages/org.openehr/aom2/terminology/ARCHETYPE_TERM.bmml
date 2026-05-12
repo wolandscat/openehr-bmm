@@ -35,6 +35,6 @@ feature_group ("access")
     | Hash of keys and corresponding values for other items in a term, e.g. provenance. Hash of
     | keys ("text", "description" etc) and corresponding values.
     |
-    prop other_items :? Hash<String,String> ;
+    prop other_items :? Map<String,String> ;
 
 end

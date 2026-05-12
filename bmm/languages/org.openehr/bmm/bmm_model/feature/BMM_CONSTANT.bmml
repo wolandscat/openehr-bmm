@@ -22,6 +22,6 @@ feature_group ("access")
     |
     | Literal value of the constant.
     |
-    prop generator : BMM_LITERAL_VALUE ;
+    prop generator : BMM_LITERAL_VALUE<BMM_TYPE> ;
 
 end

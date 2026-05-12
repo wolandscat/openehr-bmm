@@ -26,7 +26,7 @@ feature_group ("access")
     |
     | Primary translator name and other demographic details.
     |
-    prop author : Hash<String, String> ;
+    prop author : Map<String, String> ;
 
     |
     | Accreditation of primary translator or group, usually a national translator's registration
@@ -50,6 +50,6 @@ feature_group ("access")
     |
     | Any other meta-data.
     |
-    prop other_details :? Hash<String, String> ;
+    prop other_details :? Map<String, String> ;
 
 end

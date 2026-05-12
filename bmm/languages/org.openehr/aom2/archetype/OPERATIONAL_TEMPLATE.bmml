@@ -28,13 +28,13 @@ feature_group ("access")
     | Compendium of flattened terminologies of archetypes referenced from this template, keyed
     | by archetype identifier. This will almost always be present in a template.
     |
-    prop component_terminologies :? Hash<String,ARCHETYPE_TERMINOLOGY> ;
+    prop component_terminologies :? Map<String,ARCHETYPE_TERMINOLOGY> ;
 
     |
     | Compendium of flattened terminology extracts (i.e. from external terminologies) from
     | archetypes referenced from this template, keyed by archetype identifier.
     |
-    prop terminology_extracts :? Hash<String,ARCHETYPE_TERMINOLOGY> ;
+    prop terminology_extracts :? Map<String,ARCHETYPE_TERMINOLOGY> ;
 
     |
     | Return the component terminology for the archetype with identifier an_id.

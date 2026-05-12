@@ -52,7 +52,7 @@ feature_group ("access")
 
     |
     | True if this class represents a type considered to be primitive in the type system, i.e.
-    | any typically built-in or standard library type such as `String`, `Date`, `Hash<K,V>` etc.
+    | any typically built-in or standard library type such as `String`, `Date`, `Map<K,V>` etc.
     |
     prop is_primitive :? Boolean ;
 

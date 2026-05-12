@@ -50,11 +50,11 @@ feature_group ("access")
     | URIs of original clinical document(s) or description of which resource is a formalisation,
     | in the language of this description item; keyed by meaning.
     |
-    prop original_resource_uri :? Hash<String, String> ;
+    prop original_resource_uri :? Map<String, String> ;
 
     |
     | Additional language-senstive resource metadata, as a list of name/value pairs.
     |
-    prop other_details :? Hash<String, String> ;
+    prop other_details :? Map<String, String> ;
 
 end

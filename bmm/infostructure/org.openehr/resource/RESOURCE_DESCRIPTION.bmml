@@ -26,7 +26,7 @@ feature_group ("access")
     |
     | Original author of this resource, with all relevant details, including organisation.
     |
-    prop original_author : Hash<String, String> ;
+    prop original_author : Map<String, String> ;
 
     |
     | Namespace of original author's organisation, in reverse internet form, if applicable.
@@ -85,13 +85,13 @@ feature_group ("access")
     | license at http://loinc.org/terms-of-use"> ["snomedct"] = <"Content from SNOMED CT® is
     | copyright © 2007 IHTSDO <ihtsdo.org>"> > ----
     |
-    prop ip_acknowledgements :? Hash<String, String> ;
+    prop ip_acknowledgements :? Map<String, String> ;
 
     |
     | List of references of material on which this artefact is based, as a keyed list of
     | strings. The keys should be in a standard citation format.
     |
-    prop references :? Hash<String, String> ;
+    prop references :? Map<String, String> ;
 
     |
     | URI of package to which this resource belongs.
@@ -106,17 +106,17 @@ feature_group ("access")
     | <http://location.in.clinicalelementmodels.com>"> ["tool"] = <"cem2adl v6.3.0"> ["time"] =
     | <"2014-11-03T09:05:00"> > ----
     |
-    prop conversion_details :? Hash<String, String> ;
+    prop conversion_details :? Map<String, String> ;
 
     |
     | Details of all parts of resource description that are natural language-dependent, keyed by
     | language code.
     |
-    prop details :? Hash<String, RESOURCE_DESCRIPTION_ITEM> ;
+    prop details :? Map<String, RESOURCE_DESCRIPTION_ITEM> ;
 
     |
     | Additional non-language-sensitive resource meta-data, as a list of name/value pairs.
     |
-    prop other_details :? Hash<String, String> ;
+    prop other_details :? Map<String, String> ;
 
 end

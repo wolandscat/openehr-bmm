@@ -21,7 +21,7 @@ feature_group ("access")
     |
     | The interval of this cardinality.
     |
-    prop interval : Multiplicity_Interval ;
+    prop interval : Multiplicity_interval ;
 
     |
     | True if the members of the container attribute to which this cardinality refers are

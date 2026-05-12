@@ -31,7 +31,6 @@ feature_group ("access")
 
 invariant
     operator_validity: ∃operator_def ⇒ arity ∈ {|1..2|};
-
-    inv_result_type: type = Result.type;
+    inv_result_type: type = result.type;
 
 end

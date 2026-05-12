@@ -8,6 +8,7 @@
 +---------------------------------------------------------------------------------
 
 import org.openehr:representation;
+import org.openehr:infostructure;
 
 |
 | Root object of a standalone, authored archetype, including all meta-data,
@@ -46,7 +47,7 @@ feature_group ("access")
     prop is_generated : Boolean ;
 
     |
-    prop other_meta_data : Hash<String,String> ;
+    prop other_meta_data : Map<String,String> ;
 
 invariant
     invariant_adl_version_validity: valid_version_id (adl_version);

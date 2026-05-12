@@ -41,7 +41,7 @@ feature_group ("access")
     | codes, e.g. `"en"`, `"de"`, while the inner hash keys are term codes, e.g. `"at0017"`,
     | `"at0004"` (at-coded archetypes) or `"id17"`, `"at4"` (id-coded archetypes).
     |
-    prop term_definitions : Hash<String,Hash<String,ARCHETYPE_TERM>> ;
+    prop term_definitions : Map<String,Map<String,ARCHETYPE_TERM>> ;
 
     |
     | Directory of bindings to external terminology codes and value sets, as a two-level table.
@@ -50,7 +50,7 @@ feature_group ("access")
     | represent references to externally defined resources, either terms, ontology concepts, or
     | terminology subsets / ref-sets.
     |
-    prop term_bindings :? Hash<String,Hash<String,Uri>> ;
+    prop term_bindings :? Map<String,Map<String,Uri>> ;
 
     |
     | Archetype that owns this terminology.
@@ -60,14 +60,14 @@ feature_group ("access")
     |
     | Archetype-local value sets, each keyed by value-set id, i.e. an ac-code.
     |
-    prop value_sets :? Hash<String,VALUE_SET> ;
+    prop value_sets :? Map<String,VALUE_SET> ;
 
     |
     | Directory of extracts of external terminologies, as a two-level table. The outer hash keys
     | are terminology ids, e.g. `"SNOMED_CT"`, while the inner hash keys are term codes or code-
     | phrases from the relevant terminology, e.g. `"10094842"`.
     |
-    prop terminology_extracts :? Hash<String,Hash<String,ARCHETYPE_TERM>> ;
+    prop terminology_extracts :? Map<String,Map<String,ARCHETYPE_TERM>> ;
 
     |
     | Specialisation depth of this artefact. Unspecialised artefacts have depth 0, with each

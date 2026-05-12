@@ -29,7 +29,7 @@ feature_group ("access")
     |
     | Top-level (root) models in use, keyed by `model_id`.
     |
-    prop bmm_models :? Hash<String, BMM_MODEL> ;
+    prop bmm_models :? Map<String, BMM_MODEL> ;
 
     |
     | Validated models, keyed by `model_id()` and any shorter forms of id, with some or no

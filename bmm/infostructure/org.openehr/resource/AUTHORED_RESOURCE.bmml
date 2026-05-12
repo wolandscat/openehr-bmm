@@ -53,7 +53,7 @@ feature_group ("access")
     | language-dependent parts of the resource. The `original_language` does not appear in
     | this list.
     |
-    prop translations :? Hash<String, TRANSLATION_DETAILS> ;
+    prop translations :? Map<String, TRANSLATION_DETAILS> ;
 
     |
     | Total list of languages available in this resource, derived from original_language and

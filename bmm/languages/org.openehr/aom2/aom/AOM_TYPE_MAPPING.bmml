@@ -29,6 +29,6 @@ feature_group ("access")
     |
     | List of mappings of properties of this type to another type.
     |
-    prop property_mappings :? Hash<String, AOM_PROPERTY_MAPPING> ;
+    prop property_mappings :? Map<String, AOM_PROPERTY_MAPPING> ;
 
 end
