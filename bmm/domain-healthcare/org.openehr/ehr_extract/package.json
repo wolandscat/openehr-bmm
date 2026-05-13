@@ -1,0 +1,3 @@
+{
+    "packages": ["common", "openehr_extract", "generic_extract", "sync_extract", "message"]
+}

@@ -1,0 +1,3 @@
+{
+    "packages": ["primitive_types", "structures", "time", "interval", "terminology", "functional"]
+}

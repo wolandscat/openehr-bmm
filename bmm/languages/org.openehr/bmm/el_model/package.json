@@ -1,0 +1,3 @@
+{
+    "packages": ["expression", "decision", "reference", "agent"]
+}

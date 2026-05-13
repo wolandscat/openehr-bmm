@@ -1,0 +1,3 @@
+{
+    "packages": ["archetype", "constraint_model", "rules", "terminology", "rm_overlay", "aom_profile"]
+}

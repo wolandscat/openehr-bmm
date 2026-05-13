@@ -1,0 +1,3 @@
+{
+    "packages": ["text", "quantity", "encapsulated", "time_specification", "uri"]
+}

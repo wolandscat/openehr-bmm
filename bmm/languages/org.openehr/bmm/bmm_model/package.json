@@ -1,0 +1,3 @@
+{
+    "packages": ["schema", "model", "type", "class", "feature", "value", "statement"]
+}
