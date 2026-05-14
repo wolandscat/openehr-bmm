@@ -65,6 +65,14 @@ feature_group ("access")
     | True if the items in `constraint` are equal in number and identical pair-wise with those
     | in `other.constraint`.
     |
-    func c_value_congruent_to (other : C_STRING) : Boolean ;
+    | FIXME: Add the following when parser upgraded
+    |     do
+    |        Result := constraint.count = other.constraint.count ∧ then
+    |            constraint.for_all ( (i: Integer, it: String) ->
+    |                other.constraint.i_th (i).is_equal (it)
+    |            );
+    |
+    func c_value_congruent_to (other : C_STRING) : Boolean
+        ;
 
 end

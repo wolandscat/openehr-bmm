@@ -92,17 +92,26 @@ feature_group ("access")
     | Typically used to test if an inherited node locally contains any constraints.
     |
     func c_congruent_to (other : ARCHETYPE_CONSTRAINT) : Boolean
+        do
+            Result := ¬∃existence ∧ ((is_single ∧ other.is_single) ∨
+                    (is_multiple ∧ other.is_multiple ∧ ¬∃cardinality));
         post_cond
-            valid_result: Result = ¬∃existence ∧ ((is_single ∧ other.is_single) ∨ (is_multiple ∧ other.is_multiple ∧ ¬∃cardinality));
+            valid_result: Result = ¬∃existence ∧ ((is_single ∧ other.is_single) ∨
+                (is_multiple ∧ other.is_multiple ∧ ¬∃cardinality));
         ;
 
     |
     | True if constraints represented by this node, ignoring any sub-parts, are narrower or the
     | same as other. Typically used during validation of specialised archetype nodes.
     |
-    func c_conforms_to (other : ARCHETYPE_CONSTRAINT) : Boolean
+    func c_conforms_to (other : ARCHETYPE_CONSTRAINT, rmcc: (String, String) -> Boolean) : Boolean
+        do
+            Result := existence_conforms_to (other) ∧
+                ((is_single ∧ other.is_single) ∨
+                (is_multiple ∧ cardinality_conforms_to (other)));
         post_cond
-            valid_result: Result = existence_conforms_to (other) ∧ ((is_single ∧ other.is_single) ∨ (is_multiple ∧ cardinality_conforms_to (other)));
+            valid_result: Result = existence_conforms_to (other) ∧
+                ((is_single ∧ other.is_single) ∨ (is_multiple ∧ cardinality_conforms_to (other)));
         ;
 
     |
@@ -113,4 +122,21 @@ feature_group ("access")
             valid_result: Result = ∃existence ∧ existence.is_prohibited;
         ;
 
+    |
+    | True if the existence of this node conforms to other.existence
+    |
+    func existence_conforms_to (other: C_ATTRIBUTE): Boolean
+        do
+            Result := (∃existence ∧ ∃other.existence) ?
+                other.existence.contains (existence) : True;
+        ;
+
+    |
+    | True if the cardinality of this node conforms to other.cardinality, if it exists
+    |
+    func cardinality_conforms_to (other: C_ATTRIBUTE): Boolean
+        do
+            Result := (∃cardinality ∧ ∃other.cardinality) ?
+                other.cardinality.contains (cardinality) : True;
+        ;
 end

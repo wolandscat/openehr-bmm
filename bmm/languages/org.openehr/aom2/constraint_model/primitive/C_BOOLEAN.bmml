@@ -51,12 +51,21 @@ feature_group ("access")
     | True if `other.any_allowed` or else every constraint in the `constraint` list exists
     | in the `other.constraint`.
     |
-    func c_value_conforms_to (other : C_BOOLEAN) : Boolean ;
+    func c_value_conforms_to (other : C_BOOLEAN) : Boolean
+        do
+            Result := other.any_allowed ∨
+                constraint.count < other.constraint.count ∧
+                ∀ c : constraint ¦ other.constraint.has (c);
+        ;
 
     |
     | True if the items in `constraint` are equal in number and identical pair-wise with those
     | in `other.constraint`.
     |
-    func c_value_congruent_to (other : C_BOOLEAN) : Boolean ;
+    func c_value_congruent_to (other : C_BOOLEAN) : Boolean
+        do
+            Result := constraint.count = other.constraint.count ∧
+                ∀ c : constraint ¦ other.constraint.has (c);
+        ;
 
 end

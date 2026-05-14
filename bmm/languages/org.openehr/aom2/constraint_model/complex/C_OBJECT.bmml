@@ -79,15 +79,48 @@ feature_group ("access")
     |
     | If local `occurrences` not set, always assume 0 as the lower bound.
     |
-    func effective_occurrences : Multiplicity_interval ;
+    func effective_occurrences (rm_prop_mult: (String, String) -> Multiplicity_interval): Multiplicity_interval
+        do
+            Result :=
+            choice in
+              =============================================================================
+              ∃occurrences: occurrences,
+              -----------------------------------------------------------------------------
+              ∃parent:      choice in
+                            ===============================================================
+                            ∃parent.cardinality:
+                                choice in
+                                ===========================================================
+                                parent.cardinality.
+                                    interval.
+                                    upper_unbounded:  Multiplicity_interval.make_open,
+                                -----------------------------------------------------------
+                                *:                    Multiplicity_interval.make_bounded (0,
+                                                        parent.cardinality.
+                                                        interval.upper)
+                                ===========================================================
+                                ,
+                            ----------------------------------------------------------------
+                            ∃parent.parent:   rm_prop_mult (parent.parent.rm_type_name,
+                                                parent.parent.rm_attribute_path),
+                            ----------------------------------------------------------------
+                            *:                Multiplicity_interval.make_open
+                            ================================================================
+                            ,
+              -------------------------------------------------------------------------------
+              *:            Multiplicity_interval.make_open
+              ===============================================================================
+              ;
+        ;
 
     |
     | True if constraints represented by this node, ignoring any sub-parts, are narrower or the
     | same as other. Typically used during validation of specialised archetype nodes.
     |
-    | .Parameters + [horizontal] `rmcc`:: Reference Model conformance checker agent (lambda).
+    | Parameters
+    |   `rmcc`:: Reference Model conformance checker agent (lambda).
     |
-    func c_conforms_to (other : C_OBJECT) : Boolean ;
+    func c_conforms_to (other : C_OBJECT, rmcc: (String, String) -> Boolean) : Boolean ;
 
     |
     | True if constraints represented by this node contain no further redefinitions with respect
