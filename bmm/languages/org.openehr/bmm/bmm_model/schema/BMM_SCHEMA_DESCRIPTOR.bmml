@@ -18,20 +18,15 @@ abstract class BMM_SCHEMA_DESCRIPTOR
 feature_group ("access")
 
     |
-    | Schema id, formed by
-    |
-    | `{BMM_DEFINITIONS}.create_schema_id(
-    | meta_data.item({BMM_DEFINITIONS}.Metadata_model_publisher),
-    | meta_data.item({BMM_DEFINITIONS}.Metadata_schema_name),
-    | meta_data.item({BMM_DEFINITIONS}.Metadata_model_release)`
-    |
+    | Schema id, formed by the meta-data items:
+    |   <model_publisher>_<schema_name>_<model_release>
     | e.g. `openehr_rm_1.0.3`, `openehr_test_1.0.1`, `iso_13606_1_2008_2.1.2`.
     |
     prop schema_id : String ;
 
     |
     | Table of `{key, value}` of schema meta-data, keys are string values defined by
-    | `{BMM_DEFINITIONS}.Metadata_*` constants.
+    | `BMM_DEFINITIONS.Metadata_*` constants.
     |
     prop meta_data : Map<String, String> ;
 
@@ -51,15 +46,25 @@ feature_group ("access")
     prop includes :? List<String> ;
 
     |
-    | True if this is a top-level schema, i.e. is the root schema of a 'model'. True if
-    | `bmm_schema_ /= Void and then _bmm_schema.model_name_ /= Void`.
+    | True if this is a top-level schema, i.e. is the root schema of a 'model'.
     |
-    func is_top_level : Boolean ;
+    func is_top_level : Boolean
+        do
+            Result := ∃bmm_schema_name ∧ ∃bmm_schema.model_name;
+        ;
 
     |
     | True if the BMM version found in the schema (or assumed, if none) is compatible with that
     | in this software.
     |
-    func is_bmm_compatible : Boolean ;
+    func is_bmm_compatible : Boolean
+        ;
+
+invariant
+    result_valid: schema_id = BMM_DEFINITIONS.create_schema_id (
+        meta_data.item(BMM_DEFINITIONS.Metadata_model_publisher),
+        meta_data.item(BMM_DEFINITIONS.Metadata_schema_name),
+        meta_data.item(BMM_DEFINITIONS.Metadata_model_release)
+    );
 
 end

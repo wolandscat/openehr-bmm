@@ -11,7 +11,7 @@ import org.openehr:representation;
 
 |
 | Meta-type for reference to a non-abstract type as an object. Assumed to be accessible at
-| run-time. Typically represented syntactically as `TypeName` or `{TypeName}`.
+| run-time. Typically represented syntactically as `TypeName`.
 |
 | May be used as a value, or as the qualifier for a function or constant access.
 |
@@ -21,7 +21,7 @@ class EL_TYPE_REF
 feature_group ("access")
 
     |
-    | Type, directly from the name of the reference, e.g. `{SOME_TYPE}`.
+    | Type, directly from the name of the reference, e.g. `SOME_TYPE`.
     |
     prop type : BMM_TYPE ;
 

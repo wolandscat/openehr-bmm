@@ -80,7 +80,7 @@ feature_group ("access")
     |
     | Identifier of this schema, used for stating inclusions and identifying files. Formed as:
     |
-    | `{BMM_DEFINITIONS}.create_schema_id ( _rm_publisher_, _schema_name_, _rm_release_)`
+    | `BMM_DEFINITIONS.create_schema_id (rm_publisher, schema_name, rm_release)`
     |
     | E.g. `"openehr_rm_ehr_1.0.4"`.
     |

@@ -11,9 +11,9 @@ import org.openehr:representation;
 
 |
 | Object representing annotations on an archetype. These can be of various forms, with a
-| documentation form defined so far, which has a multi-level tabular structure [ [ [String
-| value, String key], path key], language key]. Example instance, showing the documentation
-| structure.
+| documentation form defined so far, which has a multi-level tabular structure
+|   `{ language: String, { path: String, { key: String, value: String } } }`
+| Example instance, showing the documentation structure.
 |
 | --------
 | {[
@@ -37,6 +37,6 @@ feature_group ("access")
     |
     | Documentary annotations in a multi-level keyed structure.
     |
-    prop documentation : Map<String, ANNOTATIONS_PATH_MAP> ;
+    prop documentation : Map<String, Map<String, Map<String, String>>> ;
 
 end
