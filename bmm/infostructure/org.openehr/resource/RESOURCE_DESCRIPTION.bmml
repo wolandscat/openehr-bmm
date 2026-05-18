@@ -80,10 +80,14 @@ feature_group ("access")
     | terminology codes, ontology ids etc. Recommended keys are the widely known name or
     | namespace for the IP source, as shown in the following example:
     |
-    | ---- ip_acknowledgements = < ["loinc"] = <"This content from LOINC® is copyright © 1995
-    | Regenstrief Institute, Inc. and the LOINC Committee, and available at no cost under the
-    | license at http://loinc.org/terms-of-use"> ["snomedct"] = <"Content from SNOMED CT® is
-    | copyright © 2007 IHTSDO <ihtsdo.org>"> > ----
+    | ----
+    | ip_acknowledgements = <
+    |   ["loinc"] = <"This content from LOINC® is copyright © 1995
+    |       Regenstrief Institute, Inc. and the LOINC Committee, and available at no cost under the
+    |       license at http://loinc.org/terms-of-use">
+    |   ["snomedct"] = <"Content from SNOMED CT® is copyright © 2007 IHTSDO <ihtsdo.org>">
+    | >
+    | ----
     |
     prop ip_acknowledgements :? Map<String, String> ;
 
@@ -102,9 +106,13 @@ feature_group ("access")
     | Details related to conversion process that generated this model from an original, if
     | relevant, as a list of name/value pairs. Typical example with recommended tags:
     |
-    | ---- conversion_details = < ["source_model"] = <"CEM model xyz
-    | <http://location.in.clinicalelementmodels.com>"> ["tool"] = <"cem2adl v6.3.0"> ["time"] =
-    | <"2014-11-03T09:05:00"> > ----
+    | ----
+    | conversion_details = <
+    |   ["source_model"] = <"CEM model xyz <http://location.in.clinicalelementmodels.com>">
+    |   ["tool"] = <"cem2adl v6.3.0">
+    |   ["time"] = <"2014-11-03T09:05:00">
+    | >
+    | ----
     |
     prop conversion_details :? Map<String, String> ;
 
