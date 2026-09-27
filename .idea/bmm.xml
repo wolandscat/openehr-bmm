@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BmmSettings">
+    <option name="bmmlGen" value="true" />
+    <option name="navGen" value="true" />
+    <option name="publishOutputDir" value="$PROJECT_DIR$/../openehr-doc" />
+  </component>
+</project>
