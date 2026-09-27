@@ -30,6 +30,8 @@ feature_group ("access")
     prop path : String ;
 
     |
+    | Resolved reference to archetype element.
+    |
     prop item : ARCHETYPE_CONSTRAINT ;
 
 end

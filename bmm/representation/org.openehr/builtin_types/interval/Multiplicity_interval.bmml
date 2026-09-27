@@ -14,7 +14,7 @@
 | models.
 |
 class Multiplicity_interval
-    is_a Proper_Interval<Integer>
+    is_a Proper_interval<Integer>
 
 feature_group ("access")
 

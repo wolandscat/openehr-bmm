@@ -12,7 +12,7 @@
 |
 | Type representing a 'proper' Interval, i.e. any two-sided or one-sided interval.
 |
-class Proper_Interval<T: Ordered>
+class Proper_interval<T: Ordered>
     is_a Interval<T>
 
 invariant

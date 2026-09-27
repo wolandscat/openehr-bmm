@@ -13,7 +13,7 @@
 | Type representing an Interval that happens to be a point value. Provides an efficient
 | representation that is substitutable for `Interval<T>` where needed.
 |
-class Point_Interval<T: Ordered>
+class Point_interval<T: Ordered>
     is_a Interval<T>
 
 invariant
