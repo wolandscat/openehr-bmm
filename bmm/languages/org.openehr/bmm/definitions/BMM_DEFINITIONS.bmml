@@ -135,7 +135,7 @@ feature_group ("definitions")
     |
     | Built-in type definition corresponding to the top `Any` type.
     |
-    singleton Any_class: BMM_SIMPLE_CLASS
+    singleton Any_type: BMM_SIMPLE_TYPE
         ;
 
 feature_group ("factory")

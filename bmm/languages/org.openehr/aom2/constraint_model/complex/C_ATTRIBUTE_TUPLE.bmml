@@ -30,12 +30,10 @@ feature_group ("access")
     prop members :? List<C_ATTRIBUTE> ;
 
     |
-    | True if constraints represented by this node, ignoring any sub-parts, are narrower or the
-    | same as other. Typically used during validation of specialised archetype nodes.
+    | .Parameters +
+    | `rmcc`:: RM conformance checker agent.
     |
-    | .Parameters + [horizontal] `rmcc`:: RM conformance checker agent.
-    |
-    func c_conforms_to (other : C_ATTRIBUTE_TUPLE) : Boolean ;
+    func c_conforms_to (other : C_ATTRIBUTE_TUPLE, rmcc: (String, String) -> Boolean) : Boolean ;
 
     |
     | True if constraints represented by this node contain no further redefinitions with respect

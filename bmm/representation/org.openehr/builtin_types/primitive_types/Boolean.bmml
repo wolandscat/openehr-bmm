@@ -13,7 +13,6 @@
 | Type representing minimal interface of built-in Boolean type.
 |
 builtin class Boolean
-    is_a Any
 
 feature_group ("operators")
 

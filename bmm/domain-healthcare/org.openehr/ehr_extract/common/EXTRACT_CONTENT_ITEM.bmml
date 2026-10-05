@@ -41,7 +41,7 @@ feature_group ("access")
     |
     | Content object.
     |
-    prop item :? LOCATABLE ;
+    prop item :? Any ;
 
 invariant
     item_validity: is_masked ⊻ ∃item;

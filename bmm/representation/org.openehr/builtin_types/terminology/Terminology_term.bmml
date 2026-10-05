@@ -14,7 +14,6 @@
 | text and the code, i.e. a concept reference.
 |
 class Terminology_term
-    is_a Any
 
 feature_group ("access")
 

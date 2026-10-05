@@ -12,7 +12,7 @@
 |
 | Container whose storage is assumed to be contiguous.
 |
-builtin class Array<T: Any>
-    is_a Container<T>
+builtin class Array<V: Any>
+    is_a Container<V>
 
 end

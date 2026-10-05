@@ -14,7 +14,7 @@
 | included or not included. Interval of ordered items.
 |
 abstract class Interval<T: Ordered>
-    is_a Any
+
 
 feature_group ("access")
 
@@ -57,22 +57,27 @@ feature_group ("access")
     | ((lower_included and v >= lower) or v > lower)) and (upper_unbounded or ((upper_included
     | and v <= upper or v < upper)))
     |
-    func has : Boolean
+    func has (e:T): Boolean
         post_cond
-            valid_result: Result = (lower_unbounded ∨ lower_included ∧ v >= lower) ∨ v > lower ∧ (upper_unbounded ∨ upper_included ∧ v <= upper ∨ v < upper);
+            valid_result: Result = (lower_unbounded ∨ lower_included ∧ e >= lower) ∨ e > lower ∧ (upper_unbounded ∨ upper_included ∧ e <= upper ∨ e < upper);
         ;
 
     |
     | True if there is any overlap between intervals represented by Current and `other`. True
     | if at least one limit of `other` is strictly inside the limits of this interval.
     |
-    func intersects : Boolean ;
+    func intersects (other: Interval<T>): Boolean ;
 
     |
     | True if current interval properly contains `other`? True if all points of `other` are
     | inside the current interval.
     |
-    func contains : Boolean ;
+    func contains (other: Interval<T>): Boolean ;
+
+    |
+    | True if current object’s interval is semantically same as other.
+    |
+    func is_equal (other: Any): Boolean ;
 
 invariant
     lower_included_valid: lower_unbounded ⇒ ¬lower_included;

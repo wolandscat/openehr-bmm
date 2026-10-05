@@ -12,20 +12,20 @@
 |
 | Ordered container that may contain duplicates.
 |
-builtin class List<T: Any>
-    is_a Container<T>
+builtin class List<V: Any>
+    is_a Container<V>
 
 feature_group ("access")
 
     |
     | Return first element.
     |
-    func first : T ;
+    func first : V ;
 
     |
     | Return last element.
     |
-    func last : T ;
+    func last : V ;
 
 invariant
     first_validity: ¬is_empty ⇒ ∃first;

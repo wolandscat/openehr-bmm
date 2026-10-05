@@ -20,12 +20,12 @@ feature_group ("values")
     | List of allowed date constraints.
     |
     const Valid_date_constraint_patterns: List<String> = (
-        "YYYY-MM-DD",       // full date required
-        "YYYY-MM-??",       // day optional
-        "YYYY-MM-XX",       // day prohibited
-        "YYYY-??-??",       // any partial or full date
-        "YYYY-??-XX",       // day prohibited, month optional
-        "YYYY-XX-XX"        // year only
+        "YYYY-MM-DD",       || full date required
+        "YYYY-MM-??",       || day optional
+        "YYYY-MM-XX",       || day prohibited
+        "YYYY-??-??",       || any partial or full date
+        "YYYY-??-XX",       || day prohibited, month optional
+        "YYYY-XX-XX"        || year only
     );
 
     |
@@ -52,11 +52,11 @@ feature_group ("values")
     | List of allowed time constraints.
     |
     const Valid_time_constraint_patterns: List<String> = (
-        "HH:MM:SS",     // full time required
-        "HH:MM:??",     // seconds optional
-        "HH:MM:XX",     // minutes required, seconds prohibited
-        "HH:??:??",     // minutes and seconds optional
-        "HH:??:XX"      // minutes optional, seconds prohibited
+        "HH:MM:SS",     || full time required
+        "HH:MM:??",     || seconds optional
+        "HH:MM:XX",     || minutes required, seconds prohibited
+        "HH:??:??",     || minutes and seconds optional
+        "HH:??:XX"      || minutes optional, seconds prohibited
     ) ;
 
     |
@@ -79,12 +79,12 @@ feature_group ("values")
     | List of allowed date/time constraints.
     |
     const Valid_date_time_constraint_patterns: List<String> = (
-        "YYYY-MM-DDTHH:MM:SS",  // full date/time required
-        "YYYY-MM-DDTHH:MM:??",  // seconds optional
-        "YYYY-MM-DDTHH:MM:XX",  // seconds prohibited
-        "YYYY-MM-DDTHH:??:??",  // minutes and seconds optional
-        "YYYY-MM-DDTHH:??:XX",  // minutes optional, seconds prohibited
-        "YYYY-??-??T??:??:??"   // any date/time ok
+        "YYYY-MM-DDTHH:MM:SS",  || full date/time required
+        "YYYY-MM-DDTHH:MM:??",  || seconds optional
+        "YYYY-MM-DDTHH:MM:XX",  || seconds prohibited
+        "YYYY-MM-DDTHH:??:??",  || minutes and seconds optional
+        "YYYY-MM-DDTHH:??:XX",  || minutes optional, seconds prohibited
+        "YYYY-??-??T??:??:??"   || any date/time ok
     );
 
     |

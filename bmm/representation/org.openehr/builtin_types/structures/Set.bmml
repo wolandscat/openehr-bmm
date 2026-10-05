@@ -12,7 +12,7 @@
 |
 | Unordered container that may not contain duplicates.
 |
-builtin class Set<T: Any>
-    is_a Container<T>
+builtin class Set<V: Any>
+    is_a Container<V>
 
 end
