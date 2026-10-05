@@ -12,15 +12,14 @@
 |
 | Abstract ancestor of container types whose items are addressable in some way.
 |
-abstract builtin class Container<T: Any>
-    is_a Any
+abstract builtin class Container<V: Any>
 
 feature_group ("access")
 
     |
     | Test for membership of a value.
     |
-    func has : Boolean ;
+    func has (v:V) : Boolean ;
 
     |
     | Number of items in container.
@@ -31,5 +30,34 @@ feature_group ("access")
     | True if container is empty.
     |
     func is_empty : Boolean ;
+
+feature_group ("comparison")
+
+    |
+    | Existential quantifier applied to container, taking one agent argument test whose signature is (v:T): Boolean.
+    |
+    func there_exists (test: (V) -> Boolean): Boolean
+        alias
+            "there exists", "∃" ;
+        ;
+
+    |
+    | Universal quantifier applied to container, taking one agent argument test whose signature is (v:T): Boolean.
+    |
+    func for_all (test: (V) -> Boolean): Boolean
+        alias
+            "for all", "∀";
+        ;
+
+    |
+    | Return a List all items matching the predicate function test which has signature (v:T): Boolean.
+    | If no matches, an empty List is returned.
+    |
+    func matching (test: (V) -> Boolean): List<V> ;
+
+    |
+    | Return first item matching the predicate function test which has signature (v:T): Boolean, or Void if no match.
+    |
+    func select (test: (V) -> Boolean): V;
 
 end
