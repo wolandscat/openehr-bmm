@@ -12,7 +12,7 @@
 |
 | Abstract ancestor of container types whose items are addressable in some way.
 |
-abstract builtin class Container<V: Any>
+abstract builtin class Container<V>
 
 feature_group ("access")
 

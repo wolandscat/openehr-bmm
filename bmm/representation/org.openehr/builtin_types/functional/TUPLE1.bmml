@@ -13,7 +13,7 @@
 | A Tuple type used, among other things, for representing a single typed argument within a
 | Routine signature.
 |
-class TUPLE1<A: Any>
+class TUPLE1<A>
     is_a TUPLE
 
 end

@@ -12,7 +12,7 @@
 |
 | Ordered container that may contain duplicates.
 |
-builtin class List<V: Any>
+builtin class List<V>
     is_a Container<V>
 
 feature_group ("access")
