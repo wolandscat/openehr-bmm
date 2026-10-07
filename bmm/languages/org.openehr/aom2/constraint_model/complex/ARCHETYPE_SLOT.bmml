@@ -31,6 +31,8 @@ feature_group ("access")
     |
     prop excludes :? List<ASSERTION> ;
 
+feature_group ("status")
+
     |
     | True if this slot specification in this artefact is closed to further filling either in
     | further specialisations or at runtime. Default value False, i.e. unless explicitly set, a

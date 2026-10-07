@@ -34,9 +34,13 @@ feature_group ("access")
     | the time of runtime use, the target occurrences value has to be set into this object.
     |
     func use_target_occurrences : Boolean
+        do
+            Result := ¬∃occurrences;
         post_cond
-            valid_result: Result = (¬∃occurrences);
+            valid_result: Result = ¬∃occurrences;
         ;
+
+feature_group ("comparison")
 
     |
     | True if this node occurrences conforms to `other.occurrences`; `other` is assumed to
@@ -50,6 +54,9 @@ feature_group ("access")
     |
     | .Parameters + [horizontal] `other`:: `C_OBJECT` from a flat parent archetype.
     |
-    func occurrences_conforms_to (other : C_OBJECT) : Boolean ;
+    func occurrences_conforms_to (other : C_OBJECT) : Boolean
+        do
+            Result := other.same_type (self) ? super (other) : True;
+        ;
 
 end

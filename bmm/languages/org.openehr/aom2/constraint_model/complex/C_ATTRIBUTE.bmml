@@ -93,11 +93,11 @@ feature_group ("access")
     |
     func c_congruent_to (other : ARCHETYPE_CONSTRAINT) : Boolean
         do
-            Result := ¬∃existence ∧ ((is_single ∧ other.is_single) ∨
-                    (is_multiple ∧ other.is_multiple ∧ ¬∃cardinality));
+            Result := ¬∃existence ∧ (is_single ∧ other.is_single ∨
+                    is_multiple ∧ other.is_multiple ∧ ¬∃cardinality);
         post_cond
-            valid_result: Result = ¬∃existence ∧ ((is_single ∧ other.is_single) ∨
-                (is_multiple ∧ other.is_multiple ∧ ¬∃cardinality));
+            valid_result: Result = ¬∃existence ∧ (is_single ∧ other.is_single ∨
+                is_multiple ∧ other.is_multiple ∧ ¬∃cardinality);
         ;
 
     |
@@ -107,17 +107,19 @@ feature_group ("access")
     func c_conforms_to (other : ARCHETYPE_CONSTRAINT, rmcc: (String, String) -> Boolean) : Boolean
         do
             Result := existence_conforms_to (other) ∧
-                ((is_single ∧ other.is_single) ∨
-                (is_multiple ∧ cardinality_conforms_to (other)));
+                (is_single ∧ other.is_single ∨
+                 is_multiple ∧ cardinality_conforms_to (other));
         post_cond
             valid_result: Result = existence_conforms_to (other) ∧
-                ((is_single ∧ other.is_single) ∨ (is_multiple ∧ cardinality_conforms_to (other)));
+                (is_single ∧ other.is_single ∨ is_multiple ∧ cardinality_conforms_to (other));
         ;
 
     |
     | True if this `C_ATTRIBUTE` has an existence constraint of `0..0`, i.e. prohibition.
     |
     func is_prohibited : Boolean
+        do
+            Result := ∃existence ∧ existence.is_prohibited;
         post_cond
             valid_result: Result = ∃existence ∧ existence.is_prohibited;
         ;
@@ -127,7 +129,7 @@ feature_group ("access")
     |
     func existence_conforms_to (other: C_ATTRIBUTE): Boolean
         do
-            Result := (∃existence ∧ ∃other.existence) ?
+            Result := ∃existence ∧ ∃other.existence ?
                 other.existence.contains (existence) : True;
         ;
 
@@ -136,7 +138,8 @@ feature_group ("access")
     |
     func cardinality_conforms_to (other: C_ATTRIBUTE): Boolean
         do
-            Result := (∃cardinality ∧ ∃other.cardinality) ?
+            Result := ∃cardinality ∧ ∃other.cardinality ?
                 other.cardinality.contains (cardinality) : True;
         ;
+
 end

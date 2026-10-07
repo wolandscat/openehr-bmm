@@ -27,21 +27,9 @@ feature_group ("access")
     prop assumed_value :? Any ;
 
     |
-    | True if this object represents a constraint on an enumerated type from the reference
-    | model, where the latter is assumed to be based on a primitive type, generally Integer or
-    | String.
-    |
-    prop is_enumerated_type_constraint :? Boolean ;
-
-    |
     | Constraint represented by this object; redefine in descendants.
     |
     prop constraint : Any ;
-
-    |
-    | True if there is an assumed value.
-    |
-    func has_assumed_value : Boolean ;
 
     |
     | Generate name of native type that is constrained by this `C_XXX` type. For most types, it
@@ -50,6 +38,22 @@ feature_group ("access")
     |
     func constrained_typename : String ;
 
+feature_group ("status")
+
+    |
+    | True if this object represents a constraint on an enumerated type from the reference
+    | model, where the latter is assumed to be based on a primitive type, generally Integer or
+    | String.
+    |
+    prop is_enumerated_type_constraint :? Boolean ;
+
+    |
+    | True if there is an assumed value.
+    |
+    func has_assumed_value : Boolean ;
+
+feature_group ("comparison")
+
     |
     | True if constraints represented by this node, ignoring any sub-parts, are narrower or the
     | same as other. Typically used during validation of specialised archetype nodes.
@@ -57,13 +61,16 @@ feature_group ("access")
     | Parameters
     |   `rmcc`:: Reference Model conformance checker lambda.
     |
-    func c_conforms_to (other : C_PRIMITIVE_OBJECT, rmcc: (String, String) -> Boolean) : Boolean ;
+    func c_conforms_to (other : C_PRIMITIVE_OBJECT, rmcc: (String, String) -> Boolean) : Boolean
+        do
+            Result := super (other, rmcc) ∧ c_value_conforms_to (other);
+        ;
 
     |
     | True if this node expresses a value constraint that conforms to that of `other`. Effected
     | in descendants.
     |
-    func c_value_conforms_to (other : C_PRIMITIVE_OBJECT) : Boolean ;
+    abstract func c_value_conforms_to (other : C_PRIMITIVE_OBJECT) : Boolean ;
 
     |
     | True if constraints represented by this node contain no further redefinitions with respect
@@ -71,12 +78,16 @@ feature_group ("access")
     |
     | Typically used to test if an inherited node locally contains any constraints.
     |
-    func c_congruent_to (other : C_PRIMITIVE_OBJECT) : Boolean ;
+    func c_congruent_to (other : C_PRIMITIVE_OBJECT) : Boolean
+        do
+            Result := constrained_typename.is_case_insensitive_equal (other.constrained_typename) ∧
+            				c_value_congruent_to (other);
+        ;
 
     |
     | True if this node expresses the same value constraint as `other`. Effected in descendants.
     |
-    func c_value_congruent_to (other : C_PRIMITIVE_OBJECT) : Boolean ;
+    abstract func c_value_congruent_to (other : C_PRIMITIVE_OBJECT) : Boolean ;
 
 invariant
     inv_valid_assumed_value: valid_value (assumed_value);

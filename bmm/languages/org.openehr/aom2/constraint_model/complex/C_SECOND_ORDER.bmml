@@ -32,13 +32,13 @@ feature_group ("access")
     |          respectively, the `rm_type_name` of the current node and the `rm_type_name` of the
     |          node being redefined in a specialisation parent archetype.
     |
-    func c_conforms_to (other : C_SECOND_ORDER, rmcc: (String, String) -> Boolean) : Boolean ;
+    abstract func c_conforms_to (other : C_SECOND_ORDER, rmcc: (String, String) -> Boolean) : Boolean ;
 
     |
     | True if constraints represented by this node contain no further redefinitions with respect
     | to the node other. Typically used to test if an inherited node locally contains any
     | constraints.
     |
-    func c_congruent_to (other : C_SECOND_ORDER) : Boolean ;
+    abstract func c_congruent_to (other : C_SECOND_ORDER) : Boolean ;
 
 end

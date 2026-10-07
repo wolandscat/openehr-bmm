@@ -23,6 +23,8 @@ feature_group ("access")
     |
     prop pattern_constraint :? String ;
 
+feature_group ("validation")
+
     |
     | True if `a_pattern` is a valid constraint. Define in concrete descendants.
     |
@@ -34,25 +36,39 @@ feature_group ("access")
     |
     func valid_pattern_constraint_replacement (a_pattern : String, an_other_pattern : String) : Boolean ;
 
+feature_group ("status")
+
     |
     | True if any value (i.e. instance) of the reference model type would be allowed. Redefined
     | in descendants.
     |
     func any_allowed : Boolean
+        do
+            Result := precursor ∧ pattern_constraint.is_empty;
         post_cond
             result_valid: Result = precursor ∧ pattern_constraint.is_empty;
         ;
+
+feature_group ("comparison")
 
     |
     | True if `precursor()` or else `other.pattern_constraint` is empty, or else
     | `pattern_constraint` is a valid (narrower) replacement for `other.pattern_constraint`.
     |
-    func c_value_conforms_to (other : C_ORDERED<T>) : Boolean ;
+    func c_value_conforms_to (other : C_ORDERED<T>) : Boolean
+        do
+            Result := super (other) ∧ other.pattern_constraint.is_empty ∨
+                ¬ pattern_constraint.is_empty ∧
+        	    valid_pattern_constraint_replacement (pattern_constraint, other.pattern_constraint);
+        ;
 
     |
     | True if `precursor (other)` and `pattern_constraint_ ~ _other.pattern_constraint`, i.e.
     | either both `Void` or else both non-`Void` and identical.
     |
-    func c_value_congruent_to (other : C_ORDERED<T>) : Boolean ;
+    func c_value_congruent_to (other : C_ORDERED<T>) : Boolean
+		do
+			Result := super (other) ∧ pattern_constraint = other.pattern_constraint ;
+        ;
 
 end

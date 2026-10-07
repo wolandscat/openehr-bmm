@@ -29,17 +29,33 @@ feature_group ("access")
     |
     prop members :? List<C_ATTRIBUTE> ;
 
+feature_group ("comparison")
+
+    |
+    | True if constraints represented by this node, ignoring any sub-parts, are narrower or the
+    | same as other. Typically used during validation of specialised archetype nodes.
     |
     | .Parameters +
-    | `rmcc`:: RM conformance checker agent.
+    | `rmcc`:: Rm conformance checker agent.
     |
-    func c_conforms_to (other : C_ATTRIBUTE_TUPLE, rmcc: (String, String) -> Boolean) : Boolean ;
+    func c_conforms_to (other : C_ATTRIBUTE_TUPLE, rmcc: (String, String) -> Boolean) : Boolean
+        do
+            Result :=
+                ∀ tpl : tuples ¦
+                    ∃ other_tpl : other.tuples ¦ tpl.c_conforms_to (other_tpl, rm_type_conformance_checker)
+                ∨ tuples.count < other.tuples.count ∧ c_congruent_to (other) ;
+        ;
 
     |
     | True if constraints represented by this node contain no further redefinitions with respect
     | to the node other. Typically used to test if an inherited node locally contains any
     | constraints.
     |
-    func c_congruent_to (other : C_SECOND_ORDER) : Boolean ;
+    func c_congruent_to (other : C_SECOND_ORDER) : Boolean
+        do
+            Result := ∀ tpl : tuples ¦
+                ∃ other_tpl : other.tuples ¦ tpl.c_congruent_to (other_tpl)
+            ;
+        ;
 
 end
