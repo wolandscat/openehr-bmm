@@ -16,7 +16,7 @@ import org.openehr:foundation ;
 |
 class EHR
 
-feature_group ("access")
+feature_group ("runtime")
 
     |
     | The identifier of the logical EHR management system in which this EHR was created.

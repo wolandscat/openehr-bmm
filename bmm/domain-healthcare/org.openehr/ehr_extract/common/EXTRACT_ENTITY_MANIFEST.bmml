@@ -10,8 +10,6 @@
 import org.openehr:representation ;
 import org.openehr:foundation ;
 
-
-
 |
 | The manifest for one entity (e.g. EHR subject), identifying the entity and optionally
 | specifying top-level items to be included in the Extract. The list actually included may

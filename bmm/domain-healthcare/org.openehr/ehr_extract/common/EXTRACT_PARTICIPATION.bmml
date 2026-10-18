@@ -19,7 +19,7 @@ import org.openehr:foundation ;
 |
 class EXTRACT_PARTICIPATION
 
-feature_group ("access")
+feature_group ("runtime")
 
     |
     | The time interval during which the participation took place, if it is used in an
@@ -27,14 +27,6 @@ feature_group ("access")
     | of the participation when used in future contexts, such as EHR Instructions.
     |
     prop time :? DV_INTERVAL<DV_DATE_TIME> ;
-
-    |
-    | The function of the Party in this participation (note that a given party might participate
-    | in more than one way in a particular activity). This attribute should be coded, but cannot
-    | be limited to the HL7v3:ParticipationFunction vocabulary, since it is too limited and
-    | hospital-oriented.
-    |
-    prop function : DV_TEXT ;
 
     |
     | The mode of the performer / activity interaction, e.g. present, by telephone, by email
@@ -46,6 +38,14 @@ feature_group ("access")
     | Uid of demographic entity within Extract who performed this participation.
     |
     prop performer : String ;
+
+    |
+    | The function of the Party in this participation (note that a given party might participate
+    | in more than one way in a particular activity). This attribute should be coded, but cannot
+    | be limited to the HL7v3:ParticipationFunction vocabulary, since it is too limited and
+    | hospital-oriented.
+    |
+    prop function : DV_TEXT ;
 
 invariant
     function_valid: ∃function ∧ function.generating_type.is_equal ("DV_CODED_TEXT") ⇒ terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_participation_function, function.defining_code);

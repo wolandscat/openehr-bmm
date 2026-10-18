@@ -11,7 +11,6 @@ import org.openehr:representation ;
 import org.openehr:foundation ;
 
 
-
 |
 | Specification of an Extract's contents. Subtypes can be used to add details specific to
 | the type of Extract. The specification consists of attributes specifying the directory,
