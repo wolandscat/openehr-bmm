@@ -1,0 +1,57 @@
+{
+    "profile_name": "openEHR",
+    "terminology_profile": {
+        "terminology_issuer": "openehr",
+        "code_sets_issuer": "openehr"
+    },
+    "archetype_parent_class": "LOCATABLE",
+    "archetype_data_value_parent_class": "DATA_VALUE",
+    "archetype_visualise_descendants_of": "ITEM",
+    "term_representation_classes": [],
+    "aom_rm_type_mappings": {
+        "TERMINOLOGY_CODE": {
+            "source_class_name": "TERMINOLOGY_CODE",
+            "target_class_name": "CODE_PHRASE",
+            "property_mappings": {
+                "terminology_id": {
+                    "source_property_name": "terminology_id",
+                    "target_property_name": "terminology_id"
+                },
+                "code_string": {
+                    "source_property_name": "code_string",
+                    "target_property_name": "code_string"
+                }
+            }
+        }
+    },
+    "rm_primitive_type_equivalences": {
+        "Octet": "Integer",
+        "Double": "Real",
+        "Integer64": "Integer",
+        "ISO8601_DATE": "Date",
+        "ISO8601_DATE_TIME": "Date_time",
+        "ISO8601_TIME": "Time",
+        "ISO8601_DURATION": "Duration"
+    },
+    "aom_rm_type_substitutions": {
+        "DATE": "String",
+        "DATE_TIME": "String",
+        "TIME": "String",
+        "DURATION": "String",
+        "CODE_PHRASE": "DV_CODED_TEXT",
+        "INTEGER": "Real",
+        "REAL": "Double",
+        "Real": "Double"
+    },
+    "aom_lifecycle_mappings": {
+        "AuthorDraft": "unmanaged",
+        "Draft": "in_development",
+        "TeamReview": "in_development",
+        "Team Review": "in_development",
+        "ReviewSuspended": "in_development",
+        "Review Suspended": "in_development",
+        "Reassess": "published",
+        "Published": "published",
+        "Rejected": "rejected"
+    }
+}
