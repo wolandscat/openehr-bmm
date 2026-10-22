@@ -10,7 +10,6 @@
 import org.openehr:representation ;
 import org.openehr:foundation ;
 
-
 |
 | The EHR object is the root object and access point of an EHR for a subject of care.
 |
