@@ -33,7 +33,7 @@ feature_group ("access")
     |
     | The list of references to other (usually) versioned objects logically in this folder.
     |
-    prop items :? List<OBJECT_REF> ;
+    prop items :? List<OBJECT_REF<COMPOSITION>> ;
 
     |
     | Archetypable meta-data for `FOLDER`.

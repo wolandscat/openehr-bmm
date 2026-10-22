@@ -15,7 +15,7 @@
 | object that `VERSION._data` points to.
 |
 class LOCATABLE_REF
-    is_a OBJECT_REF
+    is_a OBJECT_REF<LOCATABLE>
 
 feature_group ("access")
 

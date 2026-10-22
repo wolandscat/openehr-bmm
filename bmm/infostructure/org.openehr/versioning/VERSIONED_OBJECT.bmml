@@ -27,7 +27,7 @@ feature_group ("access")
     | Reference to object to which this version container belongs, e.g. the id of the containing
     | EHR or other relevant owning entity.
     |
-    prop owner_id : OBJECT_REF ;
+    prop owner_id : UID ;
 
     |
     | Time of initial creation of this versioned object.

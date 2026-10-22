@@ -21,7 +21,7 @@ feature_group ("access")
     |
     | Identifier of previous `EXTRACT_REQUEST`.
     |
-    prop request_id : OBJECT_REF ;
+    prop request_id : UID ;
 
     |
     | Requested action: `cancel | resend | send new`. Coded by openEHR Terminology

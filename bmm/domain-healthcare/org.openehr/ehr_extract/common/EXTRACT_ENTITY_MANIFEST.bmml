@@ -47,7 +47,7 @@ feature_group ("access")
     | Other identifiers that may be used to find the entity at the target system, keyed by type.
     | May include medicare numbers, drivers license number, tax number etc.
     |
-    prop other_ids :? List<OBJECT_REF> ;
+    prop other_ids :? List<DV_IDENTIFIER> ;
 
     |
     | List of Uids of items to be included in the Extract, in cases where individual items are
@@ -55,6 +55,6 @@ feature_group ("access")
     | `EXTRACT_SPEC._criteria query` defines the Extract contents. If set, for openEHR data,
     | these are Uids identifying the version containers.
     |
-    prop item_list :? List<OBJECT_REF> ;
+    prop item_list :? List<UID> ;
 
 end

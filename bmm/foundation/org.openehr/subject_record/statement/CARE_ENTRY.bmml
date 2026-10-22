@@ -31,6 +31,6 @@ feature_group ("access")
     |
     | Optional external identifier of guideline creating this Entry if relevant.
     |
-    prop guideline_id :? OBJECT_REF ;
+    prop guideline_id :? DV_URI ;
 
 end

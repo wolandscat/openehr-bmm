@@ -27,7 +27,7 @@ feature_group ("access")
     |
     | Owner_id from original `VERSIONED_OBJECT`, which identifies source EHR.
     |
-    prop owner_id : OBJECT_REF ;
+    prop owner_id : UID ;
 
     |
     | Creation time of original `VERSIONED_OBJECT`.

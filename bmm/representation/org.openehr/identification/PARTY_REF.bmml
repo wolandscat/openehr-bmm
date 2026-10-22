@@ -7,7 +7,7 @@
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
-
+import org.openehr:representation;
 
 |
 | Identifier for parties in a demographic or identity service. There are typically a number
@@ -18,9 +18,6 @@
 | to them).
 |
 class PARTY_REF
-    is_a OBJECT_REF
-
-invariant
-    type_validity: type.is_equal("PERSON") ∨ type.is_equal("ORGANISATION") ∨ type.is_equal("GROUP") ∨ type.is_equal("AGENT")∨ type.is_equal("ROLE") ∨ type.is_equal("PARTY") ∨ type.is_equal("ACTOR");
+    is_a OBJECT_REF<Any>
 
 end
