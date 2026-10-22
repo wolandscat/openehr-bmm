@@ -10,8 +10,6 @@
 import org.openehr:representation ;
 import org.openehr:foundation ;
 
-
-
 |
 | Abstract parent of Extract Folder and Content types.
 |
