@@ -1,0 +1,27 @@
++---------------------------------------------------------------------------------
+|    description:: RANGE_OF_INTERVAL_OF_QUANTITY class definition — nested generic
+|                   property syntax example
+|    keywords::    openEHR BMM test schema
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+import org.openehr:representation;
+
+|
+| Syntax-demonstration class, converted from the ODIN `EXAMPLE.bmm` reference schema.
+| Illustrates a property whose generic parameter is itself a nested generic type:
+| `TEST_REFERENCE_RANGE<DV_INTERVAL<DV_QUANTITY>>`.
+|
+class RANGE_OF_INTERVAL_OF_QUANTITY
+
+feature_group ("access")
+
+    |
+    | A generic property with a nested generic type parameter.
+    |
+    prop range :? TEST_REFERENCE_RANGE<DV_INTERVAL<DV_QUANTITY>> ;
+
+end

@@ -1,0 +1,27 @@
++---------------------------------------------------------------------------------
+|    description:: BOOK class definition — basic single/container property test example
+|    keywords::    openEHR BMM test schema
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+
+import org.openehr:representation;
+
+|
+| Syntax-demonstration class, converted from the ADLtest `openehr_adltest_100.bmm` ODIN
+| schema.
+|
+class BOOK
+
+feature_group ("access")
+
+    prop author : String ;
+
+    prop title : String ;
+
+    prop chapters :? List<CHAPTER> ;
+
+end

@@ -1,0 +1,30 @@
++---------------------------------------------------------------------------------
+|    description:: PROPORTION_KIND_2 enumeration — Integer-based enumeration syntax
+|                   example, with explicit item values
+|    keywords::    openEHR BMM test schema
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Syntax-demonstration enumeration, converted from the ODIN `EXAMPLE.bmm` reference
+| schema. An Integer-based enumeration with explicit item values.
+|
+enumeration PROPORTION_KIND_2
+    base_type Integer
+
+feature_group ("values")
+
+    pk_ratio (0);
+
+    pk_unitary (1001);
+
+    pk_percent (1002);
+
+    pk_fraction (1003);
+
+    pk_integer_fraction (1004);
+
+end

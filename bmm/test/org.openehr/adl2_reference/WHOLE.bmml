@@ -1,0 +1,251 @@
++---------------------------------------------------------------------------------
+|    description:: WHOLE class definition — exhaustive primitive-type property test example
+|    keywords::    openEHR BMM test schema
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+
+import org.openehr:representation;
+
+|
+| Syntax-demonstration class, converted from the ADLtest `openehr_adltest_100.bmm` ODIN
+| schema. Exercises every primitive leaf type with several properties each, all optional.
+|
+class WHOLE
+
+feature_group ("access")
+
+    prop string_attr1 :? String ;
+
+    prop string_attr2 :? String ;
+
+    prop string_attr3 :? String ;
+
+    prop string_attr4 :? String ;
+
+    prop string_attr5 :? String ;
+
+    prop boolean_attr1 :? Boolean ;
+
+    prop boolean_attr2 :? Boolean ;
+
+    prop boolean_attr3 :? Boolean ;
+
+    prop boolean_attr4 :? Boolean ;
+
+    prop integer_attr1 :? Integer ;
+
+    prop integer_attr2 :? Integer ;
+
+    prop integer_attr3 :? Integer ;
+
+    prop integer_attr4 :? Integer ;
+
+    prop integer_attr5 :? Integer ;
+
+    prop integer_attr6 :? Integer ;
+
+    prop integer_attr7 :? Integer ;
+
+    prop integer_attr8 :? Integer ;
+
+    prop integer_attr9 :? Integer ;
+
+    prop integer_attr10 :? Integer ;
+
+    prop integer_attr11 :? Integer ;
+
+    prop integer_attr12 :? Integer ;
+
+    prop integer_attr13 :? Integer ;
+
+    prop real_attr1 :? Real ;
+
+    prop real_attr2 :? Real ;
+
+    prop real_attr3 :? Real ;
+
+    prop real_attr4 :? Real ;
+
+    prop real_attr5 :? Real ;
+
+    prop real_attr6 :? Real ;
+
+    prop real_attr7 :? Real ;
+
+    prop real_attr8 :? Real ;
+
+    prop real_attr9 :? Real ;
+
+    prop real_attr10 :? Real ;
+
+    prop real_attr11 :? Real ;
+
+    prop real_attr12 :? Real ;
+
+    prop real_attr13 :? Real ;
+
+    prop date_attr1 :? Iso8601_date ;
+
+    prop date_attr2 :? Iso8601_date ;
+
+    prop date_attr3 :? Iso8601_date ;
+
+    prop date_attr4 :? Iso8601_date ;
+
+    prop date_attr5 :? Iso8601_date ;
+
+    prop date_attr6 :? Iso8601_date ;
+
+    prop date_attr7 :? Iso8601_date ;
+
+    prop date_attr8 :? Iso8601_date ;
+
+    prop date_attr9 :? Iso8601_date ;
+
+    prop date_attr10 :? Iso8601_date ;
+
+    prop date_attr11 :? Iso8601_date ;
+
+    prop date_attr12 :? Iso8601_date ;
+
+    prop time_attr1 :? Iso8601_time ;
+
+    prop time_attr2 :? Iso8601_time ;
+
+    prop time_attr3 :? Iso8601_time ;
+
+    prop time_attr4 :? Iso8601_time ;
+
+    prop time_attr5 :? Iso8601_time ;
+
+    prop time_attr6 :? Iso8601_time ;
+
+    prop time_attr7 :? Iso8601_time ;
+
+    prop time_attr8 :? Iso8601_time ;
+
+    prop time_attr9 :? Iso8601_time ;
+
+    prop time_attr10 :? Iso8601_time ;
+
+    prop time_attr11 :? Iso8601_time ;
+
+    prop time_attr12 :? Iso8601_time ;
+
+    prop time_attr13 :? Iso8601_time ;
+
+    prop date_time_attr1 :? Iso8601_date_time ;
+
+    prop date_time_attr2 :? Iso8601_date_time ;
+
+    prop date_time_attr3 :? Iso8601_date_time ;
+
+    prop date_time_attr4 :? Iso8601_date_time ;
+
+    prop date_time_attr5 :? Iso8601_date_time ;
+
+    prop date_time_attr6 :? Iso8601_date_time ;
+
+    prop date_time_attr7 :? Iso8601_date_time ;
+
+    prop date_time_attr8 :? Iso8601_date_time ;
+
+    prop date_time_attr9 :? Iso8601_date_time ;
+
+    prop date_time_attr10 :? Iso8601_date_time ;
+
+    prop date_time_attr11 :? Iso8601_date_time ;
+
+    prop date_time_attr12 :? Iso8601_date_time ;
+
+    prop date_time_attr13 :? Iso8601_date_time ;
+
+    prop date_time_attr14 :? Iso8601_date_time ;
+
+    prop duration_attr1 :? Iso8601_duration ;
+
+    prop duration_attr2 :? Iso8601_duration ;
+
+    prop duration_attr3 :? Iso8601_duration ;
+
+    prop duration_attr4 :? Iso8601_duration ;
+
+    prop duration_attr5 :? Iso8601_duration ;
+
+    prop duration_attr6 :? Iso8601_duration ;
+
+    prop duration_attr7 :? Iso8601_duration ;
+
+    prop duration_attr8 :? Iso8601_duration ;
+
+    prop duration_attr9 :? Iso8601_duration ;
+
+    prop duration_attr10 :? Iso8601_duration ;
+
+    prop duration_attr11 :? Iso8601_duration ;
+
+    prop duration_attr12 :? Iso8601_duration ;
+
+    prop duration_attr13 :? Iso8601_duration ;
+
+    prop duration_attr14 :? Iso8601_duration ;
+
+    prop duration_attr15 :? Iso8601_duration ;
+
+    prop duration_attr16 :? Iso8601_duration ;
+
+    prop duration_attr17 :? Iso8601_duration ;
+
+    prop duration_attr18 :? Iso8601_duration ;
+
+    prop duration_attr19 :? Iso8601_duration ;
+
+    prop duration_attr20 :? Iso8601_duration ;
+
+    prop duration_attr21 :? Iso8601_duration ;
+
+    prop duration_attr22 :? Iso8601_duration ;
+
+    prop duration_attr23 :? Iso8601_duration ;
+
+    prop duration_attr24 :? Iso8601_duration ;
+
+    prop duration_attr25 :? Iso8601_duration ;
+
+    prop duration_attr26 :? Iso8601_duration ;
+
+    prop duration_attr27 :? Iso8601_duration ;
+
+    prop duration_attr28 :? Iso8601_duration ;
+
+    prop duration_attr29 :? Iso8601_duration ;
+
+    prop duration_attr30 :? Iso8601_duration ;
+
+    prop duration_attr31 :? Iso8601_duration ;
+
+    prop duration_attr32 :? Iso8601_duration ;
+
+    prop duration_attr33 :? Iso8601_duration ;
+
+    prop duration_attr34 :? Iso8601_duration ;
+
+    prop duration_attr35 :? Iso8601_duration ;
+
+    prop duration_attr36 :? Iso8601_duration ;
+
+    prop any_attr_1 :? Any ;
+
+    prop any_attr_2 :? Any ;
+
+    prop any_attr_3 :? Any ;
+
+    prop any_attr_4 :? Any ;
+
+    prop any_attr_5 :? Any ;
+
+end

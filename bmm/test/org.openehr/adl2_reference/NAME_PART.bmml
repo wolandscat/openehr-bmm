@@ -1,0 +1,27 @@
++---------------------------------------------------------------------------------
+|    description:: NAME_PART enumeration — String-based enumeration syntax example,
+|                   with item values defaulting to the item names
+|    keywords::    openEHR BMM test schema
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Syntax-demonstration enumeration, converted from the ODIN `EXAMPLE.bmm` reference
+| schema. A String-based enumeration whose source left item values unspecified, so
+| each value defaults to its item name.
+|
+enumeration NAME_PART
+    base_type String
+
+feature_group ("values")
+
+    first ("FIRST");
+
+    middle ("MIDDLE");
+
+    last ("LAST");
+
+end

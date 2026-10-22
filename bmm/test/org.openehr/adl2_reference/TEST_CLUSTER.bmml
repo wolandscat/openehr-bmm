@@ -1,0 +1,25 @@
++---------------------------------------------------------------------------------
+|    description:: TEST_CLUSTER class definition — container-property validity-test example
+|    keywords::    openEHR BMM test schema
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+
+|
+| Syntax-demonstration class, converted from the ADLtest `openehr_adltest_100.bmm` ODIN
+| schema. Illustrates a mandatory container property.
+|
+class TEST_CLUSTER
+    is_a TEST_ITEM
+
+feature_group ("access")
+
+    |
+    | List of contained `TEST_ITEM`s.
+    |
+    prop items : List<TEST_ITEM> ;
+
+end

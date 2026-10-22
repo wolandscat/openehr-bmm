@@ -1,0 +1,17 @@
++---------------------------------------------------------------------------------
+|    description:: TEST_ITEM class definition — root of validity-test item hierarchy
+|    keywords::    openEHR BMM test schema
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+
+|
+| Syntax-demonstration class, converted from the ADLtest `openehr_adltest_100.bmm` ODIN
+| schema. Abstract root of the `TEST_CLUSTER`/`TEST_ELEMENT` validity-test hierarchy.
+|
+abstract class TEST_ITEM
+
+end

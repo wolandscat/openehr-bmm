@@ -1,0 +1,33 @@
++---------------------------------------------------------------------------------
+|    description:: TEST_ENTRY class definition — mixed single/container property validity-test example
+|    keywords::    openEHR BMM test schema
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+
+import org.openehr:representation;
+
+|
+| Syntax-demonstration class, converted from the ADLtest `openehr_adltest_100.bmm` ODIN
+| schema. Illustrates a mix of single-valued and container properties, all optional.
+|
+class TEST_ENTRY
+
+feature_group ("access")
+
+    prop value :? CODE_PHRASE ;
+
+    prop coded_text_value :? DV_CODED_TEXT ;
+
+    prop ordinal_attr_1 :? DV_ORDINAL ;
+
+    prop element_attr :? TEST_ELEMENT ;
+
+    prop element_attr_2 :? List<TEST_ELEMENT> ;
+
+    prop item :? DATA_VALUE ;
+
+end

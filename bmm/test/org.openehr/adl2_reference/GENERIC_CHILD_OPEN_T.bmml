@@ -1,0 +1,25 @@
++---------------------------------------------------------------------------------
+|    description:: GENERIC_CHILD_OPEN_T class definition — partially-closed generic inheritance test example
+|    keywords::    openEHR BMM test schema
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+
+import org.openehr:representation;
+
+|
+| Syntax-demonstration class, converted from the ADLtest `openehr_adltest_100.bmm` ODIN
+| schema. Inherits from `GENERIC_PARENT`, leaving its first generic parameter open
+| (re-declared here as `T`) while closing the second to `SUPPLIER_B`.
+|
+class GENERIC_CHILD_OPEN_T<T: SUPPLIER>
+    is_a GENERIC_PARENT<T, SUPPLIER_B>
+
+feature_group ("access")
+
+    prop gen_child_open_t_prop :? String ;
+
+end

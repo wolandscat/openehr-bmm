@@ -1,0 +1,25 @@
++---------------------------------------------------------------------------------
+|    description:: GENERIC_CHILD_OPEN_U class definition — partially-closed generic inheritance test example
+|    keywords::    openEHR BMM test schema
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+
+import org.openehr:representation;
+
+|
+| Syntax-demonstration class, converted from the ADLtest `openehr_adltest_100.bmm` ODIN
+| schema. Inherits from `GENERIC_PARENT`, closing its first generic parameter to
+| `SUPPLIER_A` while leaving the second open (re-declared here as `U`).
+|
+class GENERIC_CHILD_OPEN_U<U: SUPPLIER>
+    is_a GENERIC_PARENT<SUPPLIER_A, U>
+
+feature_group ("access")
+
+    prop gen_child_open_u_prop :? String ;
+
+end

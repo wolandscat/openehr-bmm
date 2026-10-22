@@ -1,0 +1,62 @@
++---------------------------------------------------------------------------------
+|    description:: SOME_TYPE class definition — clinical-leaf-type property test example
+|    keywords::    openEHR BMM test schema
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+
+import org.openehr:representation;
+
+|
+| Syntax-demonstration class, converted from the ADLtest `openehr_adltest_100.bmm` ODIN
+| schema. Supersedes the earlier EXAMPLE.bmm-derived `SOME_TYPE`: exercises a range of
+| clinical data-value leaf types, plus two generic (`DV_INTERVAL<DV_QUANTITY>`) properties.
+|
+class SOME_TYPE
+
+feature_group ("access")
+
+    prop standard_quantity_attr :? DV_QUANTITY ;
+
+    prop clinical_quantity_attr_1 :? DV_QUANTITY ;
+
+    prop clinical_quantity_attr_2 :? DV_QUANTITY ;
+
+    prop clinical_quantity_attr_3 :? DV_QUANTITY ;
+
+    prop clinical_quantity_attr_4 :? DATA_VALUE ;
+
+    prop clinical_quantity_attr_5 :? DATA_VALUE ;
+
+    prop clinical_quantity_attr_6 :? DATA_VALUE ;
+
+    prop standard_ordinal_attr :? DV_ORDINAL ;
+
+    prop clinical_ordinal_attr_1 :? DATA_VALUE ;
+
+    prop clinical_ordinal_attr_2 :? DATA_VALUE ;
+
+    prop clinical_coded_attr_1 :? CODE_PHRASE ;
+
+    prop clinical_coded_attr_2 :? CODE_PHRASE ;
+
+    prop clinical_coded_attr_3 :? CODE_PHRASE ;
+
+    prop clinical_coded_attr_4 :? CODE_PHRASE ;
+
+    prop standard_coded_text_attr :? DV_CODED_TEXT ;
+
+    prop standard_coded_text_attr_2 :? DV_CODED_TEXT ;
+
+    prop clinical_coded_text_attr_1 :? DV_CODED_TEXT ;
+
+    prop clinical_coded_text_attr_2 :? DV_CODED_TEXT ;
+
+    prop qty_interval_attr_1 :? DV_INTERVAL<DV_QUANTITY> ;
+
+    prop qty_interval_attr_2 :? DV_INTERVAL<DV_QUANTITY> ;
+
+end

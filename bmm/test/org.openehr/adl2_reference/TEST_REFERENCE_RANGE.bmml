@@ -1,0 +1,26 @@
++---------------------------------------------------------------------------------
+|    description:: TEST_REFERENCE_RANGE class definition — generic class syntax example
+|    keywords::    openEHR BMM test schema
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+import org.openehr:representation;
+
+|
+| Syntax-demonstration class, converted from the ODIN `EXAMPLE.bmm` reference schema.
+| Illustrates a generic class definition with one type parameter, `T`, constrained to
+| descend from `DV_ORDERED`.
+|
+class TEST_REFERENCE_RANGE<T: DV_ORDERED>
+
+feature_group ("access")
+
+    |
+    | A mandatory single-valued property with a simple (non-generic) type reference.
+    |
+    prop range : DV_INTERVAL<T> ;
+
+end

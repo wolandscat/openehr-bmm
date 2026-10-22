@@ -1,0 +1,28 @@
++---------------------------------------------------------------------------------
+|    description:: TEST_MAGNITUDE_STATUS enumeration — String-based enumeration syntax
+|                   example, with explicit item values
+|    keywords::    openEHR BMM test schema
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+|
+| Syntax-demonstration enumeration, converted from the ODIN `EXAMPLE.bmm` reference
+| schema. A String-based enumeration with explicit item values.
+|
+enumeration TEST_MAGNITUDE_STATUS
+    base_type String
+
+feature_group ("values")
+
+    le ("<=");
+
+    ge (">=");
+
+    eq ("=");
+
+    approx_eq ("~");
+
+end

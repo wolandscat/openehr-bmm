@@ -1,0 +1,25 @@
++---------------------------------------------------------------------------------
+|    description:: GENERIC_CHILD_CLOSED class definition — fully-closed generic inheritance test example
+|    keywords::    openEHR BMM test schema
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+
+import org.openehr:representation;
+
+|
+| Syntax-demonstration class, converted from the ADLtest `openehr_adltest_100.bmm` ODIN
+| schema. Inherits from `GENERIC_PARENT` with both generic parameters closed to
+| concrete types.
+|
+class GENERIC_CHILD_CLOSED
+    is_a GENERIC_PARENT<SUPPLIER_A, SUPPLIER_B>
+
+feature_group ("access")
+
+    prop gen_child_closed_prop :? String ;
+
+end
