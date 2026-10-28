@@ -45,7 +45,10 @@ feature_group ("access")
     | Lifecycle state of the content item in wrapped `ORIGINAL_VERSION`, derived as
     | `item.lifecycle_state`; coded by openEHR vocabulary `version lifecycle state`.
     |
-    func lifecycle_state : DV_CODED_TEXT ;
+    func lifecycle_state : DV_CODED_TEXT
+        post_cond
+            valid_result: Result = item.lifecycle_state;
+        ;
 
     |
     | Original content of this Version.
