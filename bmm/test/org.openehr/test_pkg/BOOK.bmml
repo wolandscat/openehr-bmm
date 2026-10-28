@@ -15,6 +15,7 @@ import org.openehr:representation;
 | schema.
 |
 class BOOK
+    is_a LOCATABLE
 
 feature_group ("access")
 
