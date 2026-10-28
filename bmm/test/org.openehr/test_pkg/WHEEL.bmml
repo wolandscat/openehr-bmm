@@ -1,5 +1,5 @@
 +---------------------------------------------------------------------------------
-|    description:: GENERIC_PARENT class definition — open generic-parameter inheritance test example
+|    description:: WHEEL class definition — composite test example
 |    keywords::    openEHR BMM test schema
 |    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
 |    support::     https://openehr.atlassian.net/issues/
@@ -8,17 +8,19 @@
 +---------------------------------------------------------------------------------
 
 
+import org.openehr:representation;
+
 |
 | Syntax-demonstration class, converted from the ADLtest `openehr_adltest_100.bmm` ODIN
-| schema. Illustrates a class with two open generic parameters, each constrained to
-| descend from `SUPPLIER`.
+| schema.
 |
-class GENERIC_PARENT<T: SUPPLIER, U: SUPPLIER>
+class WHEEL
+    is_a LOCATABLE
 
 feature_group ("access")
 
-    prop property_a :? T ;
+    prop description :? String ;
 
-    prop property_b :? U ;
+    prop parts :? List<RIM> ;
 
 end

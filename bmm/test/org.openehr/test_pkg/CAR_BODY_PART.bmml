@@ -1,5 +1,5 @@
 +---------------------------------------------------------------------------------
-|    description:: CAR_BODY class definition — composite test example
+|    description:: CAR_BODY_PART class definition — empty composite leaf test example
 |    keywords::    openEHR BMM test schema
 |    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
 |    support::     https://openehr.atlassian.net/issues/
@@ -8,20 +8,11 @@
 +---------------------------------------------------------------------------------
 
 
-import org.openehr:representation;
-
 |
 | Syntax-demonstration class, converted from the ADLtest `openehr_adltest_100.bmm` ODIN
-| schema.
+| schema. Deliberately empty: a leaf placeholder in the `CAR_BODY` composite.
 |
-class CAR_BODY
-
-feature_group ("access")
-
-    prop model :? String ;
-
-    prop description :? String ;
-
-    prop parts :? List<CAR_BODY_PART> ;
+class CAR_BODY_PART
+    is_a LOCATABLE
 
 end

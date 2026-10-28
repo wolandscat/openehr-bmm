@@ -1,5 +1,5 @@
 +---------------------------------------------------------------------------------
-|    description:: MULTIPLICITY_OBJECT class definition — primitive-container property test example
+|    description:: TEST_ITEM class definition — root of validity-test item hierarchy
 |    keywords::    openEHR BMM test schema
 |    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
 |    support::     https://openehr.atlassian.net/issues/
@@ -8,18 +8,11 @@
 +---------------------------------------------------------------------------------
 
 
-import org.openehr:representation;
-
 |
 | Syntax-demonstration class, converted from the ADLtest `openehr_adltest_100.bmm` ODIN
-| schema. Illustrates container properties of primitive leaf types.
+| schema. Abstract root of the `TEST_CLUSTER`/`TEST_ELEMENT` validity-test hierarchy.
 |
-class MULTIPLICITY_OBJECT
-
-feature_group ("access")
-
-    prop integer_list :? List<Integer> ;
-
-    prop string_list :? List<String> ;
+abstract class TEST_ITEM
+    is_a LOCATABLE
 
 end

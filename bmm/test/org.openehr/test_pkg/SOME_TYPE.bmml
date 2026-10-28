@@ -16,6 +16,7 @@ import org.openehr:representation;
 | clinical data-value leaf types, plus two generic (`DV_INTERVAL<DV_QUANTITY>`) properties.
 |
 class SOME_TYPE
+    is_a LOCATABLE
 
 feature_group ("access")
 

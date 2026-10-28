@@ -1,5 +1,5 @@
 +---------------------------------------------------------------------------------
-|    description:: CHAPTER class definition — basic single-property test example
+|    description:: GENERIC_PARENT class definition — open generic-parameter inheritance test example
 |    keywords::    openEHR BMM test schema
 |    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
 |    support::     https://openehr.atlassian.net/issues/
@@ -8,16 +8,18 @@
 +---------------------------------------------------------------------------------
 
 
-import org.openehr:representation;
-
 |
 | Syntax-demonstration class, converted from the ADLtest `openehr_adltest_100.bmm` ODIN
-| schema.
+| schema. Illustrates a class with two open generic parameters, each constrained to
+| descend from `SUPPLIER`.
 |
-class CHAPTER
+class GENERIC_PARENT<T: SUPPLIER, U: SUPPLIER>
+    is_a LOCATABLE
 
 feature_group ("access")
 
-    prop title : String ;
+    prop property_a :? T ;
+
+    prop property_b :? U ;
 
 end

@@ -1,5 +1,5 @@
 +---------------------------------------------------------------------------------
-|    description:: SUPPLIER class definition — generic-constraint root test example
+|    description:: TEST_ENTRY class definition — mixed single/container property validity-test example
 |    keywords::    openEHR BMM test schema
 |    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
 |    support::     https://openehr.atlassian.net/issues/
@@ -12,12 +12,23 @@ import org.openehr:representation;
 
 |
 | Syntax-demonstration class, converted from the ADLtest `openehr_adltest_100.bmm` ODIN
-| schema. Abstract root used as the generic-parameter constraint for `GENERIC_PARENT`.
+| schema. Illustrates a mix of single-valued and container properties, all optional.
 |
-abstract class SUPPLIER
+class TEST_ENTRY
+    is_a LOCATABLE
 
 feature_group ("access")
 
-    prop abstract_prop :? String ;
+    prop value :? CODE_PHRASE ;
+
+    prop coded_text_value :? DV_CODED_TEXT ;
+
+    prop ordinal_attr_1 :? DV_ORDINAL ;
+
+    prop element_attr :? TEST_ELEMENT ;
+
+    prop element_attr_2 :? List<TEST_ELEMENT> ;
+
+    prop item :? DATA_VALUE ;
 
 end

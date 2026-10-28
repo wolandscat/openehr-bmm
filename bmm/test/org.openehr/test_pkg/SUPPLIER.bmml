@@ -1,5 +1,5 @@
 +---------------------------------------------------------------------------------
-|    description:: CAR class definition — multi-part composite test example
+|    description:: SUPPLIER class definition — generic-constraint root test example
 |    keywords::    openEHR BMM test schema
 |    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
 |    support::     https://openehr.atlassian.net/issues/
@@ -8,18 +8,17 @@
 +---------------------------------------------------------------------------------
 
 
+import org.openehr:representation;
+
 |
 | Syntax-demonstration class, converted from the ADLtest `openehr_adltest_100.bmm` ODIN
-| schema.
+| schema. Abstract root used as the generic-parameter constraint for `GENERIC_PARENT`.
 |
-class CAR
+abstract class SUPPLIER
+    is_a LOCATABLE
 
 feature_group ("access")
 
-    prop body :? CAR_BODY ;
-
-    prop engine_parts :? List<ENGINE_PART> ;
-
-    prop wheels :? List<WHEEL> ;
+    prop abstract_prop :? String ;
 
 end

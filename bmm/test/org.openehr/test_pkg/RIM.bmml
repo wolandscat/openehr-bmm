@@ -1,5 +1,5 @@
 +---------------------------------------------------------------------------------
-|    description:: CAR_BODY_PART class definition — empty composite leaf test example
+|    description:: RIM class definition — composite leaf test example
 |    keywords::    openEHR BMM test schema
 |    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
 |    support::     https://openehr.atlassian.net/issues/
@@ -8,10 +8,19 @@
 +---------------------------------------------------------------------------------
 
 
+import org.openehr:representation;
+
 |
 | Syntax-demonstration class, converted from the ADLtest `openehr_adltest_100.bmm` ODIN
-| schema. Deliberately empty: a leaf placeholder in the `CAR_BODY` composite.
+| schema.
 |
-class CAR_BODY_PART
+class RIM
+    is_a LOCATABLE
+
+feature_group ("access")
+
+    prop nuts :? Integer ;
+
+    prop hubcap :? String ;
 
 end
