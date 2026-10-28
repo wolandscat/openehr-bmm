@@ -1,5 +1,5 @@
 +---------------------------------------------------------------------------------
-|    description:: MULTIPLICITY_OBJECT class definition — primitive-container property test example
+|    description:: ENGINE_PART_ITEM class definition — composite leaf test example
 |    keywords::    openEHR BMM test schema
 |    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
 |    support::     https://openehr.atlassian.net/issues/
@@ -12,14 +12,15 @@ import org.openehr:representation;
 
 |
 | Syntax-demonstration class, converted from the ADLtest `openehr_adltest_100.bmm` ODIN
-| schema. Illustrates container properties of primitive leaf types.
+| schema.
 |
-class MULTIPLICITY_OBJECT
+class ENGINE_PART_ITEM
+    is_a LOCATABLE
 
 feature_group ("access")
 
-    prop integer_list :? List<Integer> ;
+    prop model :? String ;
 
-    prop string_list :? List<String> ;
+    prop type :? String ;
 
 end

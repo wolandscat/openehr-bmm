@@ -1,5 +1,5 @@
 +---------------------------------------------------------------------------------
-|    description:: ENGINE_PART_ITEM class definition — composite leaf test example
+|    description:: CHAPTER class definition — basic single-property test example
 |    keywords::    openEHR BMM test schema
 |    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
 |    support::     https://openehr.atlassian.net/issues/
@@ -14,12 +14,11 @@ import org.openehr:representation;
 | Syntax-demonstration class, converted from the ADLtest `openehr_adltest_100.bmm` ODIN
 | schema.
 |
-class ENGINE_PART_ITEM
+class CHAPTER
+    is_a LOCATABLE
 
 feature_group ("access")
 
-    prop model :? String ;
-
-    prop type :? String ;
+    prop title : String ;
 
 end

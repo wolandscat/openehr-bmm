@@ -1,25 +1,26 @@
 +---------------------------------------------------------------------------------
-|    description:: CAR class definition — multi-part composite test example
-|    keywords::    openEHR BMM test schema
+|    description:: REGISTRY class definition
+|    keywords::    openEHR Demographic model
 |    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
 |    support::     https://openehr.atlassian.net/issues/
 |    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>
 |    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
 +---------------------------------------------------------------------------------
 
+import org.openehr:representation ;
+import org.openehr:foundation ;
 
 |
-| Syntax-demonstration class, converted from the ADLtest `openehr_adltest_100.bmm` ODIN
-| schema.
+| Demographic registry container.
 |
-class CAR
+class REGISTRY
+    is_a LOCATABLE
 
 feature_group ("access")
 
-    prop body :? CAR_BODY ;
-
-    prop engine_parts :? List<ENGINE_PART> ;
-
-    prop wheels :? List<WHEEL> ;
+    |
+    | The content extracted and serialised from the source repository for this Extract.
+    |
+    prop parties : List<OBJECT_REF<PARTY>> ;
 
 end

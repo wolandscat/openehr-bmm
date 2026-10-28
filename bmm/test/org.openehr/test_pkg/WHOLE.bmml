@@ -15,6 +15,7 @@ import org.openehr:representation;
 | schema. Exercises every primitive leaf type with several properties each, all optional.
 |
 class WHOLE
+    is_a LOCATABLE
 
 feature_group ("access")
 

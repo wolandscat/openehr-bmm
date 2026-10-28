@@ -1,5 +1,5 @@
 +---------------------------------------------------------------------------------
-|    description:: WHEEL class definition — composite test example
+|    description:: CAR_BODY class definition — composite test example
 |    keywords::    openEHR BMM test schema
 |    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
 |    support::     https://openehr.atlassian.net/issues/
@@ -14,12 +14,15 @@ import org.openehr:representation;
 | Syntax-demonstration class, converted from the ADLtest `openehr_adltest_100.bmm` ODIN
 | schema.
 |
-class WHEEL
+class CAR_BODY
+    is_a LOCATABLE
 
 feature_group ("access")
 
+    prop model :? String ;
+
     prop description :? String ;
 
-    prop parts :? List<RIM> ;
+    prop parts :? List<CAR_BODY_PART> ;
 
 end
