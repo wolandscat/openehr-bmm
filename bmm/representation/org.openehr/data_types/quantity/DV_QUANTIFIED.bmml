@@ -38,7 +38,9 @@ feature_group ("access")
     prop accuracy :? Any ;
 
     |
-    func magnitude : Ordered_Numeric ;
+    | Magnitude of the quantified value.
+    |
+    abstract magnitude : Ordered_Numeric ;
 
     |
     | True if accuracy is not known, e.g. due to not being recorded or discernable.

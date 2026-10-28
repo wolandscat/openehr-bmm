@@ -37,23 +37,23 @@ feature_group ("access")
     | creating_system_id}` triple, where the `object_id` has the same value as the containing
     | `VERSIONED_OBJECT _uid`.
     |
-    func uid : OBJECT_VERSION_ID ;
+    abstract uid : OBJECT_VERSION_ID ;
 
     |
     | Unique identifier of the version of which this version is a modification; Void if this is
     | the first version.
     |
-    func preceding_version_uid : OBJECT_VERSION_ID ;
+    abstract preceding_version_uid : OBJECT_VERSION_ID ;
 
     |
     | The data of this Version. Original content of this Version.
     |
-    func data : T ;
+    abstract data : T ;
 
     |
     | Lifecycle state of this version; coded by openEHR vocabulary `version lifecycle state`.
     |
-    func lifecycle_state : DV_CODED_TEXT ;
+    abstract lifecycle_state : DV_CODED_TEXT ;
 
     |
     | A canonical serial form of this Version, suitable for generating reliable hashes and

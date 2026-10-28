@@ -12,7 +12,7 @@
 |
 | Defines a single interval event in a series.
 |
-class INTERVAL_EVENT<T>
+class INTERVAL_EVENT<T: ITEM_STRUCTURE>
     is_a EVENT<T>
 
 feature_group ("access")
