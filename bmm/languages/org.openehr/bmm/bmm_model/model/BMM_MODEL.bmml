@@ -21,7 +21,7 @@ feature_group ("access")
     |
     | All classes in this model, keyed by type name.
     |
-    prop class_definitions :? List<String> ;
+    prop class_definitions :? Map<String, BMM_CLASS> ;
 
     |
     | List of other models 'used' (i.e. 'imported' by this model). Classes in the current model
