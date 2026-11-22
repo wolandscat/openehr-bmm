@@ -1,0 +1,7 @@
+{
+    "issuer": "openEHR",
+    "name": "RM",
+    "description": "openEHR RM, AM, LANG, BASE and other information models",
+    "issuer_uri": "http://openEHR.org",
+    "release": "1.1.0"
+}
