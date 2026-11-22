@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg"
+   viewBox="0 0 32 32"
+   version="1.1"
+   sodipodi:docname="any.svg"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)" >
+  <metadata
+     id="metadata91">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Ocean Informatics, Sebastian Garde</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title>All rights reserved.</dc:title>
+          </cc:Agent>
+        </dc:rights>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs7" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#B4B8BF"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     id="namedview5"
+     showgrid="false"
+     inkscape:zoom="6"
+     inkscape:cx="0.22118926"
+     inkscape:cy="46.666667"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg" />
+  <g
+     id="svgg"
+     transform="matrix(0.08185498,0,0,0.08185498,-0.16775733,-0.22871015)">
+    <path
+       id="path0"
+       d="M 140.873,29.883 C 117.063,37.318 112,42.628 112,60.163 c 0,26.54 1.74,27.927 24.288,19.36 54.047,-20.537 96.331,-1.29 96.875,44.095 C 233.572,157.716 212.095,180 178.823,180 161.33,180 160,183.358 160,227.527 c 0,40.601 2.439,44.497 27.8,44.412 25.216,-0.085 27.604,-2.666 28.986,-31.335 L 218,215.415 239.137,208.276 C 320.606,180.758 318.302,59.038 235.761,29.916 215.103,22.627 164.167,22.609 140.873,29.883 M 164,308 c -9.587,9.587 -11.088,42.247 -2.484,54.015 8.088,11.061 48.749,11.219 56.8,0.22 C 237.037,336.662 220.356,300 190,300 c -12.667,0 -20.37,2.37 -26,8"
+       inkscape:connector-curvature="0"
+       style="fill:#8DB2E3;fill-rule:evenodd;stroke:none" />
+  </g>
+</svg>

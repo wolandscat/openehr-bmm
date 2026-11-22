@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<!-- slot box --><g transform="translate(-2.93 -5.57) scale(0.4500)">
+  
+  <defs
+     id="defs4684" />
+  
+  <path
+     style="fill:#3e5f8a; stroke:none;"
+     d="M33 16L34 17L33 16M95 16L96 17L95 16z"
+     id="path4638" />
+  <ellipse
+     style="fill:#3e5f8a;stroke:none;stroke-width:4.34169912"
+     id="path4690-3-9"
+     cx="86.370369"
+     cy="83.441963"
+     rx="39.907406"
+     ry="39.770267" />
+  
+</g><path d="M60 6 H6 V58 H60" stroke="#385d8a" stroke-width="4"/>
+</svg>

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<!-- slot box --><g transform="translate(-2.59 2.14) scale(0.4311)">
+  
+  <defs
+     id="defs4684" />
+  
+  <path
+     style="fill:#8DB2E3; stroke:none;"
+     d="M33 16L34 17L33 16M95 16L96 17L95 16z"
+     id="path4638" />
+  <g
+     transform="matrix(1.6588612,0,0,1.5555615,-68.918124,-81.81756)"
+     id="g859">
+    <path
+      
+      
+       id="path4650"
+       d="m 77.097473,119.80505 27.738047,0.24708 -0.1871,-6.22027 L 83,114 V 96 L 104.57008,95.833275 104.37763,90.907527 83,91 l -0.0278,-4 0.402475,-5.998552 -6.210897,0.407436"
+       style="fill:#8DB2E3;stroke:none" />
+    <circle
+       cy="92.685066"
+       cx="110.35992"
+       id="path4690"
+       style="fill:#8DB2E3;stroke:none"
+       r="7.75" />
+    <circle
+       cy="116.08665"
+       cx="110.64983"
+       id="path4690-9"
+       style="fill:#8DB2E3;stroke:none"
+       r="7.75" />
+    <circle
+       cy="78.180504"
+       cx="80.505424"
+       id="path4690-3"
+       style="fill:#8DB2E3;stroke:none"
+       r="7.75" />
+  </g>
+  
+</g><path d="M60 6 H6 V58 H60" stroke="#8DB2E3" stroke-width="4"/>
+</svg>

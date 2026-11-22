@@ -1,0 +1,7 @@
+The SVG icons of openEHR RM classes in this directory were created by Thomas Beale for openEHR.org,
+and are published by the openEHR Clinical Knowledge Manager (CKM) at
+https://ckm.openehr.org/ckm/pics/rm/<name>.svg (fetched on 2026-11-16), under the Apache License,
+Version 2.0 (https://www.apache.org/licenses/LICENSE-2.0). Here they are named by the RM class
+they stand for (see RmIcons): e.g. CKM `structure` is `item_structure`, `any` is `data_value`,
+`slot_cluster` is `cluster-slot`. The `_dark` variants are made from them by
+bmmUi/iconsrc/make_dark_svgs.py (lightened colours).
