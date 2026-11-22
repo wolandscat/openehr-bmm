@@ -9,8 +9,8 @@
     "archetype_visualise_descendants_of": "ITEM",
     "term_representation_classes": [],
     "aom_rm_type_mappings": {
-        "TERMINOLOGY_CODE": {
-            "source_class_name": "TERMINOLOGY_CODE",
+        "Terminology_code": {
+            "source_class_name": "Terminology_code",
             "target_class_name": "CODE_PHRASE",
             "property_mappings": {
                 "terminology_id": {
@@ -53,5 +53,19 @@
         "Reassess": "published",
         "Published": "published",
         "Rejected": "rejected"
+    },
+    "rm_short_names": {
+        "ELEMENT": "ELEM",
+        "CLUSTER": "CLU",
+        "ITEM": "ITEM",
+        "COMPOSITION": "COMP",
+        "SECTION": "SECT",
+        "ITEM_TREE": "TREE",
+        "OBSERVATION": "OBS",
+        "ACTION": "ACT",
+        "INSTRUCTION": "INSTR",
+        "EVALUATION": "EVAL",
+        "ADMIN_ENTRY": "ADM",
+        "PERSON": "PERS"
     }
 }
