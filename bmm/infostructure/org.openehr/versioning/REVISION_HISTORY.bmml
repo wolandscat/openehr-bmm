@@ -35,7 +35,7 @@ feature_group ("access")
     |
     func most_recent_version_time_committed : String
         post_cond
-            valid_result: Result.is_equal (items.last.audits.first. time_committed.value);
+            valid_result: Result.is_equal (items.last.audits.first.time_committed.value);
         ;
 
 end

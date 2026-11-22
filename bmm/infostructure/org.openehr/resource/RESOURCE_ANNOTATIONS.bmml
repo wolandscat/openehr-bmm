@@ -12,10 +12,12 @@ import org.openehr:representation;
 |
 | Object representing annotations on an archetype. These can be of various forms, with a
 | documentation form defined so far, which has a multi-level tabular structure
+|
 |   `{ language: String, { path: String, { key: String, value: String } } }`
+|
 | Example instance, showing the documentation structure.
 |
-| --------
+| ----
 | {[
 |     "en": {[
 |         "/data[id2]": {[
@@ -28,7 +30,7 @@ import org.openehr:representation;
 |         ]}
 |     ]}
 | ]}
-| --------
+| ----
 |
 class RESOURCE_ANNOTATIONS
 

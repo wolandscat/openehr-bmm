@@ -14,7 +14,6 @@ import org.openehr:representation;
 | signatures.
 |
 abstract class ARCHETYPE_CONSTRAINT
-    is_a ADL_CODE_DEFINITIONS
 
 feature_group ("access")
 

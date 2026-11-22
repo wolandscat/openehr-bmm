@@ -40,6 +40,14 @@ feature_group ("access")
 
 feature_group ("operators")
 
+
+    |
+    | Value equality operator
+    |
+    func is_equal (other : String) : Boolean
+        alias "==" ;
+        ;
+        
     |
     | Concatenation operator - causes `other` to be appended to this string.
     |
