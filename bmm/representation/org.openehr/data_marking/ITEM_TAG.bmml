@@ -41,7 +41,7 @@ feature_group ("access")
     |
     | Identifier of owner object, such as EHR.
     |
-    prop owner_id : OBJECT_REF ;
+    prop owner_id : OBJECT_REF<LOCATABLE> ;
 
 invariant
     inv_key_valid: ¬key.is_empty()∧ key.is_justified;

@@ -34,7 +34,7 @@ feature_group ("access")
     |
     | Reference to causing Request, if any.
     |
-    prop request_id :? OBJECT_REF ;
+    prop request_id :? UID ;
 
     |
     | Creation time of this Extract

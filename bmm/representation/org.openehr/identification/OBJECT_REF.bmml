@@ -16,7 +16,7 @@
 | some other distributed protocol. However, in small systems they may be part of the same
 | executable as the data containing the Id.
 |
-class OBJECT_REF
+class OBJECT_REF<T>
 
 feature_group ("access")
 

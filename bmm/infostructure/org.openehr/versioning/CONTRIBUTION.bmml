@@ -27,7 +27,7 @@ feature_group ("access")
     | list of versions, which may include paths pointing to any number of versionable items,
     | i.e. items of types such as `COMPOSITION` and `FOLDER`.
     |
-    prop versions : List<OBJECT_REF> ;
+    prop versions : List<UID> ;
 
     |
     | Audit trail corresponding to the committal of this Contribution.

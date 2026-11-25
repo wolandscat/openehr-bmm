@@ -20,7 +20,7 @@ feature_group ("access")
     |
     | Contribution in which this version was added.
     |
-    prop contribution : OBJECT_REF ;
+    prop contribution : HIER_OBJECT_ID ;
 
     |
     | OpenPGP digital signature or digest of content committed in this Version.

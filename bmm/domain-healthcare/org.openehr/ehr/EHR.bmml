@@ -34,28 +34,28 @@ feature_group ("runtime")
     | versions, which may include references to any number of `VERSION` instances, i.e. items of
     | type `VERSIONED_COMPOSITION` and `VERSIONED_FOLDER`.
     |
-    prop contributions :? List<OBJECT_REF> ;
+    prop contributions :? List<OBJECT_REF<CONTRIBUTION>> ;
 
     |
     | Reference to `EHR_STATUS` object for this EHR.
     |
-    prop ehr_status : OBJECT_REF ;
+    prop ehr_status : OBJECT_REF<EHR_STATUS> ;
 
     |
     | Reference to `EHR_ACCESS` object for this EHR.
     |
-    prop ehr_access : OBJECT_REF ;
+    prop ehr_access : OBJECT_REF<EHR_ACCESS> ;
 
     |
     | Master list of all Versioned Composition references in this EHR.
     |
-    prop compositions :? List<OBJECT_REF> ;
+    prop compositions :? List<OBJECT_REF<COMPOSITION>> ;
 
     |
     | Optional directory structure for this EHR. If present, this is a reference to the first
     | member of `folders`.
     |
-    prop directory :? OBJECT_REF ;
+    prop directory :? OBJECT_REF<FOLDER> ;
 
     |
     | Time of creation of the EHR.
@@ -66,13 +66,13 @@ feature_group ("runtime")
     | Optional additional Folder structures for this EHR. If set, the `directory` attribute
     | refers to the first member.
     |
-    prop folders :? List<OBJECT_REF> ;
+    prop folders :? List<OBJECT_REF<FOLDER>> ;
 
     |
     | Optional list of tags associated with this EHR. Tag `target` values can only be within
     | the same EHR.
     |
-    prop tags :? List<OBJECT_REF> ;
+    prop tags :? List<OBJECT_REF<ITEM_TAG>> ;
 
 invariant
     contributions_valid: ∀ c:contributions ¦ c.type.is_equal("CONTRIBUTION");
