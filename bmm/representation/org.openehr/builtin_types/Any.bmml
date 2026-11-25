@@ -16,4 +16,21 @@
 |
 abstract class Any
 
+feature_group ("builtin")
+
+    |
+    | Output dynamic type of this object, including generics if applicable.
+    |
+    func generating_type: String
+        ;
+
+feature_group ("operators")
+
+    |
+    | Value equality operator
+    |
+    func is_equal (other : Any) : Boolean
+        alias "==" ;
+        ;
+        
 end
