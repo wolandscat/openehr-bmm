@@ -54,6 +54,11 @@ feature_group ("access")
     prop precision :? Integer ;
 
     |
+    | Null function used to support legacy DV_QUANTITY constraints containing 'property'.
+    |
+    func property : Terminology_code ;
+
+    |
     | Optional field used to specify a units system from which codes in `units` are defined.
     | Value is a URI identifying a terminology containing units concepts from the
     | (https://www.hl7.org/fhir/terminologies-systems.html[HL7 FHIR terminologies list]).
