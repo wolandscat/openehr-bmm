@@ -90,6 +90,6 @@ invariant
     hours_valid: hours >= 0;
     minutes_valid: minutes >= 0;
     seconds_valid: seconds >= 0;
-    fractional_second_valid: fractional_second >= 0.0 ∧ fractional_second < 1.0;
+    fractional_second_valid: fractional_seconds >= 0.0 ∧ fractional_seconds < 1.0;
 
 end

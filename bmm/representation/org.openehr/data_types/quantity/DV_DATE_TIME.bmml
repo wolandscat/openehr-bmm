@@ -17,7 +17,7 @@
 | e.g. the origin of a `HISTORY` in an `OBSERVATION` which is only partially known.
 |
 class DV_DATE_TIME
-    is_a DV_TEMPORAL
+    is_a DV_TEMPORAL, Iso8601_date_time
 
 feature_group ("access")
 
@@ -40,7 +40,10 @@ feature_group ("access")
     |
     | Subtract a Duration from this Date/time.
     |
-    func subtract (a_diff : DV_DURATION) : DV_DATE_TIME ;
+    func subtract (a_diff : DV_DURATION) : DV_DATE_TIME
+        alias
+            "-";
+        ;
 
     |
     | Difference between this Date/time and `other`.
@@ -48,6 +51,6 @@ feature_group ("access")
     func diff (other : DV_DATE_TIME) : DV_DURATION ;
 
 invariant
-    value_valid: valid_iso8601_date_time (value);
+    value_valid: Time_definitions.valid_iso8601_date_time (value);
 
 end

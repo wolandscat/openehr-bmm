@@ -83,23 +83,56 @@ feature_group ("access")
     func fractional_second : Real ;
 
     |
+    | True if there are fractional sections in the value string.
+    |
+    func has_fractional_second: Boolean
+        ;
+        
+    |
     | Timezone; may be Void.
     |
     func timezone : Iso8601_timezone ;
+    
+    |
+    | Indicates whether `hour` is unknown. If so, the datetime has the same form as a date.
+    |
+    func hour_unknown : Boolean ;
+    
+    |
+    | Indicates whether `minute` is unknown. If so, the time is of the form "hh".
+    |
+    func minute_unknown : Boolean ;
 
+    |
+    | Indicates whether `second` is unknown. If so and `month` is known, the time is of the form
+    | `"hh:mm"` or `"hhmm"`.
+    |
+    func second_unknown : Boolean ;
+    
+    |
+    | Indicates whether month in year is unknown. If so, the date is of the form `"YYYY"`.
+    |
+    func month_unknown : Boolean ;
+
+    |
+    | Indicates whether day in month is unknown. If so, and month is known, the date is of the
+    | form `"YYYY-MM"` or `"YYYYMM"`.
+    |
+    func day_unknown : Boolean ;
+    
     |
     | Return the string value in extended format.
     |
     func as_string : String ;
 
 invariant
-    year_valid: valid_year (year);
-    month_valid: valid_month (month);
-    day_valid: valid_day(year, month, day);
-    hour_valid: valid_hour (hour, minute, second);
-    minute_valid: ¬minute_unknown ⇒ valid_minute(minute);
-    second_valid: ¬second_unknown ⇒ valid_second (second);
-    fractional_second_valid: has_fractional_second ⇒ (¬second_unknown ∧ valid_fractional_second (fractional_second));
+    year_valid: Time_definitions.valid_year (year);
+    month_valid: Time_definitions.valid_month (month);
+    day_valid: Time_definitions.valid_day(year, month, day);
+    hour_valid: Time_definitions.valid_hour (hour, minute, second);
+    minute_valid: ¬minute_unknown ⇒ Time_definitions.valid_minute(minute);
+    second_valid: ¬second_unknown ⇒ Time_definitions.valid_second (second);
+    fractional_second_valid: has_fractional_second ⇒ (¬second_unknown ∧ Time_definitions.valid_fractional_second (fractional_second));
 
     partial_validity_year: ¬month_unknown;
     partial_validity_month: ¬month_unknown;

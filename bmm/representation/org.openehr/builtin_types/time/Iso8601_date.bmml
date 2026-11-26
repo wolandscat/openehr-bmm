@@ -65,9 +65,9 @@ feature_group ("access")
     func as_string : String ;
 
 invariant
-    year_valid: valid_year (year);
-    month_valid: ¬month_unknown ⇒ valid_month (month);
-    day_valid: ¬day_unknown ⇒ valid_day (year, month, day);
+    year_valid: Time_definitions.valid_year (year);
+    month_valid: ¬month_unknown ⇒ Time_definitions.valid_month (month);
+    day_valid: ¬day_unknown ⇒ Time_definitions.valid_day (year, month, day);
     partial_validity: month_unknown ⇒ day_unknown;
 
 end

@@ -56,9 +56,9 @@ feature_group ("access")
     func as_string : String ;
 
 invariant
-    min_hour_valid: sign = -1 ⇒ hour > 0 ∧ hour ≤ Min_timezone_hour;
-    max_hour_valid: sign = 1 ⇒ hour > 0 ∧ hour ≤ Max_timezone_hour;
-    minute_valid: ¬minute_unknown ⇒ valid_minute (minute);
+    min_hour_valid: sign = -1 ⇒ hour > 0 ∧ hour ≤ Time_definitions.Min_timezone_hour;
+    max_hour_valid: sign = 1 ⇒ hour > 0 ∧ hour ≤ Time_definitions.Max_timezone_hour;
+    minute_valid: ¬minute_unknown ⇒ Time_definitions.valid_minute (minute);
     sign_valid: sign = 1 ∨ sign = -1;
 
 end

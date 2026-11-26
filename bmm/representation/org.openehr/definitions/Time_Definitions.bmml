@@ -8,13 +8,12 @@
 +---------------------------------------------------------------------------------
 
 
-
 |
 | Definitions for date/time classes. Note that the timezone limits are set by
 | where the international dateline is. Thus, time in New Zealand is quoted
 | using +12:00, not -12:00.
 |
-builtin class Time_Definitions
+builtin class Time_definitions
 
 feature_group ("definitions")
 
@@ -93,4 +92,125 @@ feature_group ("definitions")
     |
     const Max_timezone_hour : Integer = 14 ;
 
+    |
+    | Return true if `year` is greater than zero
+    |
+    func valid_year (year: Integer): Boolean
+        ;
+        
+    |
+    | Return true if `month` is between 1 and 12
+    |
+    func valid_month (month: Integer): Boolean
+        ;
+        
+    |
+    | Return true if `year`, `month` and `day` is a valid combination on the Gregorian calendar.
+    |        
+    func valid_day (year: Integer, month: Integer, day: Integer): Boolean
+        ;
+
+    |
+    | Return true if `hour`, `minute` and `second` is a valid combination
+    |  
+    func valid_hour (hour: Integer, minute: Integer, second: Integer): Boolean
+        ;
+        
+    |
+    | Return true if`minute` is a between 0 and 60
+    |  
+    func valid_minute (minute: Integer): Boolean
+        ;
+
+    |
+    | Return true if`second` is between 0 and 60
+    |  
+    func valid_second (second: Integer): Boolean
+        ;
+
+    |
+    | Return true if`fraction_second` is between 0.0 and 1.0
+    |  
+    func valid_fractional_second (fraction_second: Real): Boolean
+        ;
+    
+    |
+    | String is a valid ISO 8601 date, i.e. takes the complete form:
+    |
+    |   * YYYY-MM-DD (extended, preferred) or one of the partial forms YYYY-MM or YYYY
+    |   * YYYYMMDD (compact) or a partial variant YYYYMM.
+    |
+    |   Where:
+    |
+    |   * YYYY is the string form of any positive number in the range 0000 - 9999 (zero-filled to four digits)
+    |   * MM is 01 - 12 (zero-filled to two digits)
+    |
+    | DD is 01 - 31 (zero-filled to two digits)
+    |
+    | The combinations of YYYY, MM, DD numbers must be correct with respect to the Gregorian calendar.
+    |
+    func valid_iso8601_date (s: String): Boolean
+        ;
+
+    |
+    | String is a valid ISO 8601 date, i.e. takes the form:
+    |
+    |   * hh:mm:ss[(,|.)s+][Z|±hh[:mm]] (extended)
+    |   * hhmmss[(,|.)s+][Z|±hh[mm]] (compact)
+    |   * or one of the partial forms:
+    |     * hh:mm (extended)
+    |     * hhmm or hh (compact)
+    |
+    | with an additional optional timezone indicator of:
+    |
+    |   * Z or ±hh[:mm] (extended) ±hh[mm] (compact)
+    |
+    | Where:
+    |
+    | * hh is "00" - "23" (0-filled to two digits)
+    | * mm is "00" - "59" (0-filled to two digits)
+    | * ss is "00" - "60" (0-filled to two digits)
+    | * [(,|.)s+] is an optional string consisting of a comma or decimal point followed by numeric string of 1 or more digits, representing a fractional second
+    | * Z is a literal meaning UTC (modern replacement for GMT), i.e. timezone +0000
+    |
+    func valid_iso8601_time (s: String): Boolean
+        ;
+        
+        
+    |
+    | String is a valid ISO 8601 date-time, i.e. takes the form:
+    |
+    | * YYYY-MM-DDThh:mm:ss[(,|.)s+][Z|±hh[:mm]] (extended)
+    | * YYYYMMDDThhmmss[(,|.)s+][Z|±hh[mm]] (compact)
+    |
+    | or one of the partial forms:
+    |
+    | * YYYY-MM-DDThh:mm or YYYY-MM-DDThh (extended)
+    | * YYYYMMDDThhmm or YYYYMMDDThh (compact)
+    |
+    func valid_iso8601_date_time (s: String): Boolean
+        ;
+        
+    |
+    | String is a valid ISO 8601 duration, i.e. takes the form:
+    |
+    |   * [nnY][nnM][nnW][nnD][T[nnH][nnM][nnS]]
+    |
+    | Where each nn represents a number of years, months, etc. nnW represents a number of 7-day weeks.
+    | Note: allowing the W designator in the same expression as other designators is an exception to the 
+    | published standard, but necessary in clinical information (typically for representing pregnancy duration).
+    |
+    | Parameters
+    | s:: 	
+    |     String is a valid ISO 8601 duration, i.e. takes the form:
+    |
+    |    * [nnY][nnM][nnW][nnD][T[nnH][nnM][nnS]]
+    |
+    | Where each nn represents a number of years, months, etc. nnW represents a number of 7- day weeks.
+    | 
+    | Note: allowing the W designator in the same expression as other designators is an exception to the 
+    | published standard, but necessary in clinical information (typically for representing pregnancy duration).
+    func valid_iso8601_duration (s: String): Boolean
+        ;
+            
 end
