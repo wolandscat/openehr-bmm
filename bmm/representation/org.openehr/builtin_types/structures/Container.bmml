@@ -30,6 +30,14 @@ feature_group ("access")
     | True if container is empty.
     |
     func is_empty : Boolean ;
+    
+    |
+    | Return nth item in container. The value n is 1-based.
+    |
+    func item(n: Integer) : V
+        pre_cond
+            index_valid: n > 0 ∧ n <= count;
+        ;
 
 feature_group ("comparison")
 
@@ -38,7 +46,7 @@ feature_group ("comparison")
     |
     func there_exists (test: (V) -> Boolean): Boolean
         alias
-            "there exists", "∃" ;
+            "∃" ;
         ;
 
     |
@@ -46,7 +54,7 @@ feature_group ("comparison")
     |
     func for_all (test: (V) -> Boolean): Boolean
         alias
-            "for all", "∀";
+            "∀";
         ;
 
     |

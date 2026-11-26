@@ -54,6 +54,13 @@ feature_group ("operators")
         ;
 
     |
+    | Real number modulo.
+    |
+    func mod (v : Real) : Real
+        alias "%" ;
+        ;
+
+    |
     | Real number exponentiation.
     |
     func exponent (other : Double) : Double

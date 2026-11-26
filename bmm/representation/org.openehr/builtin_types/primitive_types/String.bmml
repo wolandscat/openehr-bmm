@@ -28,6 +28,12 @@ feature_group ("access")
     |
     func is_integer : Boolean ;
 
+
+    |
+    | True if string has no leading or traiing whitespace.
+    |
+    func is_justified : Boolean ;
+    
     |
     | Return the integer corresponding to the integer value represented in this string.
     |
@@ -39,7 +45,6 @@ feature_group ("access")
     func contains (other : String) : Boolean ;
 
 feature_group ("operators")
-
 
     |
     | Value equality operator
