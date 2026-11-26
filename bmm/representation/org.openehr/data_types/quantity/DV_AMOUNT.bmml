@@ -34,6 +34,12 @@ feature_group ("access")
     |
     prop accuracy_is_percent :? Boolean ;
 
+    |
+    | Test whether a number is a valid percentage, i.e. between 0 and 100.
+    |    
+    func valid_percentage (number: Ordered_Numeric): Boolean
+        ;
+
 invariant
     accuracy_is_percent_validity: accuracy = 0 ⇒ ¬accuracy_is_percent;
     accuracy_validity: accuracy_is_percent ⇒ valid_percentage (accuracy);

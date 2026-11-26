@@ -20,6 +20,11 @@ abstract class EVENT<T: ITEM_STRUCTURE>
 feature_group ("access")
 
     |
+    | Parent `HISTORY` object of this `EVENT`..
+    |
+    prop parent : HISTORY<T> ;
+    
+    |
     | Time of this event. If the width is non-zero, it is the time point of the trailing edge of
     | the event.
     |

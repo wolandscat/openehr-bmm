@@ -46,6 +46,15 @@ feature_group ("access")
     | True if accuracy is not known, e.g. due to not being recorded or discernable.
     |
     func accuracy_unknown : Boolean ;
+    
+    |
+    | Test whether a string value is one of the valid values for the magnitude_status attribute.
+    |
+    func valid_magnitude_status (s: String): Boolean
+        post_cond
+            result_valid: {"=", "<", ">", "<=", ">=", "~"}.has(s);
+        ;
+
 
 invariant
     magnitude_status_valid: ∃magnitude_status ⇒ valid_magnitude_status (magnitude_status);

@@ -64,7 +64,7 @@ feature_group ("access")
     |
     func version_with_id (a_version_uid : OBJECT_VERSION_ID) : VERSION<T>
         pre_cond
-            version_valid: has_version_id (a_ver_id);
+            version_valid: has_version_id (a_version_uid);
         ;
 
     |
@@ -80,7 +80,7 @@ feature_group ("access")
     |
     func is_original_version (a_version_uid : OBJECT_VERSION_ID) : Boolean
         pre_cond
-            version_valid: has_version_id(a_ver_id);
+            version_valid: has_version_id(a_version_uid);
         ;
 
     |
@@ -116,6 +116,6 @@ invariant
 
     latest_version_valid: version_count > 0 ⇒ ∃latest_version;
 
-    uid_validity: extension.is_empty();
+    uid_validity: uid.extension.is_empty();
 
 end

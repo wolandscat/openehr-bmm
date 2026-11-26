@@ -30,6 +30,12 @@ feature_group ("access")
     | If True, this Request is persisted in the server until further notice.
     |
     prop persist_in_server : Boolean ;
+    
+    |
+    | If True, for persisted requests, only changes are sent for each invoction.
+    | TODO: added to satisfy invariant, possibly sould be a code value of `update_method`.
+    |
+    prop send_changes_only : Boolean ;
 
     |
     | Period for resending update Extracts in response to original Request.

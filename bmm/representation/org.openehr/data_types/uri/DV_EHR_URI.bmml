@@ -19,6 +19,10 @@
 class DV_EHR_URI
     is_a DV_URI
 
+feature_group ("definitions")
+
+    const Ehr_scheme: String = "ehr";
+
 invariant
     scheme_valid: scheme.is_equal (Ehr_scheme);
 

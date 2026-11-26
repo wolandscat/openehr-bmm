@@ -23,7 +23,7 @@ feature_group ("infrastructure")
     |
     | Parent of this node in a compositional hierarchy.
     |
-    func parent : PATHABLE ;
+    abstract parent : PATHABLE ;
 
     |
     | The item at a path (relative to this item); only valid for unique paths, i.e. paths that

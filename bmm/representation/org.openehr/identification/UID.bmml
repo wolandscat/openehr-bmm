@@ -24,6 +24,6 @@ feature_group ("access")
     prop value : String ;
 
 invariant
-    value_valid: ¬value.empty;
+    value_valid: ¬value.is_empty;
 
 end
