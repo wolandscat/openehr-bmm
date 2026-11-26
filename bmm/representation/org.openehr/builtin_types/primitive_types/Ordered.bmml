@@ -33,7 +33,7 @@ feature_group ("operators")
         alias
             "<=", "≤" ;
         post_cond
-            valid_result: ¬ (other < self);
+            valid_result: ¬ (other < Self);
         ;
 
     |
@@ -43,7 +43,7 @@ feature_group ("operators")
         alias
             ">" ;
         post_cond
-            valid_result: Result = (other < self);
+            valid_result: Result = (other < Self);
         ;
 
     |
@@ -53,7 +53,7 @@ feature_group ("operators")
         alias
             ">=", "≥" ;
         post_cond
-            valid_result: Result = (other <= self);
+            valid_result: Result = (other <= Self);
         ;
 
 end
