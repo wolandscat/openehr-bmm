@@ -56,6 +56,6 @@ feature_group ("access")
     func as_hierarchy : CLUSTER ;
 
 invariant
-    valid_structure: ∀ i:items ¦ i.type = "ELEMENT";
+    valid_structure: ∀ i:items ¦ i is_a ELEMENT;
 
 end
