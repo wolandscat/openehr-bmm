@@ -28,7 +28,7 @@ abstract class PARTY
 feature_group ("access")
 
     |
-    | Identities used by the party to identify itself, such as legal name, stage names, aliases,
+    | Identities used by the party to identify it, such as legal name, stage names, aliases,
     | nicknames and so on.
     |
     prop identities : List<PARTY_IDENTITY> ;
@@ -63,11 +63,11 @@ invariant
     type_valid: type = name;
     contacts_valid: ∃contacts ⇒ ¬contacts.is_empty();
 
-    relationships_validity: ∃relationships ⇒ ¬relationships.is_empty()∧ ∀ r:relationships ¦ r.source = self;
+    relationships_validity: ∃relationships ⇒ ¬relationships.is_empty()∧ ∀ r:relationships ¦ r.source = Self;
     reverse_relationships_validity: ∃reverse_relationships ⇒
-        ¬reverse_relationships.empty ∧ ∀ r:reverse_relationships ¦
-            repository ("demographics").all_party_relationships.has_object (r) ∧
-            repository("demographics").all_party_relationships.object (r).target = self;
+        ¬reverse_relationships.is_empty ∧ ∀ r:reverse_relationships ¦
+            ENV.party_repository ("demographics").all_party_relationships.has_object (r) ∧
+            ENV.party_repository ("demographics").all_party_relationships.object (r).target = Self;
 
     is_archetype_root: is_archetype_root;
     uid_mandatory: ∃uid;
