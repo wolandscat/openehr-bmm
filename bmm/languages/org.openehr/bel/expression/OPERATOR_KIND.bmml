@@ -15,7 +15,7 @@ import org.openehr:representation;
 enumeration OPERATOR_KIND
     base_type String
 
-feature_group ("values")
+values
 
     |
     | Equality (equals) operator.

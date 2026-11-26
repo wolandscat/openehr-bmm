@@ -16,7 +16,7 @@ import org.openehr:representation;
 enumeration BMM_SCHEMA_STATE
     base_type String
 
-feature_group ("values")
+values
 
     |
     | Initial state directly after instantiation of schema.

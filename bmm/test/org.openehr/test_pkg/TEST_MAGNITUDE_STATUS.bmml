@@ -15,7 +15,7 @@
 enumeration TEST_MAGNITUDE_STATUS
     base_type String
 
-feature_group ("values")
+values
 
     le ("<=");
 

@@ -16,7 +16,7 @@ import org.openehr:representation;
 enumeration INSTRUCTION_EXECUTION_STATE
     base_type String
 
-feature_group ("values")
+values
 
     |
     | Instruction created but not yet activated.

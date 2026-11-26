@@ -16,7 +16,7 @@
 enumeration NAME_PART
     base_type String
 
-feature_group ("values")
+values
 
     first ("FIRST");
 

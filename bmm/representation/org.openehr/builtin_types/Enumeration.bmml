@@ -1,0 +1,33 @@
++---------------------------------------------------------------------------------
+|    description:: Enumeration class definition
+|    keywords::    openEHR Foundation Types model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+
+
+|
+| Abstract ancestor of all enumerations, over their base type `T` (`Integer` or `String`):
+| each enumeration inherits from it implicitly.
+|
+abstract builtin class Enumeration<T>
+
+feature_group ("validation")
+
+    |
+    | The values of the enumeration, in order.
+    |
+    func value_list: List<T> ;
+
+    |
+    | True if `v` is one of the values of the enumeration.
+    |
+    func valid_value (v: T): Boolean
+        post_cond
+            validity: Result = value_list ().has (v);
+        ;
+
+end

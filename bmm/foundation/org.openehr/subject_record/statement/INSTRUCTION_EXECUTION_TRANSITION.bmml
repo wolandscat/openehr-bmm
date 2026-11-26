@@ -16,7 +16,7 @@ import org.openehr:representation;
 enumeration INSTRUCTION_EXECUTION_TRANSITION
     base_type String
 
-feature_group ("values")
+values
 
     |
     | Transition to initiate an instruction.

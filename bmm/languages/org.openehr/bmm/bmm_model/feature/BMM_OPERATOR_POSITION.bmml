@@ -16,7 +16,7 @@ import org.openehr:representation;
 enumeration BMM_OPERATOR_POSITION
     base_type String
 
-feature_group ("values")
+values
 
     |
     | Prefix operator position: operator comes before operand.

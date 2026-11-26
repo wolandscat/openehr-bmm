@@ -16,7 +16,7 @@ import org.openehr:representation;
 enumeration CONSTRAINT_STATUS
     base_type Integer
 
-feature_group ("values")
+values
 
     |
     | Data item is required to formally satisfy constraint. Enumeration value = 0.

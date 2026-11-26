@@ -16,7 +16,7 @@
 enumeration VERSION_STATUS
     base_type String
 
-feature_group ("values")
+values
 
     alpha ("alpha");
 

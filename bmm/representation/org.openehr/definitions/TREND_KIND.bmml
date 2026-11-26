@@ -15,7 +15,7 @@
 enumeration TREND_KIND
     base_type String
 
-feature_group ("values")
+values
 
     increase ("increase");
     decrease ("decrease");

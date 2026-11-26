@@ -15,7 +15,7 @@
 enumeration TEXT_FORMAT_TYPES
     base_type Integer
 
-feature_group ("values")
+values
 
     plain (0);
 
