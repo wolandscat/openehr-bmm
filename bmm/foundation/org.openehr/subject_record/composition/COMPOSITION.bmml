@@ -77,9 +77,9 @@ feature_group ("access")
     func is_persistent : Boolean ;
 
 invariant
-    category_validity: terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_composition_category, category.defining_code);
-    territory_valid: code_set(Code_set_id_countries).has_code(territory);
-    language_valid: code_set(Code_set_id_languages).has_code(language);
+    category_validity: TV.has_value_set_code (TV.Terminology_id_openehr, TV.Value_set_id_composition_category, category.defining_code.code_string);
+    territory_valid: TV.code_set(TV.Code_set_id_countries).has_code(territory.code_string);
+    language_valid: TV.code_set(TV.Code_set_id_languages).has_code(language.code_string);
     content_valid: ∃content ⇒ ¬content.is_empty();
     is_archetype_root: is_archetype_root;
 

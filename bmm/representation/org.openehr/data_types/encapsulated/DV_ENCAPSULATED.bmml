@@ -31,7 +31,7 @@ feature_group ("access")
     prop language :? CODE_PHRASE «iso.iso_639-1» ;
 
 invariant
-    language_valid: ∃language ⇒ code_set (Code_set_id_languages).has_code (language);
-    charset_valid: ∃charset ⇒ code_set (Code_set_id_character_sets).has_code (charset);
+    language_valid: ∃language ⇒ TV.code_set(TV.Code_set_id_languages).has_code (language.code_string);
+    charset_valid: ∃charset ⇒ TV.code_set (TV.Code_set_id_character_sets).has_code (charset.code_string);
 
 end

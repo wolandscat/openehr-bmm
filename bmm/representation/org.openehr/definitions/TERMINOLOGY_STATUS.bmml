@@ -1,0 +1,35 @@
++---------------------------------------------------------------------------------
+|    description:: TERMINOLOGY_STATUS enumeration
+|    keywords::    openEHR Terminology model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+
+
+|
+| Enumeration of possible lifecycle states of any part of the terminology.
+|
+enumeration TERMINOLOGY_STATUS
+    base_type String
+
+values
+
+    |
+    | Terminology element is in Trial state.
+    |
+    trial ("trial");
+
+    |
+    | Terminology element is in Active state, i.e. published and in use.
+    |
+    active ("active");
+
+    |
+    | Terminology element has been Retired, i.e. deprecated.
+    |
+    retired ("retired");
+
+end

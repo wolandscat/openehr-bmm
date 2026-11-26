@@ -1,0 +1,70 @@
++---------------------------------------------------------------------------------
+|    description:: CODE_SET class definition
+|    keywords::    openEHR Terminology model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+
+
+|
+| A code set.
+|
+class CODE_SET
+
+feature_group ("access")
+
+    |
+    | Name of this code set.
+    |
+    prop name : String ;
+
+    |
+    | Identifier used for code set in the openEHR Reference Model. The value is inferred from
+    | the `_name_` attribute.
+    |
+    | Valid values take the form of an xs:NCName value, i.e. cannot contain:
+    |
+    | * symbol characters `:, @, $, %, &, /, +, ,, ;`;
+    | * whitespace characters or different parentheses.
+    |
+    | An NCName cannot begin with a number, dot or minus character although these can appear
+    | later in the value.
+    |
+    prop openehr_id : String ;
+
+    |
+    | Name of the issuing organisation.
+    |
+    prop issuer : String ;
+
+    |
+    | Codes in this code set.
+    |
+    prop codes :? List<CODE> ;
+
+    |
+    | An optional identifier assumed by openEHR to be the identifier of this code set, based
+    | on its published name, with spaces replaced by underscores.
+    |
+    | Valid values take the form of an xs:NCName value, i.e. cannot contain:
+    |
+    | * symbol characters `:, @, $, %, &, /, +, ,, ;`;
+    | * whitespace characters or different parentheses.
+    |
+    | An NCName cannot begin with a number, dot or minus character although these can appear
+    | later in the value.
+    |
+    prop external_id :? String ;
+
+    |
+    | Status of this code set.
+    |
+    prop status :? TERMINOLOGY_STATUS ;
+
+    func has_code (code: String): Boolean
+        ;
+        
+end

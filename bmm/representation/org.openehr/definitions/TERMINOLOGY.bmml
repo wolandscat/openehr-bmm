@@ -1,0 +1,49 @@
++---------------------------------------------------------------------------------
+|    description:: TERMINOLOGY class definition
+|    keywords::    openEHR Terminology model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+
+
+|
+| Container for code sets and/or vocabularies that belong to a given logical terminology.
+|
+class TERMINOLOGY
+
+feature_group ("access")
+
+    |
+    | Name of this terminology.
+    |
+    prop name : String ;
+
+    |
+    | Language of this terminology, as an ISO:639 2-letter code.
+    |
+    prop language : String ;
+
+    |
+    | Code sets in this Terminology.
+    |
+    prop code_sets :? List<CODE_SET> ;
+
+    |
+    | Vocabularies of coded terms in this terminology.
+    |
+    prop value_sets :? List<TERMINOLOGY_VALUE_SET> ;
+
+    |
+    | Version of this instance of the terminology.
+    |
+    prop version :? String ;
+
+    |
+    | Date of issue of this version of the terminology.
+    |
+    prop date :? Iso8601_date ;
+
+end

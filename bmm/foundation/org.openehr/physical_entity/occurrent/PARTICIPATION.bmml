@@ -46,9 +46,9 @@ feature_group("access")
     prop performer : PARTY_PROXY ;
 
 invariant
-    function_valid: function.generating_type.is_equal ("DV_CODED_TEXT") ⇒
-        terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_participation_function, function.defining_code);
+    function_valid: function is_a DV_CODED_TEXT ⇒
+        TV.has_value_set_code (TV.Terminology_id_openehr, TV.Value_set_id_participation_function, function.defining_code.code_string);
 
-    mode_valid: ∃mode ⇒ terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_participation_mode, mode.defining_code);
+    mode_valid: ∃mode ⇒ TV.has_value_set_code (TV.Terminology_id_openehr, TV.Value_set_id_participation_mode, mode.defining_code.code_string);
 
 end

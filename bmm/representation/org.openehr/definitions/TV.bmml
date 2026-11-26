@@ -1,0 +1,84 @@
++---------------------------------------------------------------------------------
+|    description:: TV class definition
+|    keywords::    openEHR Terminology model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+
+
+|
+| Terminology validator.
+|
+class TV
+
+feature_group ("definitions")
+
+    const Terminology_id_openehr: String = "openehr";
+    
+    const Code_set_id_languages: String = "iso.iso_639-1";
+
+    const Code_set_id_character_sets: String = "iana.character-sets";
+    
+    const Code_set_id_countries: String = "iso.iso_3166-2";
+
+    const Code_set_id_media_types: String = "media_types";
+        
+    const Code_set_id_normal_statuses: String = "normal_statuses";
+    
+    const Code_set_id_compression_algorithms: String = "compression_algorithms";
+    
+    const Code_set_id_integrity_check_algorithms: String = "integrity_check_algorithms";
+        
+    const Value_set_id_term_mapping_purpose: String = "term_mapping_purpose";
+    
+    const Value_set_id_composition_category: String = "composition_category";
+    
+    const Value_set_id_setting: String = "setting";
+    
+    const Value_set_id_null_flavour: String = "null_flavour";
+    
+    const Value_set_id_event_math_function: String = "event_math_function";
+    
+    const Value_set_id_subject_relationship: String = "subject_relationship";
+    
+    const Value_set_id_instruction_transitions: String = "instruction_transitions";
+    
+    const Value_set_id_instruction_states: String = "instruction_states";
+    
+    const Value_set_id_audit_change_type: String = "audit_change_type";
+    
+    const Value_set_id_attestation_reason: String = "attestation_reason";
+    
+    const Value_set_id_version_lifecycle_state: String = "version_lifecycle_state"; 
+    
+    const Value_set_id_participation_function: String = "participation_function";
+    
+    const Value_set_id_participation_mode: String = "participation_mode";
+    
+feature_group ("access")
+
+    |
+    | Named code set.
+    |
+    func code_set(name: String): CODE_SET
+        ;
+
+    |
+    | Vocabularies of coded terms in a terminology.
+    |
+    func terminology (terminology_name: String): TERMINOLOGY
+        ;
+    
+    |
+    | Value sets of coded terms in a terminology.
+    |
+    func value_set (terminology_name: String, value_set_name: String): TERMINOLOGY_VALUE_SET
+        ;
+
+    func has_value_set_code(terminology_name: String, value_set_name: String, code: String): Boolean
+        ;
+    
+end

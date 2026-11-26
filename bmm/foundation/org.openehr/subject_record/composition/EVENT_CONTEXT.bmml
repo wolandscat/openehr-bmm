@@ -65,7 +65,7 @@ feature_group ("access")
     prop participations :? List<PARTICIPATION> ;
 
 invariant
-    setting_valid: terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_setting, setting.defining_code);
+    setting_valid: TV.has_value_set_code (TV.Terminology_id_openehr, TV.Value_set_id_setting, setting.defining_code.code_string);
     participations_validity: ∃participations ⇒ ¬participations.is_empty();
     location_valid: ∃location ⇒ ¬location.is_empty();
 

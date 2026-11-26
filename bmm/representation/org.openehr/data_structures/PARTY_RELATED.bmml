@@ -25,6 +25,6 @@ feature_group ("access")
     prop relationship : DV_CODED_TEXT ;
 
 invariant
-    relationship_valid: terminology (Terminology_id_openehr).has_code_for_group_id (Group_id_subject_relationship, relationship.defining_code);
+    relationship_valid: TV.has_value_set_code (TV.Terminology_id_openehr, TV.Value_set_id_subject_relationship, relationship.defining_code.code_string);
 
 end

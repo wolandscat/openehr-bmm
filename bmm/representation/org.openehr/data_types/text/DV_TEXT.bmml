@@ -82,8 +82,8 @@ feature_group ("access")
     prop encoding :? CODE_PHRASE ;
 
 invariant
-    language_valid: ∃language ⇒ code_set (Code_set_id_languages).has_code (language);
-    encoding_valid: ∃encoding ⇒ code_set (Code_set_id_character_sets).has_code (encoding);
+    language_valid: ∃language ⇒ TV.code_set (TV.Code_set_id_languages).has_code (language.code_string);
+    encoding_valid: ∃encoding ⇒ TV.code_set (TV.Code_set_id_character_sets).has_code (encoding.code_string);
     mappings_valid: ∃mappings ⇒ ¬mappings.is_empty();
     formatting_valid: ∃formatting ⇒ ¬formatting.is_empty();
 
