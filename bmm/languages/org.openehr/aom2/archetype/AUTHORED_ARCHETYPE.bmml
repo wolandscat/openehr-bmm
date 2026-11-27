@@ -50,8 +50,8 @@ feature_group ("access")
     prop other_meta_data : Map<String,String> ;
 
 invariant
-    invariant_adl_version_validity: valid_version_id (adl_version);
-    invariant_rm_release: valid_version_id (rm_release);
+    invariant_adl_version_validity: BASIC_DEFINITIONS.valid_version (adl_version);
+    invariant_rm_release: BASIC_DEFINITIONS.valid_version (rm_release);
     description_validity: ∃description;
 
 end

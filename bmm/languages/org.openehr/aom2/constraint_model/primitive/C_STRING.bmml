@@ -54,7 +54,7 @@ feature_group ("status")
     |
     func any_allowed : Boolean
         post_cond
-            result_valid: Result = constraint.is_empty ∨ constraint.count = 1 ∧ constraint.first.is_equal (Regex_any_string);
+            result_valid: Result = constraint.is_empty ∨ constraint.count = 1 ∧ constraint.first.is_equal (BASIC_DEFINITIONS.Regex_any_string);
         ;
 
 feature_group ("comparison")
@@ -77,7 +77,7 @@ feature_group ("comparison")
     func c_value_congruent_to (other : C_STRING) : Boolean
         do
             Result := constraint.count = other.constraint.count ∧
-                ∀ str : constraint ¦ other.constraint.i_th (str.index).is_equal (str);
+                 ∀ p : constraint.zip(other.constraint) ¦ p.first.is_equal (p.second);
         ;
 
 end

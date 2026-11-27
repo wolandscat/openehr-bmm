@@ -104,6 +104,6 @@ invariant
 
     inv_concept_id_validity: ¬concept_id.is_empty();
 
-    inv_release_version_validity: valid_version (release_version);
+    inv_release_version_validity: BASIC_DEFINITIONS.valid_version (release_version);
 
 end

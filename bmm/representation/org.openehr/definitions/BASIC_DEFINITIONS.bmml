@@ -43,5 +43,16 @@ feature_group ("infrastructure")
     | Name of the None type.
     |
     const None_type_name : String = "None" ;
+    
+    const Regex_any_string: String = ".*" ;
+    
+feature_group ("comparison")
+
+    |
+    | True if version is a valid 3-part version, optionally with trailing
+    | section such as -alpha, -beta, -rc[.NNN]
+    |
+    func valid_version(version: String): Boolean
+        ;    
 
 end
