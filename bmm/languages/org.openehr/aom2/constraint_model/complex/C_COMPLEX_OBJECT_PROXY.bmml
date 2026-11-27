@@ -56,7 +56,7 @@ feature_group ("comparison")
     |
     func occurrences_conforms_to (other : C_OBJECT) : Boolean
         do
-            Result := other.same_type (self) ? super (other) : True;
+            Result := other is_a C_COMPLEX_OBJECT_PROXY ? super (other) : True;
         ;
 
 end

@@ -17,6 +17,8 @@ abstract class C_OBJECT
 
 feature_group ("access")
 
+    prop parent :? C_ATTRIBUTE ;
+    
     |
     | Reference model type that this node corresponds to.
     |
@@ -96,7 +98,7 @@ feature_group ("access")
                                     ,
                                 ----------------------------------------------------------------
                                 ∃parent.parent   -> rm_prop_mult (parent.parent.rm_type_name,
-                                                    parent.parent.rm_attribute_path),
+                                                    parent.rm_attribute_path),
                                 ----------------------------------------------------------------
                                 *                -> Multiplicity_interval.make_open
                                 =================================================================
@@ -160,7 +162,7 @@ feature_group ("comparison")
     |  	 * sibling_order is Void or else identical to other.sibling_order
     | 	 * node_id is identical or else is the only child that overlays the parent node
     |
-    func c_congruent_to (other : ARCHETYPE_CONSTRAINT) : Boolean
+    func c_congruent_to (other : C_OBJECT) : Boolean
         do
             Result := rm_type_name.is_equal (other.rm_type_name) ∧
                 (¬∃occurrences ∨ (∃other.occurrences ∧
@@ -191,9 +193,9 @@ feature_group ("comparison")
     |
     func node_id_conforms_to (other : C_OBJECT) : Boolean
         do
-            Result := codes_conformant (node_id, other.node_id);
+            Result := ADL_CODE_DEFINITIONS.codes_conformant (node_id, other.node_id);
         post_cond
-            result_valid: Result = codes_conformant (node_id, other.node_id);
+            result_valid: Result = ADL_CODE_DEFINITIONS.codes_conformant (node_id, other.node_id);
         ;
 
     |

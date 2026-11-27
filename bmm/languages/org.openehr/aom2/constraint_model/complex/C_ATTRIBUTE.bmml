@@ -17,6 +17,8 @@ class C_ATTRIBUTE
 
 feature_group ("access")
 
+    prop parent :? C_COMPLEX_OBJECT ;
+    
     |
     | Reference model attribute within the enclosing type represented by a `C_OBJECT`.
     |
@@ -91,7 +93,7 @@ feature_group ("access")
     |
     | Typically used to test if an inherited node locally contains any constraints.
     |
-    func c_congruent_to (other : ARCHETYPE_CONSTRAINT) : Boolean
+    func c_congruent_to (other : C_ATTRIBUTE) : Boolean
         do
             Result := ¬∃existence ∧ (is_single ∧ other.is_single ∨
                     is_multiple ∧ other.is_multiple ∧ ¬∃cardinality);
@@ -104,7 +106,7 @@ feature_group ("access")
     | True if constraints represented by this node, ignoring any sub-parts, are narrower or the
     | same as other. Typically used during validation of specialised archetype nodes.
     |
-    func c_conforms_to (other : ARCHETYPE_CONSTRAINT, rmcc: (String, String) -> Boolean) : Boolean
+    func c_conforms_to (other : C_ATTRIBUTE, rmcc: (String, String) -> Boolean) : Boolean
         do
             Result := existence_conforms_to (other) ∧
                 (is_single ∧ other.is_single ∨
@@ -139,7 +141,13 @@ feature_group ("access")
     func cardinality_conforms_to (other: C_ATTRIBUTE): Boolean
         do
             Result := ∃cardinality ∧ ∃other.cardinality ?
-                other.cardinality.contains (cardinality) : True;
+                other.cardinality.interval.contains (cardinality.interval) : True;
         ;
 
+    |
+    | Number of children with either [nodeId] or specialisations of [nodeId].
+    |
+    func child_reuse_count(nodeId: String): Integer 
+        ;
+    
 end

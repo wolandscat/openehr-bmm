@@ -75,7 +75,7 @@ feature_group ("comparison")
     func c_value_congruent_to (other : C_ORDERED<T>) : Boolean
         do
             Result := constraint.count = other.constraint.count ∧
-                ∀ ivl : constraint ¦ ivl.is_equal (other.constraint.i_th (ivl.index)) ;
+                ∀ p : constraint.zip(other.constraint) ¦ p.first.is_equal (p.second) ;
         ;
 
 end
