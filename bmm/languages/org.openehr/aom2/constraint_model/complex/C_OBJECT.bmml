@@ -144,8 +144,7 @@ feature_group ("comparison")
     func c_conforms_to (other : C_OBJECT, rmcc: (String, String) -> Boolean) : Boolean
         do
             Result := node_id_conforms_to (other) ∧
-                (rm_type_name.is_case_insensitive_equal (other.rm_type_name) ∨
-                rmcc (rm_type_name, other.rm_type_name)) ∧
+                (rm_type_name.is_equal (other.rm_type_name) ∨ rmcc (rm_type_name, other.rm_type_name)) ∧
                 (is_root ∨ parent.is_multiple ∨ parent.is_single ∧ occurrences_conforms_to (other));
         ;
 
@@ -163,7 +162,7 @@ feature_group ("comparison")
     |
     func c_congruent_to (other : ARCHETYPE_CONSTRAINT) : Boolean
         do
-            Result := rm_type_name.is_case_insensitive_equal (other.rm_type_name) ∧
+            Result := rm_type_name.is_equal (other.rm_type_name) ∧
                 (¬∃occurrences ∨ (∃other.occurrences ∧
                     occurrences.is_equal (other.occurrences))) ∧
                 (¬∃sibling_order ∨ (∃other.sibling_order ∧

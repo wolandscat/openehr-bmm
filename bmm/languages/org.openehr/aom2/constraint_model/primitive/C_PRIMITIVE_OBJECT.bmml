@@ -80,7 +80,7 @@ feature_group ("comparison")
     |
     func c_congruent_to (other : C_PRIMITIVE_OBJECT) : Boolean
         do
-            Result := constrained_typename.is_case_insensitive_equal (other.constrained_typename) ∧
+            Result := constrained_typename.is_equal (other.constrained_typename) ∧
             				c_value_congruent_to (other);
         ;
 
