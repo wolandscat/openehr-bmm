@@ -44,9 +44,9 @@ feature_group ("status")
     |
     func any_allowed : Boolean
         do
-            Result := precursor ∧ pattern_constraint.is_empty;
+            Result := super ∧ pattern_constraint.is_empty;
         post_cond
-            result_valid: Result = precursor ∧ pattern_constraint.is_empty;
+            result_valid: Result = super ∧ pattern_constraint.is_empty;
         ;
 
 feature_group ("comparison")
