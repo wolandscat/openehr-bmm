@@ -17,22 +17,6 @@ builtin class String
     is_a Ordered
 
 feature_group ("access")
-
-    |
-    | True if string is empty, i.e. equal to "".
-    |
-    func is_empty : Boolean ;
-
-    |
-    | True if string can be parsed as an integer.
-    |
-    func is_integer : Boolean ;
-
-
-    |
-    | True if string has no leading or traiing whitespace.
-    |
-    func is_justified : Boolean ;
     
     |
     | Return the integer corresponding to the integer value represented in this string.
@@ -44,6 +28,46 @@ feature_group ("access")
     |
     func contains (other : String) : Boolean ;
 
+    |
+    | Return True if this String contains `other` at the start (case-sensitive).
+    |
+    func starts_with (other : String) : Boolean ;
+    
+    |
+    | Return length of this string.
+    |
+    func count: Integer 
+        ;
+    
+feature_group ("status")
+
+    |
+    | True if string is empty, i.e. equal to "".
+    |
+    func is_empty : Boolean ;
+
+    |
+    | True if string can be parsed as an integer.
+    |
+    func is_integer : Boolean ;
+
+    |
+    | True if string has no leading or traiing whitespace.
+    |
+    func is_justified : Boolean ;
+        
+    |
+    | Return True if this String contains only upper-case characters, potentially including other printable characters.
+    |
+    func is_upper: Boolean
+        ;
+
+    |
+    | Return True if this String contains only lower-case characters, potentially including other printable characters.
+    |
+    func is_lower: Boolean
+        ;
+                
 feature_group ("operators")
 
     |

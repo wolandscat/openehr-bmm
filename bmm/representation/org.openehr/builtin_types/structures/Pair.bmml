@@ -1,0 +1,29 @@
++---------------------------------------------------------------------------------
+|    description:: Pair class definition
+|    keywords::    openEHR Foundation Types model
+|    author::      Thomas Beale <thomas.beale@ArsSemantica.com>
+|    support::     https://openehr.atlassian.net/issues/
+|    copyright::   Copyright (c) 2026- openEHR Foundation <http://www.openEHR.org>
+|    license::     Apache 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
++---------------------------------------------------------------------------------
+
+
+
+|
+| Ordered container that may contain duplicates.
+|
+builtin class Pair<T, U>
+
+feature_group ("access")
+
+    |
+    | Return first element.
+    |
+    prop first : T ;
+
+    |
+    | Return second element.
+    |
+    prop second : U ;
+
+end

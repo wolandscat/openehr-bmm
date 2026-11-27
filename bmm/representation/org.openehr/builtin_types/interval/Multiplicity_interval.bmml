@@ -16,6 +16,20 @@
 class Multiplicity_interval
     is_a Proper_interval<Integer>
 
+feature_group ("initialisation")
+
+    |
+    | Make an open interval
+    |
+    func make_open: Multiplicity_interval
+        ;
+    
+    |
+    | Make a bounded interval
+    |
+    func make_bounded(a_lower: Integer, an_upper: Integer): Multiplicity_interval
+        ;    
+
 feature_group ("access")
 
     |
