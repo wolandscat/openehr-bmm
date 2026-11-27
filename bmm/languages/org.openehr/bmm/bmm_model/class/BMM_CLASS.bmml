@@ -93,9 +93,4 @@ feature_group ("access")
     |
     func class_path : String ;
 
-invariant
-    inv_constructors: ∀p : creators ¦ procedures.has(p);
-
-    inv_converters: ∀p : converters ¦ creators.has(p) ∧ p.arity() = 1;
-
 end

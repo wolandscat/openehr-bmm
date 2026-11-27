@@ -86,12 +86,4 @@ feature_group ("access")
     |
     func schema_id : String ;
 
-    |
-    | True when validation may be commenced.
-    |
-    func read_to_validate : Boolean
-        post_cond
-            valid_result: state = State_includes_processed;
-        ;
-
 end
