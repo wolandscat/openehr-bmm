@@ -54,20 +54,11 @@ feature_group ("access")
     |
     func type : DV_TEXT ;
 
-    |
-    | References to relationships in which this Party takes part as target.
-    |
-    func reverse_relationships : List<LOCATABLE_REF> ;
-
 invariant
     type_valid: type = name;
     contacts_valid: ∃contacts ⇒ ¬contacts.is_empty();
 
-    relationships_validity: ∃relationships ⇒ ¬relationships.is_empty()∧ ∀ r:relationships ¦ r.source = Self;
-    reverse_relationships_validity: ∃reverse_relationships ⇒
-        ¬reverse_relationships.is_empty ∧ ∀ r:reverse_relationships ¦
-            ENV.party_repository ("demographics").all_party_relationships.has_object (r) ∧
-            ENV.party_repository ("demographics").all_party_relationships.object (r).target = Self;
+    relationships_validity: ∃relationships ⇒ ¬relationships.is_empty()∧ ∀ r:relationships ¦ r.source.resolved = Self;
 
     is_archetype_root: is_archetype_root;
     uid_mandatory: ∃uid;
