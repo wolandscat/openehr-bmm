@@ -19,7 +19,7 @@ feature_group ("access")
     |
     | Test for membership of a value.
     |
-    func has (v:V) : Boolean ;
+    func has (v: V) : Boolean ;
 
     |
     | Number of items in container.
@@ -30,14 +30,6 @@ feature_group ("access")
     | True if container is empty.
     |
     func is_empty : Boolean ;
-    
-    |
-    | Return nth item in container. The value n is 1-based.
-    |
-    func item(n: Integer) : V
-        pre_cond
-            index_valid: n > 0 ∧ n <= count;
-        ;
 
 feature_group ("comparison")
 

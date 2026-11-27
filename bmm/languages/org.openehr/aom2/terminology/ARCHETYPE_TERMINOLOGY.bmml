@@ -81,7 +81,7 @@ feature_group ("access")
     | archetypes: list of all id codes in the terminology., i.e. the 'id' codes in an ADL
     | archetype, which are the `node_id` values on `C_OBJECT` descendants.
     |
-    func node_codes : List<String> ;
+    func id_codes : List<String> ;
 
     |
     | List of all value term codes in the terminology, i.e. the 'at' codes in an ADL archetype,
@@ -95,21 +95,6 @@ feature_group ("access")
     |
     func value_set_codes : List<String> ;
 
-    |
-    | True if language `a_lang` is present in archetype terminology.
-    |
-    func has_language (a_lang : String) : Boolean ;
-
-    |
-    | True if there are bindings to terminology `a_terminology_id` present. True if
-    | terminology `a_terminology' is present in archetype ontology.
-    |
-    func has_terminology (a_terminology_id : String) : Boolean ;
-
-    |
-    | True if code `a_code` defined in this terminology.
-    |
-    func has_term_code (a_code : String) : Boolean ;
 
     |
     | Term definition for a code, in a specified language.
@@ -123,7 +108,7 @@ feature_group ("access")
     | Binding of constraint corresponding to `a_code` in target external terminology
     | `a_terminology_id`, as a string, which is usually a formal query expression.
     |
-    func term_binding (a_terminology : String, a_code : String) : Uri
+    func term_binding (a_terminology_id : String, a_code : String) : Uri
         pre_cond
             valid_code: has_term_binding (a_terminology_id, a_code);
         ;
@@ -139,23 +124,65 @@ feature_group ("access")
     |
     func terminology_extract_term (a_terminology_id : String, a_code : String) : ARCHETYPE_TERM
         pre_cond
-            valid_code: has_terminology_extract (a_terminology_id) ∧ has_terminology_extract_code (a_code);
+            valid_code: has_terminology_extract (a_terminology_id) ∧ has_terminology_extract_code (a_terminology_id, a_code);
         ;
-
-    |
-    | True if there is a provided terminology extract present.
-    |
-    func has_terminology_extract (a_terminology_id : String) : Boolean ;
 
     |
     | List of languages in which terms in this terminology are available.
     |
     func languages_available : List<String> ;
+    
+    prop parent_archetype: ARCHETYPE;
+            
+feature_group ("status")
+
+    |
+    | True if language `a_lang` is present in archetype terminology.
+    |
+    func has_language (a_lang : String) : Boolean 
+        ;
+
+    |
+    | True if there are bindings to terminology `a_terminology_id` present. True if
+    | terminology `a_terminology' is present in archetype ontology.
+    |
+    func has_terminology (a_terminology_id : String) : Boolean 
+        ;
+
+    |
+    | Term definition for a code, in a specified language.
+    |
+    func has_term_definition (a_lang : String, a_code : String) : Boolean
+        ;
+        
+    |
+    | True if code `a_code` defined in this terminology.
+    |
+    func has_term_code (a_code : String) : Boolean 
+        ;
+
+    |
+    | True if terminlogy has `a_code`..
+    |
+    func has_term_binding (a_terminology_id : String, a_code : String) : Boolean
+        ;
+        
+    |
+    | True if there is a provided terminology extract present.
+    |
+    func has_terminology_extract (a_terminology_id : String) : Boolean 
+        ;
+        
+    |
+    | True if there is a provided terminology extract present.
+    |
+    func has_terminology_extract_code (a_terminology_id : String, a_code : String) : Boolean 
+        ;        
 
 invariant
-    original_language_validity: code_set (Code_set_id_languages).has_concept_id (original_language);
+    original_language_validity: TV.code_set (TV.Code_set_id_languages).has_code (original_language);
     concept_code_validity: id_codes.has (concept_code);
-    term_bindings_validity: ∃bindings ⇒ ¬bindings.is_empty();
-    parent_archetype_valid: parent_archetype.terminology = Current;
+    term_bindings_validity: ∃term_bindings ⇒ ¬term_bindings.is_empty();
+    parent_archetype_valid: parent_archetype.terminology = Self;
 
 end

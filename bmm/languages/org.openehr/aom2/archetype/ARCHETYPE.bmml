@@ -93,7 +93,7 @@ feature_group ("access")
     |
     func is_specialised : Boolean
         post_cond
-            valid_result: Result ⇒ ∃parent_archetype_hrid;
+            valid_result: Result ⇒ ∃parent_archetype_id;
         ;
 
 invariant

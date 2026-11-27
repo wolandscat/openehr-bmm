@@ -64,7 +64,7 @@ feature_group ("access")
     |
     func is_callable : Boolean
         post_cond
-            result_validity: Result = ¬∃open_arguments;
+            result_validity: Result = ¬∃open_args;
         ;
 
     |

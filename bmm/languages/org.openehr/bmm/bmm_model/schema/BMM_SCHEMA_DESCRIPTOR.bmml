@@ -50,7 +50,7 @@ feature_group ("access")
     |
     func is_top_level : Boolean
         do
-            Result := ∃bmm_schema_name ∧ ∃bmm_schema.model_name;
+            Result := ∃bmm_schema ∧ ∃bmm_schema.model_name;
         ;
 
     |
@@ -62,9 +62,9 @@ feature_group ("access")
 
 invariant
     result_valid: schema_id = BMM_DEFINITIONS.create_schema_id (
-        meta_data.item(BMM_DEFINITIONS.Metadata_model_publisher),
-        meta_data.item(BMM_DEFINITIONS.Metadata_schema_name),
-        meta_data.item(BMM_DEFINITIONS.Metadata_model_release)
+        meta_data.item_at_key(BMM_DEFINITIONS.Metadata_rm_publisher),
+        meta_data.item_at_key(BMM_DEFINITIONS.Metadata_schema_name),
+        meta_data.item_at_key(BMM_DEFINITIONS.Metadata_rm_release)
     );
 
 end

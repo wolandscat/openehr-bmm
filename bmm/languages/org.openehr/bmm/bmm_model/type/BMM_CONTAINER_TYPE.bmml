@@ -52,7 +52,7 @@ feature_group ("access")
     |
     func is_abstract : Boolean
         post_cond
-            valid_result: Result = container_type.is_abstract;
+            valid_result: Result = container_class.is_abstract;
         ;
 
     |

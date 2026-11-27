@@ -42,7 +42,7 @@ feature_group ("comparison")
         do
             Result :=
                 ∀ tpl : tuples ¦
-                    ∃ other_tpl : other.tuples ¦ tpl.c_conforms_to (other_tpl, rm_type_conformance_checker)
+                    ∃ other_tpl : other.tuples ¦ tpl.c_conforms_to (other_tpl, rmcc)
                 ∨ tuples.count < other.tuples.count ∧ c_congruent_to (other) ;
         ;
 
@@ -51,7 +51,7 @@ feature_group ("comparison")
     | to the node other. Typically used to test if an inherited node locally contains any
     | constraints.
     |
-    func c_congruent_to (other : C_SECOND_ORDER) : Boolean
+    func c_congruent_to (other : C_ATTRIBUTE_TUPLE) : Boolean
         do
             Result := ∀ tpl : tuples ¦
                 ∃ other_tpl : other.tuples ¦ tpl.c_congruent_to (other_tpl)
