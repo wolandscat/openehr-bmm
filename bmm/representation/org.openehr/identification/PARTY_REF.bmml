@@ -18,6 +18,6 @@ import org.openehr:representation;
 | to them).
 |
 class PARTY_REF
-    is_a OBJECT_REF<Any>
+    is_a OBJECT_REF<PARTY>
 
 end

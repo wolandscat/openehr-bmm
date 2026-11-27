@@ -45,5 +45,10 @@ feature_group ("access")
     | Globally unique id of an object, regardless of where it is stored.
     |
     prop id : OBJECT_ID ;
+    
+    |
+    | Resolved target object.
+    |
+    prop resolved :? T ;    
 
 end

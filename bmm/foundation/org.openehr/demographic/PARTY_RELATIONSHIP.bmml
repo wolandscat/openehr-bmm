@@ -43,8 +43,7 @@ feature_group ("access")
     func type : DV_TEXT ;
 
 invariant
-    source_valid: ∃source ∧ source.relationships.has (Self);
-    target_valid: ∃target ∧ ¬target.reverse_relationships.has (Self);
+    source_valid: ∃source ∧ source.resolved.relationships.has (Self);
     type_validity: type = name;
 
 end
